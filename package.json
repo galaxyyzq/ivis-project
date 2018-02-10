@@ -1,0 +1,22 @@
+{
+  "name": "ivis-project",
+  "version": "1.0.0",
+  "description": "Project in information visualization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonia-ch/ivis-project.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/sonia-ch/ivis-project/issues"
+  },
+  "homepage": "https://github.com/sonia-ch/ivis-project#readme",
+  "dependencies": {
+    "@types/d3": "^4.12.0"
+  }
+}
