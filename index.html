@@ -1,22 +1,38 @@
- <!DOCTYPE html>
- <html>
- <head>
-   <meta charset="utf-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>Away From Home</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Main CSS file -->
-   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <!-- D3 -->
-   <script src="https://d3js.org/d3.v4.min.js"></script>
-  </head>
+<!DOCTYPE html>
+<html>
 
-  <body>
-  </body>
-  
-  <!-- Main js file -->
-  <script src="main.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Away From Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS file -->
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
 
- </html>
+<body>
+</body>
+
+<!-- Main js file -->
+<script src="main.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCKvcMHnTmN_SKFG8u9n1Q1B5AiL_Pwe9M",
+    authDomain: "awayfromhome-c242d.firebaseapp.com",
+    databaseURL: "https://awayfromhome-c242d.firebaseio.com",
+    projectId: "awayfromhome-c242d",
+    storageBucket: "awayfromhome-c242d.appspot.com",
+    messagingSenderId: "122638224586"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</html>
