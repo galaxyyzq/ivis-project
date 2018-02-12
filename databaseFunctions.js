@@ -28,12 +28,11 @@ function testSave2(cb) {
     cb();
 }
 
-function getAllData(cb) {
+function getDataFromYear(year, cb) {
     let users = [];
-    firestore.collection("users").get().then((querySnapshot) => {
+    firestore.collection(year).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            users.push(doc);
-            console.log(doc.data());
+            users.push(doc.data());
         });
         cb(users);
     });
@@ -53,20 +52,20 @@ function find(data, year) {
     return res;
 }
 
-function uploadData(data) {
-    data.forEach(function(d){
-        await upload(d);
-    })
-}
+// async function uploadData(data) {
+//     data.forEach(function(d){
+//         await upload(d);
+//     })
+// }
 
-// Uploads all data entries to firebase. Takes a really long time
-function upload(data) {
-    // Have to wait for each entry, otherwise it will freeze.
-    return await firestore
-        .collection(val.Year).add(val)
-        .then(function () {
-            console.log("saved");
-        }).catch(function (error) {
-            console.log(error);
-        });
-}   
+// // Uploads all data entries to firebase. Takes a really long time
+// function upload(data) {
+//     // Have to wait for each entry, otherwise it will freeze.
+//     return firestore
+//         .collection(val.Year).add(val)
+//         .then(function () {
+//             console.log("saved");
+//         }).catch(function (error) {
+//             console.log(error);
+//         });
+// }   
