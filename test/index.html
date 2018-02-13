@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>asd</title>
+  </head>
+  <body>
+    <label for="text">Name:</label>
+    <input type="text" id="nameinput" />
+    <button id="clickButton" type="submit">Click</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBMuQJ_2fPM9LeQFQJMbj9x800oMJFYUhU",
+        authDomain: "test-5464d.firebaseapp.com",
+        databaseURL: "https://test-5464d.firebaseio.com",
+        projectId: "test-5464d",
+        storageBucket: "test-5464d.appspot.com",
+        messagingSenderId: "724055143081"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+      var name="";
+      var data;
+      $("#clickButton").on("click",function(){
+        name = $("#nameinput").val().trim();
+        // d3.csv("/data.csv", function(d) {
+        //   data = d;
+        //   database.ref().set(data.slice(0,10000));
+        //   console.log("done");
+        // });
+        // database.ref().orderByChild('Origin').equalTo('South Africa').on("child_added", function(snapshot) {
+        //   console.log(snapshot.key);
+        // });
+        var dataToFetch = ["South Africa"];
+        var dataPromises = dataToFetch.map(id => {
+          database.ref().orderByChild('Origin').equalTo('South Africa').on('child_added', function(snapshot) {
+            console.log(snapshot.key);
+            return snapshot;
+          });
+        });
+        // Wait for all the async requests mapped into
+        // the array to complete
+        Promise.all(dataPromises)
+          .then(videos => {
+            console.log(dataPromises);
+            console.log(videos);
+          })
+          .catch(err => {
+            // handle error
+          })
+
+
+        return false;
+      });
+
+
+
+    </script>
+
+  </body>
+</html>
