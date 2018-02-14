@@ -13,52 +13,18 @@
     <!-- <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBMuQJ_2fPM9LeQFQJMbj9x800oMJFYUhU",
-        authDomain: "test-5464d.firebaseapp.com",
-        databaseURL: "https://test-5464d.firebaseio.com",
-        projectId: "test-5464d",
-        storageBucket: "test-5464d.appspot.com",
-        messagingSenderId: "724055143081"
-      };
-      firebase.initializeApp(config);
-      var database = firebase.database();
-      var name="";
-      var data;
-      $("#clickButton").on("click",function(){
-        name = $("#nameinput").val().trim();
-        // d3.csv("/data.csv", function(d) {
-        //   data = d;
-        //   database.ref().set(data.slice(0,10000));
-        //   console.log("done");
-        // });
-        // database.ref().orderByChild('Origin').equalTo('South Africa').on("child_added", function(snapshot) {
-        //   console.log(snapshot.key);
-        // });
-        var dataToFetch = ["South Africa"];
-        var dataPromises = dataToFetch.map(id => {
-          database.ref().orderByChild('Origin').equalTo('South Africa').on('child_added', function(snapshot) {
-            console.log(snapshot.key);
-            return snapshot;
-          });
-        });
-        // Wait for all the async requests mapped into
-        // the array to complete
-        Promise.all(dataPromises)
-          .then(videos => {
-            console.log(dataPromises);
-            console.log(videos);
-          })
-          .catch(err => {
-            // handle error
-          })
 
+      $("#clickButton").on("click",function(){
+        $.ajax({
+            url: "https://api.mlab.com/api/1/databases?apiKey=LwoT2HQa2Ozwopn32-gcB2crvgctRx7e",
+            type: "GET",
+            contentType: "application/json"
+        }).done(function( msg ) {
+            console.log(msg);
+        });
 
         return false;
       });
-
-
 
     </script>
 
