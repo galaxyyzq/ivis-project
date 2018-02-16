@@ -15,8 +15,10 @@
     <script>
 
       $("#clickButton").on("click",function(){
+        // apiKey=LwoT2HQa2Ozwopn32-gcB2crvgctRx7e
+        // mongoimport -h ds133558.mlab.com:33558 -d ivis -c test -u test -p test --file data-refugees.csv --type csv --headerline
         $.ajax({
-            url: "https://api.mlab.com/api/1/databases?apiKey=LwoT2HQa2Ozwopn32-gcB2crvgctRx7e",
+            url: "https://api.mlab.com/api/1/databases/ivis/collections/test?q={'Year': 2004,'Origin': 'Turkey'}&apiKey=LwoT2HQa2Ozwopn32-gcB2crvgctRx7e",
             type: "GET",
             contentType: "application/json"
         }).done(function( msg ) {
