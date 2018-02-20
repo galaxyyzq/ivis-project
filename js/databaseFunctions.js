@@ -8,7 +8,7 @@
  * @param year a year as an int
  * @param cb callback function
  */
-function getCountriesFromYear(year = int, cb) {
+function getCountriesFromYear(year, cb) {
     console.log(`Looking for countries at year: ${year}`)
     $.ajax({
       url: `https://api.mlab.com/api/1/databases/ivis/collections/test?q={'Year': ${year}}&apiKey=LwoT2HQa2Ozwopn32-gcB2crvgctRx7e`,
