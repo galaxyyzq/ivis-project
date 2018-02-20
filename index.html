@@ -1,42 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Away from home</title>
+    <!-- Has to be 'https' links to work with github hosting -->
+    <!-- Include libraries here -->
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- D3js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  <body>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Away From Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Main CSS file -->
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <!-- D3 -->
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-</head>
+    <label for="text">Name:</label>
+    <input type="text" id="nameinput" />
+    <button id="clickButton" type="submit">Click</button>
 
-<body>
-  <input format="text" value=""></input>
-  <button>Upload</button>
-</body>
+  </body>
 
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCKvcMHnTmN_SKFG8u9n1Q1B5AiL_Pwe9M",
-    authDomain: "awayfromhome-c242d.firebaseapp.com",
-    databaseURL: "https://awayfromhome-c242d.firebaseio.com",
-    projectId: "awayfromhome-c242d",
-    storageBucket: "awayfromhome-c242d.appspot.com",
-    messagingSenderId: "122638224586"
-  };
-  firebase.initializeApp(config);
-  </script>
-
-
-  <script src="js/realtimeDatabaseFunctions.js"></script>
-  <!-- Main js file -->
+  <!-- Include all javascript files here-->
+  <script src="js/database/databaseFunctions.js"></script>
   <script src="js/main.js"></script>
 </html>
