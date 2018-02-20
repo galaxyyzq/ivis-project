@@ -13,6 +13,8 @@ To run:
 
 `` 
 http-server & 
+or
+npm start
 ``
 
 This will start the server on http://localhost:8080 from the current working directory.
