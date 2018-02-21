@@ -10,5 +10,3 @@ $("#clickButton").on("click", function(){
 $("#toggleMap").on("click",function(){
   $("#map-holder").toggle();
 })
-
-console.log("Hej2")
