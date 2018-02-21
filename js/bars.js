@@ -4,7 +4,8 @@
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100){
+function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP, yP){	
+	
   // var barHolderSelector = "body";
   // var xComp = "letter";
   // var yComp = "frequency";
@@ -15,10 +16,10 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
       // height = 500 - margin.top - margin.bottom;
   var margin = {top: 0, right: 0, bottom: 0, left: 0};
 
-  var x = d3.scaleOrdinal()
-      .rangeRoundBands([0, width], .1, 1);
+  var x = d3.scale.ordinal()
+  	.rangeRoundBands([0, width], .1, 1);
 
-  var y = d3.scaleLinear()
+  var y = d3.scale.linear()
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
@@ -29,12 +30,14 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
       .scale(y)
       .orient("left");
 
+  //console.log(barHolderSelector);
+	
   var barSvg = d3.select(barHolderSelector).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("id", "bar-holder")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr("transform", "translate(" + (margin.left + xP) + "," + (margin.top + yP) + ")");
   // remove
   d3.tsv("data/delete.tsv", function(error, data){
     d = data;
@@ -42,7 +45,7 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
   });
 
   function initBars(data) {
-    document.getElementById("bar-holder").innerHTML = "";
+    //document.getElementById("bar-holder").innerHTML = "";
     data.forEach(function(d) {
       d[yComp] = +d[yComp];
     });

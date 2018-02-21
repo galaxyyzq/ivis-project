@@ -19,7 +19,7 @@ var numRows = 10;
 var squareHoverSizeIncrease = 50;
 var zoomOffset = 5;
 
-var xScale = d3.scaleLinear()
+var xScale = d3.scale.linear()
     .domain([0, 100])
     .range([0, squareWidthHeight])
 
@@ -34,14 +34,7 @@ d3.csv("data/1951-data.csv", function(error, data){
   	  .attr("id", function(d,i){return "square_"+i});
 	
 	
-	square	
-		.each(function(d,i) { 
-			var barHolderSelector = d3.select(this).attr("id");
-			console.log(barHolderSelector);
-			
-			drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100)
-		});
-  
+
 	
   // append a sqare svg element in each g container
   square
@@ -74,7 +67,21 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("y", function(d,i) {
         return Math.floor(i/numRows) * (squareWidthHeight + squareMarginX);
       })
-      .attr("fill", "white")
+      .attr("fill", "white");
+		
+	
+	square	
+		.each(function(d,i) { 
+			var barHolderSelector = "#"+d3.select(this).attr("id");
+			//console.log(barHolderSelector);
+			var x = +d3.select(this).selectAll("rect").attr("x");
+		    var y = +d3.select(this).selectAll("rect").attr("y");
+			
+			console.log("x= "+x + "	y= " + y);
+		
+			drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, x, y)
+		});
+  	
 	
 	/*
 	square.selectAll(".bar")
