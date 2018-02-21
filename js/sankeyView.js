@@ -5,9 +5,7 @@ var margin = {top: 10, right: 10, bottom: 0, left: 10},
     height = 300 - margin.top - margin.bottom;
 
 var formatNumber = d3.format(",.0f"),    // zero decimal places
-    format = function(d) { return formatNumber(d) + " " + units; },
-    color = d3.scale.category20();
-
+    format = function (d) { return formatNumber(d) + " " + units; };
 
 
 // append the svg canvas to the page
