@@ -86,8 +86,7 @@ d3.csv("data/1951-data.csv", function(error, data){
 			var barHolderSelector = "#"+d3.select(this).attr("id");
 			//console.log(barHolderSelector);
 			var x = +d3.select(this).selectAll("rect").attr("x");
-		    var y = +d3.select(this).selectAll("rect").attr("y");
-
+		  var y = +d3.select(this).selectAll("rect").attr("y");
 			// console.log("x= "+x + "	y= " + y);
 
 			drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, x, y)

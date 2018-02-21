@@ -4,8 +4,8 @@
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP, yP, showAxis=false){	
-	
+function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP, yP, showAxis=false){
+
   // var barHolderSelector = "body";
   // var xComp = "letter";
   // var yComp = "frequency";
@@ -31,13 +31,37 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
       .orient("left");
 
   //console.log(barHolderSelector);
-	
+
   var barSvg = d3.select(barHolderSelector).append("g")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("id", "bar-holder")
-      .attr("transform", "translate(" + (margin.left + xP) + "," + (margin.top + yP) + ")");
+      .attr("transform", "translate(" + (margin.left + xP) + "," + (margin.top + yP) + ")")
+      .on("mouseover", function(d){
+        var currentX = +d3.select(this).attr("x")
+        var currentY = +d3.select(this).attr("y")
+        d3.select(this.parentNode.parentNode)
+          .attr("transform", `translate(${currentX},${currentY}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
+        // d3.select(this)
+        //   .attr("x", +currentX - +squareHoverSizeIncrease - +zoomOffset)
+        //   .attr("y", +currentY - +squareHoverSizeIncrease - +zoomOffset)
+        //   .attr("width", +squareWidthHeight + +squareHoverSizeIncrease)
+        //   .attr("height", +squareWidthHeight + +squareHoverSizeIncrease)
+      })
+      .on("mouseleave", function(d) {
+        var currentX = +d3.select(this).attr("x")
+        var currentY = +d3.select(this).attr("y")
+        d3.select(this.parentNode.parentNode)
+          .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
+        // var currentX = d3.select(this).attr("x")
+        // var currentY = d3.select(this).attr("y")
+        // d3.select(this)
+        //   .attr("x", +currentX + +squareHoverSizeIncrease + +zoomOffset)
+        //   .attr("y", +currentY + +squareHoverSizeIncrease + +zoomOffset)
+        //   .attr("width", squareWidthHeight)
+        //   .attr("height", squareWidthHeight)
+      });
   // remove
   d3.tsv("data/delete.tsv", function(error, data){
     d = data;
@@ -54,7 +78,7 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
     y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
 
     if(showAxis){
-            barSvg.append("g")
+    barSvg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
@@ -69,7 +93,7 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
         .style("text-anchor", "end")
         .text(yAxisTitle);
     }
-    
+
     barSvg.selectAll(".bar")
         .data(data)
       .enter().append("rect")
@@ -116,4 +140,3 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
   }
 
 }
-
