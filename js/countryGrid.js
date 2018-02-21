@@ -49,17 +49,25 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("stroke-width", 3)
       .attr("stroke", "black")
       .on("mouseover", function(d){
-        var currentX = +d3.select(this).attr("x")
-        var currentY = +d3.select(this).attr("y")
+        var currentX = +d3.select(this).attr("x");
+        var currentY = +d3.select(this).attr("y");
+		
+		var w = +d3.select(this).attr("width");	
+		var h = +d3.select(this).attr("height");	
+		
         d3.select(this.parentNode)
-          .attr("transform", `translate(${currentX},${currentY}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
+          .attr("transform", `translate(${currentX - 0.3*w},${currentY-0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
+	  
+	  
+	  
         // d3.select(this)
         //   .attr("x", +currentX - +squareHoverSizeIncrease - +zoomOffset)
         //   .attr("y", +currentY - +squareHoverSizeIncrease - +zoomOffset)
         //   .attr("width", +squareWidthHeight + +squareHoverSizeIncrease)
         //   .attr("height", +squareWidthHeight + +squareHoverSizeIncrease)
       })
-      .on("mouseleave", function(d) {
+      .on("mouseleave", function(d) {	  
+	  
         var currentX = +d3.select(this).attr("x")
         var currentY = +d3.select(this).attr("y")
         d3.select(this.parentNode)
