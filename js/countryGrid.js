@@ -1,4 +1,3 @@
-console.log("Hej");
 var margin = { top: 70, right: 100, bottom: 10, left: 10 },
   width = 2000 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
