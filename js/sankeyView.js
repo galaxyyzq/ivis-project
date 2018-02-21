@@ -27,10 +27,39 @@ var sankey = d3.sankey()
 
 var path = sankey.link();
 
+function getColorScheme(data) {
+    var names = [];
+    var values = [];
+    var sortedValues = [];
+    var sortedNames = [];
 
+    data.forEach(function (d, i) {
+        names.push(d.source);
+        values.push(d.value);
+    })
+    var help = values.slice(0);
+    sortedValues = help.sort(function (a, b) { return (b - a) });
+    for (i = 0; i < values.length; i++) {
+        sortedNames.push(names[values.indexOf(sortedValues[i])]);
+    }
+    console.log("Sorted names: ", sortedNames);
+
+    var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
+    colorDomain.forEach(function (d, i) {
+        colorDomain[i] = d3.rgb(d);
+    });
+
+    color = d3.scale.ordinal()
+        .domain(sortedNames)
+        .range(colorDomain);
+
+    return color;
+}
 
 // load the data (using the timelyportfolio csv method)
-d3.csv("data/sankey.csv", function(error, data) {
+d3.csv("data/sankey.csv", function (error, data) {
+
+    var color = getColorScheme(data);
 
   //set up graph in same style as original example but empty
   graph = {"nodes" : [], "links" : []};
@@ -105,7 +134,7 @@ d3.csv("data/sankey.csv", function(error, data) {
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d) {
         if (d.name == ourTarget) {
-          return d3.rgb("#A9a9a9");
+            return d3.rgb("#404040");
         }else {return d.color = color(d.name.replace(/ .*/, ""));
         }
 		   })
