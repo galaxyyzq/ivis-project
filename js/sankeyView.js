@@ -30,7 +30,7 @@ var path = sankey.link();
 
 
 // load the data (using the timelyportfolio csv method)
-d3.csv("sankey.csv", function(error, data) {
+d3.csv("data/sankey.csv", function(error, data) {
 
   //set up graph in same style as original example but empty
   graph = {"nodes" : [], "links" : []};
