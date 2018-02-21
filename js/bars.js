@@ -15,10 +15,10 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
       // height = 500 - margin.top - margin.bottom;
   var margin = {top: 0, right: 0, bottom: 0, left: 0};
 
-  var x = d3.scale.ordinal()
+  var x = d3.scaleOrdinal()
       .rangeRoundBands([0, width], .1, 1);
 
-  var y = d3.scale.linear()
+  var y = d3.scaleLinear()
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
@@ -111,5 +111,4 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
   }
 
 }
-drawBars("body");
-console.log("assdas");
+

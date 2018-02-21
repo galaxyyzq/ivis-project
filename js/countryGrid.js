@@ -1,4 +1,9 @@
-var margin = { top: 70, right: 100, bottom: 10, left: 10 },
+
+//
+var dataChart = [10,30,50,20,23,12,32];
+
+
+var margin = { top: 70, right: 100, bottom: 10, left: 80 },
   width = 2000 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
 
@@ -26,7 +31,18 @@ d3.csv("data/1951-data.csv", function(error, data){
       .data(data).enter()
     .append("g")
       .attr("class", "rect-container")
-
+  	  .attr("id", function(d,i){return "square_"+i});
+	
+	
+	square	
+		.each(function(d,i) { 
+			var barHolderSelector = d3.select(this).attr("id");
+			console.log(barHolderSelector);
+			
+			drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100)
+		});
+  
+	
   // append a sqare svg element in each g container
   square
     .append("rect")
@@ -59,6 +75,19 @@ d3.csv("data/1951-data.csv", function(error, data){
         return Math.floor(i/numRows) * (squareWidthHeight + squareMarginX);
       })
       .attr("fill", "white")
+	
+	/*
+	square.selectAll(".bar")
+		.data(dataChart).enter()
+		.append("rect")
+			.attr("class", "bar")
+			.attr("width", 20)
+			.attr("height", 10)
+			.attr("fill", "black");
+	*/
+	
+ 
+		
 
 });
 
