@@ -4,7 +4,7 @@
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP, yP){	
+function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP, yP, showAxis=false){	
 	
   // var barHolderSelector = "body";
   // var xComp = "letter";
@@ -32,7 +32,7 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
 
   //console.log(barHolderSelector);
 	
-  var barSvg = d3.select(barHolderSelector).append("svg")
+  var barSvg = d3.select(barHolderSelector).append("g")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -53,7 +53,8 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
     x.domain(data.map(function(d) { return d[xComp]; }));
     y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
 
-    barSvg.append("g")
+    if(showAxis){
+            barSvg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
@@ -67,7 +68,8 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text(yAxisTitle);
-
+    }
+    
     barSvg.selectAll(".bar")
         .data(data)
       .enter().append("rect")

@@ -33,9 +33,6 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("class", "rect-container")
   	  .attr("id", function(d,i){return "square_"+i});
 	
-	
-
-	
   // append a sqare svg element in each g container
   square
     .append("rect")
