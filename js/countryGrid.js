@@ -33,10 +33,11 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("class", "rect-container")
   	  .attr("id", function(d,i){return "square_"+i})
       .on("mouseover", function(d){
-        d3.select(this).attr("transform", "scale(1.2,1.2)");
+        // console.log(d3.select(this))
+        // d3.select(this).attr("transform", "translate(100,100) scale(1.3,1.3) translate(-100,-100)");
       })
       .on("mouseleave", function(d) {
-        d3.select(this).attr("transform", "scale(1,1)");
+        // d3.select(this).attr("transform", "scale(1,1)");
 
       });
 
@@ -48,8 +49,10 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("stroke-width", 3)
       .attr("stroke", "black")
       .on("mouseover", function(d){
-        // var currentX = d3.select(this).attr("x")
-        // var currentY = d3.select(this).attr("y")
+        var currentX = +d3.select(this).attr("x")
+        var currentY = +d3.select(this).attr("y")
+        d3.select(this.parentNode)
+          .attr("transform", `translate(${currentX},${currentY}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
         // d3.select(this)
         //   .attr("x", +currentX - +squareHoverSizeIncrease - +zoomOffset)
         //   .attr("y", +currentY - +squareHoverSizeIncrease - +zoomOffset)
@@ -57,6 +60,10 @@ d3.csv("data/1951-data.csv", function(error, data){
         //   .attr("height", +squareWidthHeight + +squareHoverSizeIncrease)
       })
       .on("mouseleave", function(d) {
+        var currentX = +d3.select(this).attr("x")
+        var currentY = +d3.select(this).attr("y")
+        d3.select(this.parentNode)
+          .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
         // var currentX = d3.select(this).attr("x")
         // var currentY = d3.select(this).attr("y")
         // d3.select(this)
@@ -81,7 +88,7 @@ d3.csv("data/1951-data.csv", function(error, data){
 			var x = +d3.select(this).selectAll("rect").attr("x");
 		    var y = +d3.select(this).selectAll("rect").attr("y");
 
-			console.log("x= "+x + "	y= " + y);
+			// console.log("x= "+x + "	y= " + y);
 
 			drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, x, y)
 		});
