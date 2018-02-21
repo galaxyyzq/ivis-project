@@ -6,7 +6,7 @@
     <title>Away From Home</title>
     <!-- CSS files -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
     <!-- Include libraries here -->
     <!-- Has to be 'https' links to work with github hosting -->
     <!-- Jquery -->
@@ -19,19 +19,20 @@
     <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
     <script src="https://d3js.org/topojson.v1.min.js"></script>
   </head>
-  <body>
 
   <body>
-      <label for="text">Name:</label>
+      <!-- <label for="text">Name:</label>
       <input type="text" id="nameinput" />
       <button id="clickButton" type="submit">Click</button>
       <button id="toggleMap">Toggle Map</button>
 
-      <div id="map-holder"></div>
+      <div id="map-holder"></div> -->
+      <svg id="country-grid"></svg>
   </body>
 
   <!-- Include all javascript files here-->
   <script src="js/databaseFunctions.js"></script>
-  <script src="js/topoJson.js"></script>
+  <!-- <script src="js/topoJson.js"></script> -->
+  <script src="js/countryGrid.js"></script>
   <script src="js/main.js"></script>
 </html>
