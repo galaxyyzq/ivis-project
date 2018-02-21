@@ -28,7 +28,6 @@ var sankey = d3.sankey()
 var path = sankey.link();
 
 
-
 // load the data (using the timelyportfolio csv method)
 d3.csv("data/sankey.csv", function(error, data) {
 
