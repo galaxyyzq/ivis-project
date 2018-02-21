@@ -11,7 +11,12 @@ svg = d3.select("#country-grid")
 var squareWidthHeight = 100;
 var squareMarginX = 10;
 var numRows = 10;
-var squareHoverSizeIncrease = 100;
+var squareHoverSizeIncrease = 50;
+var zoomOffset = 5;
+
+var xScale = d3.scaleLinear()
+    .domain([0, 100])
+    .range([0, squareWidthHeight])
 
 d3.csv("data/1951-data.csv", function(error, data){
   if(error) throw error;
@@ -27,12 +32,14 @@ d3.csv("data/1951-data.csv", function(error, data){
     .append("rect")
       .attr("width", squareWidthHeight)
       .attr("height", squareWidthHeight)
+      .attr("stroke-width", 3)
+      .attr("stroke", "black")
       .on("mouseover", function(d){
         var currentX = d3.select(this).attr("x")
         var currentY = d3.select(this).attr("y")
         d3.select(this)
-          .attr("x", +currentX - +squareHoverSizeIncrease * .5)
-          .attr("y", +currentY - +squareHoverSizeIncrease * .5)
+          .attr("x", +currentX - +squareHoverSizeIncrease - +zoomOffset)
+          .attr("y", +currentY - +squareHoverSizeIncrease - +zoomOffset)
           .attr("width", +squareWidthHeight + +squareHoverSizeIncrease)
           .attr("height", +squareWidthHeight + +squareHoverSizeIncrease)
       })
@@ -40,12 +47,8 @@ d3.csv("data/1951-data.csv", function(error, data){
         var currentX = d3.select(this).attr("x")
         var currentY = d3.select(this).attr("y")
         d3.select(this)
-          .attr("x", function(){
-            return +currentX + +squareHoverSizeIncrease * .5;
-          })
-          .attr("y", function() {
-            return +currentY + +squareHoverSizeIncrease * .5;
-          })
+          .attr("x", +currentX + +squareHoverSizeIncrease + +zoomOffset)
+          .attr("y", +currentY + +squareHoverSizeIncrease + +zoomOffset)
           .attr("width", squareWidthHeight)
           .attr("height", squareWidthHeight)
       })
@@ -55,6 +58,9 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("y", function(d,i) {
         return Math.floor(i/numRows) * (squareWidthHeight + squareMarginX);
       })
-      .attr("fill", "red")
+      .attr("fill", "white")
+
 });
+
+
 
