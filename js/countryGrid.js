@@ -49,6 +49,76 @@ var g_container = d3.select("#g_container")
 	.attr("rx", 10);
 
 
+////// HACK //////
+var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
+var widthHack = 500;
+var heightHack = 300;
+
+var xHack = d3.scale.ordinal()
+  .rangeRoundBands([0, widthHack], .1, 1)
+  .domain([2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]);
+
+var yHack = d3.scale.linear()
+    .range([heightHack, 0])
+    .domain([0, 2541249])
+
+var xAxisHack = d3.svg.axis()
+    .scale(xHack)
+    .orient("bottom");
+
+var yAxisHack = d3.svg.axis()
+    .scale(yHack)
+    .orient("left");
+
+var barSvg = d3.select("#right-side-bar-chart")
+    .attr("width", widthHack + marginHack.left + marginHack.right)
+    .attr("height", heightHack + marginHack.top + marginHack.bottom)
+  .append("g")
+    .attr("id", "bar-holder")
+    .attr("transform", "translate(" + (marginHack.left + 0) + "," + (marginHack.top + 0) + ")");
+
+    barSvg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + heightHack + ")")
+    .call(xAxisHack);
+
+barSvg.append("g")
+    .attr("class", "y axis")
+    .call(yAxisHack)
+  .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+
+function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){	
+    
+  var theBars = barSvg.selectAll(".bar")
+      .data(data, function(d) {return d.Year})
+    
+    theBars.enter()
+      .append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return xHack(d.Year); })
+        .attr("width", xHack.rangeBand())
+        .attr("y", function(d) { return yHack(d.Value); })
+        .attr("height", function(d) {
+            console.log(yHack(d.Value))
+            return heightHack - yHack(d.Value); 
+        })
+
+    theBars
+      .attr("class", "bar")
+      
+      .attr("x", function(d) { return xHack(d.Year); })
+      .attr("width", xHack.rangeBand())
+      .attr("y", function(d) { return yHack(d.Value); })
+      .attr("height", function(d) {
+          console.log(yHack(d.Value))
+          return heightHack - yHack(d.Value); 
+      })
+  }
+////// HACK END //////
 
 
 function zoomInSquare(d,i) {
@@ -61,6 +131,9 @@ function zoomInSquare(d,i) {
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
   d3.select(this)
     .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
+  
+  d3.select("#countryName").text(d[0].Country)
+  drawBarsHack("#right-side-bar-chart",xComp="letter",yComp="frequency",yAxisTitle="",height=200,width=500, xP=0, yP=0, showAxis=true, d)
 }
 
 function zoomOutSquare() {
@@ -71,10 +144,28 @@ function zoomOutSquare() {
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
 
+// Get our current data in a list with each element as our year
+d3.csv("data/data_10years_sorted_country.csv", function(data){
+  var countryWithYears = [];
+  var thisCountry;
+  var prevCountry = data[0];
+  var countryArray = [];
+  data.forEach(function(d,i){
+    // console.log(d)
+    thisCountry = d;
+    if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
+      countryWithYears.push(countryArray)
+      countryArray = [];
+    }
+    else{
+      countryArray.push(thisCountry)
+    }
+    prevCountry = thisCountry;
 
-// Reading data and creating the squares
-d3.csv("data/1951-data.csv", function(error, data){
-  if(error) throw error;
+  })
+  data = countryWithYears;
+
+  console.log(data)
 
   // Create g element for each data point
   var square = countryGridSVG.selectAll(".rect-container")
@@ -166,9 +257,20 @@ d3.csv("data/1951-data.csv", function(error, data){
         height = squareWidthHeight,
         width = squareWidthHeight,
         x,
-        y
+        y,
+        false,
+        d
       );
 		});
 });
 
+
+
+
+
+// change barHolderSelector for the bar holder,
+// i.e for id="barHolder" use #barHolder
+// change the x component name and y component name also the yAxisTitle
+// to update the bars, use
+// initBars(data)
 
