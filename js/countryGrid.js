@@ -1,12 +1,12 @@
 
 // Dimensions of the useful area inside the SGV
 
-var margin = { top: 22, right: 20, bottom: 20, left: 20 };
-var width  = 1055; 
-var height = 650;
+var margin = { top: 62, right: 20, bottom: 20, left: 20 };
+var width  = 1110; 
+var height = 550;
 
 var squareWidthHeight = 54;
-var squareMarginX = 5;
+var squareMarginX = 8;
 //var numRows = Math.floor(width/(squareWidthHeight+squareMarginX) );
 var numRows = 18;
 
@@ -43,8 +43,9 @@ var g_container = d3.select("#g_container")
     .attr("width",  width  + a +"px")
     .attr("height", height + a +"px")
     .attr("stroke-width", 1) // border
-    //.attr("stroke", "gray")
-    .attr("fill", "lightblue")
+    .attr("stroke", "gray")
+    //.attr("fill", "lightblue")
+    .attr("fill", "white")
 	.attr("rx", 10);
 
 
@@ -91,7 +92,31 @@ d3.csv("data/1951-data.csv", function(error, data){
       .attr("width", squareWidthHeight)
       .attr("height", squareWidthHeight)
       .attr("stroke-width", 3) // border
-      .attr("stroke", "black")
+      //.attr("stroke", "black")
+	  .attr("stroke", function(d,i){ 
+	  	console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
+	  	if(i%numRows >= 0 && i%numRows<=3 )
+		{
+			return "red"
+		}
+	  	else if(i%numRows >= 4 && i%numRows<=6 )
+		{
+			return "green"
+		}
+	  	else if(i%numRows >= 7 && i%numRows<=10 )
+		{
+			return "#5D32D2"
+			//return "blue"
+		}	  
+	  	else if(i%numRows >= 10 && i%numRows<=13 )
+		{
+			return "black"
+		}	
+	  	else if(i%numRows >= 13 && i%numRows<=18 )
+		{
+			return "brown"
+		}		  	  
+	  	return "white" })
       .attr("x", function(d,i) { return i%numRows * (squareWidthHeight + squareMarginX); })
       .attr("y", function(d,i) { return Math.floor(i/numRows) * (squareWidthHeight + squareMarginX); })
       .attr("fill", "white");
