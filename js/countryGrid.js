@@ -226,12 +226,13 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
 		}
 	  	else if(i%numRows >= 7 && i%numRows<=10 )
 		{
-			return "#5D32D2"
+			return "lightblue"
+			//return "#5D32D2"
 			//return "blue"
 		}	  
 	  	else if(i%numRows >= 10 && i%numRows<=13 )
 		{
-			return "gray"
+			return "lightgray"
 		}	
 	  	else if(i%numRows >= 13 && i%numRows<=18 )
 		{
