@@ -1,8 +1,8 @@
 var units = "Refugees";
 
-var margin = {top: 10, right: 10, bottom: 0, left: 10},
-    width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+var marginSankey = {top: 10, right: 10, bottom: 0, left: 10},
+    widthSankey = 500 - marginSankey.left - marginSankey.right,
+    heightSankey = 300 - marginSankey.top - marginSankey.bottom;
 
 var formatNumber = d3.format(",.0f"),    // zero decimal places
     format = function (d) { return formatNumber(d) + " " + units; };
@@ -11,19 +11,19 @@ var formatNumber = d3.format(",.0f"),    // zero decimal places
 // append the svg canvas to the page
 var sankeySVG = d3.select("#chart").append("svg")
     .attr("id","graph")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", widthSankey + marginSankey.left + marginSankey.right)
+    .attr("height", heightSankey + marginSankey.top + marginSankey.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+    "translate(" + marginSankey.left + "," + marginSankey.top + ")");
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()
     .nodeWidth(15)
     .nodePadding(10)
-    .size([width, height]);
+    .size([widthSankey, heightSankey]);
 
-var path = sankey.link();
+var pathSankey = sankey.link();
 
 function getColorScheme(data) {
     var names = [];
@@ -99,9 +99,9 @@ d3.csv("data/sankey.csv", function (error, data) {
 // add in the links
   var link = sankeySVG.append("g").selectAll(".link")
       .data(graph.links)
-    .enter().append("path")
+      .enter().append("path")
       .attr("class", "link")
-      .attr("d", path)
+      .attr("d", pathSankey)
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
       .style("stroke",function(d){return d.color =color(d.source.name.replace(/ .*/, ""));})
       .sort(function(a, b) { return b.dy - a.dy; });
@@ -162,6 +162,6 @@ d3.csv("data/sankey.csv", function (error, data) {
                 d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
             ) + ")");
     sankey.relayout();
-    link.attr("d", path);
+    link.attr("d", pathSankey);
   }
 });
