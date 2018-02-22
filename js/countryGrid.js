@@ -90,7 +90,7 @@ d3.csv("data/1951-data.csv", function(error, data){
     .append("rect")
       .attr("width", squareWidthHeight)
       .attr("height", squareWidthHeight)
-      .attr("stroke-width", 1) // border
+      .attr("stroke-width", 3) // border
       .attr("stroke", "black")
       .attr("x", function(d,i) { return i%numRows * (squareWidthHeight + squareMarginX); })
       .attr("y", function(d,i) { return Math.floor(i/numRows) * (squareWidthHeight + squareMarginX); })
