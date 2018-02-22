@@ -4,7 +4,7 @@
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false){	
+function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){	
 	
   // var barHolderSelector = "body";
   // var xComp = "letter";
@@ -23,7 +23,8 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
   	.rangeRoundBands([0, width], .1, 1);
 
   var y = d3.scale.linear()
-      .range([height, 0]);
+      .range([height, 0])
+      .domain([0, 2541249]);
 
   var xAxis = d3.svg.axis()
       .scale(x)
@@ -34,18 +35,16 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
       .orient("left");
 
   //console.log(barHolderSelector);
-	
+
   var barSvg = d3.select(barHolderSelector)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("id", "bar-holder")
       .attr("transform", "translate(" + (margin.left + xP) + "," + (margin.top + yP) + ")");
-  // remove
-  d3.tsv("data/delete.tsv", function(error, data){
-    d = data;
-    initBars(data);
-  });
+
+    // console.log(data)
+    initBars(data)
 
   function initBars(data) {
     //document.getElementById("bar-holder").innerHTML = "";
@@ -53,8 +52,8 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
       d[yComp] = +d[yComp];
     });
 
-    x.domain(data.map(function(d) { return d[xComp]; }));
-    y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
+    x.domain(data.map(function(d) { return d.Year; }));
+    // y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
 
     if(showAxis){
       barSvg.append("g")
@@ -73,20 +72,25 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
           .text(yAxisTitle);
     }
     
-    barSvg.selectAll(".bar")
+    var theBars = barSvg.selectAll(".bar")
         .data(data).enter()
       .append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d[xComp]); })
+        .attr("x", function(d) { return x(d.Year); })
         .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d[yComp]); })
-        .attr("height", function(d) { return height - y(d[yComp]); })
+        .attr("y", function(d) { return y(d.Value); })
+        .attr("height", function(d) {
+            return height - y(d.Value); 
+        })
         .on("click",function(d){
           // click event for bars
           console.log(d);
         });
 
-
+    theBars
+        .transition()
+        .attr("y", function(d) { return y(d.Value); })
+    // barSvg.exit().remove()
     d3.select("input").on("change", change);
 
     // var sortTimeout = setTimeout(function() {
