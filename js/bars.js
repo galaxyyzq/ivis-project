@@ -3,6 +3,19 @@
 // change the x component name and y component name also the yAxisTitle
 // to update the bars, use
 // initBars(data)
+var mouseOverBars = false;
+var mouseInSquare = false;
+
+function isMouseOverBars() {
+    return mouseOverBars;
+}
+function setMouseInSquare(state) {
+    mouseInSquare = state;
+}
+function isMouseInSquare() {
+    return mouseInSquare;
+}
+
 
 function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle="",height=100,width=100, xP, yP, showAxis=false){	
 	
@@ -82,6 +95,7 @@ function drawBars(barHolderSelector,xComp="letter",yComp="frequency",yAxisTitle=
           // click event for bars
           console.log(d);
         });
+
 
     d3.select("input").on("change", change);
 
