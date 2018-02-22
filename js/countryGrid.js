@@ -1,5 +1,4 @@
 // var dataChart = [10,30,50,20,23,12,32];
-
 var margin = { top: 70, right: 100, bottom: 10, left: 80 },
   width = 2000 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
@@ -25,12 +24,10 @@ function zoomInSquare(d,i) {
   // With translate and scale, all children will be affected as well. 
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
   d3.select(this)
-  // .attr("transform", `translate(${currentX},${currentY}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
-    .attr("transform", `translate(${currentX - 0.3*w},${currentY-0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
+    .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
 }
 
 function zoomOutSquare() {
-  console.log("LEAVING")
   var currentX = +d3.select(this).select("rect").attr("x"), // Current x position of square in parent
       currentY = +d3.select(this).select("rect").attr("y"); // Current y position of square in parent
 
