@@ -35,7 +35,7 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
       .orient("left");
 
   //console.log(barHolderSelector);
-	
+
   var barSvg = d3.select(barHolderSelector)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -45,13 +45,6 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
 
     // console.log(data)
     initBars(data)
-
-    //   initBars(data);
-  // remove
-//   d3.tsv("data/delete.tsv", function(error, data){
-//     d = data;
-//     initBars(data);
-//   });
 
   function initBars(data) {
     //document.getElementById("bar-holder").innerHTML = "";
@@ -79,7 +72,7 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
           .text(yAxisTitle);
     }
     
-    barSvg.selectAll(".bar")
+    var theBars = barSvg.selectAll(".bar")
         .data(data).enter()
       .append("rect")
         .attr("class", "bar")
@@ -94,7 +87,10 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
           console.log(d);
         });
 
-
+    theBars
+        .transition()
+        .attr("y", function(d) { return y(d.Value); })
+    // barSvg.exit().remove()
     d3.select("input").on("change", change);
 
     // var sortTimeout = setTimeout(function() {
