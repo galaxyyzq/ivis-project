@@ -91,10 +91,11 @@ d3.csv("data/1951-data.csv", function(error, data){
     .append("rect")
       .attr("width", squareWidthHeight)
       .attr("height", squareWidthHeight)
-      .attr("stroke-width", 3) // border
-      //.attr("stroke", "black")
+      .attr("stroke-width", 1) // border
+      .attr("stroke", "black")
+	  /*
 	  .attr("stroke", function(d,i){ 
-	  	console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
+	  	//console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
 	  	if(i%numRows >= 0 && i%numRows<=3 )
 		{
 			return "red"
@@ -117,9 +118,37 @@ d3.csv("data/1951-data.csv", function(error, data){
 			return "brown"
 		}		  	  
 	  	return "white" })
+		*/
       .attr("x", function(d,i) { return i%numRows * (squareWidthHeight + squareMarginX); })
       .attr("y", function(d,i) { return Math.floor(i/numRows) * (squareWidthHeight + squareMarginX); })
-      .attr("fill", "white");
+      //.attr("fill", "white");
+	
+	  .attr("fill", function(d,i){ 
+	  	//console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
+	  	if(i%numRows >= 0 && i%numRows<=3 )
+		{
+			return "pink"
+		}
+	  	else if(i%numRows >= 4 && i%numRows<=6 )
+		{
+			return "lightgreen"
+		}
+	  	else if(i%numRows >= 7 && i%numRows<=10 )
+		{
+			return "#5D32D2"
+			//return "blue"
+		}	  
+	  	else if(i%numRows >= 10 && i%numRows<=13 )
+		{
+			return "gray"
+		}	
+	  	else if(i%numRows >= 13 && i%numRows<=18 )
+		{
+			// orange
+			return "#FFA55F"
+			//return "brown"
+		}		  	  
+	  	return "white" });
   
   // Add a bar chart in each square
 	square
