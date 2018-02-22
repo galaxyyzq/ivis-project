@@ -35,8 +35,32 @@ function zoomOutSquare() {
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
   }
 
-d3.csv("data/1951-data.csv", function(error, data){
-  if(error) throw error;
+
+
+  
+// Get our current data in a list with each element as our year
+d3.csv("data/data_10years_sorted_country.csv", function(data){
+  var countryWithYears = [];
+  var thisCountry;
+  var prevCountry = data[0];
+  var countryArray = [];
+  data.forEach(function(d,i){
+    // console.log(d)
+    thisCountry = d;
+    if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
+      countryWithYears.push(countryArray)
+      countryArray = [];
+    }
+    else{
+      countryArray.push(thisCountry)
+    }
+    prevCountry = thisCountry;
+
+  })
+
+  data = countryWithYears;
+
+  console.log(data)
 
   // Create g element for each data point
   var square = countryGridSVG.selectAll(".rect-container")
@@ -74,7 +98,9 @@ d3.csv("data/1951-data.csv", function(error, data){
         height = squareWidthHeight,
         width = squareWidthHeight,
         x,
-        y
+        y,
+        false,
+        d
       );
 		});
 });
