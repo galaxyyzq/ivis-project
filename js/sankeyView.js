@@ -9,7 +9,7 @@ var formatNumber = d3.format(",.0f"),    // zero decimal places
 
 
 // append the svg canvas to the page
-var svg = d3.select("#chart").append("svg")
+var sankeySVG = d3.select("#chart").append("svg")
     .attr("id","graph")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -97,7 +97,7 @@ d3.csv("data/sankey.csv", function (error, data) {
     .layout(32);
 
 // add in the links
-  var link = svg.append("g").selectAll(".link")
+  var link = sankeySVG.append("g").selectAll(".link")
       .data(graph.links)
     .enter().append("path")
       .attr("class", "link")
@@ -114,7 +114,7 @@ d3.csv("data/sankey.csv", function (error, data) {
                 d.target.name + "\n" + format(d.value); });
 
 // add in the nodes
-  var node = svg.append("g").selectAll(".node")
+  var node = sankeySVG.append("g").selectAll(".node")
       .data(graph.nodes)
     .enter().append("g")
       .attr("class", "node")
