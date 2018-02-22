@@ -1,7 +1,7 @@
 // var dataChart = [10,30,50,20,23,12,32];
-var margin = { top: 70, right: 100, bottom: 10, left: 80 },
-  width = 2000 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
+var margin = { top: 60, right: 0, bottom: 10, left: 50 },
+  width = 1200 - margin.left - margin.right,
+  height = 1000 - margin.top - margin.bottom;
 
 var squareWidthHeight = 100;
 var squareMarginX = 10;
@@ -9,7 +9,7 @@ var numRows = 10;
 var squareHoverSizeIncrease = 50;
 var zoomOffset = 5;
 
-svg = d3.select("#country-grid")
+var countryGridSVG = d3.select("#country-grid")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
 .append("g")
@@ -39,7 +39,7 @@ d3.csv("data/1951-data.csv", function(error, data){
   if(error) throw error;
 
   // Create g element for each data point
-  var square = svg.selectAll(".rect-container")
+  var square = countryGridSVG.selectAll(".rect-container")
       .data(data).enter()
     .append("g")
       .attr("class", "rect-container")

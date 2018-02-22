@@ -6,6 +6,7 @@
     <title>Away From Home</title>
     <!-- CSS files -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="css/sankeyStyle.css">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
     <!-- Include libraries here -->
     <!-- Has to be 'https' links to work with github hosting -->
@@ -25,9 +26,25 @@
       <input type="text" id="nameinput" />
       <button id="clickButton" type="submit">Click</button>
       <button id="toggleMap">Toggle Map</button>
-
       <div id="map-holder"></div> -->
-      <svg id="country-grid"></svg>
+
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Column with country grid -->
+          <div class="col-8">
+            <svg id="country-grid"></svg>
+          </div>
+          <!-- Column with sankey -->
+          <div class="col-4">
+            <div class="sankey">
+              <div id="Title"></div>
+              <p id="chart">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
   </body>
 
   <!-- Include all javascript files here-->
@@ -36,5 +53,7 @@
   <script src="js/databaseFunctions.js"></script>
   <!-- <script src="js/topoJson.js"></script> -->
   <script src="js/countryGrid.js"></script>
+  <script src="js/sankey.js"></script>
+  <script src="js/sankeyView.js"></script>
   <script src="js/main.js"></script>
 </html>
