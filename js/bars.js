@@ -78,14 +78,12 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
         .attr("x", function(d) { return x(d.Year); })
         .attr("width", x.rangeBand())
         .attr("y", function(d) { 
-            console.log(d)
             return y(d.Value); })
         .attr("height", function(d) {
             return height - y(d.Value); 
         })
         .on("click",function(d){
           // click event for bars
-          console.log(d);
         });
 
     theBars

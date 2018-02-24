@@ -209,8 +209,6 @@ function updateSankey(data, inOut = "in") {
     
     // Just use the first year for now, should be linked to what bar is clicked
     data = data.Years[0] 
-    
-    console.log(data)
 
     var sankeyData = [];
     data.Origins.forEach(function(d){

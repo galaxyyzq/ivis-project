@@ -1,6 +1,4 @@
-
 // Dimensions of the useful area inside the SGV
-
 var margin = { top: 62, right: 20, bottom: 20, left: 20 };
 var width  = 1110; 
 var height = 550;
@@ -9,10 +7,8 @@ var squareWidthHeight = 54;
 var squareMarginX = 8;
 //var numRows = Math.floor(width/(squareWidthHeight+squareMarginX) );
 var numRows = 18;
-
 var squareHoverSizeIncrease = 50;
 var zoomOffset = 5;
-
 
 var countryGridSVG = d3.select("#country-grid")
   //.attr("width", width)
@@ -50,17 +46,18 @@ var g_container = d3.select("#g_container")
 
 
 ////// HACK //////
-var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
+var marginHack = {top: 30, right: 0, bottom: 50, left: 100};
 var widthHack = 500;
 var heightHack = 300;
 
 var xHack = d3.scale.ordinal()
   .rangeRoundBands([0, widthHack], .1, 1)
-  .domain([2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]);
+  .domain([1951, 1952]);
+  // .domain([2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]);
 
 var yHack = d3.scale.linear()
     .range([heightHack, 0])
-    .domain([0, 2541249])
+    .domain([0, 1000])
 
 var xAxisHack = d3.svg.axis()
     .scale(xHack)
@@ -77,7 +74,8 @@ var barSvg = d3.select("#right-side-bar-chart")
     .attr("id", "bar-holder")
     .attr("transform", "translate(" + (marginHack.left + 0) + "," + (marginHack.top + 0) + ")");
 
-    barSvg.append("g")
+// Figure out how to redraw this with new years instead of having them static
+barSvg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + heightHack + ")")
     .call(xAxisHack);
@@ -92,10 +90,12 @@ barSvg.append("g")
     .style("text-anchor", "end")
 
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){	
-    
+  
+  xHack.domain(data.map(function(d) { return d.Year; }));
+
   var theBars = barSvg.selectAll(".bar")
       .data(data, function(d) {return d.Year})
-    
+
     theBars.enter()
       .append("rect")
         .attr("class", "bar")
@@ -103,7 +103,6 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
         .attr("height", function(d) {
-            // console.log(yHack(d.Value))
             return heightHack - yHack(d.Value); 
         })
 
@@ -114,7 +113,6 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("width", xHack.rangeBand())
       .attr("y", function(d) { return yHack(d.Value); })
       .attr("height", function(d) {
-          // console.log(yHack(d.Value))
           return heightHack - yHack(d.Value); 
       })
   }
@@ -132,9 +130,9 @@ function zoomInSquare(d,i) {
   d3.select(this)
     .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
   
-  console.log("DRAW",d)
   d3.select("#countryName").text(d.Country)
-  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+
+  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d.Years)
 
   // Update the Sankey diagram for that selected country
   updateSankey(d);
@@ -143,7 +141,6 @@ function zoomInSquare(d,i) {
 function zoomOutSquare() {
   var currentX = +d3.select(this).select("rect").attr("x"), // Current x position of square in parent
       currentY = +d3.select(this).select("rect").attr("y"); // Current y position of square in parent
-
     d3.select(this)
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
@@ -151,7 +148,6 @@ function zoomOutSquare() {
 // Get our current data in a list with each element as our year
 // d3.csv("data/data_10years_sorted_country.csv", function(data){
 d3.json("data/data.json", function(data){
-  console.log(data)
 
   data = data.In;
 
