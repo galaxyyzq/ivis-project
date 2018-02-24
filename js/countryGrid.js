@@ -133,7 +133,10 @@ function zoomInSquare(d,i) {
     .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
   
   d3.select("#countryName").text(d[0].Country)
-  drawBarsHack("#right-side-bar-chart",xComp="letter",yComp="frequency",yAxisTitle="",height=200,width=500, xP=0, yP=0, showAxis=true, d)
+  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+
+  // Update the Sankey diagram for that selected country
+  UpdateSankey(d);
 }
 
 function zoomOutSquare() {
