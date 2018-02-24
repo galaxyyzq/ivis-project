@@ -103,7 +103,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
         .attr("height", function(d) {
-            console.log(yHack(d.Value))
+            //console.log(yHack(d.Value))
             return heightHack - yHack(d.Value); 
         })
 
@@ -114,7 +114,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("width", xHack.rangeBand())
       .attr("y", function(d) { return yHack(d.Value); })
       .attr("height", function(d) {
-          console.log(yHack(d.Value))
+          //console.log(yHack(d.Value))
           return heightHack - yHack(d.Value); 
       })
   }

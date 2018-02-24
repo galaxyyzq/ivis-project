@@ -61,9 +61,6 @@ function topCountries(data) {
 function getColorScheme(data) {
     
     var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
-    colorDomain.forEach(function (d, i) {
-        colorDomain[i] = d3.rgb(d);
-    });
 
     var color = d3.scale.ordinal()
         .domain(sortCountries(data))
@@ -150,7 +147,7 @@ function drawSankey(data) {
         .attr("class", "link")
         .attr("d", pathSankey)
         .style("stroke-width", function (d) { return Math.max(1, d.dy); })
-        .style("stroke", function (d) { return d.color = color(d.source.name.replace(/ .*/, "")); })
+        .style("stroke", function (d) { return d.color = color(d.source.name);}) //.replace(/ .*/, "")
         .sort(function (a, b) { return b.dy - a.dy; });
 
 
@@ -178,7 +175,7 @@ function drawSankey(data) {
             if (d.name == ourTarget) {
                 return d3.rgb("#404040");
             } else {
-                return d.color = color(d.name.replace(/ .*/, ""));
+                return d.color = color(d.name); //.replace(/ .*/, "")
             }
         })
         // .style("stroke", function(d) {
