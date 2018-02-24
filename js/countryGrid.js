@@ -136,7 +136,7 @@ function zoomInSquare(d,i) {
   drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 
   // Update the Sankey diagram for that selected country
-  UpdateSankey(d);
+  updateSankey(d);
 }
 
 function zoomOutSquare() {

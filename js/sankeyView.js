@@ -4,8 +4,8 @@ var marginSankey = { top: 10, right: 10, bottom: 0, left: 10 },
     widthSankey = 500 - marginSankey.left - marginSankey.right,
     heightSankey = 300 - marginSankey.top - marginSankey.bottom;
 
-
-function getColorScheme(data) {
+// Sort countries by number of refugees, return names
+function sortCountries(data) {
     var names = [];
     var values = [];
     var sortedValues = [];
@@ -13,27 +13,66 @@ function getColorScheme(data) {
 
     data.forEach(function (d, i) {
         names.push(d.source);
-        values.push(d.value);
+        values.push(+d.value);
     })
     var help = values.slice(0);
     sortedValues = help.sort(function (a, b) { return (b - a) });
+    //console.log("sorted values: ", sortedValues);
+    var index = 0;
+    var prevIndex = -1;
     for (i = 0; i < values.length; i++) {
-        sortedNames.push(names[values.indexOf(sortedValues[i])]);
+        index = values.indexOf(sortedValues[i]);
+        if (prevIndex == index) {
+            index = values.indexOf(sortedValues[i], index + 1);
+        }
+        sortedNames.push(names[index]);
+        prevIndex = index;
     }
-    console.log("Sorted names: ", sortedNames);
+    //console.log("Sorted names: ", sortedNames);
+    return sortedNames
+}
 
+// Get the top 5 countries of data, return new data structure
+function topCountries(data) {
+    var sortedNames = sortCountries(data);
+    var topData = [];
+    var sumOthers = 0;
+    var isTop = 0;
+    data.forEach(function (d, i) {
+        for (j = 0; j < 5; j++) {
+            if (d.source == sortedNames[j]) {
+                topData.push({ source: d.source, target: d.target, value: d.value });
+                isTop = 1;
+            }
+        }
+        if (isTop == 0) {
+            sumOthers = + d.value;
+        }
+        isTop = 0; 
+    })
+    if (sumOthers != 0) {
+        topData.push({ source: "Others", target: data[0].target, value: sumOthers });
+    }
+    //console.log("top 5: ", topData);
+    return topData;
+}
+
+// Color scheme for the sankey
+function getColorScheme(data) {
+    
     var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
     colorDomain.forEach(function (d, i) {
         colorDomain[i] = d3.rgb(d);
     });
 
-    color = d3.scale.ordinal()
-        .domain(sortedNames)
+    var color = d3.scale.ordinal()
+        .domain(sortCountries(data))
         .range(colorDomain);
 
     return color;
 }
 
+// Draw the sankey diagram
 function drawSankey(data) {
     var units = "Refugees";
 
@@ -55,8 +94,8 @@ function drawSankey(data) {
     // Set the sankey diagram properties
     var sankey = d3.sankey()
         .nodeWidth(15)
-        .nodePadding(10)
-        .size([widthSankey, heightSankey]);
+        .nodePadding(20)
+        .size([widthSankey, heightSankey-10]);
 
     var pathSankey = sankey.link();
 
@@ -164,9 +203,10 @@ function drawSankey(data) {
 
 }
 
-function UpdateSankey(data, inOut = "in") {
+// Called when mouse hovers over a square
+function updateSankey(data, inOut = "in") {
     var thisCountry = data[0].Country;
-    console.log("This country: ", thisCountry);
+    //console.log("This country: ", thisCountry);
 
     d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
         var sankeyData = [];
@@ -175,8 +215,10 @@ function UpdateSankey(data, inOut = "in") {
                 sankeyData.push({ source: d.Origin, target: thisCountry, value: d.Value });
             }
         });
-        //console.log(sankeyData);
-        drawSankey(sankeyData);
+        //console.log("Sankey data: ", sankeyData);
+
+        //Represent only the top5 countries to simplify the diagram
+        drawSankey(topCountries(sankeyData));
     });
 
 }
