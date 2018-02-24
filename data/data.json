@@ -6,11 +6,16 @@
         "Years": [
           {
             "Year": "1951",
-            "Value": "306",
+            "Value": "300",
             "Origins": [
               {"Country":"SwedenOrigin1", "Value": "101"},
               {"Country":"SwedenOrigin2", "Value": "202"},
-              {"Country":"SwedenOrigin3", "Value": "303"}
+              {"Country":"SwedenOrigin3", "Value": "303"},
+              {"Country":"SwedenOrigin4", "Value": "503"},
+              {"Country":"SwedenOrigin5", "Value": "603"},
+              {"Country":"SwedenOrigin6", "Value": "38603"},
+              {"Country":"SwedenOrigin7", "Value": "30343"},
+              {"Country":"SwedenOrigin8", "Value": "3033"}
             ]
           },
           {
