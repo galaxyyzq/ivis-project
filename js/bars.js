@@ -22,9 +22,10 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   var x = d3.scale.ordinal()
   	.rangeRoundBands([0, width], .1, 1);
 
+  // Domain is the min and max height of the bars
   var y = d3.scale.linear()
       .range([height, 0])
-      .domain([0, 2541249]);
+      .domain([0, 800]);
 
   var xAxis = d3.svg.axis()
       .scale(x)
@@ -34,8 +35,6 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
       .scale(y)
       .orient("left");
 
-  //console.log(barHolderSelector);
-
   var barSvg = d3.select(barHolderSelector)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -44,12 +43,12 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
       .attr("transform", "translate(" + (margin.left + xP) + "," + (margin.top + yP) + ")");
 
     // console.log(data)
-    initBars(data)
+    initBars(data.Years)
 
   function initBars(data) {
-    //document.getElementById("bar-holder").innerHTML = "";
     data.forEach(function(d) {
-      d[yComp] = +d[yComp];
+      d.Year = +d.Year;
+      d.Value = +d.Value
     });
 
     x.domain(data.map(function(d) { return d.Year; }));
@@ -78,7 +77,9 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
         .attr("class", "bar")
         .attr("x", function(d) { return x(d.Year); })
         .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.Value); })
+        .attr("y", function(d) { 
+            console.log(d)
+            return y(d.Value); })
         .attr("height", function(d) {
             return height - y(d.Value); 
         })

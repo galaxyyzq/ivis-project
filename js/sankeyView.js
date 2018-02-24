@@ -20,7 +20,7 @@ function getColorScheme(data) {
     for (i = 0; i < values.length; i++) {
         sortedNames.push(names[values.indexOf(sortedValues[i])]);
     }
-    console.log("Sorted names: ", sortedNames);
+    // console.log("Sorted names: ", sortedNames);
 
     var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
     colorDomain.forEach(function (d, i) {
@@ -165,18 +165,32 @@ function drawSankey(data) {
 }
 
 function UpdateSankey(data, inOut = "in") {
-    var thisCountry = data[0].Country;
-    console.log("This country: ", thisCountry);
+    var thisCountry = data.Country;
+    // console.log("This country: ", thisCountry);
+    
+    // Just use the first year for now, should be linked to what bar is clicked
+    data = data.Years[0] 
+    
+    console.log(data)
 
-    d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
-        var sankeyData = [];
-        data.forEach(function (d) {
-            if (d.Residence == thisCountry) {
-                sankeyData.push({ source: d.Origin, target: thisCountry, value: d.Value });
-            }
-        });
-        //console.log(sankeyData);
-        drawSankey(sankeyData);
-    });
+    var sankeyData = [];
+    data.Origins.forEach(function(d){
+        sankeyData.push({ source: d.Country, target: thisCountry, value: +d.Value });
+    })
+    drawSankey(sankeyData);
+
+
+    // d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
+    //     var sankeyData = [];
+    //     data.forEach(function (d) {
+    //         if (d.Residence == thisCountry) {
+    //             sankeyData.push({ source: d.Origin, target: thisCountry, value: d.Value });
+    //         }
+    //     });
+
+    //     console.log(sankeyData)
+    //     //console.log(sankeyData);
+    //     drawSankey(sankeyData);
+    // });
 
 }

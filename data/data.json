@@ -1,0 +1,105 @@
+{
+"In":
+[
+    {
+        "Country": "Sweden",
+        "Years": [
+          {
+            "Year": "1951",
+            "Value": "306",
+            "Origins": [
+              {"Country":"SwedenOrigin1", "Value": "101"},
+              {"Country":"SwedenOrigin2", "Value": "202"},
+              {"Country":"SwedenOrigin3", "Value": "303"}
+            ]
+          },
+          {
+            "Year":"1952",
+            "Value": "315",
+            "Origins": [
+              {"Country":"SwedenOrigin4", "Value": "304"},
+              {"Country":"SwedenOrigin5", "Value": "205"},
+              {"Country":"SwedenOrigin6", "Value": "106"}
+            ]
+          }
+        ]
+
+    },
+    {
+        "Country": "Uruguay",
+        "Years": [
+          {
+            "Year": "1951",
+            "Value": "606",
+            "Origins": [
+              {"Country":"UruguayOrigin1", "Value": "501"},
+              {"Country":"UruguayOrigin2", "Value": "102"},
+              {"Country":"UruguayOrigin3", "Value": "303"}
+            ]
+          },
+          {
+            "Year":"1952",
+            "Value": "615",
+            "Origins": [
+              {"Country":"UruguayOrigin4", "Value": "204"},
+              {"Country":"UruguayOrigin5", "Value": "205"},
+              {"Country":"UruguayOrigin6", "Value": "206"}
+            ]
+          }
+        ]
+
+    }
+],
+
+"Out":
+[
+    {
+        "Country": "Sweden",
+        "Years": [
+          {
+            "Year": "1951",
+            "Value": "306",
+            "Destinations": [
+              {"Country":"SwedenDestination1", "Value": "101"},
+              {"Country":"SwedenDestination2", "Value": "102"},
+              {"Country":"SwedenDestination3", "Value": "103"}
+            ]
+          },
+          {
+            "Year":"1952",
+            "Value": "315",
+            "Destinations": [
+              {"Country":"SwedenDestination4", "Value": "104"},
+              {"Country":"SwedenDestination5", "Value": "105"},
+              {"Country":"SwedenDestination6", "Value": "106"}
+            ]
+          }
+        ]
+
+    },
+    {
+        "Country": "Uruguay",
+        "Years": [
+          {
+            "Year": "1951",
+            "Value": "606",
+            "Destinations": [
+              {"Country":"UruguayDestination1", "Value": "201"},
+              {"Country":"UruguayDestination2", "Value": "202"},
+              {"Country":"UruguayDestination3", "Value": "203"}
+            ]
+          },
+          {
+            "Year":"1952",
+            "Value": "615",
+            "Destinations": [
+              {"Country":"UruguayDestination4", "Value": "204"},
+              {"Country":"UruguayDestination5", "Value": "205"},
+              {"Country":"UruguayDestination6", "Value": "206"}
+            ]
+          }
+        ]
+
+    }
+]
+}
