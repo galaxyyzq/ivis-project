@@ -60,7 +60,8 @@ function topCountries(data) {
 // Color scheme for the sankey
 function getColorScheme(data) {
     
-    var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
+    //var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
+    var colorDomain = ["#01545a", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
 
     var color = d3.scale.ordinal()
         .domain(sortCountries(data))
@@ -173,7 +174,7 @@ function drawSankey(data) {
         .attr("width", sankey.nodeWidth())
         .style("fill", function (d) {
             if (d.name == ourTarget) {
-                return d3.rgb("#404040");
+                return "#1a1334";//d3.rgb("#404040");
             } else {
                 return d.color = color(d.name); //.replace(/ .*/, "")
             }
