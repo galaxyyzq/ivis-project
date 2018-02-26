@@ -125,10 +125,10 @@ function zoomInSquare(thisSquare, thisYear, d) {
   if(prev_clicked_element){
     zoomOutSquare(prev_clicked_element);
   }
-  var currentX = +d3.select(this).select("rect").attr("x"), // Current x position of square in parent
-      currentY = +d3.select(this).select("rect").attr("y"), // Current y position of square in parent
-      w = +d3.select(this).select("rect").attr("width"),    // Current width of square in parent
-      h = +d3.select(this).select("rect").attr("height");
+  var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
+      currentY = +d3.select(thisSquare).select("rect").attr("y"), // Current y position of square in parent
+      w = +d3.select(thisSquare).select("rect").attr("width"),    // Current width of square in parent
+      h = +d3.select(thisSquare).select("rect").attr("height");
 
   // With translate and scale, all children will be affected as well.
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
@@ -141,7 +141,7 @@ function zoomInSquare(thisSquare, thisYear, d) {
   // Update the Sankey diagram for that selected country
 
   updateSankey(d,thisYear);
-  prev_clicked_element = this;
+  prev_clicked_element = thisSquare;
 }
 
 function zoomOutSquare(prev) {
