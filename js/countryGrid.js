@@ -101,10 +101,8 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("dy", ".71em")
       .style("text-anchor", "end")
 
-    console.log("drw: ", data)
   var theBars = barSvg.selectAll(".bar")
       .data(data, function(d) {return d.Year})
-      console.log(data);
     theBars.enter()
       .append("rect")
         .attr("class", "bar")
@@ -116,7 +114,6 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         })
         .on("click",function(d,i){
           // bar click event
-          // console.log(d);
           thisYear = d.Year;
           updateSankey(d.Country,thisYear);
         });
@@ -196,7 +193,6 @@ d3.csv("data/barChartData2.csv", function(data){
     }
   })
   data = countryWithYears;
-  console.log("Processed: ", data);
   maxRefugees = Math.max.apply(Math, refugeesArray); // For color interpolation
 
   // Create g element for each data point
