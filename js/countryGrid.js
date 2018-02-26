@@ -131,6 +131,7 @@ function zoomInSquare(thisSquare, thisYear, d) {
   // With translate and scale, all children will be affected as well.
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
     d3.select(thisSquare)
+    .transition().duration(100)
     .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
 }
 
@@ -154,6 +155,7 @@ function zoomOutSquare(prev, clicked) {
   var currentX = +d3.select(prev).select("rect").attr("x"), // Current x position of square in parent
       currentY = +d3.select(prev).select("rect").attr("y"); // Current y position of square in parent
     d3.select(prev)
+      .transition().duration(100)
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
 function drawGrids(){
