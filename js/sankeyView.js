@@ -202,14 +202,16 @@ function drawSankey(data) {
 }
 
 // Called when mouse hovers over a square
-function updateSankey(data, inOut = "in") {
+function updateSankey(data, thisYear, inOut = "in") {
     var thisCountry = data[0].Country;
     //console.log("This country: ", thisCountry);
 
-    d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
+    //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
+    d3.csv("data/treatedDataSankey.csv", function (error, data) {
+
         var sankeyData = [];
         data.forEach(function (d) {
-            if (d.Residence == thisCountry) {
+            if (d.Residence == thisCountry && d.Year == thisYear) {
                 sankeyData.push({ source: d.Origin, target: thisCountry, value: d.Value });
             }
         });
