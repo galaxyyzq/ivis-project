@@ -188,7 +188,7 @@ function drawGrids(){
   	.attr("rx", 10);
 
   // Get our current data in a list with each element as our year
-  d3.csv("data/barChartData2.csv", function(data){
+  d3.csv("data/treatingRealData/barChartDataIn.csv", function(data){
     var countryWithYears = [];
     var thisCountry;
     var prevCountry = data[0];
