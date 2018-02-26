@@ -170,16 +170,14 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
       countryWithYears.push(countryArray)
       countryArray = [];
     }
-    else{
-      countryArray.push(thisCountry)
-    }
+    countryArray.push(thisCountry)
+
     prevCountry = thisCountry;
     if (d.Year == thisYear) {
         refugeesArray.push(+d.Value);
     }
   })
   data = countryWithYears;
-  console.log(data)
 
   maxRefugees = Math.max.apply(Math, refugeesArray); // For color interpolation
 
