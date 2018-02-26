@@ -41,7 +41,7 @@ function sortCountries(data) {
 // Get the top 5 countries of data, return new data structure
 function topCountries(data) {
     var sortedNames = sortCountries(data);
-    console.log("names: ", sortedNames);
+    //console.log("names: ", sortedNames);
     var topData = [];
     var sumOthers = 0;
     var isTop = 0;
@@ -70,7 +70,7 @@ function topCountries(data) {
             topData.push({ source: data[0].source, target: "Others", value: sumOthers });
         }
     }
-    console.log("top 5: ", topData);
+    //console.log("top 5: ", topData);
     return topData;
 }
 
@@ -246,7 +246,7 @@ function updateSankey(country, thisYear) {
                 sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
-        console.log("Sankey data: ", sankeyData);
+        //console.log("Sankey data: ", sankeyData);
 
         //Represent only the top5 countries to simplify the diagram
         drawSankey(topCountries(sankeyData), thisYear);
