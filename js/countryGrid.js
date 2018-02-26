@@ -103,7 +103,6 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
         .attr("height", function(d) {
-            //console.log(yHack(d.Value))
             return heightHack - yHack(d.Value);
         })
 
@@ -132,27 +131,27 @@ function zoomInSquare(thisSquare, thisYear, d) {
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
     d3.select(thisSquare)
     .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
-
 }
 
 function updateFigures(thisSquare, thisYear, d) {
     if (prev_clicked_element) {
-        zoomOutSquare(prev_clicked_element);
+        zoomOutSquare(prev_clicked_element, true);
     }
     zoomInSquare(thisSquare, thisYear, d);
     d3.select("#countryName").text(d[0].Country)
     drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 
     // Update the Sankey diagram for that selected country
-
     updateSankey(d, thisYear);
     prev_clicked_element = thisSquare;
 }
 
-function zoomOutSquare(prev) {
+function zoomOutSquare(prev, clicked) {
+  if(!clicked) { // If you leave the area with the mouse, check if it's the element clicked
+    if(prev === prev_clicked_element) return;
+  }
   var currentX = +d3.select(prev).select("rect").attr("x"), // Current x position of square in parent
       currentY = +d3.select(prev).select("rect").attr("y"); // Current y position of square in parent
-
     d3.select(prev)
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
@@ -201,7 +200,7 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
           zoomInSquare(this, thisYear, d);
       })  // This will trigger only for parent node
       .on("mouseleave", function () {
-          zoomOutSquare(this);
+          zoomOutSquare(this, false);
       });  // This will trigger only for parent node
 
 
@@ -397,10 +396,7 @@ function drawLegend(maxRefugees, thisYear) {
         .style("font-size", "16pt")
         .style("text-anchor", "middle")
         .text(maxLabel);
-
 }
-
-
 
 // change barHolderSelector for the bar holder,
 // i.e for id="barHolder" use #barHolder
