@@ -115,6 +115,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .on("click",function(d,i){
           // bar click event
           thisYear = d.Year;
+          drawLegend(maxRefugees[thisYear], thisYear);
           updateSankey(d.Country,thisYear);
         });
 
@@ -132,6 +133,8 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 ////// HACK END //////
 var thisYear = "2015"; // Provisional (maybe selected by the user with a button?)
 var prev_clicked_element = null;
+var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
+
 function zoomInSquare(thisSquare, thisYear, d) {
 
   var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
@@ -177,8 +180,6 @@ d3.csv("data/barChartData2.csv", function(data){
 
   // For coloring the squares
   var refugeesArray = [];
-  var maxRefugees; // Max number of refugees in a country for year = thisYear
-
   data.forEach(function(d,i){
     thisCountry = d;
     if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
@@ -191,10 +192,16 @@ d3.csv("data/barChartData2.csv", function(data){
     if (d.Year == thisYear) {
         refugeesArray.push(+d.Value);
     }
+    if(maxRefugees[d.Year]){
+      if(maxRefugees[d.Year] < (+d.Value)){
+        maxRefugees[d.Year] = +d.Value;
+      }
+    }else{
+      maxRefugees[d.Year] = +d.Value;
+    }
+
   })
   data = countryWithYears;
-  maxRefugees = Math.max.apply(Math, refugeesArray); // For color interpolation
-
   // Create g element for each data point
   var square = countryGridSVG.selectAll(".rect-container")
       .data(data).enter()
@@ -301,13 +308,13 @@ d3.csv("data/barChartData2.csv", function(data){
                   }
               }
               //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
-              var t = numRefugees / maxRefugees;
+              var t = numRefugees / maxRefugees[thisYear];
               return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
           }
       });
 
   // Add legend
-  drawLegend(maxRefugees, thisYear);
+  drawLegend(maxRefugees[thisYear], thisYear);
 
     ///////////////////////////////////////////////////////
 
@@ -335,6 +342,7 @@ d3.csv("data/barChartData2.csv", function(data){
 
 // Legend for the country Grid when coloring by amount of refugees in a country in "thisYear"
 function drawLegend(maxRefugees, thisYear) {
+    document.getElementById("legendGrid").innerHTML = "";
     var w = 500, h = 70;
     d3.select("#legendGrid").selectAll("svg").remove();
 
@@ -384,10 +392,10 @@ function drawLegend(maxRefugees, thisYear) {
 
     function precisionRound(number, precision) {
         var factor = Math.pow(10, precision);
-        return Math.round(number * factor) / factor;
+        var a = Number(( Math.round(number * factor) / factor).toFixed((-1)*precision) );
+        return a;
     }
     var maxLabel = precisionRound(maxRefugees, 2 - maxRefugees.toString().length);
-
     key.append("g")
         .append("text")
         .attr("class", "legendTitle")
