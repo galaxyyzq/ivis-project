@@ -48,7 +48,7 @@ function topCountries(data) {
         if (isTop == 0) {
             sumOthers = + d.value;
         }
-        isTop = 0; 
+        isTop = 0;
     })
     if (sumOthers != 0) {
         topData.push({ source: "Others", target: data[0].target, value: sumOthers });
@@ -59,7 +59,7 @@ function topCountries(data) {
 
 // Color scheme for the sankey
 function getColorScheme(data) {
-    
+
     //var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
     var colorDomain = ["#01545a", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
 
@@ -202,17 +202,16 @@ function drawSankey(data) {
 }
 
 // Called when mouse hovers over a square
-function updateSankey(data, thisYear, inOut = "in") {
-    var thisCountry = data[0].Country;
-    //console.log("This country: ", thisCountry);
+function updateSankey(country, thisYear, inOut = "in") {
+    //console.log("This country: ", country);
 
     //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
     d3.csv("data/treatedDataSankey.csv", function (error, data) {
 
         var sankeyData = [];
         data.forEach(function (d) {
-            if (d.Residence == thisCountry && d.Year == thisYear) {
-                sankeyData.push({ source: d.Origin, target: thisCountry, value: d.Value });
+            if (d.Residence == country && d.Year == thisYear) {
+                sankeyData.push({ source: d.Origin, target: country, value: d.Value });
             }
         });
         //console.log("Sankey data: ", sankeyData);
