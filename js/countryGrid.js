@@ -50,52 +50,53 @@ var g_container = d3.select("#g_container")
 
 
 ////// HACK //////
-var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
-var widthHack = 500;
-var heightHack = 300;
-
-var xHack = d3.scale.ordinal()
-  .rangeRoundBands([0, widthHack], .1, 1)
-  .domain([2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]);
-
-var yHack = d3.scale.linear()
-    .range([heightHack, 0])
-    .domain([0, 2541249])
-
-var xAxisHack = d3.svg.axis()
-    .scale(xHack)
-    .orient("bottom");
-
-var yAxisHack = d3.svg.axis()
-    .scale(yHack)
-    .orient("left");
-
-var barSvg = d3.select("#right-side-bar-chart")
-    .attr("width", widthHack + marginHack.left + marginHack.right)
-    .attr("height", heightHack + marginHack.top + marginHack.bottom)
-  .append("g")
-    .attr("id", "bar-holder")
-    .attr("transform", "translate(" + (marginHack.left + 0) + "," + (marginHack.top + 0) + ")");
-
-    barSvg.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + heightHack + ")")
-    .call(xAxisHack);
-
-barSvg.append("g")
-    .attr("class", "y axis")
-    .call(yAxisHack)
-  .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("y", 6)
-    .attr("dy", ".71em")
-    .style("text-anchor", "end")
-
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
+  document.getElementById("right-side-bar-chart").innerHTML = "";
+  var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
+  var widthHack = 500;
+  var heightHack = 300;
+  var xDomain = data.map(x => x.Year);
+
+  var xHack = d3.scale.ordinal()
+    .rangeRoundBands([0, widthHack], .1, 1)
+    .domain(xDomain);
+
+  var yHack = d3.scale.linear()
+      .range([heightHack, 0])
+      .domain([0, 2541249])
+
+  var xAxisHack = d3.svg.axis()
+      .scale(xHack)
+      .orient("bottom");
+
+  var yAxisHack = d3.svg.axis()
+      .scale(yHack)
+      .orient("left");
+
+  var barSvg = d3.select("#right-side-bar-chart")
+      .attr("width", widthHack + marginHack.left + marginHack.right)
+      .attr("height", heightHack + marginHack.top + marginHack.bottom)
+    .append("g")
+      .attr("id", "bar-holder")
+      .attr("transform", "translate(" + (marginHack.left + 0) + "," + (marginHack.top + 0) + ")");
+
+      barSvg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + heightHack + ")")
+      .call(xAxisHack);
+
+  barSvg.append("g")
+      .attr("class", "y axis")
+      .call(yAxisHack)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
 
   var theBars = barSvg.selectAll(".bar")
       .data(data, function(d) {return d.Year})
-
+      console.log(data);
     theBars.enter()
       .append("rect")
         .attr("class", "bar")
@@ -105,6 +106,12 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .attr("height", function(d) {
             return heightHack - yHack(d.Value);
         })
+        .on("click",function(d,i){
+          // bar click event
+          // console.log(d);
+          thisYear = d.Year;
+          updateSankey(d.Country,thisYear);
+        });
 
     theBars
       .attr("class", "bar")
@@ -118,10 +125,10 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       })
   }
 ////// HACK END //////
-
+var thisYear = "2015"; // Provisional (maybe selected by the user with a button?)
 var prev_clicked_element = null;
 function zoomInSquare(thisSquare, thisYear, d) {
-  
+
   var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
       currentY = +d3.select(thisSquare).select("rect").attr("y"), // Current y position of square in parent
       w = +d3.select(thisSquare).select("rect").attr("width"),    // Current width of square in parent
@@ -134,16 +141,16 @@ function zoomInSquare(thisSquare, thisYear, d) {
 }
 
 function updateFigures(thisSquare, thisYear, d) {
-    if (prev_clicked_element) {
-        zoomOutSquare(prev_clicked_element, true);
-    }
-    zoomInSquare(thisSquare, thisYear, d);
-    d3.select("#countryName").text(d[0].Country)
-    drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+  if (prev_clicked_element) {
+    zoomOutSquare(prev_clicked_element, true);
+  }
+  zoomInSquare(thisSquare, thisYear, d);
+  d3.select("#countryName").text(d[0].Country)
+  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 
-    // Update the Sankey diagram for that selected country
-    updateSankey(d, thisYear);
-    prev_clicked_element = thisSquare;
+  // Update the Sankey diagram for that selected country
+  updateSankey(d[0].Country,thisYear);
+  prev_clicked_element = thisSquare;
 }
 
 function zoomOutSquare(prev, clicked) {
@@ -165,7 +172,6 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
 
   // For coloring the squares
   var refugeesArray = [];
-  var thisYear = "2015"; // Provisional (maybe selected by the user with a button?)
   var maxRefugees; // Max number of refugees in a country for year = thisYear
 
   data.forEach(function(d,i){
