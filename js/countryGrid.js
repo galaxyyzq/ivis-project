@@ -93,6 +93,7 @@ barSvg.append("g")
 
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
 
+    console.log("drw: ", data)
   var theBars = barSvg.selectAll(".bar")
       .data(data, function(d) {return d.Year})
 
@@ -158,7 +159,7 @@ function zoomOutSquare(prev) {
 }
 
 // Get our current data in a list with each element as our year
-d3.csv("data/data_10years_sorted_country.csv", function(data){
+d3.csv("data/barChartData2.csv", function(data){
   var countryWithYears = [];
   var thisCountry;
   var prevCountry = data[0];
@@ -170,7 +171,6 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
   var maxRefugees; // Max number of refugees in a country for year = thisYear
 
   data.forEach(function(d,i){
-    // console.log(d)
     thisCountry = d;
     if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
       countryWithYears.push(countryArray)
@@ -184,7 +184,7 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
     }
   })
   data = countryWithYears;
-
+  console.log("Processed: ", data);
   maxRefugees = Math.max.apply(Math, refugeesArray); // For color interpolation
 
   // Create g element for each data point
