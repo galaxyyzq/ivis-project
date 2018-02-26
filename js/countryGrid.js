@@ -356,10 +356,13 @@ function drawGrids(){
     // Add a bar chart in each square
   	square
   		.each(function(d,i) {
+
   			var barHolderSelector = "#"+d3.select(this).attr("id");
   			var x = +d3.select(this).selectAll("rect").attr("x");
         var y = +d3.select(this).selectAll("rect").attr("y");
-
+        // TODO solve the how many years we should show
+        if(d.length>50)
+          d = d.slice(Math.max(d.length - 50, 1));
         // Call function from 'bars.js'
         drawBars(barHolderSelector,
           xComp = "letter",
