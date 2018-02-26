@@ -202,11 +202,11 @@ function drawSankey(data, thisYear) {
 }
 
 // Called when mouse hovers over a square
-function updateSankey(country, thisYear, inOut = "in") {
+function updateSankey(country, thisYear, inOut = "In") {
     //console.log("This country: ", country);
 
     //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
-    d3.csv("data/treatedDataSankey.csv", function (error, data) {
+    d3.csv("data/treatingRealData/sankeyData"+ inOut + ".csv", function (error, data) {
 
         var sankeyData = [];
         data.forEach(function (d) {
