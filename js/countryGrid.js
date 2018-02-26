@@ -66,8 +66,27 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         })
         .on("click",function(d,i){
           thisYear = d.Year;
-          console.log(thisYear);
-          drawGrids();
+          drawLegend(maxRefugees[thisYear], thisYear);
+          rects
+            .transition()
+            .duration(1000)
+            .style("fill", function (d, i) {
+                if (d.length == 0) {
+                    return "white"; // Some countries have invalid data
+                } else {
+                    //var numRefugees = 1; // For logarithmic scale
+                    var numRefugees = 0; // For some countries there is no data for all the years
+
+                    for (j = 0; j < d.length; j++) {
+                        if (d[j].Year == thisYear) {
+                            numRefugees = d[j].Value;
+                        }
+                    }
+                    //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
+                    var t = numRefugees / maxRefugees[thisYear];
+                    return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
+                }
+            });
           updateSankey(d.Country,thisYear);
           d3.select(this)
             .attr("fill", "green")
@@ -101,7 +120,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 var thisYear = "2015"; // Provisional (maybe selected by the user with a button?)
 var prev_clicked_element = null;
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
-var square;
+var rects;
 function zoomInSquare(thisSquare, thisYear, d) {
 
   var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
@@ -138,7 +157,7 @@ function zoomOutSquare(prev, clicked) {
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
 function drawGrids(){
-  document.getElementById("country-grid").innerHTML = "";
+  // document.getElementById("country-grid").innerHTML = "";
   // Dimensions of the useful area inside the SGV
 
   var margin = { top: 62, right: 20, bottom: 20, left: 20 };
@@ -219,7 +238,7 @@ function drawGrids(){
     })
     data = countryWithYears;
     // Create g element for each data point
-    square = countryGridSVG.selectAll(".rect-container")
+    var square = countryGridSVG.selectAll(".rect-container")
         .data(data).enter()
         .append("g")
         .attr("class", "rect-container")
@@ -237,7 +256,7 @@ function drawGrids(){
 
 
     // Append a square svg element in each g container
-    square
+    rects = square
         .append("rect")
         .attr("width", squareWidthHeight)
         .attr("height", squareWidthHeight)
