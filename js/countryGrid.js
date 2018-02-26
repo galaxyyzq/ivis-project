@@ -83,7 +83,14 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       barSvg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + heightHack + ")")
-      .call(xAxisHack);
+      .call(xAxisHack)
+      .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-90)"
+                });
 
   barSvg.append("g")
       .attr("class", "y axis")
