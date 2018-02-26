@@ -121,22 +121,22 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 ////// HACK END //////
 
 
-function zoomInSquare(d,i) {
-  var currentX = +d3.select(this).select("rect").attr("x"), // Current x position of square in parent
-      currentY = +d3.select(this).select("rect").attr("y"), // Current y position of square in parent
-      w = +d3.select(this).select("rect").attr("width"),    // Current width of square in parent
-      h = +d3.select(this).select("rect").attr("height");
+function zoomInSquare(thisSquare, thisYear, d) {
+    var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
+        currentY = +d3.select(thisSquare).select("rect").attr("y"), // Current y position of square in parent
+        w = +d3.select(thisSquare).select("rect").attr("width"),    // Current width of square in parent
+        h = +d3.select(thisSquare).select("rect").attr("height");
 
   // With translate and scale, all children will be affected as well.
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
-  d3.select(this)
+    d3.select(thisSquare)
     .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
 
   d3.select("#countryName").text(d[0].Country)
   drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 
   // Update the Sankey diagram for that selected country
-  updateSankey(d);
+  updateSankey(d,thisYear); //thisYear
 }
 
 function zoomOutSquare() {
@@ -186,7 +186,9 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
       .attr("class", "rect-container")
       // Id is used to reference the square in the bar chart script
   	  .attr("id", function(d,i) {return "square-" + i; })
-      .on("mouseenter", zoomInSquare)   // This will trigger only for parent node
+      .on("mouseenter", function(d, i){
+          zoomInSquare(this, thisYear, d);
+      })   // This will trigger only for parent node (this,thisYear)
       .on("mouseleave", zoomOutSquare)  // This will trigger only for parent node
 
   // Append a square svg element in each g container
