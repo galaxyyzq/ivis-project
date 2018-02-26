@@ -53,9 +53,10 @@ var g_container = d3.select("#g_container")
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
   document.getElementById("right-side-bar-chart").innerHTML = "";
   var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
-  var widthHack = 500;
+  var widthHack = 1000;
   var heightHack = 300;
   var xDomain = data.map(x => x.Year);
+  var prevClickedBar = null;
 
   var xHack = d3.scale.ordinal()
     .rangeRoundBands([0, widthHack], .1, 1)
@@ -113,11 +114,25 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
             return heightHack - yHack(d.Value);
         })
         .on("click",function(d,i){
-          // bar click event
           thisYear = d.Year;
           drawLegend(maxRefugees[thisYear], thisYear);
           updateSankey(d.Country,thisYear);
-        });
+          d3.select(this)
+            .attr("fill", "green")
+          d3.select(prevClickedBar)
+            .attr("fill", "black")
+          prevClickedBar = this;
+        })
+        .on("mouseenter", function(){
+            if(this === prevClickedBar) return;
+            d3.select(this)
+              .attr("fill", "blue")
+        })
+        .on("mouseleave", function(){
+          if(this === prevClickedBar) return;
+          d3.select(this)
+            .attr("fill", "black")
+        })
 
     theBars
       .attr("class", "bar")
