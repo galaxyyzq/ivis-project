@@ -10,3 +10,6 @@ $("#clickButton").on("click", function(){
 $("#toggleMap").on("click",function(){
   $("#map-holder").toggle();
 })
+
+
+// drawBars("#right-side-bar-chart",xComp="letter",yComp="frequency",yAxisTitle="",height=200,width=500, xP=0, yP=0, showAxis=true)

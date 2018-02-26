@@ -6,6 +6,7 @@
     <title>Away From Home</title>
     <!-- CSS files -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="css/sankeyStyle.css">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
     <!-- Include libraries here -->
     <!-- Has to be 'https' links to work with github hosting -->
@@ -25,9 +26,46 @@
       <input type="text" id="nameinput" />
       <button id="clickButton" type="submit">Click</button>
       <button id="toggleMap">Toggle Map</button>
-
       <div id="map-holder"></div> -->
-      <svg id="country-grid"></svg>
+
+	  <h1 style="text-align: center; font-size: 70px">Away from home</h1> 
+	  
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Column with country grid -->
+            <div class="col-7" id="test">
+                <svg id="country-grid"></svg>
+                <!--<div id="countryGridLabelContainer">
+                    <span class="continents asia">Asia</span>
+                    <span class="continents africa">Africa</span>
+                    <span class="continents america">America</span>
+                    <span class="continents europe">Europe</span>
+                    <span class="continents oceania">Oceania</span>
+                </div>-->
+                <div id="legendGrid"></div>
+
+            </div>
+			
+
+		  <!-- Column with sankey and sidebar chart -->
+          <div class="col-5">
+	  		<h1 id="countryName" style="text-align: center; font-size: 50px"></h1> 
+			 
+            <div class="row top-buffer" style="margin-left: 70px">
+                <svg id="right-side-bar-chart"></svg>
+            </div>
+            <div class="row top-buffer" style="margin-left: 70px">
+              <div class="sankey">
+                <div id="Title"></div>
+                <p id="chart">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
   </body>
 
   <!-- Include all javascript files here-->
@@ -36,5 +74,7 @@
   <script src="js/databaseFunctions.js"></script>
   <!-- <script src="js/topoJson.js"></script> -->
   <script src="js/countryGrid.js"></script>
+  <script src="js/sankey.js"></script>
+  <script src="js/sankeyView.js"></script>
   <script src="js/main.js"></script>
 </html>
