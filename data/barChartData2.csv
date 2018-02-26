@@ -1221,88 +1221,88 @@ Year,Country,Value
 2014,China,301519
 2015,China,301729
 2016,China,317885
-1951,China, Hong Kong SAR,30000
-1954,China, Hong Kong SAR,22000
-1964,China, Hong Kong SAR,1120000
-1965,China, Hong Kong SAR,1251200
-1966,China, Hong Kong SAR,1250040
-1970,China, Hong Kong SAR,1000
-1971,China, Hong Kong SAR,1000
-1972,China, Hong Kong SAR,50
-1978,China, Hong Kong SAR,63410
-1979,China, Hong Kong SAR,55700
-1980,China, Hong Kong SAR,24070
-1981,China, Hong Kong SAR,13540
-1982,China, Hong Kong SAR,12620
-1983,China, Hong Kong SAR,12770
-1984,China, Hong Kong SAR,11960
-1985,China, Hong Kong SAR,9400
-1986,China, Hong Kong SAR,8000
-1987,China, Hong Kong SAR,9530
-1988,China, Hong Kong SAR,15359
-1989,China, Hong Kong SAR,12022
-1990,China, Hong Kong SAR,8161
-1991,China, Hong Kong SAR,4414
-1992,China, Hong Kong SAR,2605
-1993,China, Hong Kong SAR,1848
-1994,China, Hong Kong SAR,1700
-1995,China, Hong Kong SAR,1481
-1996,China, Hong Kong SAR,1348
-1997,China, Hong Kong SAR,1229
-1998,China, Hong Kong SAR,1039
-1999,China, Hong Kong SAR,974
-2000,China, Hong Kong SAR,1034
-2001,China, Hong Kong SAR,1858
-2002,China, Hong Kong SAR,1686
-2003,China, Hong Kong SAR,2098
-2004,China, Hong Kong SAR,2538
-2005,China, Hong Kong SAR,3031
-2006,China, Hong Kong SAR,4347
-2007,China, Hong Kong SAR,2021
-2008,China, Hong Kong SAR,1215
-2009,China, Hong Kong SAR,877
-2010,China, Hong Kong SAR,640
-2011,China, Hong Kong SAR,749
-2012,China, Hong Kong SAR,952
-2013,China, Hong Kong SAR,1997
-2014,China, Hong Kong SAR,2418
-2015,China, Hong Kong SAR,2448
-2016,China, Hong Kong SAR,86
-1964,China, Macao SAR,80000
-1965,China, Macao SAR,80000
-1966,China, Macao SAR,73770
-1967,China, Macao SAR,74000
-1968,China, Macao SAR,70000
-1969,China, Macao SAR,65000
-1970,China, Macao SAR,66000
-1971,China, Macao SAR,70000
-1972,China, Macao SAR,80000
-1978,China, Macao SAR,850
-1979,China, Macao SAR,3490
-1980,China, Macao SAR,2920
-1981,China, Macao SAR,1200
-1982,China, Macao SAR,970
-1983,China, Macao SAR,800
-1984,China, Macao SAR,730
-1985,China, Macao SAR,700
-1986,China, Macao SAR,600
-1987,China, Macao SAR,500
-1988,China, Macao SAR,440
-1989,China, Macao SAR,422
-1990,China, Macao SAR,205
-1991,China, Macao SAR,116
-1992,China, Macao SAR,15
-1993,China, Macao SAR,10
-1994,China, Macao SAR,9
-1995,China, Macao SAR,8
-2009,China, Macao SAR,12
-2010,China, Macao SAR,9
-2011,China, Macao SAR,11
-2012,China, Macao SAR,6
-2013,China, Macao SAR,6
-2014,China, Macao SAR,6
-2015,China, Macao SAR,7
-2016,China, Macao SAR,0
+1951,"China, Hong Kong SAR",30000
+1954,"China, Hong Kong SAR",22000
+1964,"China, Hong Kong SAR",1120000
+1965,"China, Hong Kong SAR",1251200
+1966,"China, Hong Kong SAR",1250040
+1970,"China, Hong Kong SAR",1000
+1971,"China, Hong Kong SAR",1000
+1972,"China, Hong Kong SAR",50
+1978,"China, Hong Kong SAR",63410
+1979,"China, Hong Kong SAR",55700
+1980,"China, Hong Kong SAR",24070
+1981,"China, Hong Kong SAR",13540
+1982,"China, Hong Kong SAR",12620
+1983,"China, Hong Kong SAR",12770
+1984,"China, Hong Kong SAR",11960
+1985,"China, Hong Kong SAR",9400
+1986,"China, Hong Kong SAR",8000
+1987,"China, Hong Kong SAR",9530
+1988,"China, Hong Kong SAR",15359
+1989,"China, Hong Kong SAR",12022
+1990,"China, Hong Kong SAR",8161
+1991,"China, Hong Kong SAR",4414
+1992,"China, Hong Kong SAR",2605
+1993,"China, Hong Kong SAR",1848
+1994,"China, Hong Kong SAR",1700
+1995,"China, Hong Kong SAR",1481
+1996,"China, Hong Kong SAR",1348
+1997,"China, Hong Kong SAR",1229
+1998,"China, Hong Kong SAR",1039
+1999,"China, Hong Kong SAR",974
+2000,"China, Hong Kong SAR",1034
+2001,"China, Hong Kong SAR",1858
+2002,"China, Hong Kong SAR",1686
+2003,"China, Hong Kong SAR",2098
+2004,"China, Hong Kong SAR",2538
+2005,"China, Hong Kong SAR",3031
+2006,"China, Hong Kong SAR",4347
+2007,"China, Hong Kong SAR",2021
+2008,"China, Hong Kong SAR",1215
+2009,"China, Hong Kong SAR",877
+2010,"China, Hong Kong SAR",640
+2011,"China, Hong Kong SAR",749
+2012,"China, Hong Kong SAR",952
+2013,"China, Hong Kong SAR",1997
+2014,"China, Hong Kong SAR",2418
+2015,"China, Hong Kong SAR",2448
+2016,"China, Hong Kong SAR",86
+1964,"China, Macao SAR",80000
+1965,"China, Macao SAR",80000
+1966,"China, Macao SAR",73770
+1967,"China, Macao SAR",74000
+1968,"China, Macao SAR",70000
+1969,"China, Macao SAR",65000
+1970,"China, Macao SAR",66000
+1971,"China, Macao SAR",70000
+1972,"China, Macao SAR",80000
+1978,"China, Macao SAR",850
+1979,"China, Macao SAR",3490
+1980,"China, Macao SAR",2920
+1981,"China, Macao SAR",1200
+1982,"China, Macao SAR",970
+1983,"China, Macao SAR",800
+1984,"China, Macao SAR",730
+1985,"China, Macao SAR",700
+1986,"China, Macao SAR",600
+1987,"China, Macao SAR",500
+1988,"China, Macao SAR",440
+1989,"China, Macao SAR",422
+1990,"China, Macao SAR",205
+1991,"China, Macao SAR",116
+1992,"China, Macao SAR",15
+1993,"China, Macao SAR",10
+1994,"China, Macao SAR",9
+1995,"China, Macao SAR",8
+2009,"China, Macao SAR",12
+2010,"China, Macao SAR",9
+2011,"China, Macao SAR",11
+2012,"China, Macao SAR",6
+2013,"China, Macao SAR",6
+2014,"China, Macao SAR",6
+2015,"China, Macao SAR",7
+2016,"China, Macao SAR",0
 1970,Colombia,1500
 1971,Colombia,1400
 1972,Colombia,1350
