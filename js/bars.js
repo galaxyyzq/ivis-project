@@ -4,8 +4,7 @@
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){	
-	
+function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
   // var barHolderSelector = "body";
   // var xComp = "letter";
   // var yComp = "frequency";
@@ -14,7 +13,7 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   // var margin = {top: 20, right: 20, bottom: 30, left: 40},
       // width = 960 - margin.left - margin.right,
       // height = 500 - margin.top - margin.bottom;
-  
+
   var margin;
   if(showAxis) margin = {top: 0, right: 0, bottom: 50, left: 50};
   else margin = {top: 0, right: 0, bottom: 0, left: 0};
@@ -35,7 +34,7 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
       .orient("left");
 
   //console.log(barHolderSelector);
-	
+
   var barSvg = d3.select(barHolderSelector)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -45,13 +44,6 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
 
     // console.log(data)
     initBars(data)
-
-    //   initBars(data);
-  // remove
-//   d3.tsv("data/delete.tsv", function(error, data){
-//     d = data;
-//     initBars(data);
-//   });
 
   function initBars(data) {
     //document.getElementById("bar-holder").innerHTML = "";
@@ -78,8 +70,8 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
           .style("text-anchor", "end")
           .text(yAxisTitle);
     }
-    
-    barSvg.selectAll(".bar")
+
+    var theBars = barSvg.selectAll(".bar")
         .data(data).enter()
       .append("rect")
         .attr("class", "bar")
@@ -87,14 +79,17 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
         .attr("width", x.rangeBand())
         .attr("y", function(d) { return y(d.Value); })
         .attr("height", function(d) {
-            return height - y(d.Value); 
+            return height - y(d.Value);
         })
         .on("click",function(d){
           // click event for bars
           console.log(d);
         });
 
-
+    theBars
+        .transition()
+        .attr("y", function(d) { return y(d.Value); })
+    // barSvg.exit().remove()
     d3.select("input").on("change", change);
 
     // var sortTimeout = setTimeout(function() {
@@ -128,4 +123,3 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   }
 
 }
-
