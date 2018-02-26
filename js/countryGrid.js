@@ -117,7 +117,8 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       })
   }
 ////// HACK END //////
-var thisYear = "2015"; // Provisional (maybe selected by the user with a button?)
+var thisYear = "2015"; // Default value. It will be changed by a slider
+var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
 var prev_clicked_element = null;
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
 var rects;
@@ -209,7 +210,7 @@ function drawGrids(){
   	.attr("rx", 10);
 
   // Get our current data in a list with each element as our year
-  d3.csv("data/treatingRealData/barChartDataIn.csv", function(data){
+  d3.csv("data/treatingRealData/barChartData" + inOut + ".csv", function(data){
     var countryWithYears = [];
     var thisCountry;
     var prevCountry = data[0];
