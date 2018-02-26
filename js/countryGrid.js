@@ -1,53 +1,4 @@
 
-// Dimensions of the useful area inside the SGV
-
-var margin = { top: 62, right: 20, bottom: 20, left: 20 };
-var width  = 1110;
-var height = 550;
-
-var squareWidthHeight = 54;
-var squareMarginX = 8;
-//var numRows = Math.floor(width/(squareWidthHeight+squareMarginX) );
-var numRows = 18;
-
-var squareHoverSizeIncrease = 50;
-var zoomOffset = 5;
-
-
-var countryGridSVG = d3.select("#country-grid")
-  //.attr("width", width)
-  //.attr("height", height)
-  .attr("width",  width  + margin.left + margin.right)
-  .attr("height", height + margin.top  + margin.bottom)
-.append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
-							  //  that will represent the useful area.
-
-// Changing SVG background Color
-//$("#country-grid").css('background-color', 'yellow');
-
-// Creating a rect inside the <g> that contains everything so we can fill it with color
-var g_container = d3.select("#g_container")
-	.append("rect")
-    .attr("width",  width+"px")
-    .attr("height", height+"px")
-    .attr("fill", "pink");
-
-// Creating a rect inside the <g> that will draw a cool border
-var a = 20;
-var g_container = d3.select("#g_container")
-	.append("rect")
-	.attr("x", -a/2)
-	.attr("y", -a/2)
-    .attr("width",  width  + a +"px")
-    .attr("height", height + a +"px")
-    .attr("stroke-width", 1) // border
-    .attr("stroke", "gray")
-    //.attr("fill", "lightblue")
-    .attr("fill", "white")
-	.attr("rx", 10);
-
 
 ////// HACK //////
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
@@ -115,7 +66,8 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         })
         .on("click",function(d,i){
           thisYear = d.Year;
-          drawLegend(maxRefugees[thisYear], thisYear);
+          console.log(thisYear);
+          drawGrids();
           updateSankey(d.Country,thisYear);
           d3.select(this)
             .attr("fill", "green")
@@ -149,7 +101,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 var thisYear = "2015"; // Provisional (maybe selected by the user with a button?)
 var prev_clicked_element = null;
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
-
+var square;
 function zoomInSquare(thisSquare, thisYear, d) {
 
   var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
@@ -185,175 +137,227 @@ function zoomOutSquare(prev, clicked) {
     d3.select(prev)
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
+function drawGrids(){
+  document.getElementById("country-grid").innerHTML = "";
+  // Dimensions of the useful area inside the SGV
 
-// Get our current data in a list with each element as our year
-d3.csv("data/barChartData2.csv", function(data){
-  var countryWithYears = [];
-  var thisCountry;
-  var prevCountry = data[0];
-  var countryArray = [];
+  var margin = { top: 62, right: 20, bottom: 20, left: 20 };
+  var width  = 1110;
+  var height = 550;
 
-  // For coloring the squares
-  var refugeesArray = [];
-  data.forEach(function(d,i){
-    thisCountry = d;
-    if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
-      countryWithYears.push(countryArray)
-      countryArray = [];
-    }
-    countryArray.push(thisCountry)
+  var squareWidthHeight = 54;
+  var squareMarginX = 8;
+  //var numRows = Math.floor(width/(squareWidthHeight+squareMarginX) );
+  var numRows = 18;
 
-    prevCountry = thisCountry;
-    if (d.Year == thisYear) {
-        refugeesArray.push(+d.Value);
-    }
-    if(maxRefugees[d.Year]){
-      if(maxRefugees[d.Year] < (+d.Value)){
+  var squareHoverSizeIncrease = 50;
+  var zoomOffset = 5;
+
+  var countryGridSVG = d3.select("#country-grid")
+    //.attr("width", width)
+    //.attr("height", height)
+    .attr("width",  width  + margin.left + margin.right)
+    .attr("height", height + margin.top  + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
+  							  //  that will represent the useful area.
+
+  // Changing SVG background Color
+  //$("#country-grid").css('background-color', 'yellow');
+
+  // Creating a rect inside the <g> that contains everything so we can fill it with color
+  var g_container = d3.select("#g_container")
+  	.append("rect")
+      .attr("width",  width+"px")
+      .attr("height", height+"px")
+      .attr("fill", "pink");
+
+  // Creating a rect inside the <g> that will draw a cool border
+  var a = 20;
+  var g_container = d3.select("#g_container")
+  	.append("rect")
+  	.attr("x", -a/2)
+  	.attr("y", -a/2)
+      .attr("width",  width  + a +"px")
+      .attr("height", height + a +"px")
+      .attr("stroke-width", 1) // border
+      .attr("stroke", "gray")
+      //.attr("fill", "lightblue")
+      .attr("fill", "white")
+  	.attr("rx", 10);
+
+  // Get our current data in a list with each element as our year
+  d3.csv("data/barChartData2.csv", function(data){
+    var countryWithYears = [];
+    var thisCountry;
+    var prevCountry = data[0];
+    var countryArray = [];
+
+    // For coloring the squares
+    var refugeesArray = [];
+    data.forEach(function(d,i){
+      thisCountry = d;
+      if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
+        countryWithYears.push(countryArray)
+        countryArray = [];
+      }
+      countryArray.push(thisCountry)
+
+      prevCountry = thisCountry;
+      if (d.Year == thisYear) {
+          refugeesArray.push(+d.Value);
+      }
+      if(maxRefugees[d.Year]){
+        if(maxRefugees[d.Year] < (+d.Value)){
+          maxRefugees[d.Year] = +d.Value;
+        }
+      }else{
         maxRefugees[d.Year] = +d.Value;
       }
-    }else{
-      maxRefugees[d.Year] = +d.Value;
-    }
 
-  })
-  data = countryWithYears;
-  // Create g element for each data point
-  var square = countryGridSVG.selectAll(".rect-container")
-      .data(data).enter()
-      .append("g")
-      .attr("class", "rect-container")
-      // Id is used to reference the square in the bar chart script
-      .attr("id", function (d, i) { return "square-" + i; })
-      .on("click", function (d, i) {
-          updateFigures(this, thisYear, d);
-      })   // This will trigger only for parent node (this,thisYear)
-      .on("mouseenter", function (d, i) {
-          zoomInSquare(this, thisYear, d);
-      })  // This will trigger only for parent node
-      .on("mouseleave", function () {
-          zoomOutSquare(this, false);
-      });  // This will trigger only for parent node
+    })
+    data = countryWithYears;
+    // Create g element for each data point
+    square = countryGridSVG.selectAll(".rect-container")
+        .data(data).enter()
+        .append("g")
+        .attr("class", "rect-container")
+        // Id is used to reference the square in the bar chart script
+        .attr("id", function (d, i) { return "square-" + i; })
+        .on("click", function (d, i) {
+            updateFigures(this, thisYear, d);
+        })   // This will trigger only for parent node (this,thisYear)
+        .on("mouseenter", function (d, i) {
+            zoomInSquare(this, thisYear, d);
+        })  // This will trigger only for parent node
+        .on("mouseleave", function () {
+            zoomOutSquare(this, false);
+        });  // This will trigger only for parent node
 
 
-  // Append a square svg element in each g container
-  square
-      .append("rect")
-      .attr("width", squareWidthHeight)
-      .attr("height", squareWidthHeight)
-      .attr("stroke-width", 1) // border
-      .attr("stroke", "black")
-	  /*
-	  .attr("stroke", function(d,i){
-	  	//console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
-	  	if(i%numRows >= 0 && i%numRows<=3 )
-		{
-			return "red"
-		}
-	  	else if(i%numRows >= 4 && i%numRows<=6 )
-		{
-			return "green"
-		}
-	  	else if(i%numRows >= 7 && i%numRows<=10 )
-		{
-			return "#5D32D2"
-			//return "blue"
-		}
-	  	else if(i%numRows >= 10 && i%numRows<=13 )
-		{
-			return "black"
-		}
-	  	else if(i%numRows >= 13 && i%numRows<=18 )
-		{
-			return "brown"
-		}
-	  	return "white" })
-		*/
-      .attr("x", function (d, i) { return i % numRows * (squareWidthHeight + squareMarginX); })
-      .attr("y", function (d, i) { return Math.floor(i / numRows) * (squareWidthHeight + squareMarginX); })
-      //.attr("fill", "white");
+    // Append a square svg element in each g container
+    square
+        .append("rect")
+        .attr("width", squareWidthHeight)
+        .attr("height", squareWidthHeight)
+        .attr("stroke-width", 1) // border
+        .attr("stroke", "black")
+  	  /*
+  	  .attr("stroke", function(d,i){
+  	  	//console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
+  	  	if(i%numRows >= 0 && i%numRows<=3 )
+  		{
+  			return "red"
+  		}
+  	  	else if(i%numRows >= 4 && i%numRows<=6 )
+  		{
+  			return "green"
+  		}
+  	  	else if(i%numRows >= 7 && i%numRows<=10 )
+  		{
+  			return "#5D32D2"
+  			//return "blue"
+  		}
+  	  	else if(i%numRows >= 10 && i%numRows<=13 )
+  		{
+  			return "black"
+  		}
+  	  	else if(i%numRows >= 13 && i%numRows<=18 )
+  		{
+  			return "brown"
+  		}
+  	  	return "white" })
+  		*/
+        .attr("x", function (d, i) { return i % numRows * (squareWidthHeight + squareMarginX); })
+        .attr("y", function (d, i) { return Math.floor(i / numRows) * (squareWidthHeight + squareMarginX); })
+        //.attr("fill", "white");
 
-      // Two options for coloring the squares. Comment and uncomment for applying one or the other:
+        // Two options for coloring the squares. Comment and uncomment for applying one or the other:
 
-      /////////////////////////
-      // Color by continents //
-      /////////////////////////
+        /////////////////////////
+        // Color by continents //
+        /////////////////////////
 
-	  /*.attr("fill", function(d,i){
-	  	//console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
-	  	if(i%numRows >= 0 && i%numRows<=3 )
-		{
-			return "pink"
-		}
-	  	else if(i%numRows >= 4 && i%numRows<=6 )
-		{
-			return "lightgreen"
-		}
-	  	else if(i%numRows >= 7 && i%numRows<=10 )
-		{
-			return "lightblue"
-			//return "#5D32D2"
-			//return "blue"
-		}
-	  	else if(i%numRows >= 10 && i%numRows<=13 )
-		{
-			return "lightgray"
-		}
-	  	else if(i%numRows >= 13 && i%numRows<=18 )
-		{
-			// orange
-			return "#FFA55F"
-			//return "brown"
-		}
-	  	return "white" });*/
+  	  /*.attr("fill", function(d,i){
+  	  	//console.log(i + "	"+ Math.floor(i/numRows) + "	"+i%numRows)
+  	  	if(i%numRows >= 0 && i%numRows<=3 )
+  		{
+  			return "pink"
+  		}
+  	  	else if(i%numRows >= 4 && i%numRows<=6 )
+  		{
+  			return "lightgreen"
+  		}
+  	  	else if(i%numRows >= 7 && i%numRows<=10 )
+  		{
+  			return "lightblue"
+  			//return "#5D32D2"
+  			//return "blue"
+  		}
+  	  	else if(i%numRows >= 10 && i%numRows<=13 )
+  		{
+  			return "lightgray"
+  		}
+  	  	else if(i%numRows >= 13 && i%numRows<=18 )
+  		{
+  			// orange
+  			return "#FFA55F"
+  			//return "brown"
+  		}
+  	  	return "white" });*/
 
-      ////////////////////////////////////////////////////
-      // Color by amount of refugees in year = thisYear //
-      ////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////
+        // Color by amount of refugees in year = thisYear //
+        ////////////////////////////////////////////////////
 
-      .attr("fill", function (d, i) {
-          if (d.length == 0) {
-              return "white"; // Some countries have invalid data
-          } else {
-              //var numRefugees = 1; // For logarithmic scale
-              var numRefugees = 0; // For some countries there is no data for all the years
+        .attr("fill", function (d, i) {
+            if (d.length == 0) {
+                return "white"; // Some countries have invalid data
+            } else {
+                //var numRefugees = 1; // For logarithmic scale
+                var numRefugees = 0; // For some countries there is no data for all the years
 
-              for (j = 0; j < d.length; j++) {
-                  if (d[j].Year == thisYear) {
-                      numRefugees = d[j].Value;
-                  }
-              }
-              //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
-              var t = numRefugees / maxRefugees[thisYear];
-              return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
-          }
-      });
+                for (j = 0; j < d.length; j++) {
+                    if (d[j].Year == thisYear) {
+                        numRefugees = d[j].Value;
+                    }
+                }
+                //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
+                var t = numRefugees / maxRefugees[thisYear];
+                return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
+            }
+        });
 
-  // Add legend
-  drawLegend(maxRefugees[thisYear], thisYear);
+    // Add legend
+    drawLegend(maxRefugees[thisYear], thisYear);
 
-    ///////////////////////////////////////////////////////
+      ///////////////////////////////////////////////////////
 
-  // Add a bar chart in each square
-	square
-		.each(function(d,i) {
-			var barHolderSelector = "#"+d3.select(this).attr("id");
-			var x = +d3.select(this).selectAll("rect").attr("x");
-      var y = +d3.select(this).selectAll("rect").attr("y");
+    // Add a bar chart in each square
+  	square
+  		.each(function(d,i) {
+  			var barHolderSelector = "#"+d3.select(this).attr("id");
+  			var x = +d3.select(this).selectAll("rect").attr("x");
+        var y = +d3.select(this).selectAll("rect").attr("y");
 
-      // Call function from 'bars.js'
-      drawBars(barHolderSelector,
-        xComp = "letter",
-        yComp = "frequency",
-        yAxisTitle = "",
-        height = squareWidthHeight,
-        width = squareWidthHeight,
-        x,
-        y,
-        false,
-        d
-      );
-		});
-});
+        // Call function from 'bars.js'
+        drawBars(barHolderSelector,
+          xComp = "letter",
+          yComp = "frequency",
+          yAxisTitle = "",
+          height = squareWidthHeight,
+          width = squareWidthHeight,
+          x,
+          y,
+          false,
+          d
+        );
+  		});
+  });
+}
+
+drawGrids();
 
 // Legend for the country Grid when coloring by amount of refugees in a country in "thisYear"
 function drawLegend(maxRefugees, thisYear) {
