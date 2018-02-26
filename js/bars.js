@@ -83,7 +83,6 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
         })
         .on("click",function(d){
           // click event for bars
-          console.log(d);
         });
 
     theBars

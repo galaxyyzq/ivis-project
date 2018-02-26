@@ -120,8 +120,11 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
   }
 ////// HACK END //////
 
-
+var prev_clicked_element = null;
 function zoomInSquare(d,i) {
+  if(prev_clicked_element){
+    zoomOutSquare(prev_clicked_element);
+  }
   var currentX = +d3.select(this).select("rect").attr("x"), // Current x position of square in parent
       currentY = +d3.select(this).select("rect").attr("y"), // Current y position of square in parent
       w = +d3.select(this).select("rect").attr("width"),    // Current width of square in parent
@@ -137,13 +140,14 @@ function zoomInSquare(d,i) {
 
   // Update the Sankey diagram for that selected country
   updateSankey(d);
+  prev_clicked_element = this;
 }
 
-function zoomOutSquare() {
-  var currentX = +d3.select(this).select("rect").attr("x"), // Current x position of square in parent
-      currentY = +d3.select(this).select("rect").attr("y"); // Current y position of square in parent
+function zoomOutSquare(prev) {
+  var currentX = +d3.select(prev).select("rect").attr("x"), // Current x position of square in parent
+      currentY = +d3.select(prev).select("rect").attr("y"); // Current y position of square in parent
 
-    d3.select(this)
+    d3.select(prev)
       .attr("transform", `translate(${currentX},${currentY}) scale(1,1) translate(-${currentX},-${currentY})`);
 }
 
@@ -186,8 +190,8 @@ d3.csv("data/data_10years_sorted_country.csv", function(data){
       .attr("class", "rect-container")
       // Id is used to reference the square in the bar chart script
   	  .attr("id", function(d,i) {return "square-" + i; })
-      .on("mouseenter", zoomInSquare)   // This will trigger only for parent node
-      .on("mouseleave", zoomOutSquare)  // This will trigger only for parent node
+      .on("click", zoomInSquare)   // This will trigger only for parent node
+      // .on("mouseleave", zoomOutSquare)  // This will trigger only for parent node
 
   // Append a square svg element in each g container
   square
