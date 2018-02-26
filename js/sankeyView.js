@@ -71,7 +71,7 @@ function getColorScheme(data) {
 }
 
 // Draw the sankey diagram
-function drawSankey(data) {
+function drawSankey(data, thisYear) {
     var units = "Refugees";
 
     var formatNumber = d3.format(",.0f"),    // zero decimal places
@@ -117,7 +117,7 @@ function drawSankey(data) {
 
     //Add title in graph
     var ourTarget = data[0].target;
-    d3.select("#Title").text("Refugees in " + ourTarget);
+    d3.select("#Title").text("Refugees in " + ourTarget + ". Year:" + thisYear);
 
     // return only the distinct / unique nodes
     graph.nodes = d3.keys(d3.nest()
@@ -217,7 +217,7 @@ function updateSankey(country, thisYear, inOut = "in") {
         //console.log("Sankey data: ", sankeyData);
 
         //Represent only the top5 countries to simplify the diagram
-        drawSankey(topCountries(sankeyData));
+        drawSankey(topCountries(sankeyData), thisYear);
     });
 
 }
