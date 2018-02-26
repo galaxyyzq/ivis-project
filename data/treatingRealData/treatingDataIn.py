@@ -161,11 +161,12 @@ with open('3_addingAsylumnSeekers_refugees.csv', 'r') as csv_file:
 
 
 
+# CREATING THE DATA FOR BARCHART IN
 # ---------------------------------------------------------------------------------------------
 with open('3_addingAsylumnSeekers_refugees.csv', 'r') as csv_file:
 	reader = csv.reader(csv_file)
 
-	with open('barChartData.txt', 'w') as td:
+	with open('barChartDataIn.txt', 'w') as td:
 		# Where we are going to write
 		writer = csv.writer(td)
 
