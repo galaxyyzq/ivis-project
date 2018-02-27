@@ -144,7 +144,9 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         })
         .attr("class", "bar")
         // This doesn't work. Not sure why
-        .transition().duration(500) 
+        .attr("height", 0)
+        .attr("y", heightHack)
+        .transition().delay(200).duration(300) 
         .attr("x", function(d) { return xHack(d.Year); })
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
