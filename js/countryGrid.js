@@ -124,6 +124,8 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
                 }
             });
           updateSankey(d.Country,thisYear);
+
+          if(this == prevClickedBar) return;
           d3.select(this)
             .attr("fill", "green")
           d3.select(prevClickedBar)
