@@ -1,48 +1,67 @@
+//// Global Variables ////
+var thisYear = "2015"; // Default value. It will be changed by a slider
+var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
+var prev_clicked_element = null;
+var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
+var rects;
 
+// top right bar chart global vars. Need to check what has to be global
+var barSvg;
+var xHack;
+var yHack;
+var xAxisHack;
+var xAxisHack2;
+var yAxisHack;
+var prevClickedBar;
 
-////// HACK //////
-function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
-  document.getElementById("right-side-bar-chart").innerHTML = "";
+function initTopRightBarChart() {
+  // These variables has to be set in drawBarsHack too.
   var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
   var widthHack = 1000;
   var heightHack = 300;
-  var xDomain = data.map(x => x.Year);
-  var prevClickedBar = null;
+  var data = [];
+  for(i = 1951; i < 2017; i++){
+    data.push(i);
+  }
+  var xDomain = data;
+  prevClickedBar = null;
 
-  var xHack = d3.scale.ordinal()
+  xHack = d3.scale.ordinal()
     .rangeRoundBands([0, widthHack], .1, 1)
     .domain(xDomain);
 
-  var yHack = d3.scale.linear()
+  yHack = d3.scale.linear()
       .range([heightHack, 0])
       .domain([0, 2541249])
 
-  var xAxisHack = d3.svg.axis()
+  xAxisHack = d3.svg.axis()
       .scale(xHack)
       .orient("bottom");
 
-  var yAxisHack = d3.svg.axis()
+  yAxisHack = d3.svg.axis()
       .scale(yHack)
       .orient("left");
 
-  var barSvg = d3.select("#right-side-bar-chart")
+  barSvg = d3.select("#right-side-bar-chart")
       .attr("width", widthHack + marginHack.left + marginHack.right)
       .attr("height", heightHack + marginHack.top + marginHack.bottom)
     .append("g")
       .attr("id", "bar-holder")
       .attr("transform", "translate(" + (marginHack.left + 0) + "," + (marginHack.top + 0) + ")");
 
-      barSvg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + heightHack + ")")
-      .call(xAxisHack)
-      .selectAll("text")
-            .style("text-anchor", "end")
-            .attr("dx", "-.8em")
-            .attr("dy", ".15em")
-            .attr("transform", function(d) {
-                return "rotate(-90)"
-                });
+  xAxisHack2 = barSvg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + heightHack + ")")
+    .call(xAxisHack)
+
+  xAxisHack2
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", function(d) {
+          return "rotate(-90)"
+      });
 
   barSvg.append("g")
       .attr("class", "y axis")
@@ -52,18 +71,35 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
+  
+  d3.select("#countryName").text("Country name")
+}
+
+// Top right bar chart
+function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
+  var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
+  var widthHack = 1000;
+  var heightHack = 300;
+  var xDomain = data.map(x => x.Year);
+
+  // Apply the new domain for this data
+  xHack.domain(xDomain);
+  xAxisHack2
+  .call(xAxisHack)
+    .selectAll("text")
+      .attr("transform", function(d) {
+          return "rotate(-90)"
+      })
+      .style("text-anchor", "end")
+      .transition().duration(100)
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
 
   var theBars = barSvg.selectAll(".bar")
+      // Link each bar to it's year, needed to keep year selected during transition
       .data(data, function(d) {return d.Year})
     theBars.enter()
       .append("rect")
-        .attr("class", "bar")
-        .attr("x", function(d) { return xHack(d.Year); })
-        .attr("width", xHack.rangeBand())
-        .attr("y", function(d) { return yHack(d.Value); })
-        .attr("height", function(d) {
-            return heightHack - yHack(d.Value);
-        })
         .on("click",function(d,i){
           thisYear = d.Year;
           drawLegend(maxRefugees[thisYear], thisYear);
@@ -104,24 +140,33 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
           d3.select(this)
             .attr("fill", "black")
         })
+        .attr("class", "bar")
+        // This doesn't work. Not sure why
+        .transition().duration(500) 
+        .attr("x", function(d) { return xHack(d.Year); })
+        .attr("width", xHack.rangeBand())
+        .attr("y", function(d) { return yHack(d.Value); })
+        .attr("height", function(d) {
+            return heightHack - yHack(d.Value);
+        })
 
     theBars
       .attr("class", "bar")
-
+      // Need delay in order to wait for xAxis transition
+      // Otherwise it looks choppy
+      .transition().delay(200).duration(300) 
       .attr("x", function(d) { return xHack(d.Year); })
       .attr("width", xHack.rangeBand())
       .attr("y", function(d) { return yHack(d.Value); })
       .attr("height", function(d) {
-          //console.log(yHack(d.Value))
           return heightHack - yHack(d.Value);
       })
+
+    // Remove bars that don't exist
+    theBars.exit().remove()
   }
-////// HACK END //////
-var thisYear = "2015"; // Default value. It will be changed by a slider
-var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
-var prev_clicked_element = null;
-var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
-var rects;
+////// Top right bar chart END //////
+
 function zoomInSquare(thisSquare, thisYear, d) {
 
   var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
@@ -383,6 +428,7 @@ function drawGrids(){
 }
 
 drawGrids();
+initTopRightBarChart();
 
 // Legend for the country Grid when coloring by amount of refugees in a country in "thisYear"
 function drawLegend(maxRefugees, thisYear) {
