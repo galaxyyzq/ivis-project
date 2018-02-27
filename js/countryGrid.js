@@ -214,7 +214,7 @@ function drawGrids(){
 
   var margin = { top: 62, right: 20, bottom: 20, left: 20 };
   var width  = 1110;
-  var height = 550;
+  var height = 680;
 
   var squareWidthHeight = 54;
   var squareMarginX = 8;
