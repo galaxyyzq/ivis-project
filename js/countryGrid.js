@@ -95,9 +95,10 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("dx", "-.8em")
       .attr("dy", ".15em")
 
-  var theBars = barSvg.selectAll(".bar")
+    var theBars = barSvg.selectAll(".bar")
       // Link each bar to it's year, needed to keep year selected during transition
       .data(data, function(d) {return d.Year})
+
     theBars.enter()
       .append("rect")
         .on("click",function(d,i){
@@ -143,10 +144,10 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
             .attr("fill", "black")
         })
         .attr("class", "bar")
-        // This doesn't work. Not sure why
         .attr("height", 0)
         .attr("y", heightHack)
-        .transition().delay(200).duration(300) 
+        // The transition times are ignored, not sure why
+        .transition().delay(2000).duration(1000) 
         .attr("x", function(d) { return xHack(d.Year); })
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
@@ -158,16 +159,20 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("class", "bar")
       // Need delay in order to wait for xAxis transition
       // Otherwise it looks choppy
-      .transition().delay(200).duration(300) 
+      .transition().delay(500).duration(300) 
       .attr("x", function(d) { return xHack(d.Year); })
       .attr("width", xHack.rangeBand())
       .attr("y", function(d) { return yHack(d.Value); })
       .attr("height", function(d) {
           return heightHack - yHack(d.Value);
-      })
+    });
 
     // Remove bars that don't exist
-    theBars.exit().remove()
+    theBars.exit()
+      .transition().delay(200).duration(300) 
+      .attr("height", 0)
+      .attr("y", heightHack)
+      .remove();
   }
 ////// Top right bar chart END //////
 
