@@ -26,85 +26,6 @@ function initTopRightBarChart() {
   var xDomain = data;
   prevClickedBar = null;
 
-<<<<<<< HEAD
-// Dimensions of the useful area inside the SGV
-
-var margin = { top: 62, right: 20, bottom: 20, left: 20 };
-var width  = 1110;
-var height = 550;
-
-var squareWidthHeight = 54;
-var squareMarginX = 8;
-//var numRows = Math.floor(width/(squareWidthHeight+squareMarginX) );
-var numRows = 18;
-
-var squareHoverSizeIncrease = 50;
-var zoomOffset = 5;
-
-
-var countryGridSVG = d3.select("#country-grid")
-  //.attr("width", width)
-  //.attr("height", height)
-  .attr("width",  width  + margin.left + margin.right)
-  .attr("height", height + margin.top  + margin.bottom)
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
-							  //  that will represent the useful area.
-
-// Changing SVG background Color
-//$("#country-grid").css('background-color', 'yellow');
-
-// Creating a rect inside the <g> that contains everything so we can fill it with color
-var g_container = d3.select("#g_container")
-	.append("rect")
-    .attr("width",  width+"px")
-    .attr("height", height+"px")
-    .attr("fill", "pink");
-
-// Creating a rect inside the <g> that will draw a cool border
-var a = 20;
-var g_container = d3.select("#g_container")
-	.append("rect")
-	.attr("x", -a/2)
-	.attr("y", -a/2)
-    .attr("width",  width  + a +"px")
-    .attr("height", height + a +"px")
-    .attr("stroke-width", 1) // border
-    .attr("stroke", "gray")
-    //.attr("fill", "lightblue")
-    .attr("fill", "white")
-	.attr("rx", 10);
-
-
-////// HACK //////
-var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
-var widthHack = 500;
-var heightHack = 300;
-
-var xHack = d3.scale.ordinal()
-  .rangeRoundBands([0, widthHack], .1, 1)
-  .domain([2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]);
-
-var yHack = d3.scale.linear()
-    .range([heightHack, 0])
-    .domain([0, 2541249])
-
-var xAxisHack = d3.svg.axis()
-    .scale(xHack)
-    .orient("bottom");
-
-var yAxisHack = d3.svg.axis()
-    .scale(yHack)
-    .orient("left");
-
-var barSvg = d3.select("#right-side-bar-chart")
-    .attr("width", widthHack + marginHack.left + marginHack.right)
-    .attr("height", heightHack + marginHack.top + marginHack.bottom)
-  .append("g")
-    .attr("id", "bar-holder")
-    .attr("transform", "translate(" + (marginHack.left + 0) + "," + (marginHack.top + 0) + ")");
-=======
   xHack = d3.scale.ordinal()
     .rangeRoundBands([0, widthHack], .1, 1)
     .domain(xDomain);
@@ -120,7 +41,6 @@ var barSvg = d3.select("#right-side-bar-chart")
   yAxisHack = d3.svg.axis()
       .scale(yHack)
       .orient("left");
->>>>>>> 4bba17de077f75841008d9b0bb885471397d5921
 
   barSvg = d3.select("#right-side-bar-chart")
       .attr("width", widthHack + marginHack.left + marginHack.right)
@@ -151,7 +71,7 @@ var barSvg = d3.select("#right-side-bar-chart")
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-  
+
   d3.select("#countryName").text("Country name")
 }
 
@@ -227,7 +147,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .attr("height", 0)
         .attr("y", heightHack)
         // The transition times are ignored, not sure why
-        .transition().delay(2000).duration(1000) 
+        .transition().delay(2000).duration(1000)
         .attr("x", function(d) { return xHack(d.Year); })
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
@@ -239,7 +159,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       .attr("class", "bar")
       // Need delay in order to wait for xAxis transition
       // Otherwise it looks choppy
-      .transition().delay(500).duration(300) 
+      .transition().delay(500).duration(300)
       .attr("x", function(d) { return xHack(d.Year); })
       .attr("width", xHack.rangeBand())
       .attr("y", function(d) { return yHack(d.Value); })
@@ -249,7 +169,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 
     // Remove bars that don't exist
     theBars.exit()
-      .transition().delay(200).duration(300) 
+      .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", heightHack)
       .remove();
