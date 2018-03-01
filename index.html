@@ -11,14 +11,13 @@
     <!-- Include libraries here -->
     <!-- Has to be 'https' links to work with github hosting -->
     <!-- Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- D3js -->
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/d3.js"></script>
     <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
-    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="js/d3-topojson.js"></script>
   </head>
 
   <body>
@@ -28,12 +27,14 @@
       <button id="toggleMap">Toggle Map</button>
       <div id="map-holder"></div> -->
 
-	  <h1 style="text-align: center; font-size: 70px">Away from home</h1> 
-	  
+	  <h2 style="text-align: center; font-size: 70px; margin-bottom: 40px;">
+        Number of refugees and asylum-seekers throughout the years
+    </h2>
+
       <div class="container-fluid">
         <div class="row">
           <!-- Column with country grid -->
-            <div class="col-7" id="test">
+            <div class="col-6" id="test">
                 <svg id="country-grid"></svg>
                 <!--<div id="countryGridLabelContainer">
                     <span class="continents asia">Asia</span>
@@ -45,12 +46,12 @@
                 <div id="legendGrid"></div>
 
             </div>
-			
+
 
 		  <!-- Column with sankey and sidebar chart -->
-          <div class="col-5">
-	  		<h1 id="countryName" style="text-align: center; font-size: 50px"></h1> 
-			 
+          <div class="col-6">
+	  		<h1 id="countryName" style="text-align: center; font-size: 50px"></h1>
+
             <div class="row top-buffer" style="margin-left: 70px">
                 <svg id="right-side-bar-chart"></svg>
             </div>
@@ -63,6 +64,28 @@
 
           </div>
         </div>
+        <div class="row footer top-buffer">
+          <div class="col-6">
+            <h3></h3>
+            <h3>Data and definitons provided by <a href="http://popstats.unhcr.org/">The UN Refugee Agency</a></h3>
+            <p style="border-left: 5px solid #F8B7B7; padding-left: 7px">
+              <strong>Refugees</strong>
+              include individuals recognised under the 1951 Convention relating to the Status of Refugees; 
+              its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems 
+              in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary 
+              forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also 
+              includes people in a refugee-like situation.
+            </p>
+            <p style="border-left: 5px solid #8496AB; padding-left: 7px">
+              <strong>Asylum-seekers</strong>
+              are individuals who have sought international protection and whose claims for refugee status have 
+              not yet been determined, irrespective of when they may have been lodged.
+            </p>
+          </div>
+          <div class="col-6">
+            <h3>Our contact information and such</h3>
+          </div>
+        </div>
       </div>
 
 
@@ -70,7 +93,7 @@
 
   <!-- Include all javascript files here-->
   <script src="js/bars.js"></script>
-	
+
   <script src="js/databaseFunctions.js"></script>
   <!-- <script src="js/topoJson.js"></script> -->
   <script src="js/countryGrid.js"></script>
