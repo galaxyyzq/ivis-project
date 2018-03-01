@@ -7,6 +7,7 @@
     <!-- CSS files -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="css/sankeyStyle.css">
+    <link rel="stylesheet" href="css/d3.slider.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
     <!-- Include libraries here -->
     <!-- Has to be 'https' links to work with github hosting -->
@@ -33,6 +34,7 @@
 
       <div class="container-fluid">
         <div class="row">
+
           <!-- Column with country grid -->
             <div class="col-6" id="test">
                 <svg id="country-grid"></svg>
@@ -43,8 +45,10 @@
                     <span class="continents europe">Europe</span>
                     <span class="continents oceania">Oceania</span>
                 </div>-->
-                <div id="legendGrid"></div>
 
+                <div id="legendGrid"></div>
+                <div id="slider">
+                </div>
             </div>
 
 
@@ -61,9 +65,9 @@
                 <p id="chart">
               </div>
             </div>
-
           </div>
         </div>
+
         <div class="row footer top-buffer">
           <div class="col-6">
             <h3></h3>
@@ -87,9 +91,8 @@
           </div>
         </div>
       </div>
-
-
   </body>
+
 
   <!-- Include all javascript files here-->
   <script src="js/bars.js"></script>
@@ -100,4 +103,6 @@
   <script src="js/sankey.js"></script>
   <script src="js/sankeyView.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/d3.slider.js"></script>
+  <script src="js/sliderView.js"></script>
 </html>
