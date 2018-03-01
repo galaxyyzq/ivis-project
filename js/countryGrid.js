@@ -5,101 +5,69 @@ var prev_clicked_element = null;
 var prev_clicked_name = "";
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
 var rects;
+var dataForUpdate = null;
 
-// TODO: adapt to only use transform
-function zoomInSquare(thisSquare, thisYear, d) {
-
-  // var currentX = d3.transform(d3.select(thisSquare).attr("transform")).translate[0];
-  // var currentY = d3.transform(d3.select(thisSquare).attr("transform")).translate[1];
-
-  // var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
-  //     currentY = +d3.select(thisSquare).select("rect").attr("y"), // Current y position of square in parent
-  //     w = +d3.select(thisSquare).select("rect").attr("width"),    // Current width of square in parent
-  //     h = +d3.select(thisSquare).select("rect").attr("height");
-
-  // With translate and scale, all children will be affected as well.
-  // Transformation are from left to right, just like in computer graphics with matrix multiplications.
+function selectSquare(thisSquare, thisYear, d) {
 
   if(thisSquare === prev_clicked_element) return;
 
   d3.select(thisSquare).select("rect")
-    // .transition().duration(100)
     .attr("stroke-width", 3)
     .attr("stroke", "orange")
-
-    // d3.select(thisSquare)
-    // .transition().duration(100)
-    // .attr("transform", `translate(${currentX},${currentY}) scale(1.1,1.1) translate(${-currentX},${-currentY})`);
-    // .attr("transform", `translate(${currentX-10},${currentY-10})`);
-    // .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
 }
 
 function updateFigures(thisSquare, thisYear, d) {
   if (prev_clicked_element) {
-    zoomOutSquare(prev_clicked_element, true);
+    deselectSquare(prev_clicked_element, true);
   }
+
   // Mark the square as selected
   d3.select(thisSquare).select("rect")
-  // .transition().duration(100)
   .attr("stroke-width", 3)
   .attr("stroke", "green")
 
   // Update the title above the barchart
   d3.select("#countryName").text(d[0].Country)
-  // Update the barchart
+
   drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
-  // Update the Sankey diagram for that selected country
+
   updateSankey(d[0].Country,thisYear);
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
 }
 
-// TODO: adapt to only use transform
-function zoomOutSquare(prev, clicked) {
+function deselectSquare(prev, clicked) {
   if(!clicked) { // If you leave the area with the mouse, check if it's the element clicked
     if(prev === prev_clicked_element) return;
   }
-
-  var currentX = d3.transform(d3.select(prev).attr("transform")).translate[0];
-  var currentY = d3.transform(d3.select(prev).attr("transform")).translate[1];
-
-  // var currentX = +d3.select(prev).select("rect").attr("x"), // Current x position of square in parent
-  //     currentY = +d3.select(prev).select("rect").attr("y"); // Current y position of square in parent
-    // d3.select(prev)
-    //   .transition().duration(100)
-      // .attr("transform", `translate(${currentX},${currentY}) scale(0.9,0.9) translate(${-currentX},${-currentY})`);
-      // .attr("transform", `translate(${currentX},${currentY})`);
-      // .attr("transform", `translate(${currentX+10},${currentY+10})`);
-
-
     d3.select(prev).select("rect")
-      // .transition().duration(100)
       .attr("stroke-width", 1)
       .attr("stroke", "black") 
 }
 
-  // Dimensions of the useful area inside the SGV
-  var countryData;
 
-  var gridMargin = { top: 62, right: 20, bottom: 20, left: 20 };
-  var gridWidth  = 1110;
-  var gridHeight = 680;
+//// Global variables for the grid
+// Dimensions of the useful area inside the SGV
+var countryData;
 
-  var squareWidthHeight = 80;
-  var squareMarginX = 8;
-  //var numRows = Math.floor(gridWidth/(squareWidthHeight+squareMarginX) );
-  var numRows = 16;
+var gridMargin = { top: 62, right: 20, bottom: 20, left: 20 };
+var gridWidth  = 1110;
+var gridHeight = 680;
 
-  var squareHoverSizeIncrease = 50;
-  var zoomOffset = 5;
+var squareWidthHeight = 80;
+var squareMarginX = 8;
+var numRows = 16;
 
-  var countryGridSVG = d3.select("#country-grid")
-    .attr("width", 100+(squareWidthHeight + squareMarginX)*numRows)
-    .attr("height", (Math.floor(222 / numRows)+2) * (squareWidthHeight + squareMarginX))
-  .append("g")
-    .attr("transform", "translate(" + gridMargin.left + "," + gridMargin.top + ")")
-    .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
-  							                //  that will represent the useful area.
+var squareHoverSizeIncrease = 50;
+var zoomOffset = 5;
+
+var countryGridSVG = d3.select("#country-grid")
+  .attr("width", 100+(squareWidthHeight + squareMarginX)*numRows)
+  .attr("height", (Math.floor(222 / numRows)+2) * (squareWidthHeight + squareMarginX))
+.append("g")
+  .attr("transform", "translate(" + gridMargin.left + "," + gridMargin.top + ")")
+  .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
+                              //  that will represent the useful area.
 
   // // Creating a rect inside the <g> that contains everything so we can fill it with color
   // var g_container = d3.select("#g_container")
@@ -206,10 +174,10 @@ function initGrid() {
           updateFigures(this, thisYear, d);
       })   // This will trigger only for parent node (this,thisYear)
       .on("mouseenter", function (d, i) {
-          zoomInSquare(this, thisYear, d);
+          selectSquare(this, thisYear, d);
       })  // This will trigger only for parent node
       .on("mouseleave", function () {
-          zoomOutSquare(this, false);
+          deselectSquare(this, false);
       })
       .attr("transform", function(d,i){
         var x = i % numRows * (squareWidthHeight + squareMarginX);
@@ -223,8 +191,17 @@ function initGrid() {
     .append("rect")
       .attr("width", squareWidthHeight)
       .attr("height", squareWidthHeight)
-      .attr("stroke-width", 1) // border
-      .attr("stroke", "black")
+      .attr("stroke-width", function(d){
+        if(prev_clicked_name === d[0].Country) return 3;
+        else return 1;
+      })
+      .attr("stroke", function(d) {
+        if(prev_clicked_name === d[0].Country) {
+          prev_clicked_element = this.parentNode;
+          return "green";
+        }
+        else return "black";
+      })
       .transition().duration(500)
       .attr("fill", function (d, i) {
           if (d.length == 0) {
@@ -250,8 +227,6 @@ function initGrid() {
       var barHolderSelector = "#"+d3.select(this).attr("id");
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
-          // TODO solve the how many years we should show
-          if(d.length>50)
           d = d.slice(Math.max(d.length - 50, 1));
           // Call function from 'bars.js'
           drawBars(barHolderSelector,
@@ -279,7 +254,7 @@ function loadCountryData() {
     var thisCountry;
     var prevCountry = data[0];
     var countryArray = [];
-    var dataForUpdate = null;
+    dataForUpdate = null;
     // For coloring the squares
     var refugeesArray = [];
     data.forEach(function(d,i){
