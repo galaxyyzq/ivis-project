@@ -18,6 +18,11 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   if(showAxis) margin = {top: 0, right: 0, bottom: 50, left: 50};
   else margin = {top: 0, right: 0, bottom: 0, left: 0};
 
+  var xRange = [];
+  for(i = 1951; i < 2017; i++){
+    xRange.push(i);
+  }
+
   var x = d3.scale.ordinal()
   	.rangeRoundBands([0, width], .1, 1);
 
@@ -51,7 +56,10 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
       d.Value = +d.Value;
     });
 
-    x.domain(data.map(function(d) { return d.Year; }));
+    // console.log(xRange.map(function(d) { return d.toString(); }));
+
+    x.domain(xRange.map(function(d) { return d.toString();}));
+    // x.domain(data.map(function(d) { return d.Year;}));
     // y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
 
     if(showAxis){
@@ -75,7 +83,9 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
         .data(data).enter()
       .append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d.Year); })
+        .attr("x", function(d) { 
+            console.log(x(d.Year))
+            return x(d.Year); })
         .attr("width", x.rangeBand())
         .attr("y", function(d) { return y(d.Value); })
         .attr("height", function(d) {

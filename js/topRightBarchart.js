@@ -76,17 +76,17 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
   var xDomain = data.map(x => x.Year);
 
   // Apply the new domain for this data
-  xHack.domain(xDomain);
-  xAxisHack2
-  .call(xAxisHack)
-    .selectAll("text")
-      .attr("transform", function(d) {
-          return "rotate(-90)"
-      })
-      .style("text-anchor", "end")
-      .transition().duration(100)
-      .attr("dx", "-.8em")
-      .attr("dy", ".15em")
+  // xHack.domain(xDomain);
+  // xAxisHack2
+  // .call(xAxisHack)
+  //   .selectAll("text")
+  //     .attr("transform", function(d) {
+  //         return "rotate(-90)"
+  //     })
+  //     .style("text-anchor", "end")
+  //     .transition().duration(100)
+  //     .attr("dx", "-.8em")
+  //     .attr("dy", ".15em")
 
     var theBars = barSvg.selectAll(".bar")
       // Link each bar to it's year, needed to keep year selected during transition
@@ -168,6 +168,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 
     // Remove bars that don't exist
     theBars.exit()
+      .attr("fill", "red")
       .transition().delay(200).duration(300) 
       .attr("height", 0)
       .attr("y", heightHack)

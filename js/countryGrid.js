@@ -64,7 +64,7 @@ function zoomOutSquare(prev, clicked) {
   var gridWidth  = 1110;
   var gridHeight = 680;
 
-  var squareWidthHeight = 54;
+  var squareWidthHeight = 80;
   var squareMarginX = 8;
   //var numRows = Math.floor(gridWidth/(squareWidthHeight+squareMarginX) );
   var numRows = 18;
@@ -123,7 +123,7 @@ function updateGrid() {
 
   // Update the position of the squares
   countrySquares
-    .transition().duration(3000).delay(500)
+    .transition().duration(3000).delay(800)
     .attr("transform", function(d,i){
       var x = i % numRows * (squareWidthHeight + squareMarginX);
       var y = Math.floor(i / numRows) * (squareWidthHeight + squareMarginX);
@@ -133,7 +133,7 @@ function updateGrid() {
   // Update the colormaping
   countrySquares
     .select("rect")
-    .transition().duration(500)
+    .transition().duration(1000)
     .attr("fill", function (d, i) {
         if (d.length == 0) {
             return "white"; // Some countries have invalid data
@@ -155,6 +155,8 @@ function updateGrid() {
 
 function initGrid() {
   // Get the rectangle container and add the data sorted by nr of refugees and asylum-seekers
+  countryGridSVG.selectAll(".rect-container").remove();
+
   var countrySquares = countryGridSVG.selectAll(".rect-container")
     .data(countryData.sort(function(a,b) {
         var refugeesA = 0;
