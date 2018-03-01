@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -7,6 +7,7 @@
     <!-- CSS files -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="css/sankeyStyle.css">
+    <link rel="stylesheet" href="css/d3.slider.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
     <!-- Include libraries here -->
     <!-- Has to be 'https' links to work with github hosting -->
@@ -34,6 +35,7 @@
 
       <div class="container-fluid">
         <div class="row">
+
           <!-- Column with country grid -->
             <div class="col-6" id="test">
                 <svg id="country-grid"></svg>
@@ -44,8 +46,10 @@
                     <span class="continents europe">Europe</span>
                     <span class="continents oceania">Oceania</span>
                 </div>-->
-                <div id="legendGrid"></div>
 
+                <div id="legendGrid"></div>
+                <div id="slider">
+                </div>
             </div>
 
 
@@ -62,24 +66,24 @@
                 <p id="chart">
               </div>
             </div>
-
           </div>
         </div>
+
         <div class="row footer top-buffer">
           <div class="col-6">
             <h3></h3>
             <h3>Data and definitons provided by <a href="http://popstats.unhcr.org/">The UN Refugee Agency</a></h3>
             <p style="border-left: 5px solid #F8B7B7; padding-left: 7px">
               <strong>Refugees</strong>
-              include individuals recognised under the 1951 Convention relating to the Status of Refugees; 
-              its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems 
-              in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary 
-              forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also 
+              include individuals recognised under the 1951 Convention relating to the Status of Refugees;
+              its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems
+              in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary
+              forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also
               includes people in a refugee-like situation.
             </p>
             <p style="border-left: 5px solid #8496AB; padding-left: 7px">
               <strong>Asylum-seekers</strong>
-              are individuals who have sought international protection and whose claims for refugee status have 
+              are individuals who have sought international protection and whose claims for refugee status have
               not yet been determined, irrespective of when they may have been lodged.
             </p>
           </div>
@@ -88,9 +92,8 @@
           </div>
         </div>
       </div>
-
-
   </body>
+
 
   <!-- Include all javascript files here-->
   <script src="js/bars.js"></script>
@@ -102,4 +105,6 @@
   <script src="js/sankey.js"></script>
   <script src="js/sankeyView.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/d3.slider.js"></script>
+  <script src="js/sliderView.js"></script>
 </html>
