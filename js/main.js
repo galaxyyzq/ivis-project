@@ -1,4 +1,4 @@
-
+window.parent.document.body.style.zoom = 0.5;
 // Example click event with Jquery
 $("#clickButton").on("click", function(){
   getCountriesFromYear(2000, function(res){
