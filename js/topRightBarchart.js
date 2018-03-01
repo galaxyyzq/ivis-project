@@ -30,7 +30,9 @@ function initTopRightBarChart() {
 
   xAxisHack = d3.svg.axis()
       .tickFormat(function(d, i) {
-        return i % 3 === 0 ? d : null;
+        if(d !== xDomain[xDomain.length-1])
+          return i % 3 === 0 ? d : null;
+        return d;
       })
       .scale(xHack)
       .orient("bottom")
