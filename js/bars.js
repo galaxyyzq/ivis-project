@@ -4,8 +4,7 @@
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){	
-	
+function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
   // var barHolderSelector = "body";
   // var xComp = "letter";
   // var yComp = "frequency";
@@ -14,10 +13,15 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   // var margin = {top: 20, right: 20, bottom: 30, left: 40},
       // width = 960 - margin.left - margin.right,
       // height = 500 - margin.top - margin.bottom;
-  
+    //console.log("Drawbars: ", data);
   var margin;
   if(showAxis) margin = {top: 0, right: 0, bottom: 50, left: 50};
   else margin = {top: 0, right: 0, bottom: 0, left: 0};
+
+  var xRange = [];
+  for(i = 1951; i < 2017; i++){
+    xRange.push(i);
+  }
 
   var x = d3.scale.ordinal()
   	.rangeRoundBands([0, width], .1, 1);
@@ -49,10 +53,13 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   function initBars(data) {
     //document.getElementById("bar-holder").innerHTML = "";
     data.forEach(function(d) {
-      d[yComp] = +d[yComp];
+      d.Value = +d.Value;
     });
 
-    x.domain(data.map(function(d) { return d.Year; }));
+    // console.log(xRange.map(function(d) { return d.toString(); }));
+
+    x.domain(xRange.map(function(d) { return d.toString();}));
+    // x.domain(data.map(function(d) { return d.Year;}));
     // y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
 
     if(showAxis){
@@ -71,20 +78,20 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
           .style("text-anchor", "end")
           .text(yAxisTitle);
     }
-    
+
     var theBars = barSvg.selectAll(".bar")
         .data(data).enter()
       .append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d.Year); })
+        .attr("x", function(d) { 
+            return x(d.Year); })
         .attr("width", x.rangeBand())
         .attr("y", function(d) { return y(d.Value); })
         .attr("height", function(d) {
-            return height - y(d.Value); 
+            return height - y(d.Value);
         })
         .on("click",function(d){
           // click event for bars
-          console.log(d);
         });
 
     theBars
@@ -124,4 +131,3 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   }
 
 }
-

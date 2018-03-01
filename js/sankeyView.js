@@ -10,9 +10,15 @@ function sortCountries(data) {
     var values = [];
     var sortedValues = [];
     var sortedNames = [];
+    var namesLabel;
+    if (inOut == "In") {
+        namesLabel = "source";
+    } else {
+        namesLabel = "target";
+    }
 
     data.forEach(function (d, i) {
-        names.push(d.source);
+        names.push(d[namesLabel]);
         values.push(+d.value);
     })
     var help = values.slice(0);
@@ -35,12 +41,19 @@ function sortCountries(data) {
 // Get the top 5 countries of data, return new data structure
 function topCountries(data) {
     var sortedNames = sortCountries(data);
+    //console.log("names: ", sortedNames);
     var topData = [];
     var sumOthers = 0;
     var isTop = 0;
+    var namesLabel;
+    if (inOut == "In") {
+        namesLabel = "source";
+    } else {
+        namesLabel = "target";
+    }
     data.forEach(function (d, i) {
         for (j = 0; j < 5; j++) {
-            if (d.source == sortedNames[j]) {
+            if (d[namesLabel] == sortedNames[j]) {
                 topData.push({ source: d.source, target: d.target, value: d.value });
                 isTop = 1;
             }
@@ -48,10 +61,14 @@ function topCountries(data) {
         if (isTop == 0) {
             sumOthers = + d.value;
         }
-        isTop = 0; 
+        isTop = 0;
     })
     if (sumOthers != 0) {
-        topData.push({ source: "Others", target: data[0].target, value: sumOthers });
+        if (inOut == "In") {
+            topData.push({ source: "Others", target: data[0].target, value: sumOthers });
+        } else {
+            topData.push({ source: data[0].source, target: "Others", value: sumOthers });
+        }
     }
     //console.log("top 5: ", topData);
     return topData;
@@ -59,7 +76,7 @@ function topCountries(data) {
 
 // Color scheme for the sankey
 function getColorScheme(data) {
-    
+
     //var colorDomain = ["#1a1334", "#26294a", "#01545a", "#017351", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
     var colorDomain = ["#01545a", "#03c383", "#aad962", "#fbbf45", "#ef6a32", "#ed0345", "#a12a5e", "#710162", "#110141"];
 
@@ -71,7 +88,7 @@ function getColorScheme(data) {
 }
 
 // Draw the sankey diagram
-function drawSankey(data) {
+function drawSankey(data, thisYear) {
     var units = "Refugees";
 
     var formatNumber = d3.format(",.0f"),    // zero decimal places
@@ -97,9 +114,6 @@ function drawSankey(data) {
 
     var pathSankey = sankey.link();
 
-    // load the data
-    //d3.csv("data/sankey.csv", function (error, data) {
-
     var color = getColorScheme(data);
 
     //set up graph in same style as original example but empty
@@ -116,8 +130,13 @@ function drawSankey(data) {
     });
 
     //Add title in graph
-    var ourTarget = data[0].target;
-    d3.select("#Title").text("Refugees in " + ourTarget);
+    var ourTarget;
+    if (inOut == "In") {
+        ourTarget = data[0].target;
+    } else {
+        ourTarget = data[0].source;
+    }
+    d3.select("#Title").text("Refugees in " + ourTarget + ". Year:" + thisYear);
 
     // return only the distinct / unique nodes
     graph.nodes = d3.keys(d3.nest()
@@ -148,7 +167,13 @@ function drawSankey(data) {
         .attr("class", "link")
         .attr("d", pathSankey)
         .style("stroke-width", function (d) { return Math.max(1, d.dy); })
-        .style("stroke", function (d) { return d.color = color(d.source.name);}) //.replace(/ .*/, "")
+        .style("stroke", function (d) {
+            if (inOut == "In") {
+                return d.color = color(d.source.name);
+            } else {
+                return d.color = color(d.target.name);
+            }
+        })
         .sort(function (a, b) { return b.dy - a.dy; });
 
 
@@ -174,9 +199,9 @@ function drawSankey(data) {
         .attr("width", sankey.nodeWidth())
         .style("fill", function (d) {
             if (d.name == ourTarget) {
-                return "#1a1334";//d3.rgb("#404040");
+                return "#1a1334";
             } else {
-                return d.color = color(d.name); //.replace(/ .*/, "")
+                return d.color = color(d.name);
             }
         })
         // .style("stroke", function(d) {
@@ -202,21 +227,29 @@ function drawSankey(data) {
 }
 
 // Called when mouse hovers over a square
-function updateSankey(data, inOut = "in") {
-    var thisCountry = data[0].Country;
-    //console.log("This country: ", thisCountry);
+function updateSankey(country, thisYear) {
+    //console.log("This country: ", country);
 
-    d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
+    //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
+    d3.csv("data/treatingRealData/sankeyData"+ inOut + ".csv", function (error, data) {
+
+        if (inOut == "In") {
+            countryLabel = "Residence";
+        } else {
+            countryLabel = "Origin";
+        }
         var sankeyData = [];
         data.forEach(function (d) {
-            if (d.Residence == thisCountry) {
-                sankeyData.push({ source: d.Origin, target: thisCountry, value: d.Value });
+            if (d[countryLabel] == country && d.Year == thisYear) {
+                //console.log(d[countryLabel]);
+
+                sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
         //console.log("Sankey data: ", sankeyData);
 
         //Represent only the top5 countries to simplify the diagram
-        drawSankey(topCountries(sankeyData));
+        drawSankey(topCountries(sankeyData), thisYear);
     });
 
 }
