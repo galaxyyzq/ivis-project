@@ -5,11 +5,12 @@ var yHack;
 var xAxisHack;
 var xAxisHack2;
 var yAxisHack;
+var yAxisHack2;
 var prevClickedBar;
 
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
-  var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
+  var marginHack = {top: 40, right: 0, bottom: 50, left: 100};
   var widthHack = 1000;
   var heightHack = 300;
   var data = [];
@@ -56,9 +57,11 @@ function initTopRightBarChart() {
           return "rotate(-90)"
       });
 
-  barSvg.append("g")
+  yAxisHack2= barSvg.append("g")
       .attr("class", "y axis")
       .call(yAxisHack)
+  
+  yAxisHack2
     .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
@@ -70,10 +73,21 @@ function initTopRightBarChart() {
 
 // Top right bar chart
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
-  var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
+  // var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
   var widthHack = 1000;
   var heightHack = 300;
   var xDomain = data.map(x => x.Year);
+
+  var yDomain = d3.max(data, function(d) {return d.Value; })
+  yHack.domain([0, yDomain]);
+  yAxisHack2
+  .call(yAxisHack)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .transition().duration(100)
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+
 
   // Apply the new domain for this data
   // xHack.domain(xDomain);
