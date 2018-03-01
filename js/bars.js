@@ -84,7 +84,6 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
       .append("rect")
         .attr("class", "bar")
         .attr("x", function(d) { 
-            console.log(x(d.Year))
             return x(d.Year); })
         .attr("width", x.rangeBand())
         .attr("y", function(d) { return y(d.Value); })

@@ -8,8 +8,8 @@ var rects;
 // TODO: adapt to only use transform
 function zoomInSquare(thisSquare, thisYear, d) {
 
-  var currentX = d3.transform(d3.select(thisSquare).attr("transform")).translate[0];
-  var currentY = d3.transform(d3.select(thisSquare).attr("transform")).translate[1];
+  // var currentX = d3.transform(d3.select(thisSquare).attr("transform")).translate[0];
+  // var currentY = d3.transform(d3.select(thisSquare).attr("transform")).translate[1];
 
   // var currentX = +d3.select(thisSquare).select("rect").attr("x"), // Current x position of square in parent
   //     currentY = +d3.select(thisSquare).select("rect").attr("y"), // Current y position of square in parent
@@ -19,9 +19,16 @@ function zoomInSquare(thisSquare, thisYear, d) {
   // With translate and scale, all children will be affected as well.
   // Transformation are from left to right, just like in computer graphics with matrix multiplications.
 
-    d3.select(thisSquare)
-    .transition().duration(100)
-    .attr("transform", `translate(${currentX},${currentY}) scale(1.1,1.1) translate(${-currentX},${-currentY})`);
+  if(thisSquare === prev_clicked_element) return;
+
+  d3.select(thisSquare).select("rect")
+    // .transition().duration(100)
+    .attr("stroke-width", 3)
+    .attr("stroke", "orange")
+
+    // d3.select(thisSquare)
+    // .transition().duration(100)
+    // .attr("transform", `translate(${currentX},${currentY}) scale(1.1,1.1) translate(${-currentX},${-currentY})`);
     // .attr("transform", `translate(${currentX-10},${currentY-10})`);
     // .attr("transform", `translate(${currentX - 0.3*w},${currentY - 0.4*h}) scale(1.3,1.3) translate(-${currentX},-${currentY})`);
 }
@@ -30,10 +37,16 @@ function updateFigures(thisSquare, thisYear, d) {
   if (prev_clicked_element) {
     zoomOutSquare(prev_clicked_element, true);
   }
-  // zoomInSquare(thisSquare, thisYear, d);
-  d3.select("#countryName").text(d[0].Country)
-  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+  // Mark the square as selected
+  d3.select(thisSquare).select("rect")
+  // .transition().duration(100)
+  .attr("stroke-width", 3)
+  .attr("stroke", "green")
 
+  // Update the title above the barchart
+  d3.select("#countryName").text(d[0].Country)
+  // Update the barchart
+  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
   // Update the Sankey diagram for that selected country
   updateSankey(d[0].Country,thisYear);
   prev_clicked_element = thisSquare;
@@ -50,11 +63,17 @@ function zoomOutSquare(prev, clicked) {
 
   // var currentX = +d3.select(prev).select("rect").attr("x"), // Current x position of square in parent
   //     currentY = +d3.select(prev).select("rect").attr("y"); // Current y position of square in parent
-    d3.select(prev)
-      .transition().duration(100)
+    // d3.select(prev)
+    //   .transition().duration(100)
       // .attr("transform", `translate(${currentX},${currentY}) scale(0.9,0.9) translate(${-currentX},${-currentY})`);
       // .attr("transform", `translate(${currentX},${currentY})`);
       // .attr("transform", `translate(${currentX+10},${currentY+10})`);
+
+
+    d3.select(prev).select("rect")
+      // .transition().duration(100)
+      .attr("stroke-width", 1)
+      .attr("stroke", "black") 
 }
 
   // Dimensions of the useful area inside the SGV
@@ -185,10 +204,10 @@ function initGrid() {
           updateFigures(this, thisYear, d);
       })   // This will trigger only for parent node (this,thisYear)
       .on("mouseenter", function (d, i) {
-          // zoomInSquare(this, thisYear, d);
+          zoomInSquare(this, thisYear, d);
       })  // This will trigger only for parent node
       .on("mouseleave", function () {
-          // zoomOutSquare(this, false);
+          zoomOutSquare(this, false);
       })
       .attr("transform", function(d,i){
         var x = i % numRows * (squareWidthHeight + squareMarginX);
