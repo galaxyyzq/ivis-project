@@ -5,6 +5,7 @@ var prev_clicked_element = null;
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
 var rects;
 
+// TODO: adapt to only use transform
 function zoomInSquare(thisSquare, thisYear, d) {
 
   var currentX = d3.transform(d3.select(thisSquare).attr("transform")).translate[0];
@@ -38,6 +39,7 @@ function updateFigures(thisSquare, thisYear, d) {
   prev_clicked_element = thisSquare;
 }
 
+// TODO: adapt to only use transform
 function zoomOutSquare(prev, clicked) {
   if(!clicked) { // If you leave the area with the mouse, check if it's the element clicked
     if(prev === prev_clicked_element) return;
@@ -55,7 +57,6 @@ function zoomOutSquare(prev, clicked) {
       // .attr("transform", `translate(${currentX+10},${currentY+10})`);
 }
 
-  // document.getElementById("country-grid").innerHTML = "";
   // Dimensions of the useful area inside the SGV
   var countryData;
 
@@ -72,17 +73,12 @@ function zoomOutSquare(prev, clicked) {
   var zoomOffset = 5;
 
   var countryGridSVG = d3.select("#country-grid")
-    //.attr("gridWidth", gridWidth)
-    //.attr("gridHeight", gridHeight)
     .attr("width",  gridWidth  + gridMargin.left + gridMargin.right)
     .attr("height", gridHeight + gridMargin.top  + gridMargin.bottom)
   .append("g")
     .attr("transform", "translate(" + gridMargin.left + "," + gridMargin.top + ")")
     .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
-  							  //  that will represent the useful area.
-
-  // Changing SVG background Color
-  //$("#country-grid").css('background-color', 'yellow');
+  							                //  that will represent the useful area.
 
   // Creating a rect inside the <g> that contains everything so we can fill it with color
   var g_container = d3.select("#g_container")
@@ -101,10 +97,10 @@ function zoomOutSquare(prev, clicked) {
       .attr("height", gridHeight + a +"px")
       .attr("stroke-width", 1) // border
       .attr("stroke", "gray")
-      //.attr("fill", "lightblue")
       .attr("fill", "white")
   	.attr("rx", 10);
 
+// Call this function if we "thisYear" has been updated
 function updateGrid() {
   var countrySquares = countryGridSVG.selectAll(".rect-container")
   .data(countryData.sort(function(a,b) {
@@ -125,15 +121,16 @@ function updateGrid() {
       return d[0].Country;
     });
 
-      // Update the position of the squares
+  // Update the position of the squares
   countrySquares
-  .transition().duration(3000).delay(500)
+    .transition().duration(3000).delay(500)
     .attr("transform", function(d,i){
       var x = i % numRows * (squareWidthHeight + squareMarginX);
       var y = Math.floor(i / numRows) * (squareWidthHeight + squareMarginX);
       return `translate(${x},${y})`;
     });
 
+  // Update the colormaping
   countrySquares
     .select("rect")
     .transition().duration(500)
@@ -156,7 +153,7 @@ function updateGrid() {
     });
 }
 
-function drawGrid() {
+function initGrid() {
   // Get the rectangle container and add the data sorted by nr of refugees and asylum-seekers
   var countrySquares = countryGridSVG.selectAll(".rect-container")
     .data(countryData.sort(function(a,b) {
@@ -248,21 +245,11 @@ function drawGrid() {
           );
     });
 
-  
-  // // Update the position of the squares
-  // countrySquares
-  //   .transition().duration(3000).delay(500)
-  //     .attr("transform", function(d,i){
-  //       var x = i % numRows * (squareWidthHeight + squareMarginX);
-  //       var y = Math.floor(i / numRows) * (squareWidthHeight + squareMarginX);
-  //       return `translate(${x},${y})`;
-  //     });
-
-
   // Add legend
   drawLegend(maxRefugees[thisYear], thisYear);
 }
 
+// Load the data
 function loadCountryData() {
   // Get our current data in a list with each element as our year
   d3.csv("data/treatingRealData/barChartData" + inOut + ".csv", function(data){
@@ -296,10 +283,9 @@ function loadCountryData() {
     })
     countryData = countryWithYears;
 
-    drawGrid();
+    initGrid();
   });
 }
-
 
 // Legend for the country Grid when coloring by amount of refugees in a country in "thisYear"
 function drawLegend(maxRefugees, thisYear) {
@@ -349,13 +335,13 @@ function drawLegend(maxRefugees, thisYear) {
         .style("text-anchor", "middle")
         .text("Number of refugees sheltered in " + thisYear); // Change sheltered when toggling to out
 
-    // Append labels
-
     function precisionRound(number, precision) {
         var factor = Math.pow(10, precision);
         var a = Number(( Math.round(number * factor) / factor).toFixed((-1)*precision) );
         return a;
     }
+
+    // Append labels
     var maxLabel = precisionRound(maxRefugees, 2 - maxRefugees.toString().length);
     key.append("g")
         .append("text")
