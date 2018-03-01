@@ -10,9 +10,9 @@ var prevClickedBar;
 
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
-  var marginHack = {top: 40, right: 0, bottom: 50, left: 100};
+  var marginHack = {top: 40, right: 0, bottom: 100, left: 150};
   var widthHack = 1000;
-  var heightHack = 300;
+  var heightHack = 500;
   var data = [];
   for(i = 1951; i < 2017; i++){
     data.push(i);
@@ -29,8 +29,11 @@ function initTopRightBarChart() {
       .domain([0, 2541249])
 
   xAxisHack = d3.svg.axis()
+      .tickFormat(function(d, i) {
+        return i % 3 === 0 ? d : null;
+      })
       .scale(xHack)
-      .orient("bottom");
+      .orient("bottom")
 
   yAxisHack = d3.svg.axis()
       .scale(yHack)
@@ -50,9 +53,10 @@ function initTopRightBarChart() {
 
   xAxisHack2
     .selectAll("text")
+      .style("font-size", 25)
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
-      .attr("dy", ".15em")
+      .attr("dy", ".0em")
       .attr("transform", function(d) {
           return "rotate(-90)"
       });
@@ -67,6 +71,7 @@ function initTopRightBarChart() {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
+      
   
   d3.select("#countryName").text("Country name")
 }
@@ -75,7 +80,7 @@ function initTopRightBarChart() {
 function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
   // var marginHack = {top: 0, right: 0, bottom: 50, left: 100};
   var widthHack = 1000;
-  var heightHack = 300;
+  var heightHack = 500;
   var xDomain = data.map(x => x.Year);
 
   var yDomain = d3.max(data, function(d) {return d.Value; })
@@ -84,23 +89,10 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
   .call(yAxisHack)
     .selectAll("text")
       .style("text-anchor", "end")
+      .style("font-size", 20)
       .transition().duration(100)
       .attr("dx", "-.8em")
       .attr("dy", ".15em")
-
-
-  // Apply the new domain for this data
-  // xHack.domain(xDomain);
-  // xAxisHack2
-  // .call(xAxisHack)
-  //   .selectAll("text")
-  //     .attr("transform", function(d) {
-  //         return "rotate(-90)"
-  //     })
-  //     .style("text-anchor", "end")
-  //     .transition().duration(100)
-  //     .attr("dx", "-.8em")
-  //     .attr("dy", ".15em")
 
     var theBars = barSvg.selectAll(".bar")
       // Link each bar to it's year, needed to keep year selected during transition
