@@ -1,4 +1,4 @@
-var chosenYear=2015;
+// var chosenYear=2015;
 
 d3.slider = function module() {
   "use strict";
@@ -89,10 +89,10 @@ d3.slider = function module() {
       var displayValue = null;
       if (tickFormat) {
         displayValue = tickFormat(value);
-        chosenYear=displayValue;
+        thisYear=displayValue;
       } else {
         displayValue = d3.format(".0f")(value);
-        chosenYear=displayValue;
+        thisYear=displayValue;
       }
 
       dragger.append("text")
@@ -190,8 +190,13 @@ d3.slider = function module() {
       displayValue = d3.format(".0f")(value);
 
     }
-    if (olddisplayValue != displayValue) {
+    if (olddisplayValue!=null && olddisplayValue != displayValue) {
       console.log(displayValue);
+      thisYear = displayValue;
+      drawLegend(maxRefugees[thisYear], thisYear);
+
+      updateSankey($("#countryName").text(),thisYear);
+      updateGrid();
     }  //console.log(displayValue);
     olddisplayValue = displayValue;
     svg.selectAll(".dragger").select("text")
@@ -271,7 +276,7 @@ d3.slider = function module() {
 
 
   slider.getYear = function(){
-    return chosenYear;
+    return thisYear;
   }
 
   slider.setValue = function(newValue) {
