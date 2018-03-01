@@ -1,4 +1,4 @@
-var chosenYear=0;
+var chosenYear=2015;
 
 d3.slider = function module() {
   "use strict";
