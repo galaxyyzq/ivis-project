@@ -19,7 +19,7 @@ var countryGridSVG = d3.select("#country-grid")
   //.attr("height", height)
   .attr("width",  width  + margin.left + margin.right)
   .attr("height", height + margin.top  + margin.bottom)
-.append("g")
+  .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
   .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
 							  //  that will represent the useful area.
