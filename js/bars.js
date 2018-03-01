@@ -48,7 +48,7 @@ function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
   function initBars(data) {
     //document.getElementById("bar-holder").innerHTML = "";
     data.forEach(function(d) {
-      d[yComp] = +d[yComp];
+      d.Value = +d.Value;
     });
 
     x.domain(data.map(function(d) { return d.Year; }));
