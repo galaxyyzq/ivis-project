@@ -88,38 +88,38 @@ function zoomOutSquare(prev, clicked) {
   var squareWidthHeight = 80;
   var squareMarginX = 8;
   //var numRows = Math.floor(gridWidth/(squareWidthHeight+squareMarginX) );
-  var numRows = 18;
+  var numRows = 16;
 
   var squareHoverSizeIncrease = 50;
   var zoomOffset = 5;
 
   var countryGridSVG = d3.select("#country-grid")
-    .attr("width",  gridWidth  + gridMargin.left + gridMargin.right)
-    .attr("height", gridHeight + gridMargin.top  + gridMargin.bottom)
+    .attr("width", 100+(squareWidthHeight + squareMarginX)*numRows)
+    .attr("height", (Math.floor(222 / numRows)+2) * (squareWidthHeight + squareMarginX))
   .append("g")
     .attr("transform", "translate(" + gridMargin.left + "," + gridMargin.top + ")")
     .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
   							                //  that will represent the useful area.
 
-  // Creating a rect inside the <g> that contains everything so we can fill it with color
-  var g_container = d3.select("#g_container")
-  	.append("rect")
-      .attr("width",  gridWidth+"px")
-      .attr("height", gridHeight+"px")
-      .attr("fill", "pink");
+  // // Creating a rect inside the <g> that contains everything so we can fill it with color
+  // var g_container = d3.select("#g_container")
+  // 	.append("rect")
+  //     .attr("width",  gridWidth+"px")
+  //     .attr("height", gridHeight+"px")
+  //     .attr("fill", "pink");
 
-  // Creating a rect inside the <g> that will draw a cool border
-  var a = 20;
-  var g_container = d3.select("#g_container")
-  	.append("rect")
-  	.attr("x", -a/2)
-  	.attr("y", -a/2)
-      .attr("width",  gridWidth  + a +"px")
-      .attr("height", gridHeight + a +"px")
-      .attr("stroke-width", 1) // border
-      .attr("stroke", "gray")
-      .attr("fill", "white")
-  	.attr("rx", 10);
+  // // Creating a rect inside the <g> that will draw a cool border
+  // var a = 20;
+  // var g_container = d3.select("#g_container")
+  // 	.append("rect")
+  // 	.attr("x", -a/2)
+  // 	.attr("y", -a/2)
+  //     .attr("width",  gridWidth  + a +"px")
+  //     .attr("height", gridHeight + a +"px")
+  //     .attr("stroke-width", 1) // border
+  //     .attr("stroke", "gray")
+  //     .attr("fill", "white")
+  // 	.attr("rx", 10);
 
 // Call this function if we "thisYear" has been updated
 function updateGrid() {
