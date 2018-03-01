@@ -2,6 +2,7 @@
 var thisYear = "2015"; // Default value. It will be changed by a slider
 var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
 var prev_clicked_element = null;
+var prev_clicked_name = "";
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
 var rects;
 
@@ -50,6 +51,7 @@ function updateFigures(thisSquare, thisYear, d) {
   // Update the Sankey diagram for that selected country
   updateSankey(d[0].Country,thisYear);
   prev_clicked_element = thisSquare;
+  prev_clicked_name = d[0].Country;
 }
 
 // TODO: adapt to only use transform
@@ -245,7 +247,6 @@ function initGrid() {
   // Add a bar chart in each square
   countrySquares
     .each(function(d,i) {
-      console.log("Hej");
       var barHolderSelector = "#"+d3.select(this).attr("id");
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
@@ -278,12 +279,15 @@ function loadCountryData() {
     var thisCountry;
     var prevCountry = data[0];
     var countryArray = [];
-
+    var dataForUpdate = null;
     // For coloring the squares
     var refugeesArray = [];
     data.forEach(function(d,i){
       thisCountry = d;
       if(thisCountry.Country != prevCountry.Country || data[i+1] === undefined){
+        if (prev_clicked_name!="" && prev_clicked_name == prevCountry.Country){
+          dataForUpdate = countryArray;
+        }
         countryWithYears.push(countryArray)
         countryArray = [];
       }
@@ -305,6 +309,11 @@ function loadCountryData() {
     countryData = countryWithYears;
 
     initGrid();
+    if (prev_clicked_name == "" || dataForUpdate == null){
+      dataForUpdate = countryData[0];
+      prev_clicked_element = document.getElementById("square-0");
+    }
+    updateFigures(prev_clicked_element, thisYear, dataForUpdate);
   });
 }
 
