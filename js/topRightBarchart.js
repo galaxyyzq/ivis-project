@@ -95,10 +95,18 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
     theBars.enter()
       .append("rect")
         .on("click",function(d,i){
+
+          if(this !== prevClickedBar){
+            d3.select(this)
+              .attr("fill", "green")
+            d3.select(prevClickedBar)
+              .attr("fill", "black")
+            prevClickedBar = this;
+          }
+
           thisYear = d.Year;
           drawLegend(maxRefugees[thisYear], thisYear);
           
-          drawGrid();
           // rects
           //   .transition()
           //   .duration(1000)
@@ -121,12 +129,8 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
           //   });
           updateSankey(d.Country,thisYear);
 
-          if(this == prevClickedBar) return;
-          d3.select(this)
-            .attr("fill", "green")
-          d3.select(prevClickedBar)
-            .attr("fill", "black")
-          prevClickedBar = this;
+
+          updateGrid();
         })
         .on("mouseenter", function(){
             if(this === prevClickedBar) return;
@@ -151,7 +155,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         })
 
     theBars
-      .attr("class", "bar")
+      // .attr("class", "bar")
       // Need delay in order to wait for xAxis transition
       // Otherwise it looks choppy
       .transition().delay(500).duration(300) 

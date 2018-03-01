@@ -105,9 +105,60 @@ function zoomOutSquare(prev, clicked) {
       .attr("fill", "white")
   	.attr("rx", 10);
 
+function updateGrid() {
+  var countrySquares = countryGridSVG.selectAll(".rect-container")
+  .data(countryData.sort(function(a,b) {
+      var refugeesA = 0;
+      for (j = 0; j < a.length; j++) {
+        if (a[j].Year == thisYear) {
+            refugeesA = a[j].Value;
+        }
+      }
+      var refugeesB = 0;
+      for (j = 0; j < b.length; j++) {
+        if (b[j].Year == thisYear) {
+            refugeesB = b[j].Value;
+        }
+      }
+      return +refugeesB - +refugeesA;
+    }), function(d) {
+      return d[0].Country;
+    });
+
+      // Update the position of the squares
+  countrySquares
+  .transition().duration(3000).delay(500)
+    .attr("transform", function(d,i){
+      var x = i % numRows * (squareWidthHeight + squareMarginX);
+      var y = Math.floor(i / numRows) * (squareWidthHeight + squareMarginX);
+      return `translate(${x},${y})`;
+    });
+
+  countrySquares
+    .select("rect")
+    .transition().duration(500)
+    .attr("fill", function (d, i) {
+        if (d.length == 0) {
+            return "white"; // Some countries have invalid data
+        } else {
+            //var numRefugees = 1; // For logarithmic scale
+            var numRefugees = 0; // For some countries there is no data for all the years
+
+            for (j = 0; j < d.length; j++) {
+                if (d[j].Year == thisYear) {
+                    numRefugees = d[j].Value;
+                }
+            }
+            //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
+            var t = numRefugees / maxRefugees[thisYear];
+            return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
+        }
+    });
+}
+
 function drawGrid() {
-      // Create g element for each data point
-  var square = countryGridSVG.selectAll(".rect-container")
+  // Get the rectangle container and add the data sorted by nr of refugees and asylum-seekers
+  var countrySquares = countryGridSVG.selectAll(".rect-container")
     .data(countryData.sort(function(a,b) {
         var refugeesA = 0;
         for (j = 0; j < a.length; j++) {
@@ -124,10 +175,10 @@ function drawGrid() {
         return +refugeesB - +refugeesA;
       }), function(d) {
         return d[0].Country;
-      })
+      });
       
-     square.enter()
-      .append("g")
+  var newRectContainer =  countrySquares.enter()
+    .append("g")
       .attr("class", "rect-container")
       // Id is used to reference the square in the bar chart script
       .attr("id", function (d, i) { return "square-" + i; })
@@ -146,25 +197,16 @@ function drawGrid() {
         return `translate(${x},${y})`;
       });  // This will trigger only for parent node
 
-  square
-  .selectAll("g")
-  .transition().duration(500)
-  .attr("transform", function(d,i){
-    var x = i % numRows * (squareWidthHeight + squareMarginX);
-    var y = Math.floor(i / numRows) * (squareWidthHeight + squareMarginX);
-    return `translate(${x},${y})`;
-  });
 
-  // Append a square svg element in each g container
-  square
-      .append("rect")
+  // Append a square svg element in each g container with hilight color
+  countrySquares
+    .append("rect")
       .attr("width", squareWidthHeight)
       .attr("height", squareWidthHeight)
       .attr("stroke-width", 1) // border
       .attr("stroke", "black")
-      // .attr("x", function (d, i) { return i % numRows * (squareWidthHeight + squareMarginX); })
-      // .attr("y", function (d, i) { return Math.floor(i / numRows) * (squareWidthHeight + squareMarginX); })
-            .attr("fill", function (d, i) {
+      .transition().duration(500)
+      .attr("fill", function (d, i) {
           if (d.length == 0) {
               return "white"; // Some countries have invalid data
           } else {
@@ -182,15 +224,10 @@ function drawGrid() {
           }
       });
 
-  // Add legend
-  drawLegend(maxRefugees[thisYear], thisYear);
-
-  ///////////////////////////////////////////////////////
-
   // Add a bar chart in each square
-  square
+  countrySquares
     .each(function(d,i) {
-
+      console.log("Hej");
       var barHolderSelector = "#"+d3.select(this).attr("id");
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
@@ -211,9 +248,19 @@ function drawGrid() {
           );
     });
 
+  
+  // // Update the position of the squares
+  // countrySquares
+  //   .transition().duration(3000).delay(500)
+  //     .attr("transform", function(d,i){
+  //       var x = i % numRows * (squareWidthHeight + squareMarginX);
+  //       var y = Math.floor(i / numRows) * (squareWidthHeight + squareMarginX);
+  //       return `translate(${x},${y})`;
+  //     });
 
-    countryGridSVG.selectAll(".rect-container")
-      
+
+  // Add legend
+  drawLegend(maxRefugees[thisYear], thisYear);
 }
 
 function loadCountryData() {
