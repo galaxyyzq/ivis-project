@@ -6,8 +6,8 @@
 
 var squareX;
 var squareY;
-var squareBarSvg;
 var xRangeSquare;
+var startingYear = 1951;
 
 /*
 * barHolderSelctor is the id of the element that holds the barchart
@@ -17,10 +17,9 @@ var xRangeSquare;
 */
 function initBars(barHolderSelector, height, width, data) {
 
-  margin = {top: 0, right: 0, bottom: 0, left: 0};
-
+	// The range we are using, 2017 - 1951 = 66
   xRangeSquare = [];
-  for(i = 1951; i < 2017; i++){
+  for(i = 0; i < 66; i++){
     xRangeSquare.push(i);
   }
 
@@ -28,74 +27,48 @@ function initBars(barHolderSelector, height, width, data) {
 	// Ordinal only uses whole numbers which we can't use
 	squareX = d3.scale.linear()
 		.range([0, width*0.95]) // If we use the whole width the bars will go outside the square
-		.domain([0, xRangeSquare[xRangeSquare.length-1] - xRangeSquare[0]]);
+		.domain([0, xRangeSquare[xRangeSquare.length-1]]);
 
   squareY = d3.scale.linear()
       .range([height, 0])
       .domain([0, 2541249]);
 
-  squareBarSvg = d3.select(barHolderSelector)
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+  d3.select(barHolderSelector)
+      .attr("width", width)
+      .attr("height", height)
     .append("g")
       .attr("id", "bar-holder")
 
-  drawBarsInSquare(data, height)
+  drawBarsInSquare(data, height, barHolderSelector)
 }
 
-function drawBarsInSquare(data, height) {
+function drawBarsInSquare(data, height, barHolderSelector) {
 
 	data.forEach(function(d) {
 		d.Value = +d.Value;
 		d.Year 	= +d.Year;
 	});
 
-	var theBars = squareBarSvg.selectAll(".bar")
+	var barSvg = d3.select(barHolderSelector);
+
+	var theBars = barSvg.selectAll(".bar")
 			.data(data).enter()
 		.append("rect")
 			.attr("class", "bar")
-			.attr("x", function(d,i) {
-					// Use values between "0" and "number of years"
-					return squareX(d.Year - xRangeSquare[0]); })
+			.attr("x", function(d) {
+					// Scale down d.Year to [0, 66]
+					return squareX(d.Year - startingYear); })
 			.attr("width", 2)
 			.attr("y", function(d) { return squareY(d.Value); })
 			.attr("height", function(d) {
 					return height - squareY(d.Value);
 			})
 
+	// Update the bars here!
+	// When we switch from linear to exponential etc
+		
+	// squareY = d3.scale.linear()
+	// .range([height, 0])
+	// .domain([0, 2541249]);
 
-
-			// .on("click",function(d){
-			// });
-
-	// theBars
-	// 		.transition()
-	// 		.attr("y", function(d) { return squareY(d.Value); })
-
-	// squareBarSvg.exit().remove()
-	// d3.select("input").on("change", change);
-	// function change() {
-	// 	// clearTimeout(sortTimeout);
-	// 	// Copy-on-write since tweens are evaluated after a delay.
-	// 	var x0 = squareX.domain(data.sort(this.checked
-	// 			? function(a, b) { return b[yComp] - a[yComp]; }
-	// 			: function(a, b) { return d3.ascending(a[xComp], b[xComp]); })
-	// 			.map(function(d) { return d[xComp]; }))
-	// 			.copy();
-
-	// 	svg.selectAll(".bar")
-	// 			.sort(function(a, b) { return x0(a[xComp]) - x0(b[xComp]); });
-
-	// 	var transition = svg.transition().duration(750),
-	// 			delay = function(d, i) { return i * 50; };
-
-	// 	transition.selectAll(".bar")
-	// 			.delay(delay)
-	// 			.attr("x", function(d) { return x0(d[xComp]); });
-
-	// 	transition.select(".x.axis")
-	// 			.call(squareXAxis)
-	// 		.selectAll("g")
-	// 			.delay(delay);
-	// }
 }
