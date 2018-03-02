@@ -8,6 +8,17 @@ var yAxisHack;
 var yAxisHack2;
 var prevClickedBar;
 
+
+function mouseOverContryName(x){
+	x.innerHTML = currentCountryName;
+	x.style.color = "black";	
+}
+
+function mouseOutContryName(x){
+	x.innerHTML = "Hover here to get Country's Name"
+	x.style.color = "lightgray";
+}
+
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var marginHack = {top: 40, right: 0, bottom: 100, left: 150};
@@ -75,7 +86,7 @@ function initTopRightBarChart() {
       .style("text-anchor", "end")
       
   
-  d3.select("#countryName").text("Country name")
+  //d3.select("#countryName").text("Country name")
 }
 
 // Top right bar chart

@@ -63,6 +63,17 @@ span:before
 }
 	
 	
+#countryName{
+	text-align: center; 
+	
+	font-family: 'Saira Condensed', sans-serif;	
+	
+	font-size: 150px;		
+	font-weight:600;
+	
+	color: lightgray;
+}	
+	
 #modeSentence{
 	font-size: 50px;
 	font-family: 'Saira Condensed', sans-serif;	
@@ -72,6 +83,7 @@ span:before
 #inOutToggle{
 	font-size: 40px;
 	float: right;
+	margin-right: 80px;
 }
 	
 #projectTitle{
@@ -81,6 +93,10 @@ span:before
 	font-family: 'Saira Condensed', sans-serif;	
 	
 	margin-top: 40px;
+}	
+	
+#leftColum{
+	border-right: 1px solid lightgray;
 }	
 	
 .yellow{

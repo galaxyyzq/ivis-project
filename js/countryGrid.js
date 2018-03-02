@@ -27,7 +27,8 @@ function updateFigures(thisSquare, thisYear, d) {
   .attr("stroke", "green")
 
   // Update the title above the barchart
-  d3.select("#countryName").text(d[0].Country)
+  currentCountryName = d[0].Country;
+  //d3.select("#countryName").text(d[0].Country)
 
   drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 

@@ -21,7 +21,7 @@
 	  <script src="js/d3-topojson.js"></script>
 	  
 	  <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet"> -->   
-	  <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400" rel="stylesheet">	  
+	  <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">	  
   </head>
 
   <body>
@@ -41,19 +41,20 @@
 		  <div class="row">
 			  
 			  <!-- COUNTRY GRID AND SLIDER ######################### -->
-			  <div class="col-6 col-12-md" id="test">
+			  <div class="col-6 col-12-md" id="leftColum">
 				  <div class="row">
-					  <div class="col-9 red" id="test">  
+					  <div class="col-9" id="test">  
 						  <p id="modeSentence"> Refugees and Asylum-Seekers Living in each Country. </p>
+						  <!-- <p> Refugees and Asylum-Seekers from each Country -->
 					  </div>					  
 
-					  <div class="col-3 red" id="test">  
+					  <div class="col-3" id="test">  
 						  <button id="inOutToggle">Chage In Out</button>
 					  </div>					  
 				  </div>
 				  
 				  <div class="row">
-					  <div class="col-12 blue" id="test">
+					  <div class="col-12" id="test">
 						  <svg id="country-grid"></svg>
 						  <div id="legendGrid"> </div>
 						  <div id="slider"> </div>						  
@@ -68,7 +69,7 @@
 			  
 			  <!-- BAR CHART + SANKEY ############################## -->
 			  <div class="col-6 col-12-md">
-				  <h1 id="countryName" style="text-align: center; font-size: 50px"></h1>
+				  <h1 onmouseout="mouseOutContryName(this)" onmouseover="mouseOverContryName(this)" id="countryName">Hover here to get Country's Name</h1>
 
 				  <div class="row top-buffer" style="margin-left: 70px">
 					  <svg id="right-side-bar-chart"></svg>
@@ -117,7 +118,9 @@
   </body>
 
 
-  <!-- Include all javascript files here-->
+  <!-- Include all javascript files here -->
+  <script src="js/globalVariables.js"></script>
+	
   <script src="js/bars.js"></script>
 
   <script src="js/databaseFunctions.js"></script>
