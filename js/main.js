@@ -24,5 +24,16 @@ $("#inOutToggle").on("click", function() {
 // drawBars("#right-side-bar-chart",xComp="letter",yComp="frequency",yAxisTitle="",height=200,width=500, xP=0, yP=0, showAxis=true)
 
 
+// When we click on the 'Info' button.
+$("#infoLink").on("click", function() {
+  $("#contentRow").css('display', 'none');
+  $("#information").css('display', 'inline-block');	
+})
 
+
+// When we click on the 'Away from home' button.
+$("#awayFromHomeLink").on("click", function() {
+  $("#contentRow").css('display', 'inline');
+  $("#information").css('display', 'none');	
+})
 

@@ -14,6 +14,7 @@
 	margin-left: 20px;
 }
 
+/*
 #countryGridLabelContainer span
 {
 	-display: block;
@@ -37,6 +38,27 @@ span:before
   -vertical-align: middle;
   -display: inline-block;
   -margin-top: -5px;	
+}
+*/
+	
+
+
+#nRefugees{
+	font-size: 90px;
+}
+
+#barChartYear{
+	font-size: 90px;
+}
+
+#barChartDescription{
+	text-align: right;
+	font-family: 'Saira Condensed', sans-serif;	
+	font-size: 50px;	
+}
+
+#contentRow{
+	
 }
 
 		
@@ -93,11 +115,32 @@ span:before
 	font-family: 'Saira Condensed', sans-serif;	
 	
 	margin-top: 40px;
+	float: left;
 }	
+
+#info{
+	font-size: 80px;
+	margin-top: 40px;
+	margin-left: 800px;
+}
 	
+.menuLink{
+  color: gray;
+  text-decoration: none; /* no underline */	
+}
+
+.menuLink:hover{
+	color: black;
+}
+
 #leftColum{
 	border-right: 1px solid lightgray;
 }	
+
+
+#rightColumn{
+	padding-right: 100px;
+}
 	
 .yellow{
 	background-color: yellow;
