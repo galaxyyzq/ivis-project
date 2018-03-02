@@ -40,10 +40,10 @@ function initBars(barHolderSelector, height, width, data) {
     .append("g")
       .attr("id", "bar-holder")
 
-  updateSquareBars(data, height)
+  drawBarsInSquare(data, height)
 }
 
-function updateSquareBars(data, height) {
+function drawBarsInSquare(data, height) {
 
 	data.forEach(function(d) {
 		d.Value = +d.Value;
