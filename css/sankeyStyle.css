@@ -20,9 +20,9 @@
 }
 
 .sankey {
-  display: inline-block;
-  border: solid;
-  margin: 20px;
+    display: inline-block;
+    /* border: solid; */
+    margin: 20px;
 }
 
 #Title {

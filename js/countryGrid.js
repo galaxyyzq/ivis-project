@@ -6,8 +6,8 @@ var prev_clicked_name = "";
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
 var rects;
 var dataForUpdate = null;
-var hueIn = 230;
-var hueOut = 40;
+var hueIn = 230; //Hue of the HSL color of the squares for In mode
+var hueOut = 40; //Hue of the HSL color of the squares for Out mode
 
 function selectSquare(thisSquare, thisYear, d) {
 
