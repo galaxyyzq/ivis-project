@@ -6,6 +6,8 @@ var prev_clicked_name = "";
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
 var rects;
 var dataForUpdate = null;
+var hueIn = 230;
+var hueOut = 40;
 
 function selectSquare(thisSquare, thisYear, d) {
 
@@ -141,9 +143,9 @@ function updateGrid() {
             //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
             var t = numRefugees / maxRefugees[thisYear];
             if (inOut == "In") {
-                return d3.hsl(230, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
+                return d3.hsl(hueIn, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
             } else {
-                return d3.hsl(40, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
+                return d3.hsl(hueOut, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
             }
         }
     });
@@ -225,10 +227,11 @@ function initGrid() {
               //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
               var t = numRefugees / maxRefugees[thisYear];
               if (inOut == "In") {
-                  return d3.hsl(230, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
+                  return d3.hsl(hueIn, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
               } else {
-                  return d3.hsl(40, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
-              }          }
+                  return d3.hsl(hueOut, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
+              }
+          }
       });
 
   // Add a bar chart in each square
@@ -326,12 +329,18 @@ function drawLegend(maxRefugees, thisYear) {
 
     legend.append("stop")
         .attr("offset", "0%")
-        .attr("stop-color", d3.hsl(230, 1, 1))
+        .attr("stop-color", "white")
         .attr("stop-opacity", 1);
 
     legend.append("stop")
         .attr("offset", "100%")
-        .attr("stop-color", d3.hsl(230, 1, 0.6))
+        .attr("stop-color", function () {
+            if (inOut == "In") {
+                return d3.hsl(hueIn, 1, 0.6);
+            } else {
+                return d3.hsl(hueOut, 1, 0.6);
+            }
+        })
         .attr("stop-opacity", 1);
 
     key.append("rect")
