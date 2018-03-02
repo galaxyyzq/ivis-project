@@ -66,15 +66,15 @@ function initTopRightBarChart() {
   yAxisHack2= barSvg.append("g")
       .attr("class", "y axis")
       .call(yAxisHack)
-  
+
   yAxisHack2
     .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      
-  
+
+
   d3.select("#countryName").text("Country name")
 }
 
@@ -114,7 +114,11 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
 
           thisYear = d.Year;
           drawLegend(maxRefugees[thisYear], thisYear);
-          
+
+          //Update the slider when year change in bar chart
+          var newYear = scaleSlider(thisYear);
+          d3.slider().move(Math.round(newYear));
+
           // rects
           //   .transition()
           //   .duration(1000)
@@ -154,7 +158,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
         .attr("height", 0)
         .attr("y", heightHack)
         // The transition times are ignored, not sure why
-        .transition().delay(2000).duration(1000) 
+        .transition().delay(2000).duration(1000)
         .attr("x", function(d) { return xHack(d.Year); })
         .attr("width", xHack.rangeBand())
         .attr("y", function(d) { return yHack(d.Value); })
@@ -166,7 +170,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
       // .attr("class", "bar")
       // Need delay in order to wait for xAxis transition
       // Otherwise it looks choppy
-      .transition().delay(500).duration(300) 
+      .transition().delay(500).duration(300)
       .attr("x", function(d) { return xHack(d.Year); })
       .attr("width", xHack.rangeBand())
       .attr("y", function(d) { return yHack(d.Value); })
@@ -177,7 +181,7 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
     // Remove bars that don't exist
     theBars.exit()
       .attr("fill", "red")
-      .transition().delay(200).duration(300) 
+      .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", heightHack)
       .remove();
