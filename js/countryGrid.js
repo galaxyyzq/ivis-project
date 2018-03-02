@@ -29,9 +29,12 @@ function updateFigures(thisSquare, thisYear, d) {
   // Update the title above the barchart
   d3.select("#countryName").text(d[0].Country)
 
+  // Update the barchart
   drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 
-  updateSankey(d[0].Country,thisYear);
+  // Update the sankey diagram
+  updateSankey(d[0].Country, thisYear);
+
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
 }
@@ -89,7 +92,7 @@ var countryGridSVG = d3.select("#country-grid")
   //     .attr("fill", "white")
   // 	.attr("rx", 10);
 
-// Call this function if we "thisYear" has been updated
+// Call this function if "thisYear" has been updated
 function updateGrid() {
   var countrySquares = countryGridSVG.selectAll(".rect-container")
   .data(countryData.sort(function(a,b) {
@@ -127,8 +130,8 @@ function updateGrid() {
         if (d.length == 0) {
             return "white"; // Some countries have invalid data
         } else {
-            //var numRefugees = 1; // For logarithmic scale
             var numRefugees = 0; // For some countries there is no data for all the years
+            //var numRefugees = 1; // For logarithmic scale
 
             for (j = 0; j < d.length; j++) {
                 if (d[j].Year == thisYear) {
@@ -137,7 +140,11 @@ function updateGrid() {
             }
             //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
             var t = numRefugees / maxRefugees[thisYear];
-            return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
+            if (inOut == "In") {
+                return d3.hsl(230, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
+            } else {
+                return d3.hsl(40, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
+            }
         }
     });
 }
@@ -217,8 +224,11 @@ function initGrid() {
               }
               //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
               var t = numRefugees / maxRefugees[thisYear];
-              return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
-          }
+              if (inOut == "In") {
+                  return d3.hsl(230, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
+              } else {
+                  return d3.hsl(40, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
+              }          }
       });
 
   // Add a bar chart in each square
