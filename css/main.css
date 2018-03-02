@@ -61,4 +61,45 @@ span:before
   padding-right: 5px;
   border-top: 2px solid gray;
 }
+	
+	
+#modeSentence{
+	font-size: 50px;
+	font-family: 'Saira Condensed', sans-serif;	
+	font-weight:300;
+}
+
+#inOutToggle{
+	font-size: 40px;
+	float: right;
+}
+	
+#projectTitle{
+	font-size: 80px;
+	-text-align: center;
+	text-align: left;
+	font-family: 'Saira Condensed', sans-serif;	
+	
+	margin-top: 40px;
+}	
+	
+.yellow{
+	background-color: yellow;
+}
+	
+.red{
+	background-color: red;
+}
+	
+.green{
+	background-color: green;
+}
+	
+.blue{
+	background-color: blue;
+}
+	
+.black{
+	background-color: black;
+}	
 		

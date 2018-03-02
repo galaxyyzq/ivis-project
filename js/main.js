@@ -12,7 +12,7 @@ $("#toggleMap").on("click",function(){
 })
 
 
-$("#inoutChange").on("click", function() {
+$("#inOutToggle").on("click", function() {
   if(inOut === "In") inOut = "Out";
   else inOut = "In";
 

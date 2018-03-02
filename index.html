@@ -1,97 +1,119 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Away From Home</title>
-    <!-- CSS files -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link rel="stylesheet" href="css/sankeyStyle.css">
-    <link rel="stylesheet" href="css/d3.slider.css" />
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
-    <!-- Include libraries here -->
-    <!-- Has to be 'https' links to work with github hosting -->
-    <!-- Jquery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- D3js -->
-    <script src="js/d3.js"></script>
-    <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
-    <script src="js/d3-topojson.js"></script>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <title>Away From Home</title>
+	  <!-- CSS files -->
+	  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	  <link rel="stylesheet" href="css/sankeyStyle.css">
+	  <link rel="stylesheet" href="css/d3.slider.css" />
+	  <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
+	  <!-- Include libraries here -->
+	  <!-- Has to be 'https' links to work with github hosting -->
+	  <!-- Jquery -->
+	  <script src="js/jquery.js"></script>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="css/bootstrap.css">
+	  <!-- D3js -->
+	  <script src="js/d3.js"></script>
+	  <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
+	  <script src="js/d3-topojson.js"></script>
+	  
+	  <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet"> -->   
+	  <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400" rel="stylesheet">	  
   </head>
 
   <body>
-    <button id="inoutChange">Chage In Out</button>
-      <!-- <label for="text">Name:</label>
-      <input type="text" id="nameinput" />
-      <button id="clickButton" type="submit">Click</button>
-      <button id="toggleMap">Toggle Map</button>
-      <div id="map-holder"></div> -->
+	  
+	  <!-- CONTAINER THAT CONTAINS EVERYTHING -->
+	  <div class="container-fluid">
+		  <!-- HEADER (just in case we decide putting a word on the top, but right now we think we don't have space for that) -->
+		  <div class="row">
+			  <div class="col-12">
+				  <img src= "img/logo.png" style="width: 200px; float: left">
+				  <h1 id="projectTitle"> Away From Home </h1>
+			  </div>
+		  </div>
+		  <!-- End of Header -->
+			  
+		  <!-- CONTENT ROW -->
+		  <div class="row">
+			  
+			  <!-- COUNTRY GRID AND SLIDER ######################### -->
+			  <div class="col-6 col-12-md" id="test">
+				  <div class="row">
+					  <div class="col-9 red" id="test">  
+						  <p id="modeSentence"> Refugees and Asylum-Seekers Living in each Country. </p>
+					  </div>					  
 
-	  <h2 style="text-align: center; font-size: 70px; margin-bottom: 40px;">
-        Number of refugees and asylum-seekers throughout the years
-    </h2>
+					  <div class="col-3 red" id="test">  
+						  <button id="inOutToggle">Chage In Out</button>
+					  </div>					  
+				  </div>
+				  
+				  <div class="row">
+					  <div class="col-12 blue" id="test">
+						  <svg id="country-grid"></svg>
+						  <div id="legendGrid"> </div>
+						  <div id="slider"> </div>						  
+					  </div>
+				  </div>				  
+				  
+				  
 
-      <div class="container-fluid">
-        <div class="row">
+			  </div>
+			  <!-- ################################################# -->
 
-          <!-- Column with country grid -->
-            <div class="col-6 col-12-md" id="test">
-                <svg id="country-grid"></svg>
-                <!--<div id="countryGridLabelContainer">
-                    <span class="continents asia">Asia</span>
-                    <span class="continents africa">Africa</span>
-                    <span class="continents america">America</span>
-                    <span class="continents europe">Europe</span>
-                    <span class="continents oceania">Oceania</span>
-                </div>-->
+			  
+			  <!-- BAR CHART + SANKEY ############################## -->
+			  <div class="col-6 col-12-md">
+				  <h1 id="countryName" style="text-align: center; font-size: 50px"></h1>
 
-                <div id="legendGrid"></div>
-                <div id="slider">
-                </div>
-            </div>
+				  <div class="row top-buffer" style="margin-left: 70px">
+					  <svg id="right-side-bar-chart"></svg>
+				  </div>
+				  
+				  <div class="row top-buffer" style="margin-left: 70px">
+					  <div class="sankey">
+						  <div id="Title"></div>
+						  <p id="chart">
+					  </div>
+				  </div>
+			  </div>
+			  <!-- END OF BAR CHART + SANKEY ####################### -->  
+		  </div> <!-- END OF CONTENT ROW -->
 
-
-		  <!-- Column with sankey and sidebar chart -->
-          <div class="col-6 col-12-md">
-	  		<h1 id="countryName" style="text-align: center; font-size: 50px"></h1>
-
-            <div class="row top-buffer" style="margin-left: 70px">
-                <svg id="right-side-bar-chart"></svg>
-            </div>
-            <div class="row top-buffer" style="margin-left: 70px">
-              <div class="sankey">
-                <div id="Title"></div>
-                <p id="chart">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row footer top-buffer">
-          <div class="col-6">
-            <h3></h3>
-            <h3>Data and definitons provided by <a href="http://popstats.unhcr.org/">The UN Refugee Agency</a></h3>
-            <p style="border-left: 5px solid #F8B7B7; padding-left: 7px">
-              <strong>Refugees</strong>
-              include individuals recognised under the 1951 Convention relating to the Status of Refugees;
-              its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems
-              in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary
-              forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also
-              includes people in a refugee-like situation.
-            </p>
-            <p style="border-left: 5px solid #8496AB; padding-left: 7px">
-              <strong>Asylum-seekers</strong>
-              are individuals who have sought international protection and whose claims for refugee status have
-              not yet been determined, irrespective of when they may have been lodged.
-            </p>
-          </div>
-          <div class="col-6">
-            <h3>Our contact information and such</h3>
-          </div>
-        </div>
-      </div>
+		  <!-- ROW FOOTER ############################################################ -->
+		  <div class="row footer top-buffer">
+			  <div class="col-6">
+				  <h3></h3>
+				  <h3>Data and definitons provided by 
+					  <a href="http://popstats.unhcr.org/">The UN Refugee Agency</a>
+				  </h3>
+				  
+				  <p style="border-left: 5px solid #F8B7B7; padding-left: 7px">
+					  <strong>Refugees</strong>
+					  include individuals recognised under the 1951 Convention relating to the Status of Refugees;
+					  its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems
+					  in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary
+					  forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also
+					  includes people in a refugee-like situation.
+				  </p>
+				  
+				  <p style="border-left: 5px solid #8496AB; padding-left: 7px">
+					  <strong>Asylum-seekers</strong>
+					  are individuals who have sought international protection and whose claims for refugee status have
+					  not yet been determined, irrespective of when they may have been lodged.
+				  </p>
+			  </div>
+			  
+			  <div class="col-6">
+				  <h3>Our contact information and such</h3>
+			  </div>
+		  </div>
+		  <!-- END OF FOOTER ######################################################### -->
+	  </div>
   </body>
 
 
