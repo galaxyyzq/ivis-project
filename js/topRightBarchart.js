@@ -126,6 +126,14 @@ function drawBarsHack(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle=""
           }
 
           thisYear = d.Year;
+		
+		  // Changing the year in the second column description.
+		  $("#barChartYear").html(thisYear);
+		  $("#nRefugees").html(d.Value);
+		
+		
+		
+		  console.log(d);
           drawLegend(maxRefugees[thisYear], thisYear);
           
           // rects
