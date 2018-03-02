@@ -197,6 +197,11 @@ d3.slider = function module() {
 
       updateSankey($("#countryName").text(),thisYear);
       updateGrid();
+		
+		
+      $("#barChartYear").html(thisYear);
+      //$("#nRefugees").html(d.Value);	
+		
     }  //console.log(displayValue);
     olddisplayValue = displayValue;
     svg.selectAll(".dragger").select("text")
