@@ -9,7 +9,13 @@ var squareY;
 var squareBarSvg;
 var xRangeSquare;
 
-function initBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
+/*
+* barHolderSelctor is the id of the element that holds the barchart
+* height is the height of the bar chart
+* width is the width of the bar chart
+* data is the data that's shown in the bar chart
+*/
+function initBars(barHolderSelector, height, width, data) {
 
   margin = {top: 0, right: 0, bottom: 0, left: 0};
 
@@ -18,15 +24,11 @@ function initBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",hei
     xRangeSquare.push(i);
   }
 
-  // squareX = d3.scale.ordinal()
-	// 	.rangeRoundBands([0, width], 0)
-	// 	.domain(xRangeSquare);
-
+	// Use linear scale for so we can have small squares
+	// Ordinal only uses whole numbers which we can't use
 	squareX = d3.scale.linear()
-		.range([0, width])
+		.range([0, width*0.95]) // If we use the whole width the bars will go outside the square
 		.domain([0, xRangeSquare[xRangeSquare.length-1] - xRangeSquare[0]]);
-
-	console.log(squareX(10))
 
   squareY = d3.scale.linear()
       .range([height, 0])
@@ -48,15 +50,12 @@ function updateSquareBars(data, height) {
 		d.Year 	= +d.Year;
 	});
 
-	if(data[0].Country === "United States of America") console.log(data)
-
 	var theBars = squareBarSvg.selectAll(".bar")
 			.data(data).enter()
 		.append("rect")
 			.attr("class", "bar")
 			.attr("x", function(d,i) {
-					if(d.Country === "United States of America") console.log(d.Country ,d.Year, d.Year - xRangeSquare[0]);
-					// if(i === 0) console.log(d.Year - xRangeSquare[0], squareX(d.Year - xRangeSquare[0]), d.Year)
+					// Use values between "0" and "number of years"
 					return squareX(d.Year - xRangeSquare[0]); })
 			.attr("width", 2)
 			.attr("y", function(d) { return squareY(d.Value); })
@@ -72,9 +71,6 @@ function updateSquareBars(data, height) {
 	// theBars
 	// 		.transition()
 	// 		.attr("y", function(d) { return squareY(d.Value); })
-
-
-
 
 	// squareBarSvg.exit().remove()
 	// d3.select("input").on("change", change);

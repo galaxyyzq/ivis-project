@@ -240,19 +240,8 @@ function initGrid() {
       var barHolderSelector = "#"+d3.select(this).attr("id");
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
-        //   d = d.slice(Math.max(d.length - 50, 1));
           // Call function from 'bars.js'
-          initBars(barHolderSelector,
-          xComp = "letter",
-          yComp = "frequency",
-          yAxisTitle = "",
-          gridHeight = squareWidthHeight,
-          width = squareWidthHeight,
-          x,
-          y,
-          false,
-          d
-          );
+          initBars(barHolderSelector, squareWidthHeight, squareWidthHeight,d);
     });
 
   // Add legend
