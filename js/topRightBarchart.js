@@ -36,6 +36,7 @@ function initTopRightBarChart() {
     .domain(xDomain);
 
 	
+	
   yHack = d3.scale.linear()
       .range([heightHack, 0])
       .domain([0, 2541249])
