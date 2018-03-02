@@ -59,7 +59,7 @@ var gridMargin = { top: 62, right: 20, bottom: 20, left: 20 };
 var gridWidth  = 1110;
 var gridHeight = 680;
 
-var squareWidthHeight = 80;
+var squareWidthHeight = 40;
 var squareMarginX = 8;
 var numRows = 16;
 
@@ -240,9 +240,9 @@ function initGrid() {
       var barHolderSelector = "#"+d3.select(this).attr("id");
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
-          d = d.slice(Math.max(d.length - 50, 1));
+        //   d = d.slice(Math.max(d.length - 50, 1));
           // Call function from 'bars.js'
-          drawBars(barHolderSelector,
+          initBars(barHolderSelector,
           xComp = "letter",
           yComp = "frequency",
           yAxisTitle = "",
