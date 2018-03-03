@@ -32,7 +32,7 @@ function updateFigures(thisSquare, thisYear, d) {
   d3.select("#countryName").text(d[0].Country)
 
   // Update the barchart
-  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+  updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
 
   // Update the sankey diagram
   updateSankey(d[0].Country, thisYear);
@@ -241,7 +241,7 @@ function initGrid() {
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
           // Call function from 'bars.js'
-          initBars(barHolderSelector, squareWidthHeight, squareWidthHeight,d);
+          initBars(barHolderSelector, squareWidthHeight, squareWidthHeight, d);
     });
 
   // Add legend
