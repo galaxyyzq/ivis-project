@@ -1,4 +1,4 @@
-// top right bar chart global vars. "Trbc"
+// top right bar chart global vars. "trbc"
 var trbcSVG;
 var trbcX;
 var trbcY;
@@ -9,7 +9,8 @@ var trbcYaxisAnimate;
 var trbcPrevClickedBar;
 var trbcWidth = 1000;
 var trbcHeight = 500;
-var trbcHoverBarColor = "blue";
+var trbcHoverBarColor = "orange";
+var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";
 
 function initTopRightBarChart() {
@@ -79,15 +80,11 @@ function initTopRightBarChart() {
       .attr("dy", ".71em")
       .style("text-anchor", "end")
 
-
   d3.select("#countryName").text("Country name")
 }
 
-// Top right bar chart
 function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
   
-  // var xDomain = data.map(x => x.Year);
-
   // Update yaxis here, when we switch from linear to exponential
   var yDomain = d3.max(data, function(d) {return d.Value; })
   trbcY.domain([0, yDomain]);
@@ -110,9 +107,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
         .on("click",function(d,i){
           if(this !== trbcPrevClickedBar){
             d3.select(this)
-              .attr("fill", "green")
+              .attr("fill", trbcClickedColor)
             d3.select(trbcPrevClickedBar)
-              .attr("fill", "black")
+              .attr("fill", trbcDefaultBarColor)
             trbcPrevClickedBar = this;
           }
 
@@ -138,9 +135,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
         })
         .attr("class", "bar")
         .attr("height", 0)
-        .attr("y", trbcHeight)
-        // The transition times are ignored, not sure why
-        .transition().delay(2000).duration(1000)
+				.attr("y", trbcHeight)
+				// Transition for new bars
+				.transition().delay(600).duration(500)
         .attr("x", function(d) { return trbcX(d.Year); })
         .attr("width", trbcX.rangeBand())
         .attr("y", function(d) { return trbcY(d.Value); })
@@ -149,8 +146,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
         })
 
 		// Update the bars
-    theBars
-      .transition().delay(500).duration(300)
+		theBars
+			// Transition for updating bars
+      .transition().delay(600).duration(500)
       .attr("x", function(d) { return trbcX(d.Year); })
       .attr("width", trbcX.rangeBand())
       .attr("y", function(d) { return trbcY(d.Value); })
@@ -160,7 +158,8 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
     // Remove bars that don't exist anymore
     theBars.exit()
-      .attr("fill", "red")
+			.attr("fill", "red")
+			// Transition for deleted bars
       .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", trbcHeight)
