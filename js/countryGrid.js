@@ -49,7 +49,7 @@ function updateFigures(thisSquare, thisYear, d) {
   // Mark the square as selected
   d3.select(thisSquare).select("rect")
   .attr("stroke-width", 3)
-  .attr("stroke", "green")
+  .attr("stroke", "red")
 
   // Update the title above the barchart
   currentCountryName = d[0].Country;
@@ -92,7 +92,7 @@ function deselectSquare(prev, clicked) {
 // Dimensions of the useful area inside the SGV
 countryGridSVG = d3.select("#country-grid")
   .attr("width", 100+(squareWidthHeight + squareMarginX)*numRows)
-  .attr("height", (Math.floor(222 / numRows)+2) * (squareWidthHeight + squareMarginX))
+  .attr("height", (Math.floor(222 / numRows)+1.1) * (squareWidthHeight + squareMarginX))
 .append("g")
   .attr("transform", "translate(" + gridMargin.left + "," + gridMargin.top + ")")
   .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it

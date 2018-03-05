@@ -1,7 +1,7 @@
 // Code for drawing a sankey diagram
 
 var marginSankey = { top: 10, right: 10, bottom: 0, left: 10 },
-    widthSankey = 500 - marginSankey.left - marginSankey.right,
+    widthSankey = 600 - marginSankey.left - marginSankey.right,
     heightSankey = 300 - marginSankey.top - marginSankey.bottom;
 
 // Sort countries by number of refugees, return names

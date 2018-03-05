@@ -13,8 +13,8 @@ var zoom = d3.behavior.zoom()
 var svgMap, g;
 
 //for tooltip 
-var offsetL = document.getElementById('map-holder').offsetLeft + 10;
-var offsetT = document.getElementById('map-holder').offsetTop + 10;
+var offsetL = document.getElementById('map-holder').offsetLeft + 30;
+var offsetT = document.getElementById('map-holder').offsetTop + 30;
 
 var pathMap = d3.geo.path()
     .projection(projection);
