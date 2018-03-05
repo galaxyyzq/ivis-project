@@ -1,6 +1,7 @@
 window.checkModelData = function(ele)
 {
 	var name = $(ele).val().replace(" ", "");
+	if(name === "") return;
 	var data = findDataForCountry(name);
 	selectSquare(null, thisYear, data);
 	updateFigures(null, thisYear, data);
@@ -27,3 +28,11 @@ function loadModelData(name) {
 $("#search-countries").bind('change', function () {
     window.checkModelData(this);
 });
+
+
+// Using the global variable countryData
+function addCountriesToDropdown(data) {
+	$.each(data, function(i,d){
+		$("#search-options").append("<option value='"+d[0].Country+"'></option>");
+	});
+}

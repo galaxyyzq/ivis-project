@@ -36,7 +36,7 @@ var g = svgMap.append("g");
 //det json data and draw it
 d3.json("data/old/custom.geo.json", function (error, world) {
     if (error) return console.error(error);
-    console.log(world.features)
+    // console.log(world.features)
     //countries
     g.append("g")
         .attr("class", "boundary")
