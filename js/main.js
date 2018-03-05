@@ -52,5 +52,5 @@ $("#logScaleToggle").on("click", function () {
   } 
   initGrid();
   updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, dataForUpdate, scaleForY);
-  
+  drawMap();
 })
