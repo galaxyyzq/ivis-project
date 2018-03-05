@@ -8,7 +8,7 @@ var trbcYaxis;
 var trbcYaxisAnimate;
 var trbcPrevClickedBar;
 var trbcWidth = 600;
-var trbcHeight = 300;
+var trbcHeight = 250;
 var trbcHoverBarColor = "orange";
 var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";

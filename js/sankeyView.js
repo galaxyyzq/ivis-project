@@ -248,7 +248,7 @@ function drawSankey(data, thisYear) {
 function updateSankey(country, thisYear) {
     //console.log("This country: ", country);
     //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
-    d3.csv("data/treatingRealData/sankeyData"+ inOut + ".csv", function (error, data) {
+    d3.csv("data/treatingRealData/sankeyData" + inOut + ".csv", function (error, data) {
         if (inOut == "In") {
             countryLabel = "Residence";
         } else {
@@ -275,9 +275,17 @@ function updateSankey(country, thisYear) {
                 sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
-
-        //Represent only the top5 countries to simplify the diagram
-        drawSankey(topCountries(sankeyData), thisYear);
+        console.log(sankeyData)
+        if (sankeyData.length == 0) {
+            //Remove previous sankey
+            d3.select("#chart").selectAll("svg").remove();
+            // add some text
+            d3.select("#Title").text("No data for this year");
+        } else {
+            //Represent only the top5 countries to simplify the diagram
+            drawSankey(topCountries(sankeyData), thisYear);
+        }
+        
     });
 
 }
