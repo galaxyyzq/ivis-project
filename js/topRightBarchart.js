@@ -13,6 +13,43 @@ var trbcHoverBarColor = "orange";
 var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";
 
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
+
+
+function updateBarChartDescription(){
+
+	// Changing the year in the second column description.
+	$("#barChartYear").html(thisYear);
+
+
+	// Changing the description Sentence
+	if(inOut === "In"){
+		$("#descriptionSentence").html("Refugees living in this country in ");
+	}
+  	else{
+		$("#descriptionSentence").html("Refugees from this country in");
+	}
+
+	// Changing the Value
+	countryData.forEach(function(countryRecords){
+		// 'countryRecords' contains all records for each country
+		countryRecords.forEach(function(cr){
+			if(cr.Country === currentCountryName && cr.Year == thisYear)
+			{
+				$("#nRefugees").html( formatNumber(cr.Value) );
+
+				return;
+			}
+		});
+
+	});
+}
+
+
+
+
 
 var chartForSliderVariable;
 
@@ -42,10 +79,16 @@ function initTopRightBarChart() {
   trbcX = d3.scale.ordinal()
     .rangeRoundBands([0, trbcWidth], .1, 1)
     .domain(xDomain);
-
-  trbcY = d3.scale.linear()
-      .range([trbcHeight, 0])
+  if (scaleForY == "linear") {
+    trbcY = d3.scale.linear()
       .domain([0, 2541249])
+      .range([trbcHeight, 0]);
+  } else {
+    trbcY = d3.scale.log()
+      .base(10)
+      .domain([1, 10000000])
+      .range([trbcHeight, 0]);
+  }
 
   trbcXAxis = d3.svg.axis()
       .tickFormat(function(d, i) {
@@ -97,12 +140,31 @@ function initTopRightBarChart() {
   //d3.select("#countryName").text("Country name")
 }
 
-function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
-
-
+function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data,scaleForY="linear"){
   // Update yaxis here, when we switch from linear to exponential
-  var yDomain = d3.max(data, function(d) {return d.Value; })
-  trbcY.domain([0, yDomain]);
+  var yDomain;
+  if (scaleForY == "linear") {
+    yDomain = d3.max(data, function (d) { return d.Value; })
+    trbcY = d3.scale.linear()
+      .domain([0, yDomain])
+      .range([trbcHeight, 0]);
+    trbcYaxis = d3.svg.axis()
+      .scale(trbcY)
+      .orient("left");
+
+  } else {
+    trbcY = d3.scale.log()
+      .base(10)
+      .domain([1, 10000000])
+      .range([trbcHeight, 0]);
+    trbcYaxis = d3.svg.axis()
+      .tickFormat(function (d, i) {
+        return Math.floor(Math.log10(d)) == Math.log10(d)? d: null;
+      })
+      .scale(trbcY)
+      .orient("left");
+  }
+  // trbcY.domain([0, yDomain]);
   trbcYaxisAnimate
   .call(trbcYaxis)
     .selectAll("text")
@@ -133,6 +195,7 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
           }
 
           thisYear = d.Year;
+<<<<<<< HEAD
 		  // Changing the year in the second column description.
 		  $("#barChartYear").html(thisYear);
 
@@ -141,6 +204,11 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
 
 
+=======
+
+		  updateBarChartDescription();
+
+>>>>>>> 877f51738b4265a60cf87a11b44e2fa006d3513f
           drawLegend(maxRefugees[thisYear], thisYear);
 
           //Update the slider when year change in bar chart
@@ -169,9 +237,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 				.transition().delay(600).duration(500)
         .attr("x", function(d) { return trbcX(d.Year); })
         .attr("width", trbcX.rangeBand())
-        .attr("y", function(d) { return trbcY(d.Value); })
+      .attr("y", function (d) { return trbcY(Math.max(1, d.Value)); })
         .attr("height", function(d) {
-            return trbcHeight - trbcY(d.Value);
+          return trbcHeight - trbcY(Math.max(1, d.Value));
         })
 
 		// Update the bars
@@ -180,9 +248,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .transition().delay(600).duration(500)
       .attr("x", function(d) { return trbcX(d.Year); })
       .attr("width", trbcX.rangeBand())
-      .attr("y", function(d) { return trbcY(d.Value); })
+      .attr("y", function(d) { return trbcY(Math.max(1, d.Value)); })
       .attr("height", function(d) {
-          return trbcHeight - trbcY(d.Value);
+          return trbcHeight - trbcY(Math.max(1, d.Value));
     });
 
     // Remove bars that don't exist anymore
@@ -192,6 +260,11 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", trbcHeight)
+<<<<<<< HEAD
       .remove();
 
   }
+=======
+      .remove();
+  }
+>>>>>>> 877f51738b4265a60cf87a11b44e2fa006d3513f

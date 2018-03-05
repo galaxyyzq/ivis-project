@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
   <head>
 	  <meta charset="utf-8">
@@ -63,10 +63,11 @@
 							  <!-- <p> Refugees and Asylum-Seekers from each Country -->
 						  </div>					  
 
-                          <div class="col-3" id="test">
-                              <button id="inOutToggle">Chage In Out</button>
-                              <button id="toggleMap">Toggle Map</button>
-                          </div>					  
+						  <div class="col-3" id="test">  
+							  	<button id="inOutToggle" type="button" class="btn">Change In Out</button>
+								<button id="logScaleToggle" type="button" class="btn">Use Log Scale</button>
+								<button id="toggleMap" type="button" class="btn">Toggle Map</button>
+						  </div>					  
 					  </div>
 
 					  <div class="row">
@@ -84,7 +85,7 @@
 				  <!-- BAR CHART + SANKEY ############################## -->
 				  <div class="col-6 col-12-md" id="rightColumn">
 					  <h1 onmouseout="mouseOutContryName(this)" onmouseover="mouseOverContryName(this)" id="countryName">Hover here to get Country's Name</h1>
-					  <h3 id="barChartDescription"> <span id="nRefugees">228,601</span> Refugees living in this country in <span id="barChartYear">2015</span></h3>
+					  <h3 id="barChartDescription"> <span id="nRefugees">228,601</span> <span id="descriptionSentence">Refugees living in this country in</span> <span id="barChartYear">2015</span></h3>
 
 					  <div class="row top-buffer" style="margin-left: 10px">
 						  <svg id="right-side-bar-chart"></svg>
