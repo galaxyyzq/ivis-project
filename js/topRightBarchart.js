@@ -117,7 +117,6 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
     trbcYaxis = d3.svg.axis()
       .tickFormat(function (d, i) {
         return Math.floor(Math.log10(d)) == Math.log10(d)? d: null;
-        
       })
       .scale(trbcY)
       .orient("left");
