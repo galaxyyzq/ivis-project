@@ -231,10 +231,8 @@ function drawSankey(data, thisYear) {
 // Called when mouse hovers over a square
 function updateSankey(country, thisYear) {
     //console.log("This country: ", country);
-
     //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
     d3.csv("data/treatingRealData/sankeyData"+ inOut + ".csv", function (error, data) {
-
         if (inOut == "In") {
             countryLabel = "Residence";
         } else {
@@ -251,7 +249,7 @@ function updateSankey(country, thisYear) {
                     long = country;
                     short = d[countryLabel];
                 }
-                if (long.search(short) != -1) {
+                if ((long.search(short) != -1 || long==short) && !(long == "South Sudan" && short == "Sudan")) {
                     sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
                 }
             }

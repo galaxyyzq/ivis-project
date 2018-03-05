@@ -56,7 +56,7 @@ function updateFigures(thisSquare, thisYear, d) {
 
   // Update the barchart
   updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d, scaleForY);
-
+  
   // Update the sankey diagram
   updateSankey(d[0].Country, thisYear);
 
@@ -288,7 +288,7 @@ function loadCountryData() {
     });
 
     countryData = countryWithYears;
-
+    
     initGrid();
     if (prev_clicked_name == "" || dataForUpdate == null){
       dataForUpdate = countryData[0];
