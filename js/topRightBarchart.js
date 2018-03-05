@@ -7,8 +7,8 @@ var trbcXAxisAnimate;
 var trbcYaxis;
 var trbcYaxisAnimate;
 var trbcPrevClickedBar;
-var trbcWidth = 1000;
-var trbcHeight = 500;
+var trbcWidth = 600;
+var trbcHeight = 300;
 var trbcHoverBarColor = "orange";
 var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";
@@ -26,9 +26,7 @@ function mouseOutContryName(x){
 
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
-  var trbcMargin = {top: 40, right: 0, bottom: 100, left: 150};
-  trbcWidth = 1000;
-  trbcHeight = 500;
+  var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
   
   var xDomain = [];
   for(i = 1951; i < 2017; i++){
@@ -72,7 +70,7 @@ function initTopRightBarChart() {
 
   trbcXAxisAnimate
     .selectAll("text")
-      .style("font-size", 25)
+      .style("font-size", 20)
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
       .attr("dy", ".0em")

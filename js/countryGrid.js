@@ -53,7 +53,7 @@ function deselectSquare(prev, clicked) {
 // Dimensions of the useful area inside the SGV
 var countryData;
 
-var gridMargin = { top: 62, right: 20, bottom: 20, left: 20 };
+var gridMargin = { top: 10, right: 20, bottom: 20, left: 50 };
 var gridWidth  = 1110;
 var gridHeight = 680;
 
@@ -126,9 +126,9 @@ function changeFillColor(d,i) {
 		//var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
 		var t = numRefugees / maxRefugees[thisYear];
 		if (inOut == "In") {
-				return d3.hsl(hueIn, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
+		    return d3.hsl(hueIn, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
 		} else {
-				return d3.hsl(hueOut, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
+			return d3.hsl(hueOut, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
 		}
 	}
 }
