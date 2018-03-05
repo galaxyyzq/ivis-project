@@ -71,7 +71,8 @@ function selected(d) {
     d3.select(this).classed('selected', true);
     thisCountry = d.properties.name;
     console.log(thisCountry);
-    updateFiguresFromMap(thisYear, thisCountry);
+    var data = findDataForCountry(thisCountry);
+    updateFigures(null, thisYear, data);
 }
 
 
@@ -97,19 +98,5 @@ function zoomed() {
     //adjust the stroke width based on zoom level
     d3.selectAll(".boundary")
         .style("stroke-width", 1 / s);
-
-}
-
-
-function updateFiguresFromMap(thisYear, thisCountry) {
-
-    // Update the title above the barchart
-    currentCountryName = thisCountry;
-
-    // Update the barchart
-    //updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
-
-    // Update the sankey diagram
-    updateSankey(thisCountry, thisYear);
 
 }
