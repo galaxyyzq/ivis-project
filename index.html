@@ -36,21 +36,8 @@
 		  <div class="row">
 			  <div class="col-6">
 				  <img src= "img/logo.png" style="width: 100px; float: left">
-				  
-				  <div >
-					  <h1 id="projectTitle"> <a href="#" class="menuLink" id="awayFromHomeLink"> Away From Home </a> </h1>
-				  </div>
-				  
-				  <div>
-					  <h1 id="info">  <a href="#" class="menuLink" id="infoLink"> Info </a> </h1>	
-				  </div>
-        </div>
-        <div class="col-6">
-          <label for="search-countries">
-            Search for country:
-            <input id="search-countries" list="search-options">
-            <datalist id="search-options"></datalist>
-          </label>
+					<h1 id="projectTitle"> <a href="#" class="menuLink" id="awayFromHomeLink"> Away From Home </a> </h1>
+					<h1 id="info">  <a href="#" class="menuLink" id="infoLink"> Info </a> </h1>	
         </div>
 		  </div>
 		  <!-- End of Header -->
@@ -61,23 +48,19 @@
 				  <!-- COUNTRY GRID AND SLIDER ######################### -->
 				  <div class="col-6 col-12-md" id="leftColum">
 					  <div class="row">
-						  <div class="col-9 " id="test">  
+						  <div class="col-12 " id="test">  
 								<p id="modeSentence"> Refugees and Asylum-Seekers Living in each Country. </p>
 							  <!-- <p> Refugees and Asylum-Seekers from each Country -->
-						  </div>					  
-
-						  <div class="col-3" id="test">  
-								<input id="inOutToggle" type="checkbox" data-toggle="toggle" data-on="In" data-off="From" checked>
-								<input id="logScaleToggle" type="checkbox" data-toggle="toggle" data-on="Linear" data-off="Logarithmic" checked>
-								<input id="toggleMap" type="checkbox" data-toggle="toggle" data-on="Grid" data-off="Map" checked>
-								<div id="console-event"></div>
-								<script>
-									$(function () {
-										$('#toggle-event').change(function () {
-											$('#console-event').html('Toggle: ' + $(this).prop('checked'))
-										})
-									})
-								</script>
+									<div id="test">
+										<label for="search-countries">
+											Search for country:
+											<input id="search-countries" list="search-options">
+											<datalist id="search-options"></datalist>
+										</label>										
+										<input id="inOutToggle" type="checkbox" data-toggle="toggle" data-on="In" data-off="From" checked>
+										<input id="logScaleToggle" type="checkbox" data-toggle="toggle" data-on="Linear" data-off="Logarithmic" checked>
+										<input id="toggleMap" type="checkbox" data-toggle="toggle" data-on="Grid" data-off="Map" checked>
+									</div>
 						  </div>					  
 					  </div>
 
