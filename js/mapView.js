@@ -48,7 +48,9 @@ d3.json("data/old/custom.geo.json", function (error, world) {
         .on('click', selected)
         .on("mousemove", showTooltip)
         .on("mouseout", function (d, i) {
-            tooltipMap.classed("hidden", true);
+            //tooltipMap.classed("hidden", true);
+            tooltipMap.style('display', 'none');
+
         })
         .attr("d", pathMap);
  
@@ -58,7 +60,8 @@ function showTooltip(d) {
     label = d.properties.name;
     var mouse = d3.mouse(svgMap.node())
         .map(function (d) { return parseInt(d); });
-    tooltipMap.classed("hidden", false)
+    //tooltipMap.classed("hidden", false)
+    tooltipMap.style('display', 'block')
         .attr("style", "left:" + (mouse[0] + offsetL) + "px;top:" + (mouse[1] + offsetT) + "px")
         .html(label);
 }
@@ -102,7 +105,6 @@ function updateFiguresFromMap(thisYear, thisCountry) {
 
     // Update the title above the barchart
     currentCountryName = thisCountry;
-    //d3.select("#countryName").text(d[0].Country)
 
     // Update the barchart
     //updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
