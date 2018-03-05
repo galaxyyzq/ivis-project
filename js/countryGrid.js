@@ -74,6 +74,8 @@ function updateFigures(thisSquare, thisYear, d) {
   dataForUpdate = d;
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
+	
+  updateBarChartDescription();		
 }
 
 function deselectSquare(prev, clicked) {
