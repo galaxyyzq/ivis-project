@@ -41,7 +41,9 @@ span:before
 }
 */
 	
-
+.col-6 {
+	font-family: 'Saira Condensed', sans-serif;	
+}
 
 #nRefugees{
 	font-size: 30px;
