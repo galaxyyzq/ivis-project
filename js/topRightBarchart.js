@@ -195,20 +195,11 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
           }
 
           thisYear = d.Year;
-<<<<<<< HEAD
-		  // Changing the year in the second column description.
-		  $("#barChartYear").html(thisYear);
 
-		  // Changing the value (number of refugees) in the second column description.
-		  $("#nRefugees").html(d.Value);
-
-
-
-=======
 
 		  updateBarChartDescription();
 
->>>>>>> 877f51738b4265a60cf87a11b44e2fa006d3513f
+
           drawLegend(maxRefugees[thisYear], thisYear);
 
           //Update the slider when year change in bar chart
@@ -260,11 +251,7 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", trbcHeight)
-<<<<<<< HEAD
+
       .remove();
 
   }
-=======
-      .remove();
-  }
->>>>>>> 877f51738b4265a60cf87a11b44e2fa006d3513f
