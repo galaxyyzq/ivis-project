@@ -2,11 +2,19 @@
 // Finds the specific data for a country
 function findDataForCountry(countryName) {
   var dataWeWant;
-  countryData.forEach(function(d){
-    if(d[0].Country === countryName){
-      dataWeWant = d;
-      return;
-    }
+  countryData.forEach(function (d) {
+      var short, long;
+      if (d[0].Country.length > countryName.length) {
+          short = countryName;
+          long = d[0].Country;
+      } else {
+          long = countryName;
+          short = d[0].Country;
+      }
+      if (long.search(short) != -1) {
+          dataWeWant = d;
+          return;
+      }
   });
   return dataWeWant;
 }
