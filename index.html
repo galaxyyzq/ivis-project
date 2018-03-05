@@ -15,6 +15,7 @@
 	  <!-- Has to be 'https' links to work with github hosting -->
 	  <!-- Jquery -->
 	  <script src="js/libraries/jquery.js"></script>
+	  <script src="js/libraries/bootstrap-toggle.js"></script>
 	  <!-- Bootstrap -->
 	  <link rel="stylesheet" href="css/bootstrap.css">
 	  <!-- D3js -->
@@ -23,7 +24,9 @@
 	  <script src="js/libraries/d3-topojson.js"></script>
 	  
 	  <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet"> -->   
-	  <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">	  
+		<link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">	  
+		<link rel="stylesheet" href="css/bootstrap-toggle.min.css" rel="stylesheet">
+		
   </head>
 
   <body>
@@ -59,14 +62,22 @@
 				  <div class="col-6 col-12-md" id="leftColum">
 					  <div class="row">
 						  <div class="col-9 " id="test">  
-							  <p id="modeSentence"> Refugees and Asylum-Seekers Living in each Country. </p>
+								<p id="modeSentence"> Refugees and Asylum-Seekers Living in each Country. </p>
 							  <!-- <p> Refugees and Asylum-Seekers from each Country -->
 						  </div>					  
 
 						  <div class="col-3" id="test">  
-							  	<button id="inOutToggle" type="button" class="btn">Change In Out</button>
-								<button id="logScaleToggle" type="button" class="btn">Use Log Scale</button>
-								<button id="toggleMap" type="button" class="btn">Toggle Map</button>
+								<input id="inOutToggle" type="checkbox" data-toggle="toggle" data-on="In" data-off="From" checked>
+								<input id="logScaleToggle" type="checkbox" data-toggle="toggle" data-on="Linear" data-off="Logarithmic" checked>
+								<input id="toggleMap" type="checkbox" data-toggle="toggle" data-on="Grid" data-off="Map" checked>
+								<div id="console-event"></div>
+								<script>
+									$(function () {
+										$('#toggle-event').change(function () {
+											$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+										})
+									})
+								</script>
 						  </div>					  
 					  </div>
 
