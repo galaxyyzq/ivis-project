@@ -1,9 +1,9 @@
 // Map view
-var widthMap = 962,
-    heightMap = 502;
+var widthMap = 800,
+    heightMap = 400;
 
 var projection = d3.geo.mercator()
-    .scale(153)
+    .scale(100)
     .translate([widthMap / 2, heightMap / 1.5]);
 
 var zoom = d3.behavior.zoom()

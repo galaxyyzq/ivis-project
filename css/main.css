@@ -104,6 +104,14 @@ span:before
 	margin-right: 80px;
 	width: 150px;
 }
+
+#toggleMap {
+    font-size: 20px;
+    float: right;
+    margin-right: 80px;
+    margin-top: 10px;
+    width: 150px;
+}
 	
 #projectTitle{
 	font-size: 50px;
