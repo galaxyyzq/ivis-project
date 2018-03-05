@@ -89,23 +89,29 @@ function showTooltip(d) {
 }
 
 function selected(d) {
-    d3.select('.selected').classed('selected', false);
-    d3.select(this).classed('selected', true);
-    thisCountry = d.properties.name;
-    prev_clicked_name = thisCountry;
-
-    console.log(thisCountry);
+    
+    var thisCountry = d.properties.name;
     var data = findDataForCountry(thisCountry);
-    //updateFigures(null, thisYear, data);
 
-    // Update the title above the barchart
-    currentCountryName = thisCountry;
+    if (data != null) {
+        prev_clicked_name = thisCountry;
 
-    // Update the barchart
-    updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, data)
+        d3.select('.selected').classed('selected', false);
+        d3.select(this).classed('selected', true);
 
-    // Update the sankey diagram
-    updateSankey(thisCountry, thisYear);
+        console.log(thisCountry);
+        //updateFigures(null, thisYear, data);
+
+        // Update the title above the barchart
+        currentCountryName = thisCountry;
+
+        // Update the barchart
+        updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, data)
+
+        // Update the sankey diagram
+        updateSankey(thisCountry, thisYear);
+    }
+    
 }
 
 
