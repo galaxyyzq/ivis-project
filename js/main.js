@@ -8,15 +8,14 @@ $("#clickButton").on("click", function(){
 
 // Toggle map when button clicked
 $("#toggleMap").on("click",function(){
-  $("#map-holder").toggle();
+    $("#map-holder").toggle();
+    $("#country-grid").toggle();
 })
 
 
 $("#inOutToggle").on("click", function() {
   if(inOut === "In") inOut = "Out";
   else inOut = "In";
-
-  console.log("loading", inOut);
 
   loadCountryData();
 })
@@ -47,5 +46,5 @@ $("#logScaleToggle").on("click", function () {
   } 
   initGrid();
   updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, dataForUpdate, scaleForY)  
-  console.log("log scale")
+  
 })
