@@ -4,6 +4,7 @@ var svgSlider;
 var scaleSliderGlobal;
 var valueSlider;
 var rangeSlider = false;
+var oldYearSlider;
 
 
 
@@ -159,6 +160,7 @@ d3.slider = function module() {
   }
   var olddisplayValue = null;
 
+
   slider.move = function(pos) {
 
     var l,u;
@@ -209,18 +211,22 @@ d3.slider = function module() {
     if (olddisplayValue!=null && olddisplayValue != displayValue) {
       // console.log(displayValue);
       thisYear = displayValue;
+
       drawLegend(maxRefugees[thisYear], thisYear);
+
+      $("#chart"+olddisplayValue).attr("fill","black");
+      $("#chart"+thisYear).attr("fill","green");
 
       // updateSankey($("#countryName").text(),thisYear);
       updateSankey(currentCountryName,thisYear);
       updateGrid();
-
 
       $("#barChartYear").html(thisYear);
       //$("#nRefugees").html(d.Value);
 
     }  //console.log(displayValue);
     olddisplayValue = displayValue;
+    oldYearSlider = olddisplayValue;
     svgSlider.selectAll(".dragger").select("text")
     .text(displayValue);
 

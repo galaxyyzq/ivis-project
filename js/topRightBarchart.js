@@ -14,9 +14,13 @@ var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";
 
 
+var chartForSliderVariable;
+
+
+
 function mouseOverContryName(x){
 	x.innerHTML = currentCountryName;
-	x.style.color = "black";	
+	x.style.color = "black";
 }
 
 function mouseOutContryName(x){
@@ -27,8 +31,8 @@ function mouseOutContryName(x){
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
-  
-  var xDomain = [];
+
+	var xDomain = [];
   for(i = 1951; i < 2017; i++){
     xDomain.push(i);
   }
@@ -88,13 +92,14 @@ function initTopRightBarChart() {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      
-  
+
+
   //d3.select("#countryName").text("Country name")
 }
 
 function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
-  
+
+
   // Update yaxis here, when we switch from linear to exponential
   var yDomain = d3.max(data, function(d) {return d.Value; })
   trbcY.domain([0, yDomain]);
@@ -114,25 +119,28 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
     theBars.enter()
       .append("rect")
+			.attr("id",function(d){return "chart" +d.Year})
         .on("click",function(d,i){
           if(this !== trbcPrevClickedBar){
             d3.select(this)
               .attr("fill", trbcClickedColor)
             d3.select(trbcPrevClickedBar)
               .attr("fill", trbcDefaultBarColor)
+							  $("#chart"+oldYearSlider).attr("fill","black");
+								$("#chart"+thisYear).attr("fill","black");
             trbcPrevClickedBar = this;
+
           }
 
           thisYear = d.Year;
-		
 		  // Changing the year in the second column description.
 		  $("#barChartYear").html(thisYear);
-		
+
 		  // Changing the value (number of refugees) in the second column description.
 		  $("#nRefugees").html(d.Value);
-		
-		
-		
+
+
+
           drawLegend(maxRefugees[thisYear], thisYear);
 
           //Update the slider when year change in bar chart
@@ -141,11 +149,13 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
           updateSankey(d.Country,thisYear);
           updateGrid();
+
         })
         .on("mouseenter", function(){
             if(this === trbcPrevClickedBar) return;
             d3.select(this)
               .attr("fill", trbcHoverBarColor)
+							$("#chart"+thisYear).attr("fill","green");
         })
         .on("mouseleave", function(){
           if(this === trbcPrevClickedBar) return;
@@ -183,4 +193,5 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .attr("height", 0)
       .attr("y", trbcHeight)
       .remove();
+
   }
