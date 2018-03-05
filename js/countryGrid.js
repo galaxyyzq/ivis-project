@@ -276,6 +276,9 @@ function loadCountryData() {
       prev_clicked_element = document.getElementById("square-0");
     }
     updateFigures(prev_clicked_element, thisYear, dataForUpdate);
+
+    // Don't use the global variable so everything is sorted
+    addCountriesToDropdown(countryWithYears);
   });
 }
 
