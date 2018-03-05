@@ -28,7 +28,6 @@ function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
   
-  // $("#right-side-bar-chart > #bar-holder > .x").remove()
   var xDomain = [];
   for(i = 1951; i < 2017; i++){
     xDomain.push(i);
@@ -49,10 +48,6 @@ function initTopRightBarChart() {
       .domain([1, 10000000])
       .range([trbcHeight, 0]);
   }
-
-  // trbcY = d3.scale.linear()
-  //     .range([trbcHeight, 0])
-  //     .domain([0, 2541249])
 
   trbcXAxis = d3.svg.axis()
       .tickFormat(function(d, i) {
@@ -120,6 +115,10 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .domain([1, 10000000])
       .range([trbcHeight, 0]);
     trbcYaxis = d3.svg.axis()
+      .tickFormat(function (d, i) {
+        return Math.floor(Math.log10(d)) == Math.log10(d)? d: null;
+        
+      })
       .scale(trbcY)
       .orient("left");
   }
