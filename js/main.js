@@ -54,3 +54,20 @@ $("#logScaleToggle").on("click", function () {
   updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, dataForUpdate, scaleForY);
   
 })
+
+
+// The presentation is due tomorrow, just a quick solution...
+function resize(){
+	
+	if( window.innerWidth < 1800){
+		$("#leftColum").attr("class", "col-12");
+		$("#rightColum").attr("class", "col-12");		
+	}
+	else
+	{
+		$("#leftColum").attr("class", "col-6");
+		$("#rightColum").attr("class", "col-6");			
+	}
+}
+
+window.onresize = resize;
