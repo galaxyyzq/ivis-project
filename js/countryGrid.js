@@ -51,6 +51,10 @@ function updateFigures(thisSquare, thisYear, d) {
 
   // Update the sankey diagram
   updateSankey(d[0].Country, thisYear);
+
+  // Update the map
+  drawMap();
+
   dataForUpdate = d;
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
@@ -286,4 +290,4 @@ function loadCountryData() {
 // initBars(data)
 
 loadCountryData();
-initTopRightBarChart();
+// initTopRightBarChart();
