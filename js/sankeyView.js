@@ -254,7 +254,6 @@ function updateSankey(country, thisYear) {
                 }
             }
         });
-        console.log("Sankey data: ", sankeyData);
 
         //Represent only the top5 countries to simplify the diagram
         drawSankey(topCountries(sankeyData), thisYear);
