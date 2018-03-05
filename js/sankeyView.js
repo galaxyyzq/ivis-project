@@ -134,9 +134,11 @@ function drawSankey(data, thisYear) {
     if (inOut == "In") {
         ourTarget = data[0].target;
         direction = "in";
+        d3.select("#Title").text("Origin of refugees in " + thisYear);
     } else {
         ourTarget = data[0].source;
         direction = "from";
+        d3.select("#Title").text("Residence of refugees in " + thisYear);
     }
     //d3.select("#Title").text("Refugees " + direction + " " + ourTarget + ". Year:" + thisYear);
 
@@ -239,9 +241,9 @@ function updateSankey(country, thisYear) {
             countryLabel = "Origin";
         }
         var sankeyData = [];
-        var short, long;
+        //var short, long;
         data.forEach(function (d) {
-            if (d.Year == thisYear) { 
+            /*if (d.Year == thisYear) { 
                 if (d[countryLabel].length > country.length) {
                     short = country;
                     long = d[countryLabel];
@@ -252,6 +254,11 @@ function updateSankey(country, thisYear) {
                 if ((long.search(short) != -1 || long==short) && !(long == "South Sudan" && short == "Sudan")) {
                     sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
                 }
+            }*/
+            if (d[countryLabel] == country && d.Year == thisYear) {
+                //console.log(d[countryLabel]);
+
+                sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
 
