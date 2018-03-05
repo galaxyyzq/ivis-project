@@ -126,7 +126,7 @@ span:before
 	width: 150px;
 }
 	
-#projectTitle{
+.projectTitle{
 	font-size: 50px;
 	-text-align: center;
 	text-align: left;
@@ -136,7 +136,7 @@ span:before
 	float: left;
 }	
 
-#info{
+.info{
 	font-size: 50px;
 	margin-top: 15px;
 	margin-left: 735px;

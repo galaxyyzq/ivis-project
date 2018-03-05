@@ -11,14 +11,20 @@ $("#infoLink").on("click", function() {
   $("#contentRow").css('display', 'none');
   $("#information").css('display', 'inline-block');	
 })
-
+$("#infoLink2").on("click", function () {
+    $("#contentRow").css('display', 'none');
+    $("#information").css('display', 'inline-block');
+})
 
 // When we click on the 'Away from home' button.
 $("#awayFromHomeLink").on("click", function() {
   $("#contentRow").css('display', 'inline');
   $("#information").css('display', 'none');	
 })
-
+$("#awayFromHomeLink2").on("click", function () {
+    $("#contentRow").css('display', 'inline');
+    $("#information").css('display', 'none');
+})
 
 $(function () {
   $('#inOutToggle').change(function () {
