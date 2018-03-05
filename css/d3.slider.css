@@ -34,7 +34,7 @@
 }
 
 .d3slider text {
-  font: 10px sans-serif;
+  font: 14px sans-serif;
 }
 
 .tick.minor text {
@@ -80,5 +80,3 @@
   pointer-events: all;
   z-index: 1;
 }
-
-
