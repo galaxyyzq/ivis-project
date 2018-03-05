@@ -6,6 +6,7 @@ var valueSlider;
 var rangeSlider = false;
 
 
+
 d3.slider = function module() {
   "use strict";
 
@@ -148,7 +149,7 @@ d3.slider = function module() {
       var pos =  d3.event.offsetX ||  d3.event.layerX ;
     // }
 
-    console.log(d3.event.layerX || d3.event.offsetX );
+    // console.log( d3.event.offsetX ||  d3.event.layerX );
     slider.move(pos+margin.left);
   }
 
@@ -210,7 +211,8 @@ d3.slider = function module() {
       thisYear = displayValue;
       drawLegend(maxRefugees[thisYear], thisYear);
 
-      updateSankey($("#countryName").text(),thisYear);
+      // updateSankey($("#countryName").text(),thisYear);
+      updateSankey(currentCountryName,thisYear);
       updateGrid();
 
 
