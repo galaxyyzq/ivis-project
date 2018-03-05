@@ -6,6 +6,7 @@ var valueSlider;
 var rangeSlider = false;
 
 
+
 d3.slider = function module() {
   "use strict";
 
@@ -97,10 +98,9 @@ d3.slider = function module() {
       var displayValue = null;
       if (tickFormat) {
         displayValue = tickFormat(valueSlider);
-        thisYear=displayValue;
+
       } else {
         displayValue = d3.format(".0f")(valueSlider);
-        thisYear=displayValue;
       }
 
       dragger.append("text")
@@ -143,8 +143,14 @@ d3.slider = function module() {
   }
 
   slider.click = function() {
-    var pos = d3.event.offsetX || d3.event.layerX;
-    slider.move(pos);
+    // if (d3.event.offsetX < 40){
+    //   var pos =  (d3.event.layerX || d3.event.offsetX) ;
+    // } else {
+      var pos =  d3.event.offsetX ||  d3.event.layerX ;
+    // }
+
+    // console.log( d3.event.offsetX ||  d3.event.layerX );
+    slider.move(pos+margin.left);
   }
 
   slider.drag = function() {
@@ -154,7 +160,7 @@ d3.slider = function module() {
   var olddisplayValue = null;
 
   slider.move = function(pos) {
-    console.log(pos);
+
     var l,u;
     var newValue = scaleSliderGlobal.invert(pos - margin.left);
 
@@ -205,8 +211,10 @@ d3.slider = function module() {
       thisYear = displayValue;
       drawLegend(maxRefugees[thisYear], thisYear);
 
-      updateSankey($("#countryName").text(),thisYear);
+      // updateSankey($("#countryName").text(),thisYear);
+      updateSankey(currentCountryName,thisYear);
       updateGrid();
+<<<<<<< HEAD
 		
 		
       //$("#barChartYear").html(thisYear);
@@ -220,6 +228,13 @@ d3.slider = function module() {
 		
       //$("#nRefugees").html(d.Value);	
 		
+=======
+
+
+      $("#barChartYear").html(thisYear);
+      //$("#nRefugees").html(d.Value);
+
+>>>>>>> 21b5d5626608e154f81c6773ac539272f270c765
     }  //console.log(displayValue);
     olddisplayValue = displayValue;
     svgSlider.selectAll(".dragger").select("text")
