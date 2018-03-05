@@ -589,45 +589,45 @@ Year,Country,Value
 2015,Benin,708
 2016,Benin,1018
 1966,Bhutan,3000
-1972,Bolivia (Plurinational State of),700
-1973,Bolivia (Plurinational State of),700
-1974,Bolivia (Plurinational State of),700
-1978,Bolivia (Plurinational State of),500
-1979,Bolivia (Plurinational State of),500
-1980,Bolivia (Plurinational State of),500
-1981,Bolivia (Plurinational State of),500
-1985,Bolivia (Plurinational State of),170
-1986,Bolivia (Plurinational State of),120
-1987,Bolivia (Plurinational State of),170
-1988,Bolivia (Plurinational State of),220
-1989,Bolivia (Plurinational State of),270
-1990,Bolivia (Plurinational State of),200
-1991,Bolivia (Plurinational State of),341
-1992,Bolivia (Plurinational State of),491
-1993,Bolivia (Plurinational State of),669
-1994,Bolivia (Plurinational State of),734
-1995,Bolivia (Plurinational State of),681
-1996,Bolivia (Plurinational State of),698
-1997,Bolivia (Plurinational State of),333
-1998,Bolivia (Plurinational State of),349
-1999,Bolivia (Plurinational State of),350
-2000,Bolivia (Plurinational State of),354
-2001,Bolivia (Plurinational State of),355
-2002,Bolivia (Plurinational State of),370
-2003,Bolivia (Plurinational State of),528
-2004,Bolivia (Plurinational State of),546
-2005,Bolivia (Plurinational State of),538
-2006,Bolivia (Plurinational State of),587
-2007,Bolivia (Plurinational State of),794
-2008,Bolivia (Plurinational State of),755
-2009,Bolivia (Plurinational State of),713
-2010,Bolivia (Plurinational State of),736
-2011,Bolivia (Plurinational State of),734
-2012,Bolivia (Plurinational State of),741
-2013,Bolivia (Plurinational State of),754
-2014,Bolivia (Plurinational State of),779
-2015,Bolivia (Plurinational State of),775
-2016,Bolivia (Plurinational State of),761
+1972,Bolivia,700
+1973,Bolivia,700
+1974,Bolivia,700
+1978,Bolivia,500
+1979,Bolivia,500
+1980,Bolivia,500
+1981,Bolivia,500
+1985,Bolivia,170
+1986,Bolivia,120
+1987,Bolivia,170
+1988,Bolivia,220
+1989,Bolivia,270
+1990,Bolivia,200
+1991,Bolivia,341
+1992,Bolivia,491
+1993,Bolivia,669
+1994,Bolivia,734
+1995,Bolivia,681
+1996,Bolivia,698
+1997,Bolivia,333
+1998,Bolivia,349
+1999,Bolivia,350
+2000,Bolivia,354
+2001,Bolivia,355
+2002,Bolivia,370
+2003,Bolivia,528
+2004,Bolivia,546
+2005,Bolivia,538
+2006,Bolivia,587
+2007,Bolivia,794
+2008,Bolivia,755
+2009,Bolivia,713
+2010,Bolivia,736
+2011,Bolivia,734
+2012,Bolivia,741
+2013,Bolivia,754
+2014,Bolivia,779
+2015,Bolivia,775
+2016,Bolivia,761
 2010,Bonaire,1
 1997,Bosnia and Herzegovina,40000
 1998,Bosnia and Herzegovina,40000
@@ -2649,48 +2649,48 @@ Year,Country,Value
 2014,Indonesia,11186
 2015,Indonesia,13548
 2016,Indonesia,14358
-1962,Iran (Islamic Rep of),2000
-1963,Iran (Islamic Rep of),1500
-1968,Iran (Islamic Rep of),300
-1969,Iran (Islamic Rep of),300
-1979,Iran (Islamic Rep of),130100
-1980,Iran (Islamic Rep of),330000
-1981,Iran (Islamic Rep of),1565000
-1982,Iran (Islamic Rep of),1700060
-1983,Iran (Islamic Rep of),1900060
-1984,Iran (Islamic Rep of),2000000
-1985,Iran (Islamic Rep of),2300000
-1986,Iran (Islamic Rep of),2590000
-1987,Iran (Islamic Rep of),2760000
-1988,Iran (Islamic Rep of),2850000
-1989,Iran (Islamic Rep of),2850000
-1990,Iran (Islamic Rep of),4174401
-1991,Iran (Islamic Rep of),4404995
-1992,Iran (Islamic Rep of),4150723
-1993,Iran (Islamic Rep of),2495038
-1994,Iran (Islamic Rep of),2236350
-1995,Iran (Islamic Rep of),2071988
-1996,Iran (Islamic Rep of),2030359
-1997,Iran (Islamic Rep of),1982553
-1998,Iran (Islamic Rep of),1931332
-1999,Iran (Islamic Rep of),1835688
-2000,Iran (Islamic Rep of),1880228
-2001,Iran (Islamic Rep of),1868000
-2002,Iran (Islamic Rep of),1306603
-2003,Iran (Islamic Rep of),984897
-2004,Iran (Islamic Rep of),1046024
-2005,Iran (Islamic Rep of),974442
-2006,Iran (Islamic Rep of),969389
-2007,Iran (Islamic Rep of),964734
-2008,Iran (Islamic Rep of),981816
-2009,Iran (Islamic Rep of),1072346
-2010,Iran (Islamic Rep of),1075141
-2011,Iran (Islamic Rep of),886913
-2012,Iran (Islamic Rep of),868259
-2013,Iran (Islamic Rep of),857401
-2014,Iran (Islamic Rep of),982069
-2015,Iran (Islamic Rep of),979479
-2016,Iran (Islamic Rep of),979526
+1962,Iran,2000
+1963,Iran,1500
+1968,Iran,300
+1969,Iran,300
+1979,Iran,130100
+1980,Iran,330000
+1981,Iran,1565000
+1982,Iran,1700060
+1983,Iran,1900060
+1984,Iran,2000000
+1985,Iran,2300000
+1986,Iran,2590000
+1987,Iran,2760000
+1988,Iran,2850000
+1989,Iran,2850000
+1990,Iran,4174401
+1991,Iran,4404995
+1992,Iran,4150723
+1993,Iran,2495038
+1994,Iran,2236350
+1995,Iran,2071988
+1996,Iran,2030359
+1997,Iran,1982553
+1998,Iran,1931332
+1999,Iran,1835688
+2000,Iran,1880228
+2001,Iran,1868000
+2002,Iran,1306603
+2003,Iran,984897
+2004,Iran,1046024
+2005,Iran,974442
+2006,Iran,969389
+2007,Iran,964734
+2008,Iran,981816
+2009,Iran,1072346
+2010,Iran,1075141
+2011,Iran,886913
+2012,Iran,868259
+2013,Iran,857401
+2014,Iran,982069
+2015,Iran,979479
+2016,Iran,979526
 1979,Iraq,400
 1980,Iraq,400
 1981,Iraq,1200
@@ -5837,72 +5837,72 @@ Year,Country,Value
 2014,United Rep of Tanzania,89375
 2015,United Rep of Tanzania,213995
 2016,United Rep of Tanzania,290037
-1951,United States of America,350000
-1952,United States of America,500000
-1953,United States of America,500000
-1954,United States of America,500000
-1955,United States of America,500000
-1956,United States of America,500000
-1957,United States of America,500000
-1958,United States of America,500000
-1959,United States of America,500000
-1960,United States of America,500000
-1961,United States of America,500000
-1962,United States of America,500000
-1963,United States of America,500000
-1964,United States of America,500000
-1965,United States of America,510000
-1966,United States of America,500000
-1967,United States of America,480000
-1968,United States of America,498000
-1969,United States of America,500000
-1970,United States of America,500000
-1971,United States of America,530000
-1972,United States of America,530000
-1973,United States of America,530000
-1974,United States of America,530000
-1975,United States of America,530000
-1976,United States of America,500000
-1977,United States of America,684700
-1978,United States of America,734000
-1979,United States of America,734000
-1980,United States of America,403684
-1981,United States of America,537375
-1982,United States of America,620257
-1983,United States of America,655532
-1984,United States of America,626909
-1985,United States of America,492806
-1986,United States of America,398633
-1987,United States of America,365726
-1988,United States of America,377771
-1989,United States of America,411498
-1990,United States of America,464887
-1991,United States of America,513882
-1992,United States of America,579952
-1993,United States of America,623069
-1994,United States of America,631051
-1995,United States of America,623294
-1996,United States of America,607024
-1997,United States of America,563837
-1998,United States of America,533969
-1999,United States of America,521143
-2000,United States of America,894552
-2001,United States of America,911730
-2002,United States of America,880567
-2003,United States of America,803432
-2004,United States of America,684568
-2005,United States of America,549083
-2006,United States of America,967713
-2007,United States of America,365100
-2008,United States of America,348777
-2009,United States of America,339262
-2010,United States of America,270854
-2011,United States of America,276484
-2012,United States of America,280989
-2013,United States of America,348005
-2014,United States of America,455048
-2015,United States of America,559370
-2016,United States of America,712731
+1951,United States,350000
+1952,United States,500000
+1953,United States,500000
+1954,United States,500000
+1955,United States,500000
+1956,United States,500000
+1957,United States,500000
+1958,United States,500000
+1959,United States,500000
+1960,United States,500000
+1961,United States,500000
+1962,United States,500000
+1963,United States,500000
+1964,United States,500000
+1965,United States,510000
+1966,United States,500000
+1967,United States,480000
+1968,United States,498000
+1969,United States,500000
+1970,United States,500000
+1971,United States,530000
+1972,United States,530000
+1973,United States,530000
+1974,United States,530000
+1975,United States,530000
+1976,United States,500000
+1977,United States,684700
+1978,United States,734000
+1979,United States,734000
+1980,United States,403684
+1981,United States,537375
+1982,United States,620257
+1983,United States,655532
+1984,United States,626909
+1985,United States,492806
+1986,United States,398633
+1987,United States,365726
+1988,United States,377771
+1989,United States,411498
+1990,United States,464887
+1991,United States,513882
+1992,United States,579952
+1993,United States,623069
+1994,United States,631051
+1995,United States,623294
+1996,United States,607024
+1997,United States,563837
+1998,United States,533969
+1999,United States,521143
+2000,United States,894552
+2001,United States,911730
+2002,United States,880567
+2003,United States,803432
+2004,United States,684568
+2005,United States,549083
+2006,United States,967713
+2007,United States,365100
+2008,United States,348777
+2009,United States,339262
+2010,United States,270854
+2011,United States,276484
+2012,United States,280989
+2013,United States,348005
+2014,United States,455048
+2015,United States,559370
+2016,United States,712731
 1970,Uruguay,1500
 1971,Uruguay,1500
 1972,Uruguay,1500
@@ -5979,52 +5979,52 @@ Year,Country,Value
 2013,Vanuatu,3
 2014,Vanuatu,1
 2015,Vanuatu,1
-1969,Venezuela (Bolivarian Republic of),15000
-1970,Venezuela (Bolivarian Republic of),15000
-1971,Venezuela (Bolivarian Republic of),15000
-1972,Venezuela (Bolivarian Republic of),14700
-1973,Venezuela (Bolivarian Republic of),15400
-1974,Venezuela (Bolivarian Republic of),14350
-1977,Venezuela (Bolivarian Republic of),16000
-1978,Venezuela (Bolivarian Republic of),16000
-1979,Venezuela (Bolivarian Republic of),16000
-1980,Venezuela (Bolivarian Republic of),17800
-1981,Venezuela (Bolivarian Republic of),17000
-1982,Venezuela (Bolivarian Republic of),850
-1983,Venezuela (Bolivarian Republic of),1100
-1984,Venezuela (Bolivarian Republic of),1420
-1985,Venezuela (Bolivarian Republic of),1890
-1986,Venezuela (Bolivarian Republic of),1800
-1987,Venezuela (Bolivarian Republic of),1900
-1988,Venezuela (Bolivarian Republic of),2007
-1989,Venezuela (Bolivarian Republic of),2118
-1990,Venezuela (Bolivarian Republic of),1750
-1991,Venezuela (Bolivarian Republic of),1720
-1992,Venezuela (Bolivarian Republic of),1990
-1993,Venezuela (Bolivarian Republic of),2221
-1994,Venezuela (Bolivarian Republic of),2177
-1995,Venezuela (Bolivarian Republic of),1613
-1996,Venezuela (Bolivarian Republic of),1596
-1997,Venezuela (Bolivarian Republic of),301
-1998,Venezuela (Bolivarian Republic of),158
-1999,Venezuela (Bolivarian Republic of),188
-2000,Venezuela (Bolivarian Republic of),207
-2001,Venezuela (Bolivarian Republic of),370
-2002,Venezuela (Bolivarian Republic of),1077
-2003,Venezuela (Bolivarian Republic of),2349
-2004,Venezuela (Bolivarian Republic of),4148
-2005,Venezuela (Bolivarian Republic of),6320
-2006,Venezuela (Bolivarian Republic of),8474
-2007,Venezuela (Bolivarian Republic of),210509
-2008,Venezuela (Bolivarian Republic of),213097
-2009,Venezuela (Bolivarian Republic of),215685
-2010,Venezuela (Bolivarian Republic of),217406
-2011,Venezuela (Bolivarian Republic of),219391
-2012,Venezuela (Bolivarian Republic of),204560
-2013,Venezuela (Bolivarian Republic of),205413
-2014,Venezuela (Bolivarian Republic of),174027
-2015,Venezuela (Bolivarian Republic of),173989
-2016,Venezuela (Bolivarian Republic of),172917
+1969,Venezuela,15000
+1970,Venezuela,15000
+1971,Venezuela,15000
+1972,Venezuela,14700
+1973,Venezuela,15400
+1974,Venezuela,14350
+1977,Venezuela,16000
+1978,Venezuela,16000
+1979,Venezuela,16000
+1980,Venezuela,17800
+1981,Venezuela,17000
+1982,Venezuela,850
+1983,Venezuela,1100
+1984,Venezuela,1420
+1985,Venezuela,1890
+1986,Venezuela,1800
+1987,Venezuela,1900
+1988,Venezuela,2007
+1989,Venezuela,2118
+1990,Venezuela,1750
+1991,Venezuela,1720
+1992,Venezuela,1990
+1993,Venezuela,2221
+1994,Venezuela,2177
+1995,Venezuela,1613
+1996,Venezuela,1596
+1997,Venezuela,301
+1998,Venezuela,158
+1999,Venezuela,188
+2000,Venezuela,207
+2001,Venezuela,370
+2002,Venezuela,1077
+2003,Venezuela,2349
+2004,Venezuela,4148
+2005,Venezuela,6320
+2006,Venezuela,8474
+2007,Venezuela,210509
+2008,Venezuela,213097
+2009,Venezuela,215685
+2010,Venezuela,217406
+2011,Venezuela,219391
+2012,Venezuela,204560
+2013,Venezuela,205413
+2014,Venezuela,174027
+2015,Venezuela,173989
+2016,Venezuela,172917
 1971,Vietnam,57000
 1972,Vietnam,55000
 1973,Vietnam,35000
