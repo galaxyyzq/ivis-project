@@ -1023,56 +1023,56 @@ Year,Country,Value
 2014,Cayman Islands,8
 2015,Cayman Islands,16
 2016,Cayman Islands,37
-1964,Central African Rep,3300
-1965,Central African Rep,20560
-1966,Central African Rep,43000
-1967,Central African Rep,35000
-1968,Central African Rep,23000
-1969,Central African Rep,23000
-1970,Central African Rep,27150
-1971,Central African Rep,28000
-1972,Central African Rep,21970
-1973,Central African Rep,7000
-1974,Central African Rep,5000
-1975,Central African Rep,5000
-1979,Central African Rep,1000
-1980,Central African Rep,7000
-1981,Central African Rep,4000
-1982,Central African Rep,7450
-1983,Central African Rep,6790
-1984,Central African Rep,42000
-1985,Central African Rep,46330
-1986,Central African Rep,12980
-1987,Central African Rep,4250
-1988,Central African Rep,3148
-1989,Central African Rep,2493
-1990,Central African Rep,4284
-1991,Central African Rep,12223
-1992,Central African Rep,19040
-1993,Central African Rep,44129
-1994,Central African Rep,47791
-1995,Central African Rep,33856
-1996,Central African Rep,36564
-1997,Central African Rep,38499
-1998,Central African Rep,43013
-1999,Central African Rep,49314
-2000,Central African Rep,57396
-2001,Central African Rep,52911
-2002,Central African Rep,56073
-2003,Central African Rep,48172
-2004,Central African Rep,27768
-2005,Central African Rep,26529
-2006,Central African Rep,14264
-2007,Central African Rep,9505
-2008,Central African Rep,8883
-2009,Central African Rep,28266
-2010,Central African Rep,22793
-2011,Central African Rep,19178
-2012,Central African Rep,16618
-2013,Central African Rep,16958
-2014,Central African Rep,8103
-2015,Central African Rep,7664
-2016,Central African Rep,12397
+1964,Central African Rep.,3300
+1965,Central African Rep.,20560
+1966,Central African Rep.,43000
+1967,Central African Rep.,35000
+1968,Central African Rep.,23000
+1969,Central African Rep.,23000
+1970,Central African Rep.,27150
+1971,Central African Rep.,28000
+1972,Central African Rep.,21970
+1973,Central African Rep.,7000
+1974,Central African Rep.,5000
+1975,Central African Rep.,5000
+1979,Central African Rep.,1000
+1980,Central African Rep.,7000
+1981,Central African Rep.,4000
+1982,Central African Rep.,7450
+1983,Central African Rep.,6790
+1984,Central African Rep.,42000
+1985,Central African Rep.,46330
+1986,Central African Rep.,12980
+1987,Central African Rep.,4250
+1988,Central African Rep.,3148
+1989,Central African Rep.,2493
+1990,Central African Rep.,4284
+1991,Central African Rep.,12223
+1992,Central African Rep.,19040
+1993,Central African Rep.,44129
+1994,Central African Rep.,47791
+1995,Central African Rep.,33856
+1996,Central African Rep.,36564
+1997,Central African Rep.,38499
+1998,Central African Rep.,43013
+1999,Central African Rep.,49314
+2000,Central African Rep.,57396
+2001,Central African Rep.,52911
+2002,Central African Rep.,56073
+2003,Central African Rep.,48172
+2004,Central African Rep.,27768
+2005,Central African Rep.,26529
+2006,Central African Rep.,14264
+2007,Central African Rep.,9505
+2008,Central African Rep.,8883
+2009,Central African Rep.,28266
+2010,Central African Rep.,22793
+2011,Central African Rep.,19178
+2012,Central African Rep.,16618
+2013,Central African Rep.,16958
+2014,Central African Rep.,8103
+2015,Central African Rep.,7664
+2016,Central African Rep.,12397
 1992,Chad,70
 1993,Chad,70
 1994,Chad,109
@@ -1565,63 +1565,63 @@ Year,Country,Value
 2014,Czech Rep.,3617
 2015,Czech Rep.,4303
 2016,Czech Rep.,4314
-1960,Dem Rep of the Congo,150000
-1961,Dem Rep of the Congo,203000
-1962,Dem Rep of the Congo,223000
-1963,Dem Rep of the Congo,237000
-1964,Dem Rep of the Congo,236000
-1965,Dem Rep of the Congo,265000
-1966,Dem Rep of the Congo,357100
-1967,Dem Rep of the Congo,434100
-1968,Dem Rep of the Congo,475400
-1969,Dem Rep of the Congo,496300
-1970,Dem Rep of the Congo,489000
-1971,Dem Rep of the Congo,474250
-1972,Dem Rep of the Congo,495250
-1973,Dem Rep of the Congo,460050
-1974,Dem Rep of the Congo,503250
-1975,Dem Rep of the Congo,510000
-1976,Dem Rep of the Congo,515000
-1977,Dem Rep of the Congo,530300
-1978,Dem Rep of the Congo,653000
-1979,Dem Rep of the Congo,710480
-1980,Dem Rep of the Congo,611110
-1981,Dem Rep of the Congo,576740
-1982,Dem Rep of the Congo,497600
-1983,Dem Rep of the Congo,303500
-1984,Dem Rep of the Congo,337330
-1985,Dem Rep of the Congo,283000
-1986,Dem Rep of the Congo,301230
-1987,Dem Rep of the Congo,320000
-1988,Dem Rep of the Congo,340675
-1989,Dem Rep of the Congo,340689
-1990,Dem Rep of the Congo,416435
-1991,Dem Rep of the Congo,482959
-1992,Dem Rep of the Congo,391127
-1993,Dem Rep of the Congo,572070
-1994,Dem Rep of the Congo,1724365
-1995,Dem Rep of the Congo,1433760
-1996,Dem Rep of the Congo,675973
-1997,Dem Rep of the Congo,297538
-1998,Dem Rep of the Congo,240214
-1999,Dem Rep of the Congo,285270
-2000,Dem Rep of the Congo,332655
-2001,Dem Rep of the Congo,362320
-2002,Dem Rep of the Congo,333375
-2003,Dem Rep of the Congo,234479
-2004,Dem Rep of the Congo,199677
-2005,Dem Rep of the Congo,204481
-2006,Dem Rep of the Congo,208465
-2007,Dem Rep of the Congo,177490
-2008,Dem Rep of the Congo,155172
-2009,Dem Rep of the Congo,186452
-2010,Dem Rep of the Congo,167268
-2011,Dem Rep of the Congo,153885
-2012,Dem Rep of the Congo,66934
-2013,Dem Rep of the Congo,114823
-2014,Dem Rep of the Congo,120938
-2015,Dem Rep of the Congo,384078
-2016,Dem Rep of the Congo,453256
+1960,Dem. Rep. Congo,150000
+1961,Dem. Rep. Congo,203000
+1962,Dem. Rep. Congo,223000
+1963,Dem. Rep. Congo,237000
+1964,Dem. Rep. Congo,236000
+1965,Dem. Rep. Congo,265000
+1966,Dem. Rep. Congo,357100
+1967,Dem. Rep. Congo,434100
+1968,Dem. Rep. Congo,475400
+1969,Dem. Rep. Congo,496300
+1970,Dem. Rep. Congo,489000
+1971,Dem. Rep. Congo,474250
+1972,Dem. Rep. Congo,495250
+1973,Dem. Rep. Congo,460050
+1974,Dem. Rep. Congo,503250
+1975,Dem. Rep. Congo,510000
+1976,Dem. Rep. Congo,515000
+1977,Dem. Rep. Congo,530300
+1978,Dem. Rep. Congo,653000
+1979,Dem. Rep. Congo,710480
+1980,Dem. Rep. Congo,611110
+1981,Dem. Rep. Congo,576740
+1982,Dem. Rep. Congo,497600
+1983,Dem. Rep. Congo,303500
+1984,Dem. Rep. Congo,337330
+1985,Dem. Rep. Congo,283000
+1986,Dem. Rep. Congo,301230
+1987,Dem. Rep. Congo,320000
+1988,Dem. Rep. Congo,340675
+1989,Dem. Rep. Congo,340689
+1990,Dem. Rep. Congo,416435
+1991,Dem. Rep. Congo,482959
+1992,Dem. Rep. Congo,391127
+1993,Dem. Rep. Congo,572070
+1994,Dem. Rep. Congo,1724365
+1995,Dem. Rep. Congo,1433760
+1996,Dem. Rep. Congo,675973
+1997,Dem. Rep. Congo,297538
+1998,Dem. Rep. Congo,240214
+1999,Dem. Rep. Congo,285270
+2000,Dem. Rep. Congo,332655
+2001,Dem. Rep. Congo,362320
+2002,Dem. Rep. Congo,333375
+2003,Dem. Rep. Congo,234479
+2004,Dem. Rep. Congo,199677
+2005,Dem. Rep. Congo,204481
+2006,Dem. Rep. Congo,208465
+2007,Dem. Rep. Congo,177490
+2008,Dem. Rep. Congo,155172
+2009,Dem. Rep. Congo,186452
+2010,Dem. Rep. Congo,167268
+2011,Dem. Rep. Congo,153885
+2012,Dem. Rep. Congo,66934
+2013,Dem. Rep. Congo,114823
+2014,Dem. Rep. Congo,120938
+2015,Dem. Rep. Congo,384078
+2016,Dem. Rep. Congo,453256
 1951,Denmark,2000
 1952,Denmark,1800
 1953,Denmark,1600
@@ -1882,7 +1882,7 @@ Year,Country,Value
 2014,El Salvador,35
 2015,El Salvador,49
 2016,El Salvador,36
-1968,Equatorial Guinea,40000
+1968,Eq. Guinea,40000
 1993,Eritrea,3
 1994,Eritrea,706
 1995,Eritrea,1083
@@ -4923,12 +4923,12 @@ Year,Country,Value
 2014,South Africa,576132
 2015,South Africa,1217708
 2016,South Africa,309208
-2011,South Sudan,105111
-2012,South Sudan,202616
-2013,South Sudan,229626
-2014,South Sudan,248282
-2015,South Sudan,263855
-2016,South Sudan,264333
+2011,S. Sudan,105111
+2012,S. Sudan,202616
+2013,S. Sudan,229626
+2014,S. Sudan,248282
+2015,S. Sudan,263855
+2016,S. Sudan,264333
 1951,Spain,2000
 1954,Spain,2000
 1961,Spain,2000
@@ -5780,62 +5780,62 @@ Year,Country,Value
 2014,United Kingdom,153617
 2015,United Kingdom,168937
 2016,United Kingdom,162349
-1961,United Rep of Tanzania,12000
-1962,United Rep of Tanzania,12000
-1963,United Rep of Tanzania,12000
-1964,United Rep of Tanzania,25000
-1965,United Rep of Tanzania,29000
-1966,United Rep of Tanzania,33950
-1967,United Rep of Tanzania,39800
-1968,United Rep of Tanzania,46000
-1969,United Rep of Tanzania,54550
-1970,United Rep of Tanzania,71500
-1971,United Rep of Tanzania,71240
-1972,United Rep of Tanzania,165000
-1973,United Rep of Tanzania,180860
-1974,United Rep of Tanzania,193190
-1975,United Rep of Tanzania,171160
-1976,United Rep of Tanzania,154000
-1977,United Rep of Tanzania,164610
-1978,United Rep of Tanzania,160960
-1979,United Rep of Tanzania,160820
-1980,United Rep of Tanzania,159610
-1981,United Rep of Tanzania,164180
-1982,United Rep of Tanzania,158960
-1983,United Rep of Tanzania,180100
-1984,United Rep of Tanzania,179910
-1985,United Rep of Tanzania,214480
-1986,United Rep of Tanzania,223500
-1987,United Rep of Tanzania,266200
-1988,United Rep of Tanzania,265154
-1989,United Rep of Tanzania,265128
-1990,United Rep of Tanzania,265184
-1991,United Rep of Tanzania,288103
-1992,United Rep of Tanzania,292148
-1993,United Rep of Tanzania,564520
-1994,United Rep of Tanzania,883250
-1995,United Rep of Tanzania,829671
-1996,United Rep of Tanzania,498732
-1997,United Rep of Tanzania,570367
-1998,United Rep of Tanzania,543881
-1999,United Rep of Tanzania,622203
-2000,United Rep of Tanzania,702282
-2001,United Rep of Tanzania,668231
-2002,United Rep of Tanzania,689537
-2003,United Rep of Tanzania,649933
-2004,United Rep of Tanzania,602254
-2005,United Rep of Tanzania,549131
-2006,United Rep of Tanzania,485675
-2007,United Rep of Tanzania,435938
-2008,United Rep of Tanzania,322163
-2009,United Rep of Tanzania,119575
-2010,United Rep of Tanzania,110533
-2011,United Rep of Tanzania,131948
-2012,United Rep of Tanzania,101543
-2013,United Rep of Tanzania,102506
-2014,United Rep of Tanzania,89375
-2015,United Rep of Tanzania,213995
-2016,United Rep of Tanzania,290037
+1961,Tanzania,12000
+1962,Tanzania,12000
+1963,Tanzania,12000
+1964,Tanzania,25000
+1965,Tanzania,29000
+1966,Tanzania,33950
+1967,Tanzania,39800
+1968,Tanzania,46000
+1969,Tanzania,54550
+1970,Tanzania,71500
+1971,Tanzania,71240
+1972,Tanzania,165000
+1973,Tanzania,180860
+1974,Tanzania,193190
+1975,Tanzania,171160
+1976,Tanzania,154000
+1977,Tanzania,164610
+1978,Tanzania,160960
+1979,Tanzania,160820
+1980,Tanzania,159610
+1981,Tanzania,164180
+1982,Tanzania,158960
+1983,Tanzania,180100
+1984,Tanzania,179910
+1985,Tanzania,214480
+1986,Tanzania,223500
+1987,Tanzania,266200
+1988,Tanzania,265154
+1989,Tanzania,265128
+1990,Tanzania,265184
+1991,Tanzania,288103
+1992,Tanzania,292148
+1993,Tanzania,564520
+1994,Tanzania,883250
+1995,Tanzania,829671
+1996,Tanzania,498732
+1997,Tanzania,570367
+1998,Tanzania,543881
+1999,Tanzania,622203
+2000,Tanzania,702282
+2001,Tanzania,668231
+2002,Tanzania,689537
+2003,Tanzania,649933
+2004,Tanzania,602254
+2005,Tanzania,549131
+2006,Tanzania,485675
+2007,Tanzania,435938
+2008,Tanzania,322163
+2009,Tanzania,119575
+2010,Tanzania,110533
+2011,Tanzania,131948
+2012,Tanzania,101543
+2013,Tanzania,102506
+2014,Tanzania,89375
+2015,Tanzania,213995
+2016,Tanzania,290037
 1951,United States,350000
 1952,United States,500000
 1953,United States,500000

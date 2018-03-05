@@ -265,7 +265,7 @@ function updateSankey(country, thisYear) {
                     long = country;
                     short = d[countryLabel];
                 }
-                if ((long.search(short) != -1 || long==short) && !(long == "South Sudan" && short == "Sudan")) {
+                if ((long.search(short) != -1 || long==short) && !(long == "S. Sudan" && short == "Sudan")) {
                     sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
                 }
             }*/
