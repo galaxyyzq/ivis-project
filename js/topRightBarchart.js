@@ -132,7 +132,6 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 		  $("#nRefugees").html(d.Value);
 		
 		
-		
           drawLegend(maxRefugees[thisYear], thisYear);
 
           //Update the slider when year change in bar chart

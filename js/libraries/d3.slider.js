@@ -209,7 +209,15 @@ d3.slider = function module() {
       updateGrid();
 		
 		
-      $("#barChartYear").html(thisYear);
+      //$("#barChartYear").html(thisYear);
+		
+	  // Changing the year in the second column description.
+	  $("#barChartYear").html(thisYear);
+		
+      // Changing the value (number of refugees) in the second column description.
+      //$("#nRefugees").html(d.Value);	
+		
+		
       //$("#nRefugees").html(d.Value);	
 		
     }  //console.log(displayValue);
