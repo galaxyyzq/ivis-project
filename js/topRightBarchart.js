@@ -101,14 +101,16 @@ function initTopRightBarChart() {
 
 function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data,scaleForY="linear"){
   // Update yaxis here, when we switch from linear to exponential
-  var yDomain = d3.max(data, function(d) {return d.Value; })
+  var yDomain;
   if (scaleForY == "linear") {
+    yDomain = d3.max(data, function (d) { return d.Value; })
     trbcY = d3.scale.linear()
-      .domain([0, 2541249])
+      .domain([0, yDomain])
       .range([trbcHeight, 0]);
     trbcYaxis = d3.svg.axis()
       .scale(trbcY)
       .orient("left");
+    
   } else {
     trbcY = d3.scale.log()
       .base(10)
