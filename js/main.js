@@ -23,13 +23,11 @@ $(function () {
   $('#inOutToggle').change(function () {
     if (inOut === "In") {
       inOut = "Out";
-      // Changing the description of the chart bar in the top right.
-      $("#descriptionSentence").html("Refugees from this country in");
     }else {
       inOut = "In";
-      // Changing the description of the chart bar in the top right.
-      $("#descriptionSentence").html("Refugees living in this country in ");
     }
+    updateBarChartDescription();
+
     loadCountryData();
   });
   $('#logScaleToggle').change(function () {
@@ -42,6 +40,7 @@ $(function () {
     }
     initGrid();
     updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, dataForUpdate, scaleForY);
+    drawMap();
   });
   // Toggle map when button clicked
   $('#toggleMap').change(function () {

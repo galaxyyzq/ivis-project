@@ -130,13 +130,15 @@ function drawSankey(data, thisYear) {
     });
 
     //Add title in graph
-    var ourTarget;
+    var ourTarget, direction;
     if (inOut == "In") {
         ourTarget = data[0].target;
+        direction = "in";
     } else {
         ourTarget = data[0].source;
+        direction = "from";
     }
-    d3.select("#Title").text("Refugees in " + ourTarget + ". Year:" + thisYear);
+    //d3.select("#Title").text("Refugees " + direction + " " + ourTarget + ". Year:" + thisYear);
 
     // return only the distinct / unique nodes
     graph.nodes = d3.keys(d3.nest()
