@@ -58,10 +58,13 @@ span:before
 }
 
 #contentRow{
-	
+	font-family: 'Saira Condensed', sans-serif;
 }
 
-		
+.legendTitle {
+	font-family: 'Saira Condensed', sans-serif;
+}		
+
 .asia:before {
   background: pink;
 }
