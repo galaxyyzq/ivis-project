@@ -22,7 +22,7 @@ var gridWidth  = 1110;
 var gridHeight = 680;
 var squareWidthHeight = 40;
 var squareMarginX = 8;
-var numRows = 16;
+var numRows = 17;
 var squareHoverSizeIncrease = 50;
 var zoomOffset = 5;
 var countryGridSVG
