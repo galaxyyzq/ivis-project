@@ -258,7 +258,8 @@ function loadCountryData() {
         maxRefugees[d.Year] = +d.Value;
       }
 
-    })
+    });
+
     countryData = countryWithYears;
 
     initGrid();
