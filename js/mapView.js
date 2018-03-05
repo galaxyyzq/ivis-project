@@ -55,6 +55,10 @@ function drawMap() {
             .attr("id", function (d) { return d.id; })
             .on('click', selected)
             .on("mousemove", showTooltip)
+            .on("mouseenter", function (d) {
+                if (d.properties.name === prev_clicked_element) return;
+                //d3.select(this).
+            })
             .on("mouseout", function (d, i) {
                 //tooltipMap.classed("hidden", true);
                 tooltipMap.style('display', 'none');
