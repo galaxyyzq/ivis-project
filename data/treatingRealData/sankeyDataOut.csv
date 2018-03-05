@@ -16811,35 +16811,35 @@ Year,Residence,Origin,Value
 2016,Italy,Cabo Verde,0
 2016,Sweden,Cabo Verde,0
 2016,United States of America,Cabo Verde,17
-1971,Viet Nam,Cambodia,57000
-1972,Viet Nam,Cambodia,55000
-1973,Viet Nam,Cambodia,35000
+1971,Vietnam,Cambodia,57000
+1972,Vietnam,Cambodia,55000
+1973,Vietnam,Cambodia,35000
 1975,Thailand,Cambodia,18830
 1976,Lao People's Dem Rep,Cambodia,110
 1976,Thailand,Cambodia,17090
 1977,Lao People's Dem Rep,Cambodia,100
 1977,Malaysia,Cambodia,1580
 1977,Thailand,Cambodia,15030
-1977,Viet Nam,Cambodia,60000
+1977,Vietnam,Cambodia,60000
 1978,Lao People's Dem Rep,Cambodia,120
 1978,Thailand,Cambodia,15000
-1978,Viet Nam,Cambodia,150000
+1978,Vietnam,Cambodia,150000
 1979,Lao People's Dem Rep,Cambodia,110
 1979,Malaysia,Cambodia,580
 1979,Thailand,Cambodia,15410
-1979,Viet Nam,Cambodia,35000
+1979,Vietnam,Cambodia,35000
 1980,Italy,Cambodia,103
 1980,Japan,Cambodia,90
 1980,Lao People's Dem Rep,Cambodia,10370
 1980,Malaysia,Cambodia,1880
 1980,Thailand,Cambodia,147400
-1980,Viet Nam,Cambodia,33000
+1980,Vietnam,Cambodia,33000
 1981,Italy,Cambodia,157
 1981,Japan,Cambodia,220
 1981,Lao People's Dem Rep,Cambodia,3500
 1981,Malaysia,Cambodia,3400
 1981,Thailand,Cambodia,97800
-1981,Viet Nam,Cambodia,30000
+1981,Vietnam,Cambodia,30000
 1982,Indonesia,Cambodia,2610
 1982,Italy,Cambodia,178
 1982,Japan,Cambodia,370
@@ -16847,7 +16847,7 @@ Year,Residence,Origin,Value
 1982,Malaysia,Cambodia,800
 1982,Philippines,Cambodia,6030
 1982,Thailand,Cambodia,83950
-1982,Viet Nam,Cambodia,25960
+1982,Vietnam,Cambodia,25960
 1983,Indonesia,Cambodia,1360
 1983,Italy,Cambodia,185
 1983,Japan,Cambodia,540
@@ -16855,44 +16855,44 @@ Year,Residence,Origin,Value
 1983,Malaysia,Cambodia,620
 1983,Philippines,Cambodia,9470
 1983,Thailand,Cambodia,56610
-1983,Viet Nam,Cambodia,21070
+1983,Vietnam,Cambodia,21070
 1984,Indonesia,Cambodia,1000
 1984,Italy,Cambodia,188
 1984,Lao People's Dem Rep,Cambodia,1200
 1984,Malaysia,Cambodia,110
 1984,Philippines,Cambodia,7320
 1984,Thailand,Cambodia,41650
-1984,Viet Nam,Cambodia,21000
+1984,Vietnam,Cambodia,21000
 1985,Indonesia,Cambodia,670
 1985,Italy,Cambodia,188
 1985,Malaysia,Cambodia,6850
 1985,Philippines,Cambodia,3050
 1985,Thailand,Cambodia,31760
-1985,Viet Nam,Cambodia,25000
+1985,Vietnam,Cambodia,25000
 1986,Indonesia,Cambodia,50
 1986,Italy,Cambodia,188
 1986,Philippines,Cambodia,660
 1986,Thailand,Cambodia,26950
-1986,Viet Nam,Cambodia,27000
+1986,Vietnam,Cambodia,27000
 1987,Côte d'Ivoire,Cambodia,50
 1987,Italy,Cambodia,189
 1987,Lao People's Dem Rep,Cambodia,80
 1987,Malaysia,Cambodia,300
 1987,Thailand,Cambodia,22970
-1987,Viet Nam,Cambodia,25000
+1987,Vietnam,Cambodia,25000
 1988,Côte d'Ivoire,Cambodia,50
 1988,Indonesia,Cambodia,80
 1988,Italy,Cambodia,209
 1988,Malaysia,Cambodia,160
 1988,Thailand,Cambodia,17178
 1988,United States of America,Cambodia,53081
-1988,Viet Nam,Cambodia,27000
+1988,Vietnam,Cambodia,27000
 1989,Denmark,Cambodia,16
 1989,Indonesia,Cambodia,72
 1989,Italy,Cambodia,201
 1989,Thailand,Cambodia,17230
 1989,United States of America,Cambodia,35146
-1989,Viet Nam,Cambodia,23060
+1989,Vietnam,Cambodia,23060
 1990,Denmark,Cambodia,16
 1990,Indonesia,Cambodia,1811
 1990,Italy,Cambodia,106
@@ -16900,7 +16900,7 @@ Year,Residence,Origin,Value
 1990,Sweden,Cambodia,55
 1990,Thailand,Cambodia,15097
 1990,United States of America,Cambodia,16049
-1990,Viet Nam,Cambodia,21150
+1990,Vietnam,Cambodia,21150
 1991,Denmark,Cambodia,24
 1991,Spain,Cambodia,2
 1991,Indonesia,Cambodia,1687
@@ -16908,7 +16908,7 @@ Year,Residence,Origin,Value
 1991,Sweden,Cambodia,20
 1991,Thailand,Cambodia,14975
 1991,United States of America,Cambodia,6260
-1991,Viet Nam,Cambodia,20148
+1991,Vietnam,Cambodia,20148
 1992,Denmark,Cambodia,24
 1992,Spain,Cambodia,2
 1992,Indonesia,Cambodia,576
@@ -16917,7 +16917,7 @@ Year,Residence,Origin,Value
 1992,Sweden,Cambodia,11
 1992,Thailand,Cambodia,7128
 1992,United States of America,Cambodia,4721
-1992,Viet Nam,Cambodia,16263
+1992,Vietnam,Cambodia,16263
 1993,Switzerland,Cambodia,1855
 1993,Côte d'Ivoire,Cambodia,109
 1993,Denmark,Cambodia,24
@@ -16933,7 +16933,7 @@ Year,Residence,Origin,Value
 1993,Sweden,Cambodia,10
 1993,Thailand,Cambodia,67
 1993,United States of America,Cambodia,1916
-1993,Viet Nam,Cambodia,5084
+1993,Vietnam,Cambodia,5084
 1994,Canada,Cambodia,1520
 1994,Switzerland,Cambodia,1736
 1994,Côte d'Ivoire,Cambodia,115
@@ -16944,7 +16944,7 @@ Year,Residence,Origin,Value
 1994,Philippines,Cambodia,1
 1994,Sweden,Cambodia,10
 1994,Thailand,Cambodia,15
-1994,Viet Nam,Cambodia,5000
+1994,Vietnam,Cambodia,5000
 1995,Canada,Cambodia,822
 1995,China,Cambodia,30
 1995,Denmark,Cambodia,24
@@ -16957,7 +16957,7 @@ Year,Residence,Origin,Value
 1995,Sweden,Cambodia,10
 1995,Thailand,Cambodia,3
 1995,United States of America,Cambodia,55
-1995,Viet Nam,Cambodia,34400
+1995,Vietnam,Cambodia,34400
 1996,Australia,Cambodia,1857
 1996,Belgium,Cambodia,592
 1996,Canada,Cambodia,495
@@ -16972,7 +16972,7 @@ Year,Residence,Origin,Value
 1996,New Zealand,Cambodia,348
 1996,Sweden,Cambodia,10
 1996,United States of America,Cambodia,67
-1996,Viet Nam,Cambodia,34400
+1996,Vietnam,Cambodia,34400
 1997,Australia,Cambodia,1964
 1997,Belgium,Cambodia,592
 1997,Botswana,Cambodia,1
@@ -16991,7 +16991,7 @@ Year,Residence,Origin,Value
 1997,Sweden,Cambodia,10
 1997,Thailand,Cambodia,62235
 1997,United States of America,Cambodia,82
-1997,Viet Nam,Cambodia,15000
+1997,Vietnam,Cambodia,15000
 1997,Zimbabwe,Cambodia,1
 1998,Australia,Cambodia,1942
 1998,Austria,Cambodia,178
@@ -17012,7 +17012,7 @@ Year,Residence,Origin,Value
 1998,Sweden,Cambodia,10
 1998,Thailand,Cambodia,36075
 1998,United States of America,Cambodia,231
-1998,Viet Nam,Cambodia,15000
+1998,Vietnam,Cambodia,15000
 1999,Australia,Cambodia,1224
 1999,Austria,Cambodia,177
 1999,Belgium,Cambodia,28
@@ -17033,7 +17033,7 @@ Year,Residence,Origin,Value
 1999,Thailand,Cambodia,109
 1999,Ukraine,Cambodia,1
 1999,United States of America,Cambodia,409
-1999,Viet Nam,Cambodia,15000
+1999,Vietnam,Cambodia,15000
 2000,Australia,Cambodia,652
 2000,Austria,Cambodia,180
 2000,Belgium,Cambodia,27
@@ -17058,7 +17058,7 @@ Year,Residence,Origin,Value
 2000,Thailand,Cambodia,168
 2000,Ukraine,Cambodia,1
 2000,United States of America,Cambodia,644
-2000,Viet Nam,Cambodia,15945
+2000,Vietnam,Cambodia,15945
 2001,Australia,Cambodia,174
 2001,Austria,Cambodia,42
 2001,Belgium,Cambodia,78
@@ -17083,7 +17083,7 @@ Year,Residence,Origin,Value
 2001,Thailand,Cambodia,98
 2001,Ukraine,Cambodia,1
 2001,United States of America,Cambodia,749
-2001,Viet Nam,Cambodia,15945
+2001,Vietnam,Cambodia,15945
 2002,Argentina,Cambodia,24
 2002,Australia,Cambodia,63
 2002,Austria,Cambodia,32
@@ -17110,7 +17110,7 @@ Year,Residence,Origin,Value
 2002,Thailand,Cambodia,97
 2002,Ukraine,Cambodia,1
 2002,United States of America,Cambodia,907
-2002,Viet Nam,Cambodia,15945
+2002,Vietnam,Cambodia,15945
 2003,Argentina,Cambodia,44
 2003,Australia,Cambodia,35
 2003,Austria,Cambodia,23
@@ -17136,7 +17136,7 @@ Year,Residence,Origin,Value
 2003,Chad,Cambodia,35
 2003,Thailand,Cambodia,106
 2003,United States of America,Cambodia,682
-2003,Viet Nam,Cambodia,15360
+2003,Vietnam,Cambodia,15360
 2004,Argentina,Cambodia,51
 2004,Australia,Cambodia,20
 2004,Austria,Cambodia,21
@@ -17162,7 +17162,7 @@ Year,Residence,Origin,Value
 2004,Sweden,Cambodia,5
 2004,Thailand,Cambodia,134
 2004,United States of America,Cambodia,634
-2004,Viet Nam,Cambodia,2360
+2004,Vietnam,Cambodia,2360
 2005,Argentina,Cambodia,51
 2005,Australia,Cambodia,27
 2005,Austria,Cambodia,20
@@ -17185,7 +17185,7 @@ Year,Residence,Origin,Value
 2005,Sweden,Cambodia,14
 2005,Thailand,Cambodia,284
 2005,United States of America,Cambodia,586
-2005,Viet Nam,Cambodia,2357
+2005,Vietnam,Cambodia,2357
 2006,Argentina,Cambodia,49
 2006,Australia,Cambodia,23
 2006,Austria,Cambodia,18
@@ -17208,7 +17208,7 @@ Year,Residence,Origin,Value
 2006,Sweden,Cambodia,10
 2006,Thailand,Cambodia,174
 2006,United States of America,Cambodia,1029
-2006,Viet Nam,Cambodia,2357
+2006,Vietnam,Cambodia,2357
 2007,Argentina,Cambodia,49
 2007,Australia,Cambodia,27
 2007,Austria,Cambodia,15
@@ -17235,7 +17235,7 @@ Year,Residence,Origin,Value
 2007,Sweden,Cambodia,10
 2007,Thailand,Cambodia,94
 2007,United States of America,Cambodia,921
-2007,Viet Nam,Cambodia,2357
+2007,Vietnam,Cambodia,2357
 2008,Australia,Cambodia,21
 2008,Austria,Cambodia,8
 2008,Belgium,Cambodia,18
@@ -17263,7 +17263,7 @@ Year,Residence,Origin,Value
 2008,Thailand,Cambodia,83
 2008,Ukraine,Cambodia,1
 2008,United States of America,Cambodia,738
-2008,Viet Nam,Cambodia,2357
+2008,Vietnam,Cambodia,2357
 2009,Australia,Cambodia,17
 2009,Austria,Cambodia,6
 2009,Belgium,Cambodia,16
@@ -17291,7 +17291,7 @@ Year,Residence,Origin,Value
 2009,Thailand,Cambodia,99
 2009,Ukraine,Cambodia,1
 2009,United States of America,Cambodia,582
-2009,Viet Nam,Cambodia,2357
+2009,Vietnam,Cambodia,2357
 2010,Australia,Cambodia,20
 2010,Austria,Cambodia,1
 2010,Belgium,Cambodia,13
@@ -17320,7 +17320,7 @@ Year,Residence,Origin,Value
 2010,Thailand,Cambodia,82
 2010,Ukraine,Cambodia,2
 2010,United States of America,Cambodia,429
-2010,Viet Nam,Cambodia,1928
+2010,Vietnam,Cambodia,1928
 2010,South Africa,Cambodia,0
 2011,Argentina,Cambodia,0
 2011,Australia,Cambodia,42
@@ -17354,7 +17354,7 @@ Year,Residence,Origin,Value
 2011,Thailand,Cambodia,106
 2011,Ukraine,Cambodia,3
 2011,United States of America,Cambodia,408
-2011,Viet Nam,Cambodia,990
+2011,Vietnam,Cambodia,990
 2012,Australia,Cambodia,44
 2012,Austria,Cambodia,1
 2012,Azerbaijan,Cambodia,1
@@ -98921,7 +98921,7 @@ Year,Residence,Origin,Value
 2014,United States of America,Stateless,817
 2014,Uzbekistan,Stateless,0
 2014,Venezuela (Bolivarian Republic of),Stateless,6
-2014,Viet Nam,Stateless,0
+2014,Vietnam,Stateless,0
 2015,Albania,Stateless,0
 2015,United Arab Emirates,Stateless,3
 2015,Argentina,Stateless,13
@@ -99012,7 +99012,7 @@ Year,Residence,Origin,Value
 2015,United States of America,Stateless,703
 2015,Uzbekistan,Stateless,0
 2015,Venezuela (Bolivarian Republic of),Stateless,6
-2015,Viet Nam,Stateless,0
+2015,Vietnam,Stateless,0
 2015,Zimbabwe,Stateless,0
 2016,Albania,Stateless,0
 2016,United Arab Emirates,Stateless,0
@@ -99101,7 +99101,7 @@ Year,Residence,Origin,Value
 2016,United States of America,Stateless,571
 2016,Uzbekistan,Stateless,0
 2016,Venezuela (Bolivarian Republic of),Stateless,0
-2016,Viet Nam,Stateless,0
+2016,Vietnam,Stateless,0
 1963,Dem Rep of the Congo,Sudan,8000
 1963,Uganda,Sudan,5000
 1964,Central African Rep,Sudan,300
@@ -115560,7 +115560,7 @@ Year,Residence,Origin,Value
 1986,Uruguay,VariousUnknown,70
 1986,United States of America,VariousUnknown,398633
 1986,Venezuela (Bolivarian Republic of),VariousUnknown,1400
-1986,Viet Nam,VariousUnknown,200
+1986,Vietnam,VariousUnknown,200
 1986,Zambia,VariousUnknown,90
 1987,Argentina,VariousUnknown,13580
 1987,Australia,VariousUnknown,87600
@@ -117876,1251 +117876,1251 @@ Year,Residence,Origin,Value
 2016,Uruguay,Venezuela (Bolivarian Republic of),0
 2016,United States of America,Venezuela (Bolivarian Republic of),34624
 2016,South Africa,Venezuela (Bolivarian Republic of),0
-1964,Cambodia,Viet Nam,10000
-1965,Cambodia,Viet Nam,15000
-1966,Cambodia,Viet Nam,17000
-1967,Cambodia,Viet Nam,20000
-1968,Cambodia,Viet Nam,22000
-1969,Cambodia,Viet Nam,22000
-1970,Cambodia,Viet Nam,20000
-1975,Philippines,Viet Nam,690
-1975,Thailand,Viet Nam,1420
-1976,Philippines,Viet Nam,940
-1976,Thailand,Viet Nam,3060
-1977,Japan,Viet Nam,600
-1977,Malaysia,Viet Nam,3880
-1977,Philippines,Viet Nam,1300
-1977,Thailand,Viet Nam,3600
-1978,"China, Hong Kong SAR",Viet Nam,55710
-1978,Indonesia,Viet Nam,2240
-1978,Japan,Viet Nam,610
-1978,Rep of Korea,Viet Nam,70
-1978,Malaysia,Viet Nam,49580
-1978,Philippines,Viet Nam,1300
-1978,Singapore,Viet Nam,730
-1978,Thailand,Viet Nam,4770
-1979,China,Viet Nam,250000
-1979,"China, Hong Kong SAR",Viet Nam,55700
-1979,Indonesia,Viet Nam,32200
-1979,Japan,Viet Nam,1260
-1979,Rep of Korea,Viet Nam,170
-1979,"China, Macao SAR",Viet Nam,3490
-1979,Malaysia,Viet Nam,34300
-1979,Peru,Viet Nam,5430
-1979,Philippines,Viet Nam,5300
-1979,Thailand,Viet Nam,7440
-1980,China,Viet Nam,263000
-1980,"China, Hong Kong SAR",Viet Nam,24070
-1980,Indonesia,Viet Nam,8460
-1980,Italy,Viet Nam,2418
-1980,Japan,Viet Nam,2080
-1980,"China, Macao SAR",Viet Nam,2920
-1980,Malaysia,Viet Nam,12160
-1980,Philippines,Viet Nam,20300
-1980,Thailand,Viet Nam,9020
-1981,China,Viet Nam,265000
-1981,"China, Hong Kong SAR",Viet Nam,13540
-1981,Indonesia,Viet Nam,6200
-1981,Italy,Viet Nam,2468
-1981,Japan,Viet Nam,1800
-1981,Rep of Korea,Viet Nam,60
-1981,"China, Macao SAR",Viet Nam,1200
-1981,Malaysia,Viet Nam,9850
-1981,Philippines,Viet Nam,6630
-1981,Thailand,Viet Nam,5800
-1982,China,Viet Nam,268350
-1982,Greece,Viet Nam,120
-1982,"China, Hong Kong SAR",Viet Nam,12620
-1982,Indonesia,Viet Nam,10610
-1982,Italy,Viet Nam,2573
-1982,Japan,Viet Nam,3230
-1982,Rep of Korea,Viet Nam,70
-1982,"China, Macao SAR",Viet Nam,970
-1982,Malaysia,Viet Nam,8440
-1982,Philippines,Viet Nam,8980
-1982,Singapore,Viet Nam,480
-1982,Thailand,Viet Nam,8900
-1983,China,Viet Nam,272720
-1983,Côte d'Ivoire,Viet Nam,120
-1983,Greece,Viet Nam,130
-1983,"China, Hong Kong SAR",Viet Nam,12770
-1983,Indonesia,Viet Nam,8710
-1983,Italy,Viet Nam,2759
-1983,Japan,Viet Nam,3630
-1983,"China, Macao SAR",Viet Nam,800
-1983,Malaysia,Viet Nam,10080
-1983,Philippines,Viet Nam,7770
-1983,Singapore,Viet Nam,290
-1983,Thailand,Viet Nam,8620
-1984,Brazil,Viet Nam,140
-1984,China,Viet Nam,275960
-1984,Côte d'Ivoire,Viet Nam,180
-1984,Greece,Viet Nam,160
-1984,"China, Hong Kong SAR",Viet Nam,11900
-1984,Indonesia,Viet Nam,8500
-1984,Italy,Viet Nam,2928
-1984,Japan,Viet Nam,3917
-1984,"China, Macao SAR",Viet Nam,730
-1984,Malaysia,Viet Nam,8850
-1984,Philippines,Viet Nam,10080
-1984,Thailand,Viet Nam,4750
-1985,Brazil,Viet Nam,90
-1985,China,Viet Nam,275480
-1985,Côte d'Ivoire,Viet Nam,200
-1985,Greece,Viet Nam,160
-1985,"China, Hong Kong SAR",Viet Nam,9400
-1985,Indonesia,Viet Nam,7560
-1985,Italy,Viet Nam,2980
-1985,Japan,Viet Nam,4707
-1985,"China, Macao SAR",Viet Nam,700
-1985,Malaysia,Viet Nam,8460
-1985,Philippines,Viet Nam,11480
-1985,Thailand,Viet Nam,5400
-1986,Brazil,Viet Nam,90
-1986,China,Viet Nam,278000
-1986,Côte d'Ivoire,Viet Nam,250
-1986,Greece,Viet Nam,200
-1986,"China, Hong Kong SAR",Viet Nam,8000
-1986,Indonesia,Viet Nam,3970
-1986,Italy,Viet Nam,3072
-1986,Japan,Viet Nam,5016
-1986,"China, Macao SAR",Viet Nam,600
-1986,Malaysia,Viet Nam,9000
-1986,Philippines,Viet Nam,11360
-1986,Singapore,Viet Nam,60
-1986,Thailand,Viet Nam,7050
-1987,China,Viet Nam,276800
-1987,Côte d'Ivoire,Viet Nam,260
-1987,Greece,Viet Nam,210
-1987,"China, Hong Kong SAR",Viet Nam,9530
-1987,Indonesia,Viet Nam,2450
-1987,Italy,Viet Nam,3106
-1987,Japan,Viet Nam,5601
-1987,Rep of Korea,Viet Nam,60
-1987,"China, Macao SAR",Viet Nam,500
-1987,Malaysia,Viet Nam,9120
-1987,Philippines,Viet Nam,3220
-1987,Singapore,Viet Nam,320
-1987,Thailand,Viet Nam,14540
-1988,China,Viet Nam,280500
-1988,Côte d'Ivoire,Viet Nam,260
-1988,Indonesia,Viet Nam,2354
-1988,Italy,Viet Nam,3113
-1988,Japan,Viet Nam,6110
-1988,Rep of Korea,Viet Nam,120
-1988,"China, Macao SAR",Viet Nam,440
-1988,Malaysia,Viet Nam,14210
-1988,Philippines,Viet Nam,5031
-1988,Singapore,Viet Nam,320
-1988,Thailand,Viet Nam,14120
-1988,United States of America,Viet Nam,113734
-1988,Yemen,Viet Nam,67
-1989,China,Viet Nam,280500
-1989,Denmark,Viet Nam,2285
-1989,Greece,Viet Nam,290
-1989,Indonesia,Viet Nam,922
-1989,Italy,Viet Nam,1327
-1989,Japan,Viet Nam,6479
-1989,Rep of Korea,Viet Nam,230
-1989,"China, Macao SAR",Viet Nam,422
-1989,Malaysia,Viet Nam,20475
-1989,Philippines,Viet Nam,9659
-1989,Singapore,Viet Nam,480
-1989,Thailand,Viet Nam,13574
-1989,United States of America,Viet Nam,120243
-1989,Yemen,Viet Nam,50
-1990,China,Viet Nam,283426
-1990,Denmark,Viet Nam,1668
-1990,"China, Hong Kong SAR",Viet Nam,8161
-1990,Indonesia,Viet Nam,1457
-1990,Italy,Viet Nam,760
-1990,Japan,Viet Nam,6819
-1990,Rep of Korea,Viet Nam,230
-1990,"China, Macao SAR",Viet Nam,205
-1990,Malaysia,Viet Nam,14862
-1990,Philippines,Viet Nam,19410
-1990,Sweden,Viet Nam,5626
-1990,Thailand,Viet Nam,15778
-1990,United States of America,Viet Nam,137577
-1990,Yemen,Viet Nam,50
-1991,China,Viet Nam,284536
-1991,Denmark,Viet Nam,1151
-1991,Spain,Viet Nam,277
-1991,United Kingdom,Viet Nam,5
-1991,"China, Hong Kong SAR",Viet Nam,4409
-1991,Indonesia,Viet Nam,1453
-1991,Italy,Viet Nam,710
-1991,Japan,Viet Nam,6397
-1991,Rep of Korea,Viet Nam,162
-1991,"China, Macao SAR",Viet Nam,116
-1991,Malaysia,Viet Nam,12493
-1991,Philippines,Viet Nam,8621
-1991,Sweden,Viet Nam,5286
-1991,Thailand,Viet Nam,13708
-1991,United States of America,Viet Nam,158999
-1992,China,Viet Nam,285543
-1992,Denmark,Viet Nam,662
-1992,Spain,Viet Nam,277
-1992,United Kingdom,Viet Nam,5
-1992,"China, Hong Kong SAR",Viet Nam,2600
-1992,Indonesia,Viet Nam,2939
-1992,Italy,Viet Nam,607
-1992,Japan,Viet Nam,6669
-1992,Rep of Korea,Viet Nam,149
-1992,"China, Macao SAR",Viet Nam,15
-1992,Malaysia,Viet Nam,11370
-1992,Netherlands,Viet Nam,1467
-1992,Philippines,Viet Nam,6721
-1992,Sweden,Viet Nam,5112
-1992,Thailand,Viet Nam,12649
-1992,United States of America,Viet Nam,180326
-1993,Argentina,Viet Nam,5
-1993,Central African Rep,Viet Nam,4
-1993,Switzerland,Viet Nam,6082
-1993,Chile,Viet Nam,1
-1993,China,Viet Nam,285500
-1993,Côte d'Ivoire,Viet Nam,253
-1993,Colombia,Viet Nam,34
-1993,Denmark,Viet Nam,730
-1993,Ecuador,Viet Nam,12
-1993,Spain,Viet Nam,288
-1993,United Kingdom,Viet Nam,5
-1993,Greece,Viet Nam,500
-1993,"China, Hong Kong SAR",Viet Nam,1846
-1993,Indonesia,Viet Nam,1869
-1993,India,Viet Nam,3
-1993,Italy,Viet Nam,423
-1993,Japan,Viet Nam,6495
-1993,Cambodia,Viet Nam,3
-1993,"China, Macao SAR",Viet Nam,10
-1993,Malaysia,Viet Nam,5
-1993,Niger,Viet Nam,1
-1993,Netherlands,Viet Nam,1600
-1993,Peru,Viet Nam,2
-1993,Philippines,Viet Nam,1670
-1993,Paraguay,Viet Nam,26
-1993,Singapore,Viet Nam,2
-1993,Sierra Leone,Viet Nam,1
-1993,Sweden,Viet Nam,4991
-1993,Thailand,Viet Nam,9797
-1993,United States of America,Viet Nam,205469
-1994,Argentina,Viet Nam,8
-1994,Canada,Viet Nam,14007
-1994,Switzerland,Viet Nam,5477
-1994,Chile,Viet Nam,1
-1994,China,Viet Nam,285470
-1994,Côte d'Ivoire,Viet Nam,253
-1994,Colombia,Viet Nam,34
-1994,Denmark,Viet Nam,730
-1994,Ecuador,Viet Nam,23
-1994,Spain,Viet Nam,293
-1994,United Kingdom,Viet Nam,5
-1994,Greece,Viet Nam,500
-1994,"China, Hong Kong SAR",Viet Nam,1698
-1994,Indonesia,Viet Nam,97
-1994,India,Viet Nam,2
-1994,Italy,Viet Nam,254
-1994,Japan,Viet Nam,5942
-1994,Cambodia,Viet Nam,3
-1994,"China, Macao SAR",Viet Nam,9
-1994,Malaysia,Viet Nam,5
-1994,Netherlands,Viet Nam,1606
-1994,Peru,Viet Nam,2
-1994,Philippines,Viet Nam,668
-1994,Paraguay,Viet Nam,26
-1994,Singapore,Viet Nam,2
-1994,Sierra Leone,Viet Nam,1
-1994,Sweden,Viet Nam,4488
-1994,Thailand,Viet Nam,6121
-1994,United States of America,Viet Nam,211376
-1995,Brazil,Viet Nam,21
-1995,Canada,Viet Nam,8853
-1995,Switzerland,Viet Nam,4197
-1995,Chile,Viet Nam,1
-1995,China,Viet Nam,286783
-1995,Côte d'Ivoire,Viet Nam,253
-1995,Denmark,Viet Nam,730
-1995,Ecuador,Viet Nam,8
-1995,Spain,Viet Nam,314
-1995,France,Viet Nam,20618
-1995,United Kingdom,Viet Nam,5
-1995,"China, Hong Kong SAR",Viet Nam,1479
-1995,Indonesia,Viet Nam,19
-1995,India,Viet Nam,2
-1995,Iceland,Viet Nam,122
-1995,Italy,Viet Nam,202
-1995,Japan,Viet Nam,5432
-1995,Cambodia,Viet Nam,6
-1995,"China, Macao SAR",Viet Nam,8
-1995,Netherlands,Viet Nam,1729
-1995,New Zealand,Viet Nam,993
-1995,Peru,Viet Nam,1
-1995,Philippines,Viet Nam,481
-1995,Paraguay,Viet Nam,26
-1995,Singapore,Viet Nam,102
-1995,Sierra Leone,Viet Nam,1
-1995,Sweden,Viet Nam,4325
-1995,Thailand,Viet Nam,5014
-1995,United States of America,Viet Nam,201816
-1996,Australia,Viet Nam,8121
-1996,Belgium,Viet Nam,3090
-1996,Brazil,Viet Nam,20
-1996,Canada,Viet Nam,5765
-1996,Switzerland,Viet Nam,3711
-1996,Chile,Viet Nam,2
-1996,China,Viet Nam,288805
-1996,Côte d'Ivoire,Viet Nam,52
-1996,Czech Rep,Viet Nam,101
-1996,Denmark,Viet Nam,592
-1996,Ecuador,Viet Nam,8
-1996,Spain,Viet Nam,86
-1996,France,Viet Nam,19219
-1996,United Kingdom,Viet Nam,5
-1996,"China, Hong Kong SAR",Viet Nam,1345
-1996,Indonesia,Viet Nam,29
-1996,India,Viet Nam,2
-1996,Iceland,Viet Nam,122
-1996,Italy,Viet Nam,110
-1996,Japan,Viet Nam,5268
-1996,Cambodia,Viet Nam,5
-1996,Netherlands,Viet Nam,1787
-1996,New Zealand,Viet Nam,864
-1996,Panama,Viet Nam,4
-1996,Peru,Viet Nam,1
-1996,Philippines,Viet Nam,406
-1996,Paraguay,Viet Nam,26
-1996,Singapore,Viet Nam,5
-1996,Sierra Leone,Viet Nam,1
-1996,Sweden,Viet Nam,3866
-1996,Thailand,Viet Nam,289
-1996,United States of America,Viet Nam,174633
-1997,Australia,Viet Nam,7064
-1997,Belgium,Viet Nam,3090
-1997,Burkina Faso,Viet Nam,3
-1997,Brazil,Viet Nam,20
-1997,Canada,Viet Nam,3565
-1997,Switzerland,Viet Nam,3407
-1997,Chile,Viet Nam,1
-1997,China,Viet Nam,290621
-1997,Côte d'Ivoire,Viet Nam,60
-1997,Czech Rep,Viet Nam,147
-1997,Denmark,Viet Nam,612
-1997,Ecuador,Viet Nam,8
-1997,Spain,Viet Nam,86
-1997,France,Viet Nam,17861
-1997,Gabon,Viet Nam,4
-1997,United Kingdom,Viet Nam,5
-1997,"China, Hong Kong SAR",Viet Nam,1213
-1997,Indonesia,Viet Nam,14
-1997,Iceland,Viet Nam,128
-1997,Italy,Viet Nam,78
-1997,Japan,Viet Nam,4846
-1997,Cambodia,Viet Nam,6
-1997,Netherlands,Viet Nam,1795
-1997,Norway,Viet Nam,81
-1997,New Zealand,Viet Nam,741
-1997,Panama,Viet Nam,4
-1997,Peru,Viet Nam,2
-1997,Philippines,Viet Nam,27
-1997,Paraguay,Viet Nam,26
-1997,Singapore,Viet Nam,5
-1997,Sierra Leone,Viet Nam,1
-1997,Sweden,Viet Nam,3480
-1997,Thailand,Viet Nam,7
-1997,United States of America,Viet Nam,137787
-1998,Argentina,Viet Nam,33
-1998,Australia,Viet Nam,4705
-1998,Austria,Viet Nam,350
-1998,Belgium,Viet Nam,412
-1998,Burkina Faso,Viet Nam,3
-1998,Brazil,Viet Nam,22
-1998,Canada,Viet Nam,1583
-1998,Switzerland,Viet Nam,3220
-1998,China,Viet Nam,292267
-1998,Côte d'Ivoire,Viet Nam,60
-1998,Czech Rep,Viet Nam,150
-1998,Denmark,Viet Nam,182
-1998,Ecuador,Viet Nam,8
-1998,Spain,Viet Nam,49
-1998,Finland,Viet Nam,792
-1998,France,Viet Nam,15737
-1998,United Kingdom,Viet Nam,5
-1998,"China, Hong Kong SAR",Viet Nam,1022
-1998,Indonesia,Viet Nam,14
-1998,Iceland,Viet Nam,128
-1998,Italy,Viet Nam,67
-1998,Japan,Viet Nam,3368
-1998,Cambodia,Viet Nam,4
-1998,Malaysia,Viet Nam,6
-1998,Netherlands,Viet Nam,1797
-1998,Norway,Viet Nam,81
-1998,New Zealand,Viet Nam,530
-1998,Panama,Viet Nam,4
-1998,Peru,Viet Nam,2
-1998,Philippines,Viet Nam,25
-1998,Paraguay,Viet Nam,12
-1998,Singapore,Viet Nam,5
-1998,Sierra Leone,Viet Nam,1
-1998,Slovakia,Viet Nam,12
-1998,Sweden,Viet Nam,3061
-1998,Thailand,Viet Nam,8
-1998,Uruguay,Viet Nam,1
-1998,United States of America,Viet Nam,105692
-1998,Yemen,Viet Nam,19
-1999,Argentina,Viet Nam,33
-1999,Australia,Viet Nam,2442
-1999,Austria,Viet Nam,299
-1999,Belgium,Viet Nam,312
-1999,Burkina Faso,Viet Nam,3
-1999,Brazil,Viet Nam,22
-1999,Canada,Viet Nam,395
-1999,Switzerland,Viet Nam,3069
-1999,China,Viet Nam,293227
-1999,Côte d'Ivoire,Viet Nam,60
-1999,Czech Rep,Viet Nam,85
-1999,Denmark,Viet Nam,1935
-1999,Ecuador,Viet Nam,8
-1999,Spain,Viet Nam,50
-1999,Finland,Viet Nam,792
-1999,France,Viet Nam,14143
-1999,United Kingdom,Viet Nam,5
-1999,"China, Hong Kong SAR",Viet Nam,968
-1999,Indonesia,Viet Nam,2
-1999,Ireland,Viet Nam,4
-1999,Iceland,Viet Nam,60
-1999,Italy,Viet Nam,15
-1999,Japan,Viet Nam,3135
-1999,Cambodia,Viet Nam,3
-1999,Malaysia,Viet Nam,1
-1999,Netherlands,Viet Nam,1536
-1999,Norway,Viet Nam,1402
-1999,New Zealand,Viet Nam,550
-1999,Panama,Viet Nam,3
-1999,Peru,Viet Nam,2
-1999,Philippines,Viet Nam,4
-1999,Paraguay,Viet Nam,8
-1999,Sierra Leone,Viet Nam,1
-1999,Slovakia,Viet Nam,12
-1999,Sweden,Viet Nam,2410
-1999,Thailand,Viet Nam,6
-1999,Uruguay,Viet Nam,1
-1999,United States of America,Viet Nam,78355
-1999,Yemen,Viet Nam,19
-2000,Argentina,Viet Nam,33
-2000,Australia,Viet Nam,1889
-2000,Austria,Viet Nam,243
-2000,Belgium,Viet Nam,212
-2000,Burkina Faso,Viet Nam,3
-2000,Brazil,Viet Nam,22
-2000,Canada,Viet Nam,240
-2000,Switzerland,Viet Nam,2908
-2000,Chile,Viet Nam,1
-2000,China,Viet Nam,294057
-2000,Côte d'Ivoire,Viet Nam,75
-2000,Czech Rep,Viet Nam,409
-2000,Germany,Viet Nam,469
-2000,Denmark,Viet Nam,1313
-2000,Ecuador,Viet Nam,8
-2000,Spain,Viet Nam,50
-2000,Finland,Viet Nam,355
-2000,France,Viet Nam,12923
-2000,Gabon,Viet Nam,4
-2000,United Kingdom,Viet Nam,5
-2000,"China, Hong Kong SAR",Viet Nam,976
-2000,Hungary,Viet Nam,15
-2000,Indonesia,Viet Nam,2
-2000,Ireland,Viet Nam,1
-2000,Iceland,Viet Nam,30
-2000,Italy,Viet Nam,12
-2000,Japan,Viet Nam,2759
-2000,Cambodia,Viet Nam,122
-2000,Liechtenstein,Viet Nam,38
-2000,Lithuania,Viet Nam,1
-2000,Morocco,Viet Nam,7
-2000,Malaysia,Viet Nam,1
-2000,Netherlands,Viet Nam,1204
-2000,Norway,Viet Nam,962
-2000,New Zealand,Viet Nam,209
-2000,Panama,Viet Nam,1
-2000,Peru,Viet Nam,2
-2000,Philippines,Viet Nam,7
-2000,Paraguay,Viet Nam,6
-2000,Sierra Leone,Viet Nam,1
-2000,Slovakia,Viet Nam,12
-2000,Sweden,Viet Nam,1464
-2000,Thailand,Viet Nam,4
-2000,United States of America,Viet Nam,49211
-2000,Yemen,Viet Nam,21
-2001,Argentina,Viet Nam,33
-2001,Australia,Viet Nam,1103
-2001,Austria,Viet Nam,181
-2001,Belgium,Viet Nam,256
-2001,Burkina Faso,Viet Nam,3
-2001,Brazil,Viet Nam,22
-2001,Canada,Viet Nam,202
-2001,Switzerland,Viet Nam,2740
-2001,Chile,Viet Nam,1
-2001,China,Viet Nam,295276
-2001,Côte d'Ivoire,Viet Nam,75
-2001,Czech Rep,Viet Nam,1212
-2001,Germany,Viet Nam,676
-2001,Denmark,Viet Nam,593
-2001,Ecuador,Viet Nam,2
-2001,Spain,Viet Nam,50
-2001,Finland,Viet Nam,176
-2001,France,Viet Nam,11817
-2001,Gabon,Viet Nam,4
-2001,Greece,Viet Nam,2
-2001,"China, Hong Kong SAR",Viet Nam,1342
-2001,Hungary,Viet Nam,7
-2001,Indonesia,Viet Nam,2
-2001,Ireland,Viet Nam,2
-2001,Italy,Viet Nam,12
-2001,Japan,Viet Nam,2284
-2001,Cambodia,Viet Nam,1039
-2001,Liechtenstein,Viet Nam,38
-2001,Morocco,Viet Nam,7
-2001,Malaysia,Viet Nam,1
-2001,Netherlands,Viet Nam,748
-2001,Norway,Viet Nam,491
-2001,New Zealand,Viet Nam,96
-2001,Peru,Viet Nam,2
-2001,Philippines,Viet Nam,8
-2001,Paraguay,Viet Nam,6
-2001,Sierra Leone,Viet Nam,1
-2001,Slovakia,Viet Nam,13
-2001,Sweden,Viet Nam,826
-2001,Thailand,Viet Nam,12
-2001,Timor-Leste,Viet Nam,2
-2001,Ukraine,Viet Nam,2
-2001,United States of America,Viet Nam,35299
-2001,Yemen,Viet Nam,37
-2002,Argentina,Viet Nam,33
-2002,Australia,Viet Nam,438
-2002,Austria,Viet Nam,172
-2002,Belgium,Viet Nam,170
-2002,Burkina Faso,Viet Nam,3
-2002,Bulgaria,Viet Nam,1
-2002,Brazil,Viet Nam,2
-2002,Canada,Viet Nam,201
-2002,Switzerland,Viet Nam,2530
-2002,Chile,Viet Nam,1
-2002,China,Viet Nam,297219
-2002,Côte d'Ivoire,Viet Nam,76
-2002,Czech Rep,Viet Nam,749
-2002,Germany,Viet Nam,27547
-2002,Denmark,Viet Nam,332
-2002,Spain,Viet Nam,50
-2002,Finland,Viet Nam,6
-2002,France,Viet Nam,10818
-2002,Gabon,Viet Nam,4
-2002,United Kingdom,Viet Nam,50
-2002,Greece,Viet Nam,4
-2002,"China, Hong Kong SAR",Viet Nam,1386
-2002,Hungary,Viet Nam,9
-2002,Indonesia,Viet Nam,35
-2002,Ireland,Viet Nam,1
-2002,Italy,Viet Nam,10
-2002,Japan,Viet Nam,1906
-2002,Cambodia,Viet Nam,223
-2002,Morocco,Viet Nam,6
-2002,Malaysia,Viet Nam,1
-2002,Netherlands,Viet Nam,464
-2002,Norway,Viet Nam,100
-2002,New Zealand,Viet Nam,77
-2002,Peru,Viet Nam,2
-2002,Philippines,Viet Nam,8
-2002,Poland,Viet Nam,3
-2002,Paraguay,Viet Nam,6
-2002,Sierra Leone,Viet Nam,1
-2002,Slovakia,Viet Nam,82
-2002,Sweden,Viet Nam,398
-2002,Thailand,Viet Nam,17
-2002,United States of America,Viet Nam,30659
-2002,Yemen,Viet Nam,33
-2003,Argentina,Viet Nam,33
-2003,Australia,Viet Nam,310
-2003,Austria,Viet Nam,139
-2003,Belgium,Viet Nam,144
-2003,Burkina Faso,Viet Nam,3
-2003,Brazil,Viet Nam,2
-2003,Canada,Viet Nam,171
-2003,Switzerland,Viet Nam,2368
-2003,Chile,Viet Nam,1
-2003,China,Viet Nam,299287
-2003,Côte d'Ivoire,Viet Nam,76
-2003,Czech Rep,Viet Nam,216
-2003,Germany,Viet Nam,25813
-2003,Denmark,Viet Nam,277
-2003,Spain,Viet Nam,40
-2003,Finland,Viet Nam,1
-2003,France,Viet Nam,9274
-2003,Gabon,Viet Nam,4
-2003,United Kingdom,Viet Nam,264
-2003,Greece,Viet Nam,4
-2003,"China, Hong Kong SAR",Viet Nam,1815
-2003,Hungary,Viet Nam,28
-2003,Indonesia,Viet Nam,9
-2003,Ireland,Viet Nam,2
-2003,Italy,Viet Nam,8
-2003,Japan,Viet Nam,1692
-2003,Cambodia,Viet Nam,67
-2003,Rep of Korea,Viet Nam,2
-2003,Lithuania,Viet Nam,1
-2003,Morocco,Viet Nam,6
-2003,Malaysia,Viet Nam,2
-2003,Netherlands,Viet Nam,334
-2003,Norway,Viet Nam,7
-2003,New Zealand,Viet Nam,81
-2003,Peru,Viet Nam,1
-2003,Philippines,Viet Nam,10
-2003,Papua New Guinea,Viet Nam,3
-2003,Poland,Viet Nam,7
-2003,Paraguay,Viet Nam,6
-2003,Slovakia,Viet Nam,29
-2003,Sweden,Viet Nam,430
-2003,Thailand,Viet Nam,39
-2003,Timor-Leste,Viet Nam,3
-2003,Ukraine,Viet Nam,13
-2003,United States of America,Viet Nam,21375
-2003,Yemen,Viet Nam,31
-2004,Argentina,Viet Nam,33
-2004,Australia,Viet Nam,239
-2004,Austria,Viet Nam,118
-2004,Belgium,Viet Nam,130
-2004,Burkina Faso,Viet Nam,3
-2004,Brazil,Viet Nam,2
-2004,Canada,Viet Nam,149
-2004,Switzerland,Viet Nam,2219
-2004,Chile,Viet Nam,1
-2004,China,Viet Nam,299287
-2004,Côte d'Ivoire,Viet Nam,76
-2004,Cyprus,Viet Nam,2
-2004,Czech Rep,Viet Nam,107
-2004,Germany,Viet Nam,21261
-2004,Denmark,Viet Nam,253
-2004,Spain,Viet Nam,34
-2004,Finland,Viet Nam,2
-2004,France,Viet Nam,9132
-2004,Gabon,Viet Nam,4
-2004,United Kingdom,Viet Nam,690
-2004,Greece,Viet Nam,4
-2004,"China, Hong Kong SAR",Viet Nam,1816
-2004,Hungary,Viet Nam,13
-2004,Indonesia,Viet Nam,10
-2004,India,Viet Nam,1
-2004,Ireland,Viet Nam,2
-2004,Italy,Viet Nam,9
-2004,Japan,Viet Nam,1421
-2004,Cambodia,Viet Nam,667
-2004,Rep of Korea,Viet Nam,2
-2004,Malaysia,Viet Nam,11
-2004,Netherlands,Viet Nam,305
-2004,Norway,Viet Nam,9
-2004,New Zealand,Viet Nam,21
-2004,Peru,Viet Nam,1
-2004,Philippines,Viet Nam,10
-2004,Papua New Guinea,Viet Nam,3
-2004,Poland,Viet Nam,4
-2004,Paraguay,Viet Nam,6
-2004,Sierra Leone,Viet Nam,1
-2004,Slovakia,Viet Nam,26
-2004,Sweden,Viet Nam,191
-2004,Thailand,Viet Nam,74
-2004,Timor-Leste,Viet Nam,3
-2004,Ukraine,Viet Nam,13
-2004,United States of America,Viet Nam,12490
-2004,Yemen,Viet Nam,31
-2005,Argentina,Viet Nam,33
-2005,Australia,Viet Nam,261
-2005,Austria,Viet Nam,102
-2005,Belgium,Viet Nam,109
-2005,Burkina Faso,Viet Nam,3
-2005,Bulgaria,Viet Nam,3
-2005,Brazil,Viet Nam,4
-2005,Canada,Viet Nam,184
-2005,Switzerland,Viet Nam,2073
-2005,Chile,Viet Nam,1
-2005,China,Viet Nam,300897
-2005,Côte d'Ivoire,Viet Nam,76
-2005,Cyprus,Viet Nam,4
-2005,Czech Rep,Viet Nam,98
-2005,Germany,Viet Nam,31932
-2005,Denmark,Viet Nam,176
-2005,Spain,Viet Nam,5
-2005,Finland,Viet Nam,72
-2005,France,Viet Nam,8832
-2005,Gabon,Viet Nam,4
-2005,United Kingdom,Viet Nam,844
-2005,Greece,Viet Nam,4
-2005,"China, Hong Kong SAR",Viet Nam,1829
-2005,Hungary,Viet Nam,62
-2005,Indonesia,Viet Nam,1
-2005,Ireland,Viet Nam,2
-2005,Italy,Viet Nam,9
-2005,Japan,Viet Nam,1285
-2005,Cambodia,Viet Nam,175
-2005,Rep of Korea,Viet Nam,3
-2005,Malaysia,Viet Nam,65
-2005,Netherlands,Viet Nam,146
-2005,Norway,Viet Nam,10
-2005,New Zealand,Viet Nam,17
-2005,Peru,Viet Nam,1
-2005,Philippines,Viet Nam,10
-2005,Papua New Guinea,Viet Nam,3
-2005,Poland,Viet Nam,11
-2005,Paraguay,Viet Nam,6
-2005,Russian Federation,Viet Nam,3
-2005,Sierra Leone,Viet Nam,1
-2005,Slovakia,Viet Nam,15
-2005,Sweden,Viet Nam,144
-2005,Thailand,Viet Nam,78
-2005,Timor-Leste,Viet Nam,3
-2005,United States of America,Viet Nam,10336
-2005,Yemen,Viet Nam,31
-2006,Argentina,Viet Nam,32
-2006,Australia,Viet Nam,223
-2006,Austria,Viet Nam,170
-2006,Belgium,Viet Nam,95
-2006,Burkina Faso,Viet Nam,3
-2006,Bulgaria,Viet Nam,5
-2006,Brazil,Viet Nam,4
-2006,Canada,Viet Nam,236
-2006,Switzerland,Viet Nam,1946
-2006,Chile,Viet Nam,1
-2006,China,Viet Nam,300897
-2006,Côte d'Ivoire,Viet Nam,50
-2006,Cyprus,Viet Nam,8
-2006,Czech Rep,Viet Nam,167
-2006,Germany,Viet Nam,12558
-2006,Denmark,Viet Nam,144
-2006,Spain,Viet Nam,6
-2006,Finland,Viet Nam,72
-2006,France,Viet Nam,8750
-2006,Gabon,Viet Nam,4
-2006,United Kingdom,Viet Nam,871
-2006,Greece,Viet Nam,5
-2006,"China, Hong Kong SAR",Viet Nam,1830
-2006,Hungary,Viet Nam,109
-2006,Indonesia,Viet Nam,35
-2006,Ireland,Viet Nam,6
-2006,Italy,Viet Nam,9
-2006,Japan,Viet Nam,1132
-2006,Cambodia,Viet Nam,192
-2006,Rep of Korea,Viet Nam,3
-2006,Malaysia,Viet Nam,76
-2006,Netherlands,Viet Nam,91
-2006,Norway,Viet Nam,72
-2006,New Zealand,Viet Nam,12
-2006,Peru,Viet Nam,1
-2006,Philippines,Viet Nam,10
-2006,Papua New Guinea,Viet Nam,3
-2006,Poland,Viet Nam,9
-2006,Paraguay,Viet Nam,6
-2006,Russian Federation,Viet Nam,3
-2006,Sierra Leone,Viet Nam,1
-2006,Slovakia,Viet Nam,20
-2006,Sweden,Viet Nam,158
-2006,Thailand,Viet Nam,121
-2006,Timor-Leste,Viet Nam,3
-2006,Ukraine,Viet Nam,2
-2006,United States of America,Viet Nam,45869
-2006,Yemen,Viet Nam,31
-2007,Argentina,Viet Nam,32
-2007,Australia,Viet Nam,71
-2007,Austria,Viet Nam,152
-2007,Belgium,Viet Nam,80
-2007,Benin,Viet Nam,3
-2007,Burkina Faso,Viet Nam,5
-2007,Bulgaria,Viet Nam,5
-2007,Brazil,Viet Nam,4
-2007,Canada,Viet Nam,197
-2007,Switzerland,Viet Nam,1839
-2007,Chile,Viet Nam,1
-2007,China,Viet Nam,300897
-2007,Cyprus,Viet Nam,40
-2007,Czech Rep,Viet Nam,137
-2007,Germany,Viet Nam,13824
-2007,Denmark,Viet Nam,114
-2007,Ecuador,Viet Nam,4
-2007,Spain,Viet Nam,6
-2007,Finland,Viet Nam,2
-2007,France,Viet Nam,8668
-2007,Gabon,Viet Nam,4
-2007,United Kingdom,Viet Nam,889
-2007,Greece,Viet Nam,4
-2007,"China, Hong Kong SAR",Viet Nam,8
-2007,Hungary,Viet Nam,457
-2007,Indonesia,Viet Nam,2
-2007,Ireland,Viet Nam,13
-2007,Italy,Viet Nam,14
-2007,Japan,Viet Nam,977
-2007,Cambodia,Viet Nam,386
-2007,Rep of Korea,Viet Nam,0
-2007,Lithuania,Viet Nam,1
-2007,Mexico,Viet Nam,1
-2007,Malaysia,Viet Nam,62
-2007,Netherlands,Viet Nam,53
-2007,Norway,Viet Nam,22
-2007,New Zealand,Viet Nam,11
-2007,Peru,Viet Nam,1
-2007,Philippines,Viet Nam,6
-2007,Papua New Guinea,Viet Nam,3
-2007,Poland,Viet Nam,9
-2007,Paraguay,Viet Nam,6
-2007,Russian Federation,Viet Nam,4
-2007,Sierra Leone,Viet Nam,1
-2007,Slovakia,Viet Nam,5
-2007,Sweden,Viet Nam,149
-2007,Thailand,Viet Nam,61
-2007,Timor-Leste,Viet Nam,1
-2007,Ukraine,Viet Nam,1
-2007,United States of America,Viet Nam,297
-2007,Yemen,Viet Nam,31
-2008,Argentina,Viet Nam,1
-2008,Australia,Viet Nam,65
-2008,Austria,Viet Nam,122
-2008,Belgium,Viet Nam,71
-2008,Benin,Viet Nam,3
-2008,Burkina Faso,Viet Nam,5
-2008,Bulgaria,Viet Nam,6
-2008,Brazil,Viet Nam,4
-2008,Canada,Viet Nam,200
-2008,Switzerland,Viet Nam,1711
-2008,Chile,Viet Nam,1
-2008,China,Viet Nam,300897
-2008,Côte d'Ivoire,Viet Nam,1
-2008,Cyprus,Viet Nam,36
-2008,Czech Rep,Viet Nam,124
-2008,Germany,Viet Nam,14759
-2008,Denmark,Viet Nam,88
-2008,Ecuador,Viet Nam,4
-2008,Spain,Viet Nam,6
-2008,Finland,Viet Nam,2
-2008,France,Viet Nam,8583
-2008,Gabon,Viet Nam,4
-2008,United Kingdom,Viet Nam,902
-2008,Greece,Viet Nam,5
-2008,"China, Hong Kong SAR",Viet Nam,11
-2008,Hungary,Viet Nam,472
-2008,Indonesia,Viet Nam,9
-2008,Ireland,Viet Nam,11
-2008,Italy,Viet Nam,14
-2008,Japan,Viet Nam,873
-2008,Cambodia,Viet Nam,194
-2008,Lithuania,Viet Nam,1
-2008,Rep of Moldova,Viet Nam,1
-2008,Mexico,Viet Nam,1
-2008,Malaysia,Viet Nam,35
-2008,Netherlands,Viet Nam,50
-2008,Norway,Viet Nam,36
-2008,New Zealand,Viet Nam,10
-2008,Peru,Viet Nam,1
-2008,Philippines,Viet Nam,9
-2008,Papua New Guinea,Viet Nam,3
-2008,Poland,Viet Nam,22
-2008,Paraguay,Viet Nam,6
-2008,Romania,Viet Nam,0
-2008,Russian Federation,Viet Nam,4
-2008,Sierra Leone,Viet Nam,1
-2008,Slovakia,Viet Nam,1
-2008,Sweden,Viet Nam,149
-2008,Thailand,Viet Nam,77
-2008,Timor-Leste,Viet Nam,1
-2008,Ukraine,Viet Nam,1
-2008,United States of America,Viet Nam,271
-2008,Yemen,Viet Nam,31
-2009,Australia,Viet Nam,66
-2009,Austria,Viet Nam,62
-2009,Belgium,Viet Nam,64
-2009,Benin,Viet Nam,3
-2009,Burkina Faso,Viet Nam,5
-2009,Bulgaria,Viet Nam,4
-2009,Brazil,Viet Nam,4
-2009,Canada,Viet Nam,214
-2009,Switzerland,Viet Nam,1591
-2009,China,Viet Nam,300897
-2009,Côte d'Ivoire,Viet Nam,4
-2009,Cyprus,Viet Nam,73
-2009,Czech Rep,Viet Nam,105
-2009,Germany,Viet Nam,25839
-2009,Denmark,Viet Nam,78
-2009,Ecuador,Viet Nam,4
-2009,Spain,Viet Nam,6
-2009,Finland,Viet Nam,2
-2009,France,Viet Nam,8771
-2009,Gabon,Viet Nam,4
-2009,United Kingdom,Viet Nam,934
-2009,Greece,Viet Nam,3
-2009,"China, Hong Kong SAR",Viet Nam,10
-2009,Hungary,Viet Nam,8
-2009,Indonesia,Viet Nam,0
-2009,Ireland,Viet Nam,7
-2009,Italy,Viet Nam,15
-2009,Japan,Viet Nam,713
-2009,Cambodia,Viet Nam,113
-2009,Lithuania,Viet Nam,1
-2009,Rep of Moldova,Viet Nam,0
-2009,Mexico,Viet Nam,1
-2009,Malaysia,Viet Nam,23
-2009,Netherlands,Viet Nam,50
-2009,Norway,Viet Nam,24
-2009,New Zealand,Viet Nam,11
-2009,Peru,Viet Nam,1
-2009,Philippines,Viet Nam,5
-2009,Papua New Guinea,Viet Nam,3
-2009,Poland,Viet Nam,25
-2009,Paraguay,Viet Nam,6
-2009,Romania,Viet Nam,0
-2009,Russian Federation,Viet Nam,4
-2009,Sierra Leone,Viet Nam,1
-2009,Slovakia,Viet Nam,1
-2009,Sweden,Viet Nam,217
-2009,Thailand,Viet Nam,184
-2009,Timor-Leste,Viet Nam,1
-2009,Ukraine,Viet Nam,14
-2009,United States of America,Viet Nam,288
-2009,Yemen,Viet Nam,30
-2010,Australia,Viet Nam,105
-2010,Austria,Viet Nam,51
-2010,Belgium,Viet Nam,59
-2010,Benin,Viet Nam,3
-2010,Burkina Faso,Viet Nam,5
-2010,Brazil,Viet Nam,4
-2010,Canada,Viet Nam,196
-2010,Switzerland,Viet Nam,1487
-2010,China,Viet Nam,300897
-2010,Côte d'Ivoire,Viet Nam,7
-2010,Cyprus,Viet Nam,73
-2010,Czech Rep,Viet Nam,105
-2010,Germany,Viet Nam,25492
-2010,Denmark,Viet Nam,58
-2010,Ecuador,Viet Nam,3
-2010,Spain,Viet Nam,6
-2010,Finland,Viet Nam,2
-2010,France,Viet Nam,8719
-2010,Gabon,Viet Nam,4
-2010,United Kingdom,Viet Nam,987
-2010,Greece,Viet Nam,7
-2010,"China, Hong Kong SAR",Viet Nam,7
-2010,Hungary,Viet Nam,7
-2010,Ireland,Viet Nam,11
-2010,Italy,Viet Nam,9
-2010,Japan,Viet Nam,587
-2010,Cambodia,Viet Nam,103
-2010,Lithuania,Viet Nam,1
-2010,Mexico,Viet Nam,1
-2010,Malaysia,Viet Nam,8
-2010,Netherlands,Viet Nam,50
-2010,Norway,Viet Nam,21
-2010,New Zealand,Viet Nam,12
-2010,Peru,Viet Nam,1
-2010,Philippines,Viet Nam,4
-2010,Papua New Guinea,Viet Nam,3
-2010,Poland,Viet Nam,34
-2010,Paraguay,Viet Nam,6
-2010,Romania,Viet Nam,0
-2010,Russian Federation,Viet Nam,5
-2010,Sierra Leone,Viet Nam,1
-2010,Slovakia,Viet Nam,1
-2010,Sweden,Viet Nam,213
-2010,Thailand,Viet Nam,170
-2010,Timor-Leste,Viet Nam,0
-2010,Ukraine,Viet Nam,15
-2010,United States of America,Viet Nam,257
-2010,Yemen,Viet Nam,30
-2011,Australia,Viet Nam,113
-2011,Austria,Viet Nam,43
-2011,Belgium,Viet Nam,56
-2011,Benin,Viet Nam,3
-2011,Burkina Faso,Viet Nam,5
-2011,Bulgaria,Viet Nam,3
-2011,Brazil,Viet Nam,4
-2011,Canada,Viet Nam,194
-2011,Switzerland,Viet Nam,1400
-2011,China,Viet Nam,300897
-2011,Côte d'Ivoire,Viet Nam,9
-2011,Cyprus,Viet Nam,63
-2011,Czech Rep,Viet Nam,62
-2011,Germany,Viet Nam,24831
-2011,Denmark,Viet Nam,40
-2011,Ecuador,Viet Nam,3
-2011,Spain,Viet Nam,5
-2011,Finland,Viet Nam,6
-2011,France,Viet Nam,8654
-2011,Gabon,Viet Nam,4
-2011,United Kingdom,Viet Nam,1251
-2011,Greece,Viet Nam,4
-2011,"China, Hong Kong SAR",Viet Nam,11
-2011,Hungary,Viet Nam,2
-2011,Ireland,Viet Nam,8
-2011,Italy,Viet Nam,9
-2011,Japan,Viet Nam,495
-2011,Cambodia,Viet Nam,33
-2011,Lithuania,Viet Nam,1
-2011,Luxembourg,Viet Nam,0
-2011,Mexico,Viet Nam,1
-2011,Malaysia,Viet Nam,10
-2011,Netherlands,Viet Nam,37
-2011,Norway,Viet Nam,28
-2011,New Zealand,Viet Nam,8
-2011,Peru,Viet Nam,1
-2011,Philippines,Viet Nam,4
-2011,Papua New Guinea,Viet Nam,3
-2011,Poland,Viet Nam,37
-2011,Paraguay,Viet Nam,6
-2011,Romania,Viet Nam,0
-2011,Russian Federation,Viet Nam,3
-2011,Sierra Leone,Viet Nam,1
-2011,Slovakia,Viet Nam,1
-2011,Sweden,Viet Nam,135
-2011,Thailand,Viet Nam,339
-2011,Ukraine,Viet Nam,8
-2011,United States of America,Viet Nam,272
-2011,Yemen,Viet Nam,25
-2011,South Africa,Viet Nam,2
-2012,Australia,Viet Nam,138
-2012,Austria,Viet Nam,50
-2012,Belgium,Viet Nam,51
-2012,Burkina Faso,Viet Nam,5
-2012,Bulgaria,Viet Nam,0
-2012,Brazil,Viet Nam,4
-2012,Canada,Viet Nam,173
-2012,Switzerland,Viet Nam,1345
-2012,China,Viet Nam,300897
-2012,Côte d'Ivoire,Viet Nam,9
-2012,Cyprus,Viet Nam,48
-2012,Czech Rep,Viet Nam,86
-2012,Germany,Viet Nam,24385
-2012,Denmark,Viet Nam,20
-2012,Ecuador,Viet Nam,3
-2012,Spain,Viet Nam,5
-2012,Estonia,Viet Nam,0
-2012,Finland,Viet Nam,4
-2012,France,Viet Nam,8605
-2012,Gabon,Viet Nam,4
-2012,United Kingdom,Viet Nam,1185
-2012,Greece,Viet Nam,4
-2012,"China, Hong Kong SAR",Viet Nam,16
-2012,Hungary,Viet Nam,2
-2012,Indonesia,Viet Nam,6
-2012,Ireland,Viet Nam,9
-2012,Italy,Viet Nam,9
-2012,Japan,Viet Nam,360
-2012,Cambodia,Viet Nam,34
-2012,Lithuania,Viet Nam,3
-2012,Malaysia,Viet Nam,10
-2012,Netherlands,Viet Nam,31
-2012,Norway,Viet Nam,31
-2012,New Zealand,Viet Nam,4
-2012,Peru,Viet Nam,1
-2012,Philippines,Viet Nam,4
-2012,Poland,Viet Nam,30
-2012,Paraguay,Viet Nam,6
-2012,Romania,Viet Nam,0
-2012,Russian Federation,Viet Nam,0
-2012,Slovakia,Viet Nam,1
-2012,Sweden,Viet Nam,110
-2012,Thailand,Viet Nam,346
-2012,Ukraine,Viet Nam,10
-2012,United States of America,Viet Nam,277
-2012,Yemen,Viet Nam,20
-2012,South Africa,Viet Nam,2
-2013,Australia,Viet Nam,192
-2013,Austria,Viet Nam,47
-2013,Belgium,Viet Nam,18
-2013,Burkina Faso,Viet Nam,5
-2013,Bulgaria,Viet Nam,2
-2013,Belarus,Viet Nam,0
-2013,Brazil,Viet Nam,4
-2013,Canada,Viet Nam,155
-2013,Switzerland,Viet Nam,1265
-2013,China,Viet Nam,300896
-2013,Côte d'Ivoire,Viet Nam,9
-2013,Cyprus,Viet Nam,32
-2013,Czech Rep,Viet Nam,73
-2013,Germany,Viet Nam,2063
-2013,Denmark,Viet Nam,7
-2013,Ecuador,Viet Nam,3
-2013,Spain,Viet Nam,4
-2013,Estonia,Viet Nam,2
-2013,Finland,Viet Nam,15
-2013,France,Viet Nam,8556
-2013,Gabon,Viet Nam,4
-2013,United Kingdom,Viet Nam,1046
-2013,Greece,Viet Nam,16
-2013,"China, Hong Kong SAR",Viet Nam,254
-2013,Hungary,Viet Nam,2
-2013,Indonesia,Viet Nam,0
-2013,Ireland,Viet Nam,15
-2013,Italy,Viet Nam,9
-2013,Japan,Viet Nam,212
-2013,Cambodia,Viet Nam,36
-2013,Rep of Korea,Viet Nam,1
-2013,Lithuania,Viet Nam,4
-2013,Luxembourg,Viet Nam,1
-2013,Malaysia,Viet Nam,11
-2013,Netherlands,Viet Nam,28
-2013,Norway,Viet Nam,31
-2013,Nauru,Viet Nam,19
-2013,New Zealand,Viet Nam,6
-2013,Peru,Viet Nam,1
-2013,Philippines,Viet Nam,4
-2013,Papua New Guinea,Viet Nam,79
-2013,Poland,Viet Nam,21
-2013,Paraguay,Viet Nam,6
-2013,Romania,Viet Nam,0
-2013,Slovakia,Viet Nam,1
-2013,Slovenia,Viet Nam,0
-2013,Sweden,Viet Nam,104
-2013,Thailand,Viet Nam,436
-2013,Ukraine,Viet Nam,13
-2013,United States of America,Viet Nam,382
-2013,Yemen,Viet Nam,18
-2013,South Africa,Viet Nam,2
-2014,Argentina,Viet Nam,0
-2014,Australia,Viet Nam,431
-2014,Austria,Viet Nam,45
-2014,Belgium,Viet Nam,17
-2014,Burkina Faso,Viet Nam,0
-2014,Bulgaria,Viet Nam,0
-2014,Brazil,Viet Nam,4
-2014,Canada,Viet Nam,129
-2014,Switzerland,Viet Nam,1212
-2014,China,Viet Nam,300896
-2014,Côte d'Ivoire,Viet Nam,10
-2014,Cyprus,Viet Nam,44
-2014,Czech Rep,Viet Nam,96
-2014,Germany,Viet Nam,2274
-2014,Denmark,Viet Nam,5
-2014,Ecuador,Viet Nam,3
-2014,Spain,Viet Nam,5
-2014,Estonia,Viet Nam,0
-2014,Finland,Viet Nam,3
-2014,France,Viet Nam,8313
-2014,Gabon,Viet Nam,0
-2014,United Kingdom,Viet Nam,973
-2014,Greece,Viet Nam,8
-2014,"China, Hong Kong SAR",Viet Nam,490
-2014,Hungary,Viet Nam,3
-2014,Ireland,Viet Nam,14
-2014,Italy,Viet Nam,8
-2014,Japan,Viet Nam,173
-2014,Cambodia,Viet Nam,47
-2014,Rep of Korea,Viet Nam,1
-2014,Lithuania,Viet Nam,7
-2014,Luxembourg,Viet Nam,1
-2014,Latvia,Viet Nam,10
-2014,Malaysia,Viet Nam,8
-2014,Netherlands,Viet Nam,33
-2014,Norway,Viet Nam,20
-2014,New Zealand,Viet Nam,5
-2014,Peru,Viet Nam,1
-2014,Philippines,Viet Nam,4
-2014,Papua New Guinea,Viet Nam,0
-2014,Poland,Viet Nam,28
-2014,Paraguay,Viet Nam,6
-2014,Romania,Viet Nam,2
-2014,Russian Federation,Viet Nam,4
-2014,Slovakia,Viet Nam,1
-2014,Sweden,Viet Nam,119
-2014,Thailand,Viet Nam,635
-2014,Ukraine,Viet Nam,23
-2014,United States of America,Viet Nam,436
-2014,Yemen,Viet Nam,18
-2014,South Africa,Viet Nam,2
-2015,Argentina,Viet Nam,2
-2015,Australia,Viet Nam,601
-2015,Austria,Viet Nam,49
-2015,Belgium,Viet Nam,42
-2015,Brazil,Viet Nam,4
-2015,Canada,Viet Nam,118
-2015,Switzerland,Viet Nam,1135
-2015,China,Viet Nam,300896
-2015,Côte d'Ivoire,Viet Nam,10
-2015,Cyprus,Viet Nam,74
-2015,Czech Rep,Viet Nam,101
-2015,Germany,Viet Nam,2443
-2015,Denmark,Viet Nam,1
-2015,Ecuador,Viet Nam,3
-2015,Spain,Viet Nam,3
-2015,Finland,Viet Nam,6
-2015,France,Viet Nam,8169
-2015,United Kingdom,Viet Nam,1078
-2015,Greece,Viet Nam,8
-2015,"China, Hong Kong SAR",Viet Nam,489
-2015,Hungary,Viet Nam,8
-2015,Ireland,Viet Nam,15
-2015,Italy,Viet Nam,10
-2015,Jordan,Viet Nam,3
-2015,Japan,Viet Nam,601
-2015,Cambodia,Viet Nam,46
-2015,Rep of Korea,Viet Nam,81
-2015,Lithuania,Viet Nam,1
-2015,Luxembourg,Viet Nam,1
-2015,Latvia,Viet Nam,4
-2015,Malaysia,Viet Nam,3
-2015,Netherlands,Viet Nam,38
-2015,Norway,Viet Nam,18
-2015,New Zealand,Viet Nam,9
-2015,Peru,Viet Nam,1
-2015,Philippines,Viet Nam,8
-2015,Papua New Guinea,Viet Nam,4
-2015,Poland,Viet Nam,38
-2015,Paraguay,Viet Nam,6
-2015,Romania,Viet Nam,4
-2015,Russian Federation,Viet Nam,1
-2015,Slovakia,Viet Nam,1
-2015,Sweden,Viet Nam,102
-2015,Thailand,Viet Nam,769
-2015,Ukraine,Viet Nam,23
-2015,United States of America,Viet Nam,479
-2015,Yemen,Viet Nam,18
-2015,South Africa,Viet Nam,3
-2016,Argentina,Viet Nam,0
-2016,Australia,Viet Nam,1007
-2016,Austria,Viet Nam,49
-2016,Belgium,Viet Nam,40
-2016,Brazil,Viet Nam,0
-2016,Canada,Viet Nam,56
-2016,Switzerland,Viet Nam,1084
-2016,China,Viet Nam,317098
-2016,Côte d'Ivoire,Viet Nam,0
-2016,Cyprus,Viet Nam,133
-2016,Czech Rep,Viet Nam,101
-2016,Germany,Viet Nam,1870
-2016,Spain,Viet Nam,5
-2016,Finland,Viet Nam,5
-2016,France,Viet Nam,8016
-2016,United Kingdom,Viet Nam,1559
-2016,Greece,Viet Nam,7
-2016,"China, Hong Kong SAR",Viet Nam,0
-2016,Hungary,Viet Nam,0
-2016,India,Viet Nam,0
-2016,Ireland,Viet Nam,15
-2016,Italy,Viet Nam,16
-2016,Jordan,Viet Nam,0
-2016,Japan,Viet Nam,846
-2016,Cambodia,Viet Nam,189
-2016,Rep of Korea,Viet Nam,119
-2016,Lithuania,Viet Nam,0
-2016,Latvia,Viet Nam,0
-2016,Malaysia,Viet Nam,0
-2016,Netherlands,Viet Nam,36
-2016,Norway,Viet Nam,48
-2016,New Zealand,Viet Nam,8
-2016,Peru,Viet Nam,0
-2016,Philippines,Viet Nam,21
-2016,Poland,Viet Nam,46
-2016,Paraguay,Viet Nam,6
-2016,Romania,Viet Nam,0
-2016,Slovakia,Viet Nam,0
-2016,Sweden,Viet Nam,117
-2016,Thailand,Viet Nam,789
-2016,Ukraine,Viet Nam,18
-2016,United States of America,Viet Nam,546
-2016,Yemen,Viet Nam,15
-2016,South Africa,Viet Nam,0
+1964,Cambodia,Vietnam,10000
+1965,Cambodia,Vietnam,15000
+1966,Cambodia,Vietnam,17000
+1967,Cambodia,Vietnam,20000
+1968,Cambodia,Vietnam,22000
+1969,Cambodia,Vietnam,22000
+1970,Cambodia,Vietnam,20000
+1975,Philippines,Vietnam,690
+1975,Thailand,Vietnam,1420
+1976,Philippines,Vietnam,940
+1976,Thailand,Vietnam,3060
+1977,Japan,Vietnam,600
+1977,Malaysia,Vietnam,3880
+1977,Philippines,Vietnam,1300
+1977,Thailand,Vietnam,3600
+1978,"China, Hong Kong SAR",Vietnam,55710
+1978,Indonesia,Vietnam,2240
+1978,Japan,Vietnam,610
+1978,Rep of Korea,Vietnam,70
+1978,Malaysia,Vietnam,49580
+1978,Philippines,Vietnam,1300
+1978,Singapore,Vietnam,730
+1978,Thailand,Vietnam,4770
+1979,China,Vietnam,250000
+1979,"China, Hong Kong SAR",Vietnam,55700
+1979,Indonesia,Vietnam,32200
+1979,Japan,Vietnam,1260
+1979,Rep of Korea,Vietnam,170
+1979,"China, Macao SAR",Vietnam,3490
+1979,Malaysia,Vietnam,34300
+1979,Peru,Vietnam,5430
+1979,Philippines,Vietnam,5300
+1979,Thailand,Vietnam,7440
+1980,China,Vietnam,263000
+1980,"China, Hong Kong SAR",Vietnam,24070
+1980,Indonesia,Vietnam,8460
+1980,Italy,Vietnam,2418
+1980,Japan,Vietnam,2080
+1980,"China, Macao SAR",Vietnam,2920
+1980,Malaysia,Vietnam,12160
+1980,Philippines,Vietnam,20300
+1980,Thailand,Vietnam,9020
+1981,China,Vietnam,265000
+1981,"China, Hong Kong SAR",Vietnam,13540
+1981,Indonesia,Vietnam,6200
+1981,Italy,Vietnam,2468
+1981,Japan,Vietnam,1800
+1981,Rep of Korea,Vietnam,60
+1981,"China, Macao SAR",Vietnam,1200
+1981,Malaysia,Vietnam,9850
+1981,Philippines,Vietnam,6630
+1981,Thailand,Vietnam,5800
+1982,China,Vietnam,268350
+1982,Greece,Vietnam,120
+1982,"China, Hong Kong SAR",Vietnam,12620
+1982,Indonesia,Vietnam,10610
+1982,Italy,Vietnam,2573
+1982,Japan,Vietnam,3230
+1982,Rep of Korea,Vietnam,70
+1982,"China, Macao SAR",Vietnam,970
+1982,Malaysia,Vietnam,8440
+1982,Philippines,Vietnam,8980
+1982,Singapore,Vietnam,480
+1982,Thailand,Vietnam,8900
+1983,China,Vietnam,272720
+1983,Côte d'Ivoire,Vietnam,120
+1983,Greece,Vietnam,130
+1983,"China, Hong Kong SAR",Vietnam,12770
+1983,Indonesia,Vietnam,8710
+1983,Italy,Vietnam,2759
+1983,Japan,Vietnam,3630
+1983,"China, Macao SAR",Vietnam,800
+1983,Malaysia,Vietnam,10080
+1983,Philippines,Vietnam,7770
+1983,Singapore,Vietnam,290
+1983,Thailand,Vietnam,8620
+1984,Brazil,Vietnam,140
+1984,China,Vietnam,275960
+1984,Côte d'Ivoire,Vietnam,180
+1984,Greece,Vietnam,160
+1984,"China, Hong Kong SAR",Vietnam,11900
+1984,Indonesia,Vietnam,8500
+1984,Italy,Vietnam,2928
+1984,Japan,Vietnam,3917
+1984,"China, Macao SAR",Vietnam,730
+1984,Malaysia,Vietnam,8850
+1984,Philippines,Vietnam,10080
+1984,Thailand,Vietnam,4750
+1985,Brazil,Vietnam,90
+1985,China,Vietnam,275480
+1985,Côte d'Ivoire,Vietnam,200
+1985,Greece,Vietnam,160
+1985,"China, Hong Kong SAR",Vietnam,9400
+1985,Indonesia,Vietnam,7560
+1985,Italy,Vietnam,2980
+1985,Japan,Vietnam,4707
+1985,"China, Macao SAR",Vietnam,700
+1985,Malaysia,Vietnam,8460
+1985,Philippines,Vietnam,11480
+1985,Thailand,Vietnam,5400
+1986,Brazil,Vietnam,90
+1986,China,Vietnam,278000
+1986,Côte d'Ivoire,Vietnam,250
+1986,Greece,Vietnam,200
+1986,"China, Hong Kong SAR",Vietnam,8000
+1986,Indonesia,Vietnam,3970
+1986,Italy,Vietnam,3072
+1986,Japan,Vietnam,5016
+1986,"China, Macao SAR",Vietnam,600
+1986,Malaysia,Vietnam,9000
+1986,Philippines,Vietnam,11360
+1986,Singapore,Vietnam,60
+1986,Thailand,Vietnam,7050
+1987,China,Vietnam,276800
+1987,Côte d'Ivoire,Vietnam,260
+1987,Greece,Vietnam,210
+1987,"China, Hong Kong SAR",Vietnam,9530
+1987,Indonesia,Vietnam,2450
+1987,Italy,Vietnam,3106
+1987,Japan,Vietnam,5601
+1987,Rep of Korea,Vietnam,60
+1987,"China, Macao SAR",Vietnam,500
+1987,Malaysia,Vietnam,9120
+1987,Philippines,Vietnam,3220
+1987,Singapore,Vietnam,320
+1987,Thailand,Vietnam,14540
+1988,China,Vietnam,280500
+1988,Côte d'Ivoire,Vietnam,260
+1988,Indonesia,Vietnam,2354
+1988,Italy,Vietnam,3113
+1988,Japan,Vietnam,6110
+1988,Rep of Korea,Vietnam,120
+1988,"China, Macao SAR",Vietnam,440
+1988,Malaysia,Vietnam,14210
+1988,Philippines,Vietnam,5031
+1988,Singapore,Vietnam,320
+1988,Thailand,Vietnam,14120
+1988,United States of America,Vietnam,113734
+1988,Yemen,Vietnam,67
+1989,China,Vietnam,280500
+1989,Denmark,Vietnam,2285
+1989,Greece,Vietnam,290
+1989,Indonesia,Vietnam,922
+1989,Italy,Vietnam,1327
+1989,Japan,Vietnam,6479
+1989,Rep of Korea,Vietnam,230
+1989,"China, Macao SAR",Vietnam,422
+1989,Malaysia,Vietnam,20475
+1989,Philippines,Vietnam,9659
+1989,Singapore,Vietnam,480
+1989,Thailand,Vietnam,13574
+1989,United States of America,Vietnam,120243
+1989,Yemen,Vietnam,50
+1990,China,Vietnam,283426
+1990,Denmark,Vietnam,1668
+1990,"China, Hong Kong SAR",Vietnam,8161
+1990,Indonesia,Vietnam,1457
+1990,Italy,Vietnam,760
+1990,Japan,Vietnam,6819
+1990,Rep of Korea,Vietnam,230
+1990,"China, Macao SAR",Vietnam,205
+1990,Malaysia,Vietnam,14862
+1990,Philippines,Vietnam,19410
+1990,Sweden,Vietnam,5626
+1990,Thailand,Vietnam,15778
+1990,United States of America,Vietnam,137577
+1990,Yemen,Vietnam,50
+1991,China,Vietnam,284536
+1991,Denmark,Vietnam,1151
+1991,Spain,Vietnam,277
+1991,United Kingdom,Vietnam,5
+1991,"China, Hong Kong SAR",Vietnam,4409
+1991,Indonesia,Vietnam,1453
+1991,Italy,Vietnam,710
+1991,Japan,Vietnam,6397
+1991,Rep of Korea,Vietnam,162
+1991,"China, Macao SAR",Vietnam,116
+1991,Malaysia,Vietnam,12493
+1991,Philippines,Vietnam,8621
+1991,Sweden,Vietnam,5286
+1991,Thailand,Vietnam,13708
+1991,United States of America,Vietnam,158999
+1992,China,Vietnam,285543
+1992,Denmark,Vietnam,662
+1992,Spain,Vietnam,277
+1992,United Kingdom,Vietnam,5
+1992,"China, Hong Kong SAR",Vietnam,2600
+1992,Indonesia,Vietnam,2939
+1992,Italy,Vietnam,607
+1992,Japan,Vietnam,6669
+1992,Rep of Korea,Vietnam,149
+1992,"China, Macao SAR",Vietnam,15
+1992,Malaysia,Vietnam,11370
+1992,Netherlands,Vietnam,1467
+1992,Philippines,Vietnam,6721
+1992,Sweden,Vietnam,5112
+1992,Thailand,Vietnam,12649
+1992,United States of America,Vietnam,180326
+1993,Argentina,Vietnam,5
+1993,Central African Rep,Vietnam,4
+1993,Switzerland,Vietnam,6082
+1993,Chile,Vietnam,1
+1993,China,Vietnam,285500
+1993,Côte d'Ivoire,Vietnam,253
+1993,Colombia,Vietnam,34
+1993,Denmark,Vietnam,730
+1993,Ecuador,Vietnam,12
+1993,Spain,Vietnam,288
+1993,United Kingdom,Vietnam,5
+1993,Greece,Vietnam,500
+1993,"China, Hong Kong SAR",Vietnam,1846
+1993,Indonesia,Vietnam,1869
+1993,India,Vietnam,3
+1993,Italy,Vietnam,423
+1993,Japan,Vietnam,6495
+1993,Cambodia,Vietnam,3
+1993,"China, Macao SAR",Vietnam,10
+1993,Malaysia,Vietnam,5
+1993,Niger,Vietnam,1
+1993,Netherlands,Vietnam,1600
+1993,Peru,Vietnam,2
+1993,Philippines,Vietnam,1670
+1993,Paraguay,Vietnam,26
+1993,Singapore,Vietnam,2
+1993,Sierra Leone,Vietnam,1
+1993,Sweden,Vietnam,4991
+1993,Thailand,Vietnam,9797
+1993,United States of America,Vietnam,205469
+1994,Argentina,Vietnam,8
+1994,Canada,Vietnam,14007
+1994,Switzerland,Vietnam,5477
+1994,Chile,Vietnam,1
+1994,China,Vietnam,285470
+1994,Côte d'Ivoire,Vietnam,253
+1994,Colombia,Vietnam,34
+1994,Denmark,Vietnam,730
+1994,Ecuador,Vietnam,23
+1994,Spain,Vietnam,293
+1994,United Kingdom,Vietnam,5
+1994,Greece,Vietnam,500
+1994,"China, Hong Kong SAR",Vietnam,1698
+1994,Indonesia,Vietnam,97
+1994,India,Vietnam,2
+1994,Italy,Vietnam,254
+1994,Japan,Vietnam,5942
+1994,Cambodia,Vietnam,3
+1994,"China, Macao SAR",Vietnam,9
+1994,Malaysia,Vietnam,5
+1994,Netherlands,Vietnam,1606
+1994,Peru,Vietnam,2
+1994,Philippines,Vietnam,668
+1994,Paraguay,Vietnam,26
+1994,Singapore,Vietnam,2
+1994,Sierra Leone,Vietnam,1
+1994,Sweden,Vietnam,4488
+1994,Thailand,Vietnam,6121
+1994,United States of America,Vietnam,211376
+1995,Brazil,Vietnam,21
+1995,Canada,Vietnam,8853
+1995,Switzerland,Vietnam,4197
+1995,Chile,Vietnam,1
+1995,China,Vietnam,286783
+1995,Côte d'Ivoire,Vietnam,253
+1995,Denmark,Vietnam,730
+1995,Ecuador,Vietnam,8
+1995,Spain,Vietnam,314
+1995,France,Vietnam,20618
+1995,United Kingdom,Vietnam,5
+1995,"China, Hong Kong SAR",Vietnam,1479
+1995,Indonesia,Vietnam,19
+1995,India,Vietnam,2
+1995,Iceland,Vietnam,122
+1995,Italy,Vietnam,202
+1995,Japan,Vietnam,5432
+1995,Cambodia,Vietnam,6
+1995,"China, Macao SAR",Vietnam,8
+1995,Netherlands,Vietnam,1729
+1995,New Zealand,Vietnam,993
+1995,Peru,Vietnam,1
+1995,Philippines,Vietnam,481
+1995,Paraguay,Vietnam,26
+1995,Singapore,Vietnam,102
+1995,Sierra Leone,Vietnam,1
+1995,Sweden,Vietnam,4325
+1995,Thailand,Vietnam,5014
+1995,United States of America,Vietnam,201816
+1996,Australia,Vietnam,8121
+1996,Belgium,Vietnam,3090
+1996,Brazil,Vietnam,20
+1996,Canada,Vietnam,5765
+1996,Switzerland,Vietnam,3711
+1996,Chile,Vietnam,2
+1996,China,Vietnam,288805
+1996,Côte d'Ivoire,Vietnam,52
+1996,Czech Rep,Vietnam,101
+1996,Denmark,Vietnam,592
+1996,Ecuador,Vietnam,8
+1996,Spain,Vietnam,86
+1996,France,Vietnam,19219
+1996,United Kingdom,Vietnam,5
+1996,"China, Hong Kong SAR",Vietnam,1345
+1996,Indonesia,Vietnam,29
+1996,India,Vietnam,2
+1996,Iceland,Vietnam,122
+1996,Italy,Vietnam,110
+1996,Japan,Vietnam,5268
+1996,Cambodia,Vietnam,5
+1996,Netherlands,Vietnam,1787
+1996,New Zealand,Vietnam,864
+1996,Panama,Vietnam,4
+1996,Peru,Vietnam,1
+1996,Philippines,Vietnam,406
+1996,Paraguay,Vietnam,26
+1996,Singapore,Vietnam,5
+1996,Sierra Leone,Vietnam,1
+1996,Sweden,Vietnam,3866
+1996,Thailand,Vietnam,289
+1996,United States of America,Vietnam,174633
+1997,Australia,Vietnam,7064
+1997,Belgium,Vietnam,3090
+1997,Burkina Faso,Vietnam,3
+1997,Brazil,Vietnam,20
+1997,Canada,Vietnam,3565
+1997,Switzerland,Vietnam,3407
+1997,Chile,Vietnam,1
+1997,China,Vietnam,290621
+1997,Côte d'Ivoire,Vietnam,60
+1997,Czech Rep,Vietnam,147
+1997,Denmark,Vietnam,612
+1997,Ecuador,Vietnam,8
+1997,Spain,Vietnam,86
+1997,France,Vietnam,17861
+1997,Gabon,Vietnam,4
+1997,United Kingdom,Vietnam,5
+1997,"China, Hong Kong SAR",Vietnam,1213
+1997,Indonesia,Vietnam,14
+1997,Iceland,Vietnam,128
+1997,Italy,Vietnam,78
+1997,Japan,Vietnam,4846
+1997,Cambodia,Vietnam,6
+1997,Netherlands,Vietnam,1795
+1997,Norway,Vietnam,81
+1997,New Zealand,Vietnam,741
+1997,Panama,Vietnam,4
+1997,Peru,Vietnam,2
+1997,Philippines,Vietnam,27
+1997,Paraguay,Vietnam,26
+1997,Singapore,Vietnam,5
+1997,Sierra Leone,Vietnam,1
+1997,Sweden,Vietnam,3480
+1997,Thailand,Vietnam,7
+1997,United States of America,Vietnam,137787
+1998,Argentina,Vietnam,33
+1998,Australia,Vietnam,4705
+1998,Austria,Vietnam,350
+1998,Belgium,Vietnam,412
+1998,Burkina Faso,Vietnam,3
+1998,Brazil,Vietnam,22
+1998,Canada,Vietnam,1583
+1998,Switzerland,Vietnam,3220
+1998,China,Vietnam,292267
+1998,Côte d'Ivoire,Vietnam,60
+1998,Czech Rep,Vietnam,150
+1998,Denmark,Vietnam,182
+1998,Ecuador,Vietnam,8
+1998,Spain,Vietnam,49
+1998,Finland,Vietnam,792
+1998,France,Vietnam,15737
+1998,United Kingdom,Vietnam,5
+1998,"China, Hong Kong SAR",Vietnam,1022
+1998,Indonesia,Vietnam,14
+1998,Iceland,Vietnam,128
+1998,Italy,Vietnam,67
+1998,Japan,Vietnam,3368
+1998,Cambodia,Vietnam,4
+1998,Malaysia,Vietnam,6
+1998,Netherlands,Vietnam,1797
+1998,Norway,Vietnam,81
+1998,New Zealand,Vietnam,530
+1998,Panama,Vietnam,4
+1998,Peru,Vietnam,2
+1998,Philippines,Vietnam,25
+1998,Paraguay,Vietnam,12
+1998,Singapore,Vietnam,5
+1998,Sierra Leone,Vietnam,1
+1998,Slovakia,Vietnam,12
+1998,Sweden,Vietnam,3061
+1998,Thailand,Vietnam,8
+1998,Uruguay,Vietnam,1
+1998,United States of America,Vietnam,105692
+1998,Yemen,Vietnam,19
+1999,Argentina,Vietnam,33
+1999,Australia,Vietnam,2442
+1999,Austria,Vietnam,299
+1999,Belgium,Vietnam,312
+1999,Burkina Faso,Vietnam,3
+1999,Brazil,Vietnam,22
+1999,Canada,Vietnam,395
+1999,Switzerland,Vietnam,3069
+1999,China,Vietnam,293227
+1999,Côte d'Ivoire,Vietnam,60
+1999,Czech Rep,Vietnam,85
+1999,Denmark,Vietnam,1935
+1999,Ecuador,Vietnam,8
+1999,Spain,Vietnam,50
+1999,Finland,Vietnam,792
+1999,France,Vietnam,14143
+1999,United Kingdom,Vietnam,5
+1999,"China, Hong Kong SAR",Vietnam,968
+1999,Indonesia,Vietnam,2
+1999,Ireland,Vietnam,4
+1999,Iceland,Vietnam,60
+1999,Italy,Vietnam,15
+1999,Japan,Vietnam,3135
+1999,Cambodia,Vietnam,3
+1999,Malaysia,Vietnam,1
+1999,Netherlands,Vietnam,1536
+1999,Norway,Vietnam,1402
+1999,New Zealand,Vietnam,550
+1999,Panama,Vietnam,3
+1999,Peru,Vietnam,2
+1999,Philippines,Vietnam,4
+1999,Paraguay,Vietnam,8
+1999,Sierra Leone,Vietnam,1
+1999,Slovakia,Vietnam,12
+1999,Sweden,Vietnam,2410
+1999,Thailand,Vietnam,6
+1999,Uruguay,Vietnam,1
+1999,United States of America,Vietnam,78355
+1999,Yemen,Vietnam,19
+2000,Argentina,Vietnam,33
+2000,Australia,Vietnam,1889
+2000,Austria,Vietnam,243
+2000,Belgium,Vietnam,212
+2000,Burkina Faso,Vietnam,3
+2000,Brazil,Vietnam,22
+2000,Canada,Vietnam,240
+2000,Switzerland,Vietnam,2908
+2000,Chile,Vietnam,1
+2000,China,Vietnam,294057
+2000,Côte d'Ivoire,Vietnam,75
+2000,Czech Rep,Vietnam,409
+2000,Germany,Vietnam,469
+2000,Denmark,Vietnam,1313
+2000,Ecuador,Vietnam,8
+2000,Spain,Vietnam,50
+2000,Finland,Vietnam,355
+2000,France,Vietnam,12923
+2000,Gabon,Vietnam,4
+2000,United Kingdom,Vietnam,5
+2000,"China, Hong Kong SAR",Vietnam,976
+2000,Hungary,Vietnam,15
+2000,Indonesia,Vietnam,2
+2000,Ireland,Vietnam,1
+2000,Iceland,Vietnam,30
+2000,Italy,Vietnam,12
+2000,Japan,Vietnam,2759
+2000,Cambodia,Vietnam,122
+2000,Liechtenstein,Vietnam,38
+2000,Lithuania,Vietnam,1
+2000,Morocco,Vietnam,7
+2000,Malaysia,Vietnam,1
+2000,Netherlands,Vietnam,1204
+2000,Norway,Vietnam,962
+2000,New Zealand,Vietnam,209
+2000,Panama,Vietnam,1
+2000,Peru,Vietnam,2
+2000,Philippines,Vietnam,7
+2000,Paraguay,Vietnam,6
+2000,Sierra Leone,Vietnam,1
+2000,Slovakia,Vietnam,12
+2000,Sweden,Vietnam,1464
+2000,Thailand,Vietnam,4
+2000,United States of America,Vietnam,49211
+2000,Yemen,Vietnam,21
+2001,Argentina,Vietnam,33
+2001,Australia,Vietnam,1103
+2001,Austria,Vietnam,181
+2001,Belgium,Vietnam,256
+2001,Burkina Faso,Vietnam,3
+2001,Brazil,Vietnam,22
+2001,Canada,Vietnam,202
+2001,Switzerland,Vietnam,2740
+2001,Chile,Vietnam,1
+2001,China,Vietnam,295276
+2001,Côte d'Ivoire,Vietnam,75
+2001,Czech Rep,Vietnam,1212
+2001,Germany,Vietnam,676
+2001,Denmark,Vietnam,593
+2001,Ecuador,Vietnam,2
+2001,Spain,Vietnam,50
+2001,Finland,Vietnam,176
+2001,France,Vietnam,11817
+2001,Gabon,Vietnam,4
+2001,Greece,Vietnam,2
+2001,"China, Hong Kong SAR",Vietnam,1342
+2001,Hungary,Vietnam,7
+2001,Indonesia,Vietnam,2
+2001,Ireland,Vietnam,2
+2001,Italy,Vietnam,12
+2001,Japan,Vietnam,2284
+2001,Cambodia,Vietnam,1039
+2001,Liechtenstein,Vietnam,38
+2001,Morocco,Vietnam,7
+2001,Malaysia,Vietnam,1
+2001,Netherlands,Vietnam,748
+2001,Norway,Vietnam,491
+2001,New Zealand,Vietnam,96
+2001,Peru,Vietnam,2
+2001,Philippines,Vietnam,8
+2001,Paraguay,Vietnam,6
+2001,Sierra Leone,Vietnam,1
+2001,Slovakia,Vietnam,13
+2001,Sweden,Vietnam,826
+2001,Thailand,Vietnam,12
+2001,Timor-Leste,Vietnam,2
+2001,Ukraine,Vietnam,2
+2001,United States of America,Vietnam,35299
+2001,Yemen,Vietnam,37
+2002,Argentina,Vietnam,33
+2002,Australia,Vietnam,438
+2002,Austria,Vietnam,172
+2002,Belgium,Vietnam,170
+2002,Burkina Faso,Vietnam,3
+2002,Bulgaria,Vietnam,1
+2002,Brazil,Vietnam,2
+2002,Canada,Vietnam,201
+2002,Switzerland,Vietnam,2530
+2002,Chile,Vietnam,1
+2002,China,Vietnam,297219
+2002,Côte d'Ivoire,Vietnam,76
+2002,Czech Rep,Vietnam,749
+2002,Germany,Vietnam,27547
+2002,Denmark,Vietnam,332
+2002,Spain,Vietnam,50
+2002,Finland,Vietnam,6
+2002,France,Vietnam,10818
+2002,Gabon,Vietnam,4
+2002,United Kingdom,Vietnam,50
+2002,Greece,Vietnam,4
+2002,"China, Hong Kong SAR",Vietnam,1386
+2002,Hungary,Vietnam,9
+2002,Indonesia,Vietnam,35
+2002,Ireland,Vietnam,1
+2002,Italy,Vietnam,10
+2002,Japan,Vietnam,1906
+2002,Cambodia,Vietnam,223
+2002,Morocco,Vietnam,6
+2002,Malaysia,Vietnam,1
+2002,Netherlands,Vietnam,464
+2002,Norway,Vietnam,100
+2002,New Zealand,Vietnam,77
+2002,Peru,Vietnam,2
+2002,Philippines,Vietnam,8
+2002,Poland,Vietnam,3
+2002,Paraguay,Vietnam,6
+2002,Sierra Leone,Vietnam,1
+2002,Slovakia,Vietnam,82
+2002,Sweden,Vietnam,398
+2002,Thailand,Vietnam,17
+2002,United States of America,Vietnam,30659
+2002,Yemen,Vietnam,33
+2003,Argentina,Vietnam,33
+2003,Australia,Vietnam,310
+2003,Austria,Vietnam,139
+2003,Belgium,Vietnam,144
+2003,Burkina Faso,Vietnam,3
+2003,Brazil,Vietnam,2
+2003,Canada,Vietnam,171
+2003,Switzerland,Vietnam,2368
+2003,Chile,Vietnam,1
+2003,China,Vietnam,299287
+2003,Côte d'Ivoire,Vietnam,76
+2003,Czech Rep,Vietnam,216
+2003,Germany,Vietnam,25813
+2003,Denmark,Vietnam,277
+2003,Spain,Vietnam,40
+2003,Finland,Vietnam,1
+2003,France,Vietnam,9274
+2003,Gabon,Vietnam,4
+2003,United Kingdom,Vietnam,264
+2003,Greece,Vietnam,4
+2003,"China, Hong Kong SAR",Vietnam,1815
+2003,Hungary,Vietnam,28
+2003,Indonesia,Vietnam,9
+2003,Ireland,Vietnam,2
+2003,Italy,Vietnam,8
+2003,Japan,Vietnam,1692
+2003,Cambodia,Vietnam,67
+2003,Rep of Korea,Vietnam,2
+2003,Lithuania,Vietnam,1
+2003,Morocco,Vietnam,6
+2003,Malaysia,Vietnam,2
+2003,Netherlands,Vietnam,334
+2003,Norway,Vietnam,7
+2003,New Zealand,Vietnam,81
+2003,Peru,Vietnam,1
+2003,Philippines,Vietnam,10
+2003,Papua New Guinea,Vietnam,3
+2003,Poland,Vietnam,7
+2003,Paraguay,Vietnam,6
+2003,Slovakia,Vietnam,29
+2003,Sweden,Vietnam,430
+2003,Thailand,Vietnam,39
+2003,Timor-Leste,Vietnam,3
+2003,Ukraine,Vietnam,13
+2003,United States of America,Vietnam,21375
+2003,Yemen,Vietnam,31
+2004,Argentina,Vietnam,33
+2004,Australia,Vietnam,239
+2004,Austria,Vietnam,118
+2004,Belgium,Vietnam,130
+2004,Burkina Faso,Vietnam,3
+2004,Brazil,Vietnam,2
+2004,Canada,Vietnam,149
+2004,Switzerland,Vietnam,2219
+2004,Chile,Vietnam,1
+2004,China,Vietnam,299287
+2004,Côte d'Ivoire,Vietnam,76
+2004,Cyprus,Vietnam,2
+2004,Czech Rep,Vietnam,107
+2004,Germany,Vietnam,21261
+2004,Denmark,Vietnam,253
+2004,Spain,Vietnam,34
+2004,Finland,Vietnam,2
+2004,France,Vietnam,9132
+2004,Gabon,Vietnam,4
+2004,United Kingdom,Vietnam,690
+2004,Greece,Vietnam,4
+2004,"China, Hong Kong SAR",Vietnam,1816
+2004,Hungary,Vietnam,13
+2004,Indonesia,Vietnam,10
+2004,India,Vietnam,1
+2004,Ireland,Vietnam,2
+2004,Italy,Vietnam,9
+2004,Japan,Vietnam,1421
+2004,Cambodia,Vietnam,667
+2004,Rep of Korea,Vietnam,2
+2004,Malaysia,Vietnam,11
+2004,Netherlands,Vietnam,305
+2004,Norway,Vietnam,9
+2004,New Zealand,Vietnam,21
+2004,Peru,Vietnam,1
+2004,Philippines,Vietnam,10
+2004,Papua New Guinea,Vietnam,3
+2004,Poland,Vietnam,4
+2004,Paraguay,Vietnam,6
+2004,Sierra Leone,Vietnam,1
+2004,Slovakia,Vietnam,26
+2004,Sweden,Vietnam,191
+2004,Thailand,Vietnam,74
+2004,Timor-Leste,Vietnam,3
+2004,Ukraine,Vietnam,13
+2004,United States of America,Vietnam,12490
+2004,Yemen,Vietnam,31
+2005,Argentina,Vietnam,33
+2005,Australia,Vietnam,261
+2005,Austria,Vietnam,102
+2005,Belgium,Vietnam,109
+2005,Burkina Faso,Vietnam,3
+2005,Bulgaria,Vietnam,3
+2005,Brazil,Vietnam,4
+2005,Canada,Vietnam,184
+2005,Switzerland,Vietnam,2073
+2005,Chile,Vietnam,1
+2005,China,Vietnam,300897
+2005,Côte d'Ivoire,Vietnam,76
+2005,Cyprus,Vietnam,4
+2005,Czech Rep,Vietnam,98
+2005,Germany,Vietnam,31932
+2005,Denmark,Vietnam,176
+2005,Spain,Vietnam,5
+2005,Finland,Vietnam,72
+2005,France,Vietnam,8832
+2005,Gabon,Vietnam,4
+2005,United Kingdom,Vietnam,844
+2005,Greece,Vietnam,4
+2005,"China, Hong Kong SAR",Vietnam,1829
+2005,Hungary,Vietnam,62
+2005,Indonesia,Vietnam,1
+2005,Ireland,Vietnam,2
+2005,Italy,Vietnam,9
+2005,Japan,Vietnam,1285
+2005,Cambodia,Vietnam,175
+2005,Rep of Korea,Vietnam,3
+2005,Malaysia,Vietnam,65
+2005,Netherlands,Vietnam,146
+2005,Norway,Vietnam,10
+2005,New Zealand,Vietnam,17
+2005,Peru,Vietnam,1
+2005,Philippines,Vietnam,10
+2005,Papua New Guinea,Vietnam,3
+2005,Poland,Vietnam,11
+2005,Paraguay,Vietnam,6
+2005,Russian Federation,Vietnam,3
+2005,Sierra Leone,Vietnam,1
+2005,Slovakia,Vietnam,15
+2005,Sweden,Vietnam,144
+2005,Thailand,Vietnam,78
+2005,Timor-Leste,Vietnam,3
+2005,United States of America,Vietnam,10336
+2005,Yemen,Vietnam,31
+2006,Argentina,Vietnam,32
+2006,Australia,Vietnam,223
+2006,Austria,Vietnam,170
+2006,Belgium,Vietnam,95
+2006,Burkina Faso,Vietnam,3
+2006,Bulgaria,Vietnam,5
+2006,Brazil,Vietnam,4
+2006,Canada,Vietnam,236
+2006,Switzerland,Vietnam,1946
+2006,Chile,Vietnam,1
+2006,China,Vietnam,300897
+2006,Côte d'Ivoire,Vietnam,50
+2006,Cyprus,Vietnam,8
+2006,Czech Rep,Vietnam,167
+2006,Germany,Vietnam,12558
+2006,Denmark,Vietnam,144
+2006,Spain,Vietnam,6
+2006,Finland,Vietnam,72
+2006,France,Vietnam,8750
+2006,Gabon,Vietnam,4
+2006,United Kingdom,Vietnam,871
+2006,Greece,Vietnam,5
+2006,"China, Hong Kong SAR",Vietnam,1830
+2006,Hungary,Vietnam,109
+2006,Indonesia,Vietnam,35
+2006,Ireland,Vietnam,6
+2006,Italy,Vietnam,9
+2006,Japan,Vietnam,1132
+2006,Cambodia,Vietnam,192
+2006,Rep of Korea,Vietnam,3
+2006,Malaysia,Vietnam,76
+2006,Netherlands,Vietnam,91
+2006,Norway,Vietnam,72
+2006,New Zealand,Vietnam,12
+2006,Peru,Vietnam,1
+2006,Philippines,Vietnam,10
+2006,Papua New Guinea,Vietnam,3
+2006,Poland,Vietnam,9
+2006,Paraguay,Vietnam,6
+2006,Russian Federation,Vietnam,3
+2006,Sierra Leone,Vietnam,1
+2006,Slovakia,Vietnam,20
+2006,Sweden,Vietnam,158
+2006,Thailand,Vietnam,121
+2006,Timor-Leste,Vietnam,3
+2006,Ukraine,Vietnam,2
+2006,United States of America,Vietnam,45869
+2006,Yemen,Vietnam,31
+2007,Argentina,Vietnam,32
+2007,Australia,Vietnam,71
+2007,Austria,Vietnam,152
+2007,Belgium,Vietnam,80
+2007,Benin,Vietnam,3
+2007,Burkina Faso,Vietnam,5
+2007,Bulgaria,Vietnam,5
+2007,Brazil,Vietnam,4
+2007,Canada,Vietnam,197
+2007,Switzerland,Vietnam,1839
+2007,Chile,Vietnam,1
+2007,China,Vietnam,300897
+2007,Cyprus,Vietnam,40
+2007,Czech Rep,Vietnam,137
+2007,Germany,Vietnam,13824
+2007,Denmark,Vietnam,114
+2007,Ecuador,Vietnam,4
+2007,Spain,Vietnam,6
+2007,Finland,Vietnam,2
+2007,France,Vietnam,8668
+2007,Gabon,Vietnam,4
+2007,United Kingdom,Vietnam,889
+2007,Greece,Vietnam,4
+2007,"China, Hong Kong SAR",Vietnam,8
+2007,Hungary,Vietnam,457
+2007,Indonesia,Vietnam,2
+2007,Ireland,Vietnam,13
+2007,Italy,Vietnam,14
+2007,Japan,Vietnam,977
+2007,Cambodia,Vietnam,386
+2007,Rep of Korea,Vietnam,0
+2007,Lithuania,Vietnam,1
+2007,Mexico,Vietnam,1
+2007,Malaysia,Vietnam,62
+2007,Netherlands,Vietnam,53
+2007,Norway,Vietnam,22
+2007,New Zealand,Vietnam,11
+2007,Peru,Vietnam,1
+2007,Philippines,Vietnam,6
+2007,Papua New Guinea,Vietnam,3
+2007,Poland,Vietnam,9
+2007,Paraguay,Vietnam,6
+2007,Russian Federation,Vietnam,4
+2007,Sierra Leone,Vietnam,1
+2007,Slovakia,Vietnam,5
+2007,Sweden,Vietnam,149
+2007,Thailand,Vietnam,61
+2007,Timor-Leste,Vietnam,1
+2007,Ukraine,Vietnam,1
+2007,United States of America,Vietnam,297
+2007,Yemen,Vietnam,31
+2008,Argentina,Vietnam,1
+2008,Australia,Vietnam,65
+2008,Austria,Vietnam,122
+2008,Belgium,Vietnam,71
+2008,Benin,Vietnam,3
+2008,Burkina Faso,Vietnam,5
+2008,Bulgaria,Vietnam,6
+2008,Brazil,Vietnam,4
+2008,Canada,Vietnam,200
+2008,Switzerland,Vietnam,1711
+2008,Chile,Vietnam,1
+2008,China,Vietnam,300897
+2008,Côte d'Ivoire,Vietnam,1
+2008,Cyprus,Vietnam,36
+2008,Czech Rep,Vietnam,124
+2008,Germany,Vietnam,14759
+2008,Denmark,Vietnam,88
+2008,Ecuador,Vietnam,4
+2008,Spain,Vietnam,6
+2008,Finland,Vietnam,2
+2008,France,Vietnam,8583
+2008,Gabon,Vietnam,4
+2008,United Kingdom,Vietnam,902
+2008,Greece,Vietnam,5
+2008,"China, Hong Kong SAR",Vietnam,11
+2008,Hungary,Vietnam,472
+2008,Indonesia,Vietnam,9
+2008,Ireland,Vietnam,11
+2008,Italy,Vietnam,14
+2008,Japan,Vietnam,873
+2008,Cambodia,Vietnam,194
+2008,Lithuania,Vietnam,1
+2008,Rep of Moldova,Vietnam,1
+2008,Mexico,Vietnam,1
+2008,Malaysia,Vietnam,35
+2008,Netherlands,Vietnam,50
+2008,Norway,Vietnam,36
+2008,New Zealand,Vietnam,10
+2008,Peru,Vietnam,1
+2008,Philippines,Vietnam,9
+2008,Papua New Guinea,Vietnam,3
+2008,Poland,Vietnam,22
+2008,Paraguay,Vietnam,6
+2008,Romania,Vietnam,0
+2008,Russian Federation,Vietnam,4
+2008,Sierra Leone,Vietnam,1
+2008,Slovakia,Vietnam,1
+2008,Sweden,Vietnam,149
+2008,Thailand,Vietnam,77
+2008,Timor-Leste,Vietnam,1
+2008,Ukraine,Vietnam,1
+2008,United States of America,Vietnam,271
+2008,Yemen,Vietnam,31
+2009,Australia,Vietnam,66
+2009,Austria,Vietnam,62
+2009,Belgium,Vietnam,64
+2009,Benin,Vietnam,3
+2009,Burkina Faso,Vietnam,5
+2009,Bulgaria,Vietnam,4
+2009,Brazil,Vietnam,4
+2009,Canada,Vietnam,214
+2009,Switzerland,Vietnam,1591
+2009,China,Vietnam,300897
+2009,Côte d'Ivoire,Vietnam,4
+2009,Cyprus,Vietnam,73
+2009,Czech Rep,Vietnam,105
+2009,Germany,Vietnam,25839
+2009,Denmark,Vietnam,78
+2009,Ecuador,Vietnam,4
+2009,Spain,Vietnam,6
+2009,Finland,Vietnam,2
+2009,France,Vietnam,8771
+2009,Gabon,Vietnam,4
+2009,United Kingdom,Vietnam,934
+2009,Greece,Vietnam,3
+2009,"China, Hong Kong SAR",Vietnam,10
+2009,Hungary,Vietnam,8
+2009,Indonesia,Vietnam,0
+2009,Ireland,Vietnam,7
+2009,Italy,Vietnam,15
+2009,Japan,Vietnam,713
+2009,Cambodia,Vietnam,113
+2009,Lithuania,Vietnam,1
+2009,Rep of Moldova,Vietnam,0
+2009,Mexico,Vietnam,1
+2009,Malaysia,Vietnam,23
+2009,Netherlands,Vietnam,50
+2009,Norway,Vietnam,24
+2009,New Zealand,Vietnam,11
+2009,Peru,Vietnam,1
+2009,Philippines,Vietnam,5
+2009,Papua New Guinea,Vietnam,3
+2009,Poland,Vietnam,25
+2009,Paraguay,Vietnam,6
+2009,Romania,Vietnam,0
+2009,Russian Federation,Vietnam,4
+2009,Sierra Leone,Vietnam,1
+2009,Slovakia,Vietnam,1
+2009,Sweden,Vietnam,217
+2009,Thailand,Vietnam,184
+2009,Timor-Leste,Vietnam,1
+2009,Ukraine,Vietnam,14
+2009,United States of America,Vietnam,288
+2009,Yemen,Vietnam,30
+2010,Australia,Vietnam,105
+2010,Austria,Vietnam,51
+2010,Belgium,Vietnam,59
+2010,Benin,Vietnam,3
+2010,Burkina Faso,Vietnam,5
+2010,Brazil,Vietnam,4
+2010,Canada,Vietnam,196
+2010,Switzerland,Vietnam,1487
+2010,China,Vietnam,300897
+2010,Côte d'Ivoire,Vietnam,7
+2010,Cyprus,Vietnam,73
+2010,Czech Rep,Vietnam,105
+2010,Germany,Vietnam,25492
+2010,Denmark,Vietnam,58
+2010,Ecuador,Vietnam,3
+2010,Spain,Vietnam,6
+2010,Finland,Vietnam,2
+2010,France,Vietnam,8719
+2010,Gabon,Vietnam,4
+2010,United Kingdom,Vietnam,987
+2010,Greece,Vietnam,7
+2010,"China, Hong Kong SAR",Vietnam,7
+2010,Hungary,Vietnam,7
+2010,Ireland,Vietnam,11
+2010,Italy,Vietnam,9
+2010,Japan,Vietnam,587
+2010,Cambodia,Vietnam,103
+2010,Lithuania,Vietnam,1
+2010,Mexico,Vietnam,1
+2010,Malaysia,Vietnam,8
+2010,Netherlands,Vietnam,50
+2010,Norway,Vietnam,21
+2010,New Zealand,Vietnam,12
+2010,Peru,Vietnam,1
+2010,Philippines,Vietnam,4
+2010,Papua New Guinea,Vietnam,3
+2010,Poland,Vietnam,34
+2010,Paraguay,Vietnam,6
+2010,Romania,Vietnam,0
+2010,Russian Federation,Vietnam,5
+2010,Sierra Leone,Vietnam,1
+2010,Slovakia,Vietnam,1
+2010,Sweden,Vietnam,213
+2010,Thailand,Vietnam,170
+2010,Timor-Leste,Vietnam,0
+2010,Ukraine,Vietnam,15
+2010,United States of America,Vietnam,257
+2010,Yemen,Vietnam,30
+2011,Australia,Vietnam,113
+2011,Austria,Vietnam,43
+2011,Belgium,Vietnam,56
+2011,Benin,Vietnam,3
+2011,Burkina Faso,Vietnam,5
+2011,Bulgaria,Vietnam,3
+2011,Brazil,Vietnam,4
+2011,Canada,Vietnam,194
+2011,Switzerland,Vietnam,1400
+2011,China,Vietnam,300897
+2011,Côte d'Ivoire,Vietnam,9
+2011,Cyprus,Vietnam,63
+2011,Czech Rep,Vietnam,62
+2011,Germany,Vietnam,24831
+2011,Denmark,Vietnam,40
+2011,Ecuador,Vietnam,3
+2011,Spain,Vietnam,5
+2011,Finland,Vietnam,6
+2011,France,Vietnam,8654
+2011,Gabon,Vietnam,4
+2011,United Kingdom,Vietnam,1251
+2011,Greece,Vietnam,4
+2011,"China, Hong Kong SAR",Vietnam,11
+2011,Hungary,Vietnam,2
+2011,Ireland,Vietnam,8
+2011,Italy,Vietnam,9
+2011,Japan,Vietnam,495
+2011,Cambodia,Vietnam,33
+2011,Lithuania,Vietnam,1
+2011,Luxembourg,Vietnam,0
+2011,Mexico,Vietnam,1
+2011,Malaysia,Vietnam,10
+2011,Netherlands,Vietnam,37
+2011,Norway,Vietnam,28
+2011,New Zealand,Vietnam,8
+2011,Peru,Vietnam,1
+2011,Philippines,Vietnam,4
+2011,Papua New Guinea,Vietnam,3
+2011,Poland,Vietnam,37
+2011,Paraguay,Vietnam,6
+2011,Romania,Vietnam,0
+2011,Russian Federation,Vietnam,3
+2011,Sierra Leone,Vietnam,1
+2011,Slovakia,Vietnam,1
+2011,Sweden,Vietnam,135
+2011,Thailand,Vietnam,339
+2011,Ukraine,Vietnam,8
+2011,United States of America,Vietnam,272
+2011,Yemen,Vietnam,25
+2011,South Africa,Vietnam,2
+2012,Australia,Vietnam,138
+2012,Austria,Vietnam,50
+2012,Belgium,Vietnam,51
+2012,Burkina Faso,Vietnam,5
+2012,Bulgaria,Vietnam,0
+2012,Brazil,Vietnam,4
+2012,Canada,Vietnam,173
+2012,Switzerland,Vietnam,1345
+2012,China,Vietnam,300897
+2012,Côte d'Ivoire,Vietnam,9
+2012,Cyprus,Vietnam,48
+2012,Czech Rep,Vietnam,86
+2012,Germany,Vietnam,24385
+2012,Denmark,Vietnam,20
+2012,Ecuador,Vietnam,3
+2012,Spain,Vietnam,5
+2012,Estonia,Vietnam,0
+2012,Finland,Vietnam,4
+2012,France,Vietnam,8605
+2012,Gabon,Vietnam,4
+2012,United Kingdom,Vietnam,1185
+2012,Greece,Vietnam,4
+2012,"China, Hong Kong SAR",Vietnam,16
+2012,Hungary,Vietnam,2
+2012,Indonesia,Vietnam,6
+2012,Ireland,Vietnam,9
+2012,Italy,Vietnam,9
+2012,Japan,Vietnam,360
+2012,Cambodia,Vietnam,34
+2012,Lithuania,Vietnam,3
+2012,Malaysia,Vietnam,10
+2012,Netherlands,Vietnam,31
+2012,Norway,Vietnam,31
+2012,New Zealand,Vietnam,4
+2012,Peru,Vietnam,1
+2012,Philippines,Vietnam,4
+2012,Poland,Vietnam,30
+2012,Paraguay,Vietnam,6
+2012,Romania,Vietnam,0
+2012,Russian Federation,Vietnam,0
+2012,Slovakia,Vietnam,1
+2012,Sweden,Vietnam,110
+2012,Thailand,Vietnam,346
+2012,Ukraine,Vietnam,10
+2012,United States of America,Vietnam,277
+2012,Yemen,Vietnam,20
+2012,South Africa,Vietnam,2
+2013,Australia,Vietnam,192
+2013,Austria,Vietnam,47
+2013,Belgium,Vietnam,18
+2013,Burkina Faso,Vietnam,5
+2013,Bulgaria,Vietnam,2
+2013,Belarus,Vietnam,0
+2013,Brazil,Vietnam,4
+2013,Canada,Vietnam,155
+2013,Switzerland,Vietnam,1265
+2013,China,Vietnam,300896
+2013,Côte d'Ivoire,Vietnam,9
+2013,Cyprus,Vietnam,32
+2013,Czech Rep,Vietnam,73
+2013,Germany,Vietnam,2063
+2013,Denmark,Vietnam,7
+2013,Ecuador,Vietnam,3
+2013,Spain,Vietnam,4
+2013,Estonia,Vietnam,2
+2013,Finland,Vietnam,15
+2013,France,Vietnam,8556
+2013,Gabon,Vietnam,4
+2013,United Kingdom,Vietnam,1046
+2013,Greece,Vietnam,16
+2013,"China, Hong Kong SAR",Vietnam,254
+2013,Hungary,Vietnam,2
+2013,Indonesia,Vietnam,0
+2013,Ireland,Vietnam,15
+2013,Italy,Vietnam,9
+2013,Japan,Vietnam,212
+2013,Cambodia,Vietnam,36
+2013,Rep of Korea,Vietnam,1
+2013,Lithuania,Vietnam,4
+2013,Luxembourg,Vietnam,1
+2013,Malaysia,Vietnam,11
+2013,Netherlands,Vietnam,28
+2013,Norway,Vietnam,31
+2013,Nauru,Vietnam,19
+2013,New Zealand,Vietnam,6
+2013,Peru,Vietnam,1
+2013,Philippines,Vietnam,4
+2013,Papua New Guinea,Vietnam,79
+2013,Poland,Vietnam,21
+2013,Paraguay,Vietnam,6
+2013,Romania,Vietnam,0
+2013,Slovakia,Vietnam,1
+2013,Slovenia,Vietnam,0
+2013,Sweden,Vietnam,104
+2013,Thailand,Vietnam,436
+2013,Ukraine,Vietnam,13
+2013,United States of America,Vietnam,382
+2013,Yemen,Vietnam,18
+2013,South Africa,Vietnam,2
+2014,Argentina,Vietnam,0
+2014,Australia,Vietnam,431
+2014,Austria,Vietnam,45
+2014,Belgium,Vietnam,17
+2014,Burkina Faso,Vietnam,0
+2014,Bulgaria,Vietnam,0
+2014,Brazil,Vietnam,4
+2014,Canada,Vietnam,129
+2014,Switzerland,Vietnam,1212
+2014,China,Vietnam,300896
+2014,Côte d'Ivoire,Vietnam,10
+2014,Cyprus,Vietnam,44
+2014,Czech Rep,Vietnam,96
+2014,Germany,Vietnam,2274
+2014,Denmark,Vietnam,5
+2014,Ecuador,Vietnam,3
+2014,Spain,Vietnam,5
+2014,Estonia,Vietnam,0
+2014,Finland,Vietnam,3
+2014,France,Vietnam,8313
+2014,Gabon,Vietnam,0
+2014,United Kingdom,Vietnam,973
+2014,Greece,Vietnam,8
+2014,"China, Hong Kong SAR",Vietnam,490
+2014,Hungary,Vietnam,3
+2014,Ireland,Vietnam,14
+2014,Italy,Vietnam,8
+2014,Japan,Vietnam,173
+2014,Cambodia,Vietnam,47
+2014,Rep of Korea,Vietnam,1
+2014,Lithuania,Vietnam,7
+2014,Luxembourg,Vietnam,1
+2014,Latvia,Vietnam,10
+2014,Malaysia,Vietnam,8
+2014,Netherlands,Vietnam,33
+2014,Norway,Vietnam,20
+2014,New Zealand,Vietnam,5
+2014,Peru,Vietnam,1
+2014,Philippines,Vietnam,4
+2014,Papua New Guinea,Vietnam,0
+2014,Poland,Vietnam,28
+2014,Paraguay,Vietnam,6
+2014,Romania,Vietnam,2
+2014,Russian Federation,Vietnam,4
+2014,Slovakia,Vietnam,1
+2014,Sweden,Vietnam,119
+2014,Thailand,Vietnam,635
+2014,Ukraine,Vietnam,23
+2014,United States of America,Vietnam,436
+2014,Yemen,Vietnam,18
+2014,South Africa,Vietnam,2
+2015,Argentina,Vietnam,2
+2015,Australia,Vietnam,601
+2015,Austria,Vietnam,49
+2015,Belgium,Vietnam,42
+2015,Brazil,Vietnam,4
+2015,Canada,Vietnam,118
+2015,Switzerland,Vietnam,1135
+2015,China,Vietnam,300896
+2015,Côte d'Ivoire,Vietnam,10
+2015,Cyprus,Vietnam,74
+2015,Czech Rep,Vietnam,101
+2015,Germany,Vietnam,2443
+2015,Denmark,Vietnam,1
+2015,Ecuador,Vietnam,3
+2015,Spain,Vietnam,3
+2015,Finland,Vietnam,6
+2015,France,Vietnam,8169
+2015,United Kingdom,Vietnam,1078
+2015,Greece,Vietnam,8
+2015,"China, Hong Kong SAR",Vietnam,489
+2015,Hungary,Vietnam,8
+2015,Ireland,Vietnam,15
+2015,Italy,Vietnam,10
+2015,Jordan,Vietnam,3
+2015,Japan,Vietnam,601
+2015,Cambodia,Vietnam,46
+2015,Rep of Korea,Vietnam,81
+2015,Lithuania,Vietnam,1
+2015,Luxembourg,Vietnam,1
+2015,Latvia,Vietnam,4
+2015,Malaysia,Vietnam,3
+2015,Netherlands,Vietnam,38
+2015,Norway,Vietnam,18
+2015,New Zealand,Vietnam,9
+2015,Peru,Vietnam,1
+2015,Philippines,Vietnam,8
+2015,Papua New Guinea,Vietnam,4
+2015,Poland,Vietnam,38
+2015,Paraguay,Vietnam,6
+2015,Romania,Vietnam,4
+2015,Russian Federation,Vietnam,1
+2015,Slovakia,Vietnam,1
+2015,Sweden,Vietnam,102
+2015,Thailand,Vietnam,769
+2015,Ukraine,Vietnam,23
+2015,United States of America,Vietnam,479
+2015,Yemen,Vietnam,18
+2015,South Africa,Vietnam,3
+2016,Argentina,Vietnam,0
+2016,Australia,Vietnam,1007
+2016,Austria,Vietnam,49
+2016,Belgium,Vietnam,40
+2016,Brazil,Vietnam,0
+2016,Canada,Vietnam,56
+2016,Switzerland,Vietnam,1084
+2016,China,Vietnam,317098
+2016,Côte d'Ivoire,Vietnam,0
+2016,Cyprus,Vietnam,133
+2016,Czech Rep,Vietnam,101
+2016,Germany,Vietnam,1870
+2016,Spain,Vietnam,5
+2016,Finland,Vietnam,5
+2016,France,Vietnam,8016
+2016,United Kingdom,Vietnam,1559
+2016,Greece,Vietnam,7
+2016,"China, Hong Kong SAR",Vietnam,0
+2016,Hungary,Vietnam,0
+2016,India,Vietnam,0
+2016,Ireland,Vietnam,15
+2016,Italy,Vietnam,16
+2016,Jordan,Vietnam,0
+2016,Japan,Vietnam,846
+2016,Cambodia,Vietnam,189
+2016,Rep of Korea,Vietnam,119
+2016,Lithuania,Vietnam,0
+2016,Latvia,Vietnam,0
+2016,Malaysia,Vietnam,0
+2016,Netherlands,Vietnam,36
+2016,Norway,Vietnam,48
+2016,New Zealand,Vietnam,8
+2016,Peru,Vietnam,0
+2016,Philippines,Vietnam,21
+2016,Poland,Vietnam,46
+2016,Paraguay,Vietnam,6
+2016,Romania,Vietnam,0
+2016,Slovakia,Vietnam,0
+2016,Sweden,Vietnam,117
+2016,Thailand,Vietnam,789
+2016,Ukraine,Vietnam,18
+2016,United States of America,Vietnam,546
+2016,Yemen,Vietnam,15
+2016,South Africa,Vietnam,0
 2014,South Africa,Wallis and Futuna Islands ,1
 2015,South Africa,Wallis and Futuna Islands ,1
 2016,South Africa,Wallis and Futuna Islands ,0
