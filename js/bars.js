@@ -49,7 +49,7 @@ function drawBarsInSquare(data, height, barHolderSelector) {
 		d.Year 	= +d.Year;
 	});
 
-	var barSvg = d3.select(barHolderSelector);
+	var barSvg = d3.select(barHolderSelector).select("#bar-holder");
 
 	var theBars = barSvg.selectAll(".bar")
 			.data(data).enter()
