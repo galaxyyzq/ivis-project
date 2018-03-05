@@ -10,14 +10,7 @@ var zoom = d3.behavior.zoom()
     .scaleExtent([1, 20])
     .on("zoom", zoomed);
 
-var svgMap = d3.select("#map-holder").append("svg")
-    .attr("width", widthMap)
-    .attr("height", heightMap)
-    //track where user clicked down
-    .on("mousedown", function () {
-        d3.event.preventDefault();    
-    })
-    .call(zoom);
+var svgMap, g;
 
 //for tooltip 
 var offsetL = document.getElementById('map-holder').offsetLeft + 10;
@@ -30,31 +23,64 @@ var tooltipMap = d3.select("#map-holder")
     .append("div")
     .attr("class", "tooltip hidden");
 
-//need this for correct panning
-var g = svgMap.append("g");
+function drawMap() {
+    
+    // Delete old map
+    d3.select("#map-holder").selectAll("svg").remove();
 
-//det json data and draw it
-d3.json("data/old/custom.geo.json", function (error, world) {
-    if (error) return console.error(error);
-    // console.log(world.features)
-    //countries
-    g.append("g")
-        .attr("class", "boundary")
-        .selectAll("boundary")
-        .data(world.features)
-        .enter().append("path")
-        .attr("name", function (d) { return d.properties.name; })
-        .attr("id", function (d) { return d.id; })
-        .on('click', selected)
-        .on("mousemove", showTooltip)
-        .on("mouseout", function (d, i) {
-            //tooltipMap.classed("hidden", true);
-            tooltipMap.style('display', 'none');
-
+    // Add new svg
+    svgMap = d3.select("#map-holder").append("svg")
+        .attr("width", widthMap)
+        .attr("height", heightMap)
+        //track where user clicked down
+        .on("mousedown", function () {
+            d3.event.preventDefault();
         })
-        .attr("d", pathMap);
- 
-});
+        .call(zoom);
+
+    //need this for correct panning
+    g = svgMap.append("g");
+
+    //det json data and draw it
+    d3.json("data/old/custom.geo.json", function (error, world) {
+        if (error) return console.error(error);
+        // console.log(world.features)
+        //countries
+        g.append("g")
+            .attr("class", "boundary")
+            .selectAll("boundary")
+            .data(world.features)
+            .enter().append("path")
+            .attr("name", function (d) { return d.properties.name; })
+            .attr("id", function (d) { return d.id; })
+            .on('click', selected)
+            .on("mousemove", showTooltip)
+            .on("mouseenter", function (d) {
+                if (d.properties.name === prev_clicked_element) return;
+                //d3.select(this).
+            })
+            .on("mouseout", function (d, i) {
+                //tooltipMap.classed("hidden", true);
+                tooltipMap.style('display', 'none');
+
+            })
+            .attr("d", pathMap)
+            .attr("fill", function (d) {
+                data = findDataForCountry(d.properties.name);
+                if (data == null) {
+                    return "#DEB887";
+                } else {
+                    return changeFillColor(data, thisYear);
+                }
+            })
+            .attr("class", function (d) {
+                if (prev_clicked_name == d.properties.name) {
+                    return "selected";
+                }
+            });
+
+    });
+}
 
 function showTooltip(d) {
     label = d.properties.name;
@@ -67,12 +93,29 @@ function showTooltip(d) {
 }
 
 function selected(d) {
-    d3.select('.selected').classed('selected', false);
-    d3.select(this).classed('selected', true);
-    thisCountry = d.properties.name;
-    console.log(thisCountry);
+    
+    var thisCountry = d.properties.name;
     var data = findDataForCountry(thisCountry);
-    updateFigures(null, thisYear, data);
+
+    if (data != null) {
+        prev_clicked_name = thisCountry;
+
+        d3.select('.selected').classed('selected', false);
+        d3.select(this).classed('selected', true);
+
+        console.log(thisCountry);
+        //updateFigures(null, thisYear, data);
+
+        // Update the title above the barchart
+        currentCountryName = thisCountry;
+
+        // Update the barchart
+        updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, data)
+
+        // Update the sankey diagram
+        updateSankey(thisCountry, thisYear);
+    }
+    
 }
 
 

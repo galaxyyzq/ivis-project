@@ -1,10 +1,11 @@
 ﻿
 .selected {
-    fill: #4286f4;
+    /*fill: #4286f4; */
+    stroke: red;
+    stroke-width: 2px;
 }
 
 .boundary {
-    fill: #DEB887;
     stroke: black;
     stroke-width: 1px;
 }

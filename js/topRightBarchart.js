@@ -31,23 +31,13 @@ function updateBarChartDescription(){
   	else{
 		$("#descriptionSentence").html("Refugees from this country in");	 	  
 	}
-	
-	//console.log(countryData);
-	
+		
 	// Changing the Value
 	countryData.forEach(function(countryRecords){
-		
-		//console.log(countryRecords);
-
 		// 'countryRecords' contains all records for each country	
-		countryRecords.forEach(function(cr){
-			//console.log(cr);
-			
+		countryRecords.forEach(function(cr){			
 			if(cr.Country === currentCountryName && cr.Year == thisYear) 
-			{
-				//console.log(d[0].Country);
-
-				//console.log("d[0].Country: " + d[0].Country + "		 currentCountryName: " + currentCountryName + "		 d[0].Year: " + d[0].Year + "		thisYear:" + thisYear);			
+			{		
 				$("#nRefugees").html( formatNumber(cr.Value) );					
 
 				return;
@@ -74,8 +64,7 @@ function mouseOutContryName(x){
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
-  $("#right-side-bar-chart").empty()
-  // $("#right-side-bar-chart > #bar-holder > .x").remove()
+  
   var xDomain = [];
   for(i = 1951; i < 2017; i++){
     xDomain.push(i);
@@ -96,10 +85,6 @@ function initTopRightBarChart() {
       .domain([1, 10000000])
       .range([trbcHeight, 0]);
   }
-
-  // trbcY = d3.scale.linear()
-  //     .range([trbcHeight, 0])
-  //     .domain([0, 2541249])
 
   trbcXAxis = d3.svg.axis()
       .tickFormat(function(d, i) {
@@ -152,9 +137,29 @@ function initTopRightBarChart() {
 }
 
 function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data,scaleForY="linear"){
-  initTopRightBarChart();
   // Update yaxis here, when we switch from linear to exponential
-  var yDomain = d3.max(data, function(d) {return d.Value; })
+  var yDomain;
+  if (scaleForY == "linear") {
+    yDomain = d3.max(data, function (d) { return d.Value; })
+    trbcY = d3.scale.linear()
+      .domain([0, yDomain])
+      .range([trbcHeight, 0]);
+    trbcYaxis = d3.svg.axis()
+      .scale(trbcY)
+      .orient("left");
+    
+  } else {
+    trbcY = d3.scale.log()
+      .base(10)
+      .domain([1, 10000000])
+      .range([trbcHeight, 0]);
+    trbcYaxis = d3.svg.axis()
+      .tickFormat(function (d, i) {
+        return Math.floor(Math.log10(d)) == Math.log10(d)? d: null;
+      })
+      .scale(trbcY)
+      .orient("left");
+  }
   // trbcY.domain([0, yDomain]);
   trbcYaxisAnimate
   .call(trbcYaxis)
@@ -234,5 +239,5 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", trbcHeight)
-      .remove();
+      .remove();	
   }

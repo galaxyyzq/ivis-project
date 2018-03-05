@@ -5,7 +5,8 @@ function alphabeticalOrder(a,b) {
 
 window.checkModelData = function(ele)
 {
-	var name = $(ele).val().replace(" ", "");
+	var name = $(ele).val();
+	console.log(name);
 	if(name === "") return;
 	var data = findDataForCountry(name);
 	var squareRef = findCountrySquare(name);

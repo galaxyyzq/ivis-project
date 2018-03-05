@@ -217,6 +217,7 @@ d3.slider = function module() {
 	
 	  updateBarChartDescription();		
     }  
+
     olddisplayValue = displayValue;
     svgSlider.selectAll(".dragger").select("text")
     .text(displayValue);

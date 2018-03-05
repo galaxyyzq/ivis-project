@@ -41,7 +41,9 @@ span:before
 }
 */
 	
-
+.col-6 {
+	font-family: 'Saira Condensed', sans-serif;	
+}
 
 #nRefugees{
 	font-size: 30px;
@@ -58,10 +60,13 @@ span:before
 }
 
 #contentRow{
-	
+	font-family: 'Saira Condensed', sans-serif;
 }
 
-		
+.legendTitle {
+	font-family: 'Saira Condensed', sans-serif;
+}		
+
 .asia:before {
   background: pink;
 }
@@ -111,6 +116,14 @@ span:before
     margin-right: 80px;
     margin-top: 10px;
     width: 150px;
+}
+
+#logScaleToggle {
+	font-size: 20px;
+	float: right;
+	margin-right: 80px;
+	margin-top: 10px;
+	width: 150px;
 }
 	
 #projectTitle{
