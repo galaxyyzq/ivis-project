@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
 	  <meta charset="utf-8">
@@ -8,6 +8,8 @@
 	  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 	  <link rel="stylesheet" href="css/sankeyStyle.css">
 	  <link rel="stylesheet" href="css/d3.slider.css" />
+      <link rel="stylesheet" href="css/mapStyle.css" />
+
 	  <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
 	  <!-- Include libraries here -->
 	  <!-- Has to be 'https' links to work with github hosting -->
@@ -18,7 +20,7 @@
 	  <!-- D3js -->
 	  <script src="js/libraries/d3.js"></script>
 	  <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
-	  <script src="js/d3-topojson.js"></script>
+	  <script src="js/libraries/d3-topojson.js"></script>
 	  
 	  <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet"> -->   
 	  <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">	  
@@ -72,17 +74,19 @@
 							  <!-- <p> Refugees and Asylum-Seekers from each Country -->
 						  </div>					  
 
-						  <div class="col-3" id="test">  
-							  <button id="inOutToggle">Chage In Out</button>
-						  </div>					  
+                          <div class="col-3" id="test">
+                              <button id="inOutToggle">Chage In Out</button>
+                              <button id="toggleMap">Toggle Map</button>
+                          </div>					  
 					  </div>
 
 					  <div class="row">
-						  <div class="col-12" id="test">
-							  <svg id="country-grid"></svg>
-							  <div id="legendGrid"> </div>
-                <div id="slider"> </div>
-						  </div>
+              <div class="col-12" id="test">
+                  <svg id="country-grid"></svg>
+                  <div id="map-holder"></div>
+                  <div id="legendGrid"> </div>
+                  <div id="slider"> </div>
+              </div>
 					  </div>				  
 				  </div>
 				  <!-- ################################################# -->
@@ -149,17 +153,14 @@
   <script src="js/globalVariables.js"></script>
 	
   <script src="js/bars.js"></script>
-
-  <!-- <script src="js/databaseFunctions.js"></script> -->
-  <!-- <script src="js/topoJson.js"></script> -->
-
   <script src="js/legend.js"></script>
   <script src="js/topRightBarchart.js"></script>
   <script src="js/countryGrid.js"></script>
-  <script src="js/sankey.js"></script>
+  <script src="js/libraries/sankey.js"></script>
   <script src="js/sankeyView.js"></script>
-  <script src="js/d3.slider.js"></script>
+  <script src="js/libraries/d3.slider.js"></script>
   <script src="js/sliderView.js"></script>
   <script src="js/searchField.js"></script>
+  <script src="js/mapView.js"></script>
   <script src="js/main.js"></script>
 </html>

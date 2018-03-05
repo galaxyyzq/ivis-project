@@ -8,7 +8,8 @@ $("#clickButton").on("click", function(){
 
 // Toggle map when button clicked
 $("#toggleMap").on("click",function(){
-  $("#map-holder").toggle();
+    $("#map-holder").toggle();
+    $("#country-grid").toggle();
 })
 
 
