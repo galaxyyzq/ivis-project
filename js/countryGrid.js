@@ -3,7 +3,7 @@
 function findDataForCountry(countryName) {
   var dataWeWant;
   countryData.forEach(function (d) {
-      var short, long;
+      /*var short, long;
       if (d[0].Country.length > countryName.length) {
           short = countryName;
           long = d[0].Country;
@@ -11,7 +11,8 @@ function findDataForCountry(countryName) {
           long = countryName;
           short = d[0].Country;
       }
-      if (long.search(short) != -1) {
+      if (long.search(short) != -1) {*/
+      if (d[0].Country === countryName) {
           dataWeWant = d;
           return;
       }

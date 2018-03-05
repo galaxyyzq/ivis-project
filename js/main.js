@@ -19,6 +19,7 @@ $("#awayFromHomeLink").on("click", function() {
   $("#information").css('display', 'none');	
 })
 
+
 $(function () {
   $('#inOutToggle').change(function () {
     if (inOut === "In") {
@@ -48,3 +49,22 @@ $(function () {
     $("#country-grid").toggle();
   });
 });
+
+
+
+
+// The presentation is due tomorrow, just a quick solution...
+function resize(){
+	
+	if( window.innerWidth < 1800){
+		$("#leftColum").attr("class", "col-12");
+		$("#rightColum").attr("class", "col-12");		
+	}
+	else
+	{
+		$("#leftColum").attr("class", "col-6");
+		$("#rightColum").attr("class", "col-6");			
+	}
+}
+
+window.onresize = resize;
