@@ -14,21 +14,15 @@ $("#toggleMap").on("click",function(){
 
 
 $("#inOutToggle").on("click", function() {
-  if(inOut === "In") 
-  { 
-	  inOut = "Out";
-	  
-	  // Changing the description of the chart bar in the top right.
-	  $("#descriptionSentence").html("Refugees from this country in");	 	  
+  if(inOut === "In") { 
+	  inOut = "Out";	 	  
   }
-  else
-  {
-	  inOut = "In";	  
-	  
-	  // Changing the description of the chart bar in the top right.
-	  $("#descriptionSentence").html("Refugees living in this country in ");	 	  
+  else{
+	  inOut = "In";	  	  
   }
 
+  updateBarChartDescription();
+	
   loadCountryData();
 })
 

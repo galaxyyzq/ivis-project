@@ -13,6 +13,53 @@ var trbcHoverBarColor = "orange";
 var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";
 
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
+
+
+function updateBarChartDescription(){
+	
+	// Changing the year in the second column description.
+	$("#barChartYear").html(thisYear);	
+	
+	
+	// Changing the description Sentence
+	if(inOut === "In"){ 
+		$("#descriptionSentence").html("Refugees living in this country in ");	 	   	  
+	}
+  	else{
+		$("#descriptionSentence").html("Refugees from this country in");	 	  
+	}
+	
+	//console.log(countryData);
+	
+	// Changing the Value
+	countryData.forEach(function(countryRecords){
+		
+		//console.log(countryRecords);
+
+		// 'countryRecords' contains all records for each country	
+		countryRecords.forEach(function(cr){
+			//console.log(cr);
+			
+			if(cr.Country === currentCountryName && cr.Year == thisYear) 
+			{
+				//console.log(d[0].Country);
+
+				//console.log("d[0].Country: " + d[0].Country + "		 currentCountryName: " + currentCountryName + "		 d[0].Year: " + d[0].Year + "		thisYear:" + thisYear);			
+				$("#nRefugees").html( formatNumber(cr.Value) );					
+
+				return;
+			}				
+		});
+
+	});
+}
+
+
+
+
 
 function mouseOverContryName(x){
 	x.innerHTML = currentCountryName;
@@ -136,12 +183,7 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
           thisYear = d.Year;
 		
-		  // Changing the year in the second column description.
-		  $("#barChartYear").html(thisYear);
-		
-		  // Changing the value (number of refugees) in the second column description.
-		  $("#nRefugees").html(d.Value);
-		
+		  updateBarChartDescription();
 		
           drawLegend(maxRefugees[thisYear], thisYear);
 

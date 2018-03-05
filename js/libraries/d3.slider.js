@@ -214,28 +214,9 @@ d3.slider = function module() {
       // updateSankey($("#countryName").text(),thisYear);
       updateSankey(currentCountryName,thisYear);
       updateGrid();
-<<<<<<< HEAD
-		
-		
-      //$("#barChartYear").html(thisYear);
-		
-	  // Changing the year in the second column description.
-	  $("#barChartYear").html(thisYear);
-		
-      // Changing the value (number of refugees) in the second column description.
-      //$("#nRefugees").html(d.Value);	
-		
-		
-      //$("#nRefugees").html(d.Value);	
-		
-=======
-
-
-      $("#barChartYear").html(thisYear);
-      //$("#nRefugees").html(d.Value);
-
->>>>>>> 21b5d5626608e154f81c6773ac539272f270c765
-    }  //console.log(displayValue);
+	
+	  updateBarChartDescription();		
+    }  
     olddisplayValue = displayValue;
     svgSlider.selectAll(".dragger").select("text")
     .text(displayValue);
