@@ -286,4 +286,4 @@ function loadCountryData() {
 // initBars(data)
 
 loadCountryData();
-// initTopRightBarChart();
+initTopRightBarChart();

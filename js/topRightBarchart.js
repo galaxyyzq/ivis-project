@@ -27,7 +27,7 @@ function mouseOutContryName(x){
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
-  $("#right-side-bar-chart").empty()
+  
   // $("#right-side-bar-chart > #bar-holder > .x").remove()
   var xDomain = [];
   for(i = 1951; i < 2017; i++){
@@ -105,9 +105,24 @@ function initTopRightBarChart() {
 }
 
 function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data,scaleForY="linear"){
-  initTopRightBarChart();
   // Update yaxis here, when we switch from linear to exponential
   var yDomain = d3.max(data, function(d) {return d.Value; })
+  if (scaleForY == "linear") {
+    trbcY = d3.scale.linear()
+      .domain([0, 2541249])
+      .range([trbcHeight, 0]);
+    trbcYaxis = d3.svg.axis()
+      .scale(trbcY)
+      .orient("left");
+  } else {
+    trbcY = d3.scale.log()
+      .base(10)
+      .domain([1, 10000000])
+      .range([trbcHeight, 0]);
+    trbcYaxis = d3.svg.axis()
+      .scale(trbcY)
+      .orient("left");
+  }
   // trbcY.domain([0, yDomain]);
   trbcYaxisAnimate
   .call(trbcYaxis)
