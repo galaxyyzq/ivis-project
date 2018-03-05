@@ -112,6 +112,14 @@ span:before
     margin-top: 10px;
     width: 150px;
 }
+
+#logScaleToggle {
+	font-size: 20px;
+	float: right;
+	margin-right: 80px;
+	margin-top: 10px;
+	width: 150px;
+}
 	
 #projectTitle{
 	font-size: 50px;
