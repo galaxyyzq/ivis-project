@@ -119,15 +119,29 @@ function drawSankey(data, thisYear) {
     //set up graph in same style as original example but empty
     graph = { "nodes": [], "links": [] };
 
-    data.forEach(function (d) {
-        graph.nodes.push({ "name": d.source });
-        graph.nodes.push({ "name": d.target });
-        graph.links.push({
-            "source": d.source,
-            "target": d.target,
-            "value": +d.value
+    if (inOut == "In") { 
+        data.forEach(function (d) {
+            graph.nodes.push({ "name": d.source });
+            graph.nodes.push({ "name": "" });
+            graph.links.push({
+                "source": d.source,
+                "target": "",
+                "value": +d.value
+            });
         });
-    });
+    }else{
+        data.forEach(function (d) {
+            graph.nodes.push({ "name": "" });
+            graph.nodes.push({ "name": d.target });
+            graph.links.push({
+                "source": "",
+                "target": d.target,
+                "value": +d.value
+            });
+        });
+    }
+    
+    
 
     //Add title in graph
     var ourTarget, direction;
