@@ -134,9 +134,11 @@ function drawSankey(data, thisYear) {
     if (inOut == "In") {
         ourTarget = data[0].target;
         direction = "in";
+        d3.select("#Title").text("Origin of refugees in " + thisYear);
     } else {
         ourTarget = data[0].source;
         direction = "from";
+        d3.select("#Title").text("Residence of refugees in " + thisYear);
     }
     //d3.select("#Title").text("Refugees " + direction + " " + ourTarget + ". Year:" + thisYear);
 
