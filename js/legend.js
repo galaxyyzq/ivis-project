@@ -59,7 +59,7 @@ function drawLegend(maxRefugees, thisYear) {
   }
 
   // Append labels
-  var maxLabel = d3.format(",2r")(precisionRound(maxRefugees, 2 - maxRefugees.toString().length));
+  var maxLabel = d3.format(".2s")(precisionRound(maxRefugees, 2 - maxRefugees.toString().length));
   key.append("g")
       .append("text")
       .attr("class", "legendTitle")

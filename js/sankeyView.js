@@ -130,13 +130,17 @@ function drawSankey(data, thisYear) {
     });
 
     //Add title in graph
-    var ourTarget;
+    var ourTarget, direction;
     if (inOut == "In") {
         ourTarget = data[0].target;
+        direction = "in";
+        d3.select("#Title").text("Origin of refugees in " + thisYear);
     } else {
         ourTarget = data[0].source;
+        direction = "from";
+        d3.select("#Title").text("Residence of refugees in " + thisYear);
     }
-    d3.select("#Title").text("Refugees in " + ourTarget + ". Year: " + thisYear);
+    //d3.select("#Title").text("Refugees " + direction + " " + ourTarget + ". Year:" + thisYear);
 
     // return only the distinct / unique nodes
     graph.nodes = d3.keys(d3.nest()
@@ -229,19 +233,17 @@ function drawSankey(data, thisYear) {
 // Called when mouse hovers over a square
 function updateSankey(country, thisYear) {
     //console.log("This country: ", country);
-
     //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
     d3.csv("data/treatingRealData/sankeyData"+ inOut + ".csv", function (error, data) {
-
         if (inOut == "In") {
             countryLabel = "Residence";
         } else {
             countryLabel = "Origin";
         }
         var sankeyData = [];
-        var short, long;
+        //var short, long;
         data.forEach(function (d) {
-            if (d.Year == thisYear) { 
+            /*if (d.Year == thisYear) { 
                 if (d[countryLabel].length > country.length) {
                     short = country;
                     long = d[countryLabel];
@@ -249,12 +251,16 @@ function updateSankey(country, thisYear) {
                     long = country;
                     short = d[countryLabel];
                 }
-                if (long.search(short) != -1) {
+                if ((long.search(short) != -1 || long==short) && !(long == "South Sudan" && short == "Sudan")) {
                     sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
                 }
+            }*/
+            if (d[countryLabel] == country && d.Year == thisYear) {
+                //console.log(d[countryLabel]);
+
+                sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
-        console.log("Sankey data: ", sankeyData);
 
         //Represent only the top5 countries to simplify the diagram
         drawSankey(topCountries(sankeyData), thisYear);
