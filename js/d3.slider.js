@@ -1,32 +1,40 @@
 // var chosenYear=2015;
+var scaleSlider;
+var svgSlider;
+var scaleSliderGlobal;
+var valueSlider;
+var rangeSlider = false;
+
 
 d3.slider = function module() {
   "use strict";
 
-  var div, min = 0, max = 100, svg, svgGroup, value, classPrefix, axis,
+  var div, min = 0, max = 100, svgGroup, classPrefix, axis,
   height=40, rect,
   rectHeight = 12,
   tickSize = 6,
   margin = {top: 25, right: 25, bottom: 15, left: 25},
   ticks = 0, tickValues, scale, tickFormat, dragger, width,
-  range = false,
+  // range = false,
   callbackFn, stepValues, focus;
-
 
 
   function slider(selection) {
     selection.each(function() {
       div = d3.select(this).classed('d3slider', true);
+
       width = parseInt(div.style("width"), 10)-(margin.left
                                                 + margin.right);
 
-      value = value || min;
-      scale = d3.scale.linear().domain([min, max]).range([0, width])
+      valueSlider = valueSlider || min;
+      scaleSliderGlobal = d3.scale.linear().domain([min, max]).range([0, width])
       .clamp(true);
 
+      scaleSlider = d3.scale.linear().domain([1951,2016]).range([margin.left, width+margin.right])
+      .clamp(true);
 
       // SVG
-      svg = div.append("svg")
+      svgSlider = div.append("svg")
       .attr("class", "d3slider-axis")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -35,22 +43,22 @@ d3.slider = function module() {
             "," + margin.top + ")");
 
       // Range rect
-      svg.append("rect")
+      svgSlider.append("rect")
       .attr("class", "d3slider-rect-range")
       .attr("width", width)
       .attr("height", rectHeight);
 
       // Range rect
-      if (range) {
-        svg.append("rect")
+      if (rangeSlider) {
+        svgSlider.append("rect")
         .attr("class", "d3slider-rect-value")
-        .attr("width", scale(value))
+        .attr("width", scaleSliderGlobal(valueSlider))
         .attr("height", rectHeight);
       }
 
       // Axis
       var axis = d3.svg.axis()
-      .scale(scale)
+      .scale(scaleSliderGlobal)
       .orient("bottom");
 
       if (ticks != 0) {
@@ -67,7 +75,7 @@ d3.slider = function module() {
         axis.tickFormat(tickFormat);
       }
 
-      svg.append("g")
+      svgSlider.append("g")
       .attr("transform", "translate(0," + rectHeight + ")")
       .call(axis)
       //.selectAll(".tick")
@@ -75,23 +83,23 @@ d3.slider = function module() {
       //.exit()
       //.classed("minor", true);
 
-      var values = [value];
-      dragger = svg.selectAll(".dragger")
+      var values = [valueSlider];
+      dragger = svgSlider.selectAll(".dragger")
       .data(values)
       .enter()
       .append("g")
       .attr("class", "dragger")
       .attr("transform", function(d) {
-        return "translate(" + scale(d) + ")";
+        return "translate(" + scaleSliderGlobal(d) + ")";
       })
 
 
       var displayValue = null;
       if (tickFormat) {
-        displayValue = tickFormat(value);
+        displayValue = tickFormat(valueSlider);
         thisYear=displayValue;
       } else {
-        displayValue = d3.format(".0f")(value);
+        displayValue = d3.format(".0f")(valueSlider);
         thisYear=displayValue;
       }
 
@@ -123,7 +131,7 @@ d3.slider = function module() {
       dragger.call(dragBehaviour);
 
       // Move dragger on click
-      svg.on("click", slider.click);
+      svgSlider.on("click", slider.click);
 
     });
   }
@@ -146,8 +154,10 @@ d3.slider = function module() {
   var olddisplayValue = null;
 
   slider.move = function(pos) {
+    console.log(pos);
     var l,u;
-    var newValue = scale.invert(pos - margin.left);
+    var newValue = scaleSliderGlobal.invert(pos - margin.left);
+
     // find tick values that are closest to newValue
     // lower bound
     if (stepValues != undefined) {
@@ -166,32 +176,32 @@ d3.slider = function module() {
         u = l;
       }
       // set values
-      var oldValue = value;
-      value = ((newValue-l) <= (u-newValue)) ? l : u;
+      var oldValue = valueSlider;
+      valueSlider = ((newValue-l) <= (u-newValue)) ? l : u;
     } else {
-      var oldValue = value;
-      value = newValue;
+      var oldValue = valueSlider;
+      valueSlider = newValue;
     }
-    var values = [value];
+    var values = [valueSlider];
 
     // Move dragger
-    svg.selectAll(".dragger").data(values)
+    svgSlider.selectAll(".dragger").data(values)
     .attr("transform", function(d) {
-      return "translate(" + scale(d) + ")";
+      return "translate(" + scaleSliderGlobal(d) + ")";
     });
 
     var displayValue = null;
     if (tickFormat) {
       //olddisplayValue = displayValue;
-      displayValue = tickFormat(value);
+      displayValue = tickFormat(valueSlider);
 
     } else {
      // olddisplayValue = displayValue;
-      displayValue = d3.format(".0f")(value);
+      displayValue = d3.format(".0f")(valueSlider);
 
     }
     if (olddisplayValue!=null && olddisplayValue != displayValue) {
-      console.log(displayValue);
+      // console.log(displayValue);
       thisYear = displayValue;
       drawLegend(maxRefugees[thisYear], thisYear);
 
@@ -204,13 +214,13 @@ d3.slider = function module() {
 		
     }  //console.log(displayValue);
     olddisplayValue = displayValue;
-    svg.selectAll(".dragger").select("text")
+    svgSlider.selectAll(".dragger").select("text")
     .text(displayValue);
 
 
-    if (range) {
-      svg.selectAll(".d3slider-rect-value")
-      .attr("width", scale(value));
+    if (rangeSlider) {
+      svgSlider.selectAll(".d3slider-rect-value")
+      .attr("width", scaleSliderGlobal(valueSlider));
     }
 
     if (callbackFn) {
@@ -262,14 +272,14 @@ d3.slider = function module() {
   }
 
   slider.value = function(_) {
-    if (!arguments.length) return value;
-    value = _;
+    if (!arguments.length) return valueSlider;
+    valueSlider = _;
     return slider;
   }
 
   slider.showRange = function(_) {
-    if (!arguments.length) return range;
-    range = _;
+    if (!arguments.length) return rangeSlider;
+    rangeSlider = _;
     return slider;
   }
 
@@ -285,13 +295,13 @@ d3.slider = function module() {
   }
 
   slider.setValue = function(newValue) {
-    var pos = scale(newValue) + margin.left;
+    var pos = scaleSliderGlobal(newValue) + margin.left;
     slider.move(pos);
   }
 
   slider.mousemove = function() {
     var pos = d3.mouse(this)[0];
-    var val = slider.getNearest(scale.invert(pos), stepValues);
+    var val = slider.getNearest(scaleSliderGlobal.invert(pos), stepValues);
     focus.attr("transform", "translate(" + scale(val) + ",0)");
     focus.selectAll("text").text(val);
   }
@@ -305,7 +315,7 @@ d3.slider = function module() {
       }
     });
     var u = arr[arr.indexOf(l)+1];
-    var nearest = ((value-l) <= (u-value)) ? l : u;
+    var nearest = ((valueSlider-l) <= (u-valueSlider)) ? l : u;
     return nearest;
   }
 
