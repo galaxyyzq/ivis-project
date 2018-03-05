@@ -13,10 +13,51 @@ var trbcHoverBarColor = "orange";
 var trbcClickedColor = "green";
 var trbcDefaultBarColor = "black";
 
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
+
+
+function updateBarChartDescription(){
+
+	// Changing the year in the second column description.
+	$("#barChartYear").html(thisYear);
+
+
+	// Changing the description Sentence
+	if(inOut === "In"){
+		$("#descriptionSentence").html("Refugees living in this country in ");
+	}
+  	else{
+		$("#descriptionSentence").html("Refugees from this country in");
+	}
+
+	// Changing the Value
+	countryData.forEach(function(countryRecords){
+		// 'countryRecords' contains all records for each country
+		countryRecords.forEach(function(cr){
+			if(cr.Country === currentCountryName && cr.Year == thisYear)
+			{
+				$("#nRefugees").html( formatNumber(cr.Value) );
+
+				return;
+			}
+		});
+
+	});
+}
+
+
+
+
+
+var chartForSliderVariable;
+
+
 
 function mouseOverContryName(x){
 	x.innerHTML = currentCountryName;
-	x.style.color = "black";	
+	x.style.color = "black";
 }
 
 function mouseOutContryName(x){
@@ -27,8 +68,8 @@ function mouseOutContryName(x){
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
-  
-  var xDomain = [];
+
+	var xDomain = [];
   for(i = 1951; i < 2017; i++){
     xDomain.push(i);
   }
@@ -94,8 +135,8 @@ function initTopRightBarChart() {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      
-  
+
+
   //d3.select("#countryName").text("Country name")
 }
 
@@ -110,7 +151,7 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
     trbcYaxis = d3.svg.axis()
       .scale(trbcY)
       .orient("left");
-    
+
   } else {
     trbcY = d3.scale.log()
       .base(10)
@@ -140,24 +181,34 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
     theBars.enter()
       .append("rect")
+			.attr("id",function(d){return "chart" +d.Year})
         .on("click",function(d,i){
           if(this !== trbcPrevClickedBar){
             d3.select(this)
               .attr("fill", trbcClickedColor)
             d3.select(trbcPrevClickedBar)
               .attr("fill", trbcDefaultBarColor)
+							  $("#chart"+oldYearSlider).attr("fill","black");
+								$("#chart"+thisYear).attr("fill","black");
             trbcPrevClickedBar = this;
+
           }
 
           thisYear = d.Year;
-		
+<<<<<<< HEAD
 		  // Changing the year in the second column description.
 		  $("#barChartYear").html(thisYear);
-		
+
 		  // Changing the value (number of refugees) in the second column description.
 		  $("#nRefugees").html(d.Value);
-		
-		
+
+
+
+=======
+
+		  updateBarChartDescription();
+
+>>>>>>> 877f51738b4265a60cf87a11b44e2fa006d3513f
           drawLegend(maxRefugees[thisYear], thisYear);
 
           //Update the slider when year change in bar chart
@@ -166,11 +217,13 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
           updateSankey(d.Country,thisYear);
           updateGrid();
+
         })
         .on("mouseenter", function(){
             if(this === trbcPrevClickedBar) return;
             d3.select(this)
               .attr("fill", trbcHoverBarColor)
+							$("#chart"+thisYear).attr("fill","green");
         })
         .on("mouseleave", function(){
           if(this === trbcPrevClickedBar) return;
@@ -207,5 +260,11 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .transition().delay(200).duration(300)
       .attr("height", 0)
       .attr("y", trbcHeight)
+<<<<<<< HEAD
+      .remove();
+
+  }
+=======
       .remove();
   }
+>>>>>>> 877f51738b4265a60cf87a11b44e2fa006d3513f

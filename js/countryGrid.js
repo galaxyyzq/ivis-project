@@ -62,10 +62,20 @@ function updateFigures(thisSquare, thisYear, d) {
 
   // Update the map
   drawMap();
-
+  // update title for barChartDescription
+  d.forEach(el => {
+    if(el.Year==thisYear){
+      // Changing the value (number of refugees) in the second column description.
+      $("#nRefugees").html(el.Value);
+      return;
+    }
+  });
+  
   dataForUpdate = d;
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
+	
+  updateBarChartDescription();		
 }
 
 function deselectSquare(prev, clicked) {

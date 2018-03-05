@@ -239,14 +239,22 @@ function updateSankey(country, thisYear) {
             countryLabel = "Origin";
         }
         var sankeyData = [];
+        var short, long;
         data.forEach(function (d) {
-            if (d[countryLabel] == country && d.Year == thisYear) {
-                //console.log(d[countryLabel]);
-
-                sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
+            if (d.Year == thisYear) { 
+                if (d[countryLabel].length > country.length) {
+                    short = country;
+                    long = d[countryLabel];
+                } else {
+                    long = country;
+                    short = d[countryLabel];
+                }
+                if (long.search(short) != -1) {
+                    sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
+                }
             }
         });
-        //console.log("Sankey data: ", sankeyData);
+        console.log("Sankey data: ", sankeyData);
 
         //Represent only the top5 countries to simplify the diagram
         drawSankey(topCountries(sankeyData), thisYear);
