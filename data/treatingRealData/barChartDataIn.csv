@@ -1565,7 +1565,6 @@ Year,Country,Value
 2014,Czech Rep.,3617
 2015,Czech Rep.,4303
 2016,Czech Rep.,4314
-2015,Dem People's Rep of Korea,0
 1960,Dem Rep of the Congo,150000
 1961,Dem Rep of the Congo,203000
 1962,Dem Rep of the Congo,223000
@@ -4409,38 +4408,38 @@ Year,Country,Value
 2014,Qatar,221
 2015,Qatar,238
 2016,Qatar,309
-1978,Rep of Korea,70
-1979,Rep of Korea,170
-1981,Rep of Korea,60
-1982,Rep of Korea,70
-1987,Rep of Korea,60
-1988,Rep of Korea,120
-1989,Rep of Korea,230
-1990,Rep of Korea,230
-1991,Rep of Korea,162
-1992,Rep of Korea,149
-1995,Rep of Korea,5
-1996,Rep of Korea,6
-1997,Rep of Korea,3
-1998,Rep of Korea,1
-1999,Rep of Korea,7
-2000,Rep of Korea,52
-2001,Rep of Korea,75
-2002,Rep of Korea,89
-2003,Rep of Korea,164
-2004,Rep of Korea,291
-2005,Rep of Korea,588
-2006,Rep of Korea,710
-2007,Rep of Korea,1273
-2008,Rep of Korea,1461
-2009,Rep of Korea,928
-2010,Rep of Korea,1070
-2011,Rep of Korea,1570
-2012,Rep of Korea,2035
-2013,Rep of Korea,2945
-2014,Rep of Korea,4662
-2015,Rep of Korea,6905
-2016,Rep of Korea,8578
+1978,Korea,70
+1979,Korea,170
+1981,Korea,60
+1982,Korea,70
+1987,Korea,60
+1988,Korea,120
+1989,Korea,230
+1990,Korea,230
+1991,Korea,162
+1992,Korea,149
+1995,Korea,5
+1996,Korea,6
+1997,Korea,3
+1998,Korea,1
+1999,Korea,7
+2000,Korea,52
+2001,Korea,75
+2002,Korea,89
+2003,Korea,164
+2004,Korea,291
+2005,Korea,588
+2006,Korea,710
+2007,Korea,1273
+2008,Korea,1461
+2009,Korea,928
+2010,Korea,1070
+2011,Korea,1570
+2012,Korea,2035
+2013,Korea,2945
+2014,Korea,4662
+2015,Korea,6905
+2016,Korea,8578
 1999,Moldova,8
 2000,Moldova,266
 2001,Moldova,272
