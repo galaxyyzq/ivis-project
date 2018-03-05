@@ -243,9 +243,9 @@ function updateSankey(country, thisYear) {
             countryLabel = "Origin";
         }
         var sankeyData = [];
-        var short, long;
+        //var short, long;
         data.forEach(function (d) {
-            if (d.Year == thisYear) { 
+            /*if (d.Year == thisYear) { 
                 if (d[countryLabel].length > country.length) {
                     short = country;
                     long = d[countryLabel];
@@ -256,6 +256,11 @@ function updateSankey(country, thisYear) {
                 if (long.search(short) != -1) {
                     sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
                 }
+            }*/
+            if (d[countryLabel] == country && d.Year == thisYear) {
+                //console.log(d[countryLabel]);
+
+                sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
 
