@@ -9,12 +9,26 @@ var dataForUpdate = null;
 var hueIn = 230; //Hue of the HSL color of the squares for In mode
 var hueOut = 40; //Hue of the HSL color of the squares for Out mode
 
+
+// Finds the specific data for a country
+function findDataForCountry(countryName) {
+  var dataWeWant;
+  countryData.forEach(function(d){
+    if(d[0].Country === countryName){
+      dataWeWant = d;
+      return;
+    }
+  });
+  return dataWeWant;
+}
+
+
 function selectSquare(thisSquare, thisYear, d) {
   if(thisSquare === prev_clicked_element) return;
-  d3.select(thisSquare).select("rect")
-    .attr("stroke-width", 3)
-    .attr("stroke", "orange")
-}
+    d3.select(thisSquare).select("rect")
+      .attr("stroke-width", 3)
+      .attr("stroke", "orange")
+  }
 
 function updateFigures(thisSquare, thisYear, d) {
   if (prev_clicked_element) {

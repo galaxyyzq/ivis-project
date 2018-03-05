@@ -25,7 +25,6 @@
   </head>
 
   <body>
-	  
 	  <!-- CONTAINER THAT CONTAINS EVERYTHING -->
 	  <div class="container-fluid" id="visualization" >
 		  <!-- HEADER (just in case we decide putting a word on the top, but right now we think we don't have space for that) -->
@@ -40,7 +39,25 @@
 				  <div>
 					  <h1 id="info">  <a href="#" class="menuLink" id="infoLink"> Info </a> </h1>	
 				  </div>
-			  </div>
+        </div>
+        <div class="col-6">
+          <label for="search-countries">
+            Search for country:
+            <input id="search-countries" list="search-options">
+            <datalist id="search-options">
+              <option value="Sweden"></option>
+              <option value="Something Else"></option>
+              <option value="Another One"></option>
+              <option value="Alpha"></option>
+              <option value="Bravo"></option>
+              <option value="Charlie"></option>
+              <option value="Delta"></option>
+              <option value="Echo"></option>
+              <option value="Foxtrot"></option>
+              <option value="Gamma"></option>
+            </datalist>
+          </label>
+        </div>
 		  </div>
 		  <!-- End of Header -->
 			  
@@ -64,7 +81,7 @@
 						  <div class="col-12" id="test">
 							  <svg id="country-grid"></svg>
 							  <div id="legendGrid"> </div>
-							  <div id="slider"> </div>						  
+                <div id="slider"> </div>
 						  </div>
 					  </div>				  
 				  </div>
@@ -143,5 +160,6 @@
   <script src="js/sankeyView.js"></script>
   <script src="js/d3.slider.js"></script>
   <script src="js/sliderView.js"></script>
+  <script src="js/searchField.js"></script>
   <script src="js/main.js"></script>
 </html>
