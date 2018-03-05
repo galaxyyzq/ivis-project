@@ -629,26 +629,26 @@ Year,Country,Value
 2015,Bolivia,775
 2016,Bolivia,761
 2010,Bonaire,1
-1997,Bosnia and Herzegovina,40000
-1998,Bosnia and Herzegovina,40000
-1999,Bosnia and Herzegovina,65645
-2000,Bosnia and Herzegovina,38232
-2001,Bosnia and Herzegovina,33131
-2002,Bosnia and Herzegovina,28479
-2003,Bosnia and Herzegovina,23218
-2004,Bosnia and Herzegovina,22669
-2005,Bosnia and Herzegovina,10783
-2006,Bosnia and Herzegovina,10409
-2007,Bosnia and Herzegovina,7994
-2008,Bosnia and Herzegovina,7737
-2009,Bosnia and Herzegovina,7499
-2010,Bosnia and Herzegovina,7169
-2011,Bosnia and Herzegovina,6978
-2012,Bosnia and Herzegovina,6945
-2013,Bosnia and Herzegovina,6968
-2014,Bosnia and Herzegovina,6905
-2015,Bosnia and Herzegovina,6821
-2016,Bosnia and Herzegovina,5297
+1997,Bosnia and Herz.,40000
+1998,Bosnia and Herz.,40000
+1999,Bosnia and Herz.,65645
+2000,Bosnia and Herz.,38232
+2001,Bosnia and Herz.,33131
+2002,Bosnia and Herz.,28479
+2003,Bosnia and Herz.,23218
+2004,Bosnia and Herz.,22669
+2005,Bosnia and Herz.,10783
+2006,Bosnia and Herz.,10409
+2007,Bosnia and Herz.,7994
+2008,Bosnia and Herz.,7737
+2009,Bosnia and Herz.,7499
+2010,Bosnia and Herz.,7169
+2011,Bosnia and Herz.,6978
+2012,Bosnia and Herz.,6945
+2013,Bosnia and Herz.,6968
+2014,Bosnia and Herz.,6905
+2015,Bosnia and Herz.,6821
+2016,Bosnia and Herz.,5297
 1968,Botswana,3980
 1969,Botswana,3600
 1970,Botswana,4360
@@ -1539,32 +1539,32 @@ Year,Country,Value
 2014,Cyprus,7593
 2015,Cyprus,9319
 2016,Cyprus,11471
-1991,Czech Rep,691
-1992,Czech Rep,9399
-1993,Czech Rep,188
-1994,Czech Rep,1186
-1995,Czech Rep,2655
-1996,Czech Rep,2266
-1997,Czech Rep,1731
-1998,Czech Rep,1805
-1999,Czech Rep,1232
-2000,Czech Rep,6217
-2001,Czech Rep,12805
-2002,Czech Rep,8953
-2003,Czech Rep,5262
-2004,Czech Rep,2742
-2005,Czech Rep,2726
-2006,Czech Rep,4763
-2007,Czech Rep,4223
-2008,Czech Rep,3558
-2009,Czech Rep,3588
-2010,Czech Rep,3514
-2011,Czech Rep,3358
-2012,Czech Rep,3379
-2013,Czech Rep,3296
-2014,Czech Rep,3617
-2015,Czech Rep,4303
-2016,Czech Rep,4314
+1991,Czech Rep.,691
+1992,Czech Rep.,9399
+1993,Czech Rep.,188
+1994,Czech Rep.,1186
+1995,Czech Rep.,2655
+1996,Czech Rep.,2266
+1997,Czech Rep.,1731
+1998,Czech Rep.,1805
+1999,Czech Rep.,1232
+2000,Czech Rep.,6217
+2001,Czech Rep.,12805
+2002,Czech Rep.,8953
+2003,Czech Rep.,5262
+2004,Czech Rep.,2742
+2005,Czech Rep.,2726
+2006,Czech Rep.,4763
+2007,Czech Rep.,4223
+2008,Czech Rep.,3558
+2009,Czech Rep.,3588
+2010,Czech Rep.,3514
+2011,Czech Rep.,3358
+2012,Czech Rep.,3379
+2013,Czech Rep.,3296
+2014,Czech Rep.,3617
+2015,Czech Rep.,4303
+2016,Czech Rep.,4314
 2015,Dem People's Rep of Korea,0
 1960,Dem Rep of the Congo,150000
 1961,Dem Rep of the Congo,203000
@@ -1723,41 +1723,41 @@ Year,Country,Value
 2014,Djibouti,24362
 2015,Djibouti,22006
 2016,Djibouti,25726
-1970,Dominican Rep,1000
-1971,Dominican Rep,1000
-1972,Dominican Rep,1100
-1974,Dominican Rep,1000
-1977,Dominican Rep,500
-1978,Dominican Rep,300
-1979,Dominican Rep,3300
-1980,Dominican Rep,3800
-1981,Dominican Rep,5000
-1982,Dominican Rep,5000
-1983,Dominican Rep,5000
-1984,Dominican Rep,5130
-1985,Dominican Rep,6000
-1986,Dominican Rep,4980
-1987,Dominican Rep,5000
-1988,Dominican Rep,4686
-1989,Dominican Rep,3320
-1990,Dominican Rep,1966
-1991,Dominican Rep,1571
-1992,Dominican Rep,510
-1993,Dominican Rep,1331
-1994,Dominican Rep,1252
-1995,Dominican Rep,985
-1996,Dominican Rep,640
-1997,Dominican Rep,638
-1998,Dominican Rep,614
-1999,Dominican Rep,625
-2000,Dominican Rep,535
-2010,Dominican Rep,2358
-2011,Dominican Rep,2380
-2012,Dominican Rep,1525
-2013,Dominican Rep,1545
-2014,Dominican Rep,1354
-2015,Dominican Rep,1373
-2016,Dominican Rep,1365
+1970,Dominican Rep.,1000
+1971,Dominican Rep.,1000
+1972,Dominican Rep.,1100
+1974,Dominican Rep.,1000
+1977,Dominican Rep.,500
+1978,Dominican Rep.,300
+1979,Dominican Rep.,3300
+1980,Dominican Rep.,3800
+1981,Dominican Rep.,5000
+1982,Dominican Rep.,5000
+1983,Dominican Rep.,5000
+1984,Dominican Rep.,5130
+1985,Dominican Rep.,6000
+1986,Dominican Rep.,4980
+1987,Dominican Rep.,5000
+1988,Dominican Rep.,4686
+1989,Dominican Rep.,3320
+1990,Dominican Rep.,1966
+1991,Dominican Rep.,1571
+1992,Dominican Rep.,510
+1993,Dominican Rep.,1331
+1994,Dominican Rep.,1252
+1995,Dominican Rep.,985
+1996,Dominican Rep.,640
+1997,Dominican Rep.,638
+1998,Dominican Rep.,614
+1999,Dominican Rep.,625
+2000,Dominican Rep.,535
+2010,Dominican Rep.,2358
+2011,Dominican Rep.,2380
+2012,Dominican Rep.,1525
+2013,Dominican Rep.,1545
+2014,Dominican Rep.,1354
+2015,Dominican Rep.,1373
+2016,Dominican Rep.,1365
 1972,Ecuador,200
 1974,Ecuador,200
 1977,Ecuador,200
@@ -4441,24 +4441,24 @@ Year,Country,Value
 2014,Rep of Korea,4662
 2015,Rep of Korea,6905
 2016,Rep of Korea,8578
-1999,Rep of Moldova,8
-2000,Rep of Moldova,266
-2001,Rep of Moldova,272
-2002,Rep of Moldova,260
-2003,Rep of Moldova,242
-2004,Rep of Moldova,241
-2005,Rep of Moldova,232
-2006,Rep of Moldova,239
-2007,Rep of Moldova,230
-2008,Rep of Moldova,181
-2009,Rep of Moldova,193
-2010,Rep of Moldova,229
-2011,Rep of Moldova,195
-2012,Rep of Moldova,260
-2013,Rep of Moldova,337
-2014,Rep of Moldova,484
-2015,Rep of Moldova,556
-2016,Rep of Moldova,446
+1999,Moldova,8
+2000,Moldova,266
+2001,Moldova,272
+2002,Moldova,260
+2003,Moldova,242
+2004,Moldova,241
+2005,Moldova,232
+2006,Moldova,239
+2007,Moldova,230
+2008,Moldova,181
+2009,Moldova,193
+2010,Moldova,229
+2011,Moldova,195
+2012,Moldova,260
+2013,Moldova,337
+2014,Moldova,484
+2015,Moldova,556
+2016,Moldova,446
 1977,Romania,1000
 1978,Romania,1000
 1979,Romania,1000
@@ -4493,27 +4493,27 @@ Year,Country,Value
 2014,Romania,2542
 2015,Romania,3030
 2016,Romania,2907
-1996,Russian Federation,246691
-1997,Russian Federation,237720
-1998,Russian Federation,128574
-1999,Russian Federation,80060
-2000,Russian Federation,26956
-2001,Russian Federation,18702
-2002,Russian Federation,15578
-2003,Russian Federation,10171
-2004,Russian Federation,2167
-2005,Russian Federation,1815
-2006,Russian Federation,1716
-2007,Russian Federation,4735
-2008,Russian Federation,5279
-2009,Russian Federation,6558
-2010,Russian Federation,6385
-2011,Russian Federation,4876
-2012,Russian Federation,4022
-2013,Russian Federation,4698
-2014,Russian Federation,238836
-2015,Russian Federation,316595
-2016,Russian Federation,231942
+1996,Russia,246691
+1997,Russia,237720
+1998,Russia,128574
+1999,Russia,80060
+2000,Russia,26956
+2001,Russia,18702
+2002,Russia,15578
+2003,Russia,10171
+2004,Russia,2167
+2005,Russia,1815
+2006,Russia,1716
+2007,Russia,4735
+2008,Russia,5279
+2009,Russia,6558
+2010,Russia,6385
+2011,Russia,4876
+2012,Russia,4022
+2013,Russia,4698
+2014,Russia,238836
+2015,Russia,316595
+2016,Russia,231942
 1965,Rwanda,3000
 1966,Rwanda,250
 1972,Rwanda,4000
@@ -4671,58 +4671,58 @@ Year,Country,Value
 2014,Senegal,17188
 2015,Senegal,17511
 2016,Senegal,17763
-1965,Serbia and Kosovo (SRES1244 (1999)),25820
-1966,Serbia and Kosovo (SRES1244 (1999)),26100
-1967,Serbia and Kosovo (SRES1244 (1999)),26210
-1968,Serbia and Kosovo (SRES1244 (1999)),26270
-1969,Serbia and Kosovo (SRES1244 (1999)),26120
-1970,Serbia and Kosovo (SRES1244 (1999)),26120
-1971,Serbia and Kosovo (SRES1244 (1999)),24000
-1972,Serbia and Kosovo (SRES1244 (1999)),26700
-1973,Serbia and Kosovo (SRES1244 (1999)),26290
-1974,Serbia and Kosovo (SRES1244 (1999)),26300
-1975,Serbia and Kosovo (SRES1244 (1999)),26300
-1976,Serbia and Kosovo (SRES1244 (1999)),26000
-1977,Serbia and Kosovo (SRES1244 (1999)),2000
-1978,Serbia and Kosovo (SRES1244 (1999)),1970
-1979,Serbia and Kosovo (SRES1244 (1999)),1970
-1980,Serbia and Kosovo (SRES1244 (1999)),1970
-1981,Serbia and Kosovo (SRES1244 (1999)),1920
-1982,Serbia and Kosovo (SRES1244 (1999)),2030
-1983,Serbia and Kosovo (SRES1244 (1999)),2020
-1984,Serbia and Kosovo (SRES1244 (1999)),3150
-1985,Serbia and Kosovo (SRES1244 (1999)),3530
-1986,Serbia and Kosovo (SRES1244 (1999)),2180
-1987,Serbia and Kosovo (SRES1244 (1999)),1400
-1988,Serbia and Kosovo (SRES1244 (1999)),850
-1989,Serbia and Kosovo (SRES1244 (1999)),955
-1990,Serbia and Kosovo (SRES1244 (1999)),920
-1991,Serbia and Kosovo (SRES1244 (1999)),517
-1992,Serbia and Kosovo (SRES1244 (1999)),516430
-1993,Serbia and Kosovo (SRES1244 (1999)),479111
-1994,Serbia and Kosovo (SRES1244 (1999)),450700
-1995,Serbia and Kosovo (SRES1244 (1999)),650700
-1996,Serbia and Kosovo (SRES1244 (1999)),563215
-1997,Serbia and Kosovo (SRES1244 (1999)),550061
-1998,Serbia and Kosovo (SRES1244 (1999)),502037
-1999,Serbia and Kosovo (SRES1244 (1999)),501262
-2000,Serbia and Kosovo (SRES1244 (1999)),484403
-2001,Serbia and Kosovo (SRES1244 (1999)),400357
-2002,Serbia and Kosovo (SRES1244 (1999)),354439
-2003,Serbia and Kosovo (SRES1244 (1999)),291435
-2004,Serbia and Kosovo (SRES1244 (1999)),276723
-2005,Serbia and Kosovo (SRES1244 (1999)),148297
-2006,Serbia and Kosovo (SRES1244 (1999)),99002
-2007,Serbia and Kosovo (SRES1244 (1999)),98007
-2008,Serbia and Kosovo (SRES1244 (1999)),96778
-2009,Serbia and Kosovo (SRES1244 (1999)),86381
-2010,Serbia and Kosovo (SRES1244 (1999)),73817
-2011,Serbia and Kosovo (SRES1244 (1999)),71106
-2012,Serbia and Kosovo (SRES1244 (1999)),66702
-2013,Serbia and Kosovo (SRES1244 (1999)),57483
-2014,Serbia and Kosovo (SRES1244 (1999)),44191
-2015,Serbia and Kosovo (SRES1244 (1999)),35448
-2016,Serbia and Kosovo (SRES1244 (1999)),36615
+1965,Serbia,25820
+1966,Serbia,26100
+1967,Serbia,26210
+1968,Serbia,26270
+1969,Serbia,26120
+1970,Serbia,26120
+1971,Serbia,24000
+1972,Serbia,26700
+1973,Serbia,26290
+1974,Serbia,26300
+1975,Serbia,26300
+1976,Serbia,26000
+1977,Serbia,2000
+1978,Serbia,1970
+1979,Serbia,1970
+1980,Serbia,1970
+1981,Serbia,1920
+1982,Serbia,2030
+1983,Serbia,2020
+1984,Serbia,3150
+1985,Serbia,3530
+1986,Serbia,2180
+1987,Serbia,1400
+1988,Serbia,850
+1989,Serbia,955
+1990,Serbia,920
+1991,Serbia,517
+1992,Serbia,516430
+1993,Serbia,479111
+1994,Serbia,450700
+1995,Serbia,650700
+1996,Serbia,563215
+1997,Serbia,550061
+1998,Serbia,502037
+1999,Serbia,501262
+2000,Serbia,484403
+2001,Serbia,400357
+2002,Serbia,354439
+2003,Serbia,291435
+2004,Serbia,276723
+2005,Serbia,148297
+2006,Serbia,99002
+2007,Serbia,98007
+2008,Serbia,96778
+2009,Serbia,86381
+2010,Serbia,73817
+2011,Serbia,71106
+2012,Serbia,66702
+2013,Serbia,57483
+2014,Serbia,44191
+2015,Serbia,35448
+2016,Serbia,36615
 2016,Seychelles,0
 1969,Sierra Leone,500
 1976,Sierra Leone,170
@@ -5257,43 +5257,43 @@ Year,Country,Value
 2014,Switzerland,83452
 2015,Switzerland,106037
 2016,Switzerland,113351
-1978,Syrian Arab Rep,170
-1979,Syrian Arab Rep,200
-1980,Syrian Arab Rep,350
-1981,Syrian Arab Rep,1050
-1982,Syrian Arab Rep,26570
-1983,Syrian Arab Rep,40490
-1984,Syrian Arab Rep,34230
-1985,Syrian Arab Rep,47750
-1986,Syrian Arab Rep,1330
-1988,Syrian Arab Rep,280
-1990,Syrian Arab Rep,4125
-1991,Syrian Arab Rep,4210
-1992,Syrian Arab Rep,6310
-1993,Syrian Arab Rep,38715
-1994,Syrian Arab Rep,40290
-1995,Syrian Arab Rep,36222
-1996,Syrian Arab Rep,27759
-1997,Syrian Arab Rep,22704
-1998,Syrian Arab Rep,20974
-1999,Syrian Arab Rep,6474
-2000,Syrian Arab Rep,6106
-2001,Syrian Arab Rep,3956
-2002,Syrian Arab Rep,3421
-2003,Syrian Arab Rep,4624
-2004,Syrian Arab Rep,16389
-2005,Syrian Arab Rep,27987
-2006,Syrian Arab Rep,707413
-2007,Syrian Arab Rep,1509653
-2008,Syrian Arab Rep,1107941
-2009,Syrian Arab Rep,1057546
-2010,Syrian Arab Rep,1007918
-2011,Syrian Arab Rep,757275
-2012,Syrian Arab Rep,478728
-2013,Syrian Arab Rep,151787
-2014,Syrian Arab Rep,151885
-2015,Syrian Arab Rep,26364
-2016,Syrian Arab Rep,32264
+1978,Syria,170
+1979,Syria,200
+1980,Syria,350
+1981,Syria,1050
+1982,Syria,26570
+1983,Syria,40490
+1984,Syria,34230
+1985,Syria,47750
+1986,Syria,1330
+1988,Syria,280
+1990,Syria,4125
+1991,Syria,4210
+1992,Syria,6310
+1993,Syria,38715
+1994,Syria,40290
+1995,Syria,36222
+1996,Syria,27759
+1997,Syria,22704
+1998,Syria,20974
+1999,Syria,6474
+2000,Syria,6106
+2001,Syria,3956
+2002,Syria,3421
+2003,Syria,4624
+2004,Syria,16389
+2005,Syria,27987
+2006,Syria,707413
+2007,Syria,1509653
+2008,Syria,1107941
+2009,Syria,1057546
+2010,Syria,1007918
+2011,Syria,757275
+2012,Syria,478728
+2013,Syria,151787
+2014,Syria,151885
+2015,Syria,26364
+2016,Syria,32264
 1992,Tajikistan,3000
 1993,Tajikistan,300
 1994,Tajikistan,695
@@ -5361,31 +5361,31 @@ Year,Country,Value
 2014,Thailand,138169
 2015,Thailand,116532
 2016,Thailand,111400
-1992,The former Yugoslav Republic of Macedonia,32000
-1993,The former Yugoslav Republic of Macedonia,31452
-1994,The former Yugoslav Republic of Macedonia,14891
-1995,The former Yugoslav Republic of Macedonia,9048
-1996,The former Yugoslav Republic of Macedonia,5089
-1997,The former Yugoslav Republic of Macedonia,3500
-1998,The former Yugoslav Republic of Macedonia,1700
-1999,The former Yugoslav Republic of Macedonia,21200
-2000,The former Yugoslav Republic of Macedonia,9051
-2001,The former Yugoslav Republic of Macedonia,4417
-2002,The former Yugoslav Republic of Macedonia,2878
-2003,The former Yugoslav Republic of Macedonia,2478
-2004,The former Yugoslav Republic of Macedonia,2236
-2005,The former Yugoslav Republic of Macedonia,1997
-2006,The former Yugoslav Republic of Macedonia,1445
-2007,The former Yugoslav Republic of Macedonia,1406
-2008,The former Yugoslav Republic of Macedonia,1772
-2009,The former Yugoslav Republic of Macedonia,1617
-2010,The former Yugoslav Republic of Macedonia,1559
-2011,The former Yugoslav Republic of Macedonia,1519
-2012,The former Yugoslav Republic of Macedonia,1593
-2013,The former Yugoslav Republic of Macedonia,2074
-2014,The former Yugoslav Republic of Macedonia,2434
-2015,The former Yugoslav Republic of Macedonia,718
-2016,The former Yugoslav Republic of Macedonia,639
+1992,Macedonia,32000
+1993,Macedonia,31452
+1994,Macedonia,14891
+1995,Macedonia,9048
+1996,Macedonia,5089
+1997,Macedonia,3500
+1998,Macedonia,1700
+1999,Macedonia,21200
+2000,Macedonia,9051
+2001,Macedonia,4417
+2002,Macedonia,2878
+2003,Macedonia,2478
+2004,Macedonia,2236
+2005,Macedonia,1997
+2006,Macedonia,1445
+2007,Macedonia,1406
+2008,Macedonia,1772
+2009,Macedonia,1617
+2010,Macedonia,1559
+2011,Macedonia,1519
+2012,Macedonia,1593
+2013,Macedonia,2074
+2014,Macedonia,2434
+2015,Macedonia,718
+2016,Macedonia,639
 2001,Timor-Leste,8
 2002,Timor-Leste,5
 2003,Timor-Leste,15
