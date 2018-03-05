@@ -1,13 +1,4 @@
-//// Global Variables ////
-var thisYear = "2015"; // Default value. It will be changed by a slider
-var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
-var prev_clicked_element = null;
-var prev_clicked_name = "";
-var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
-var rects;
-var dataForUpdate = null;
-var hueIn = 230; //Hue of the HSL color of the squares for In mode
-var hueOut = 40; //Hue of the HSL color of the squares for Out mode
+
 
 
 // Finds the specific data for a country
@@ -20,6 +11,20 @@ function findDataForCountry(countryName) {
     }
   });
   return dataWeWant;
+}
+
+
+// Find the DOM reference to the specific country square
+function findCountrySquare(countryName) {
+  var countrySquares =  d3.selectAll(".rect-container");
+  var countrySquareRef;
+  countrySquares.each(function(d,i) {
+    if(d[0].Country === countryName){
+      countrySquareRef = countrySquares[0][i];
+      return;
+    }
+  });
+  return countrySquareRef;
 }
 
 
@@ -63,22 +68,8 @@ function deselectSquare(prev, clicked) {
 }
 
 
-//// Global variables for the grid
 // Dimensions of the useful area inside the SGV
-var countryData;
-
-var gridMargin = { top: 10, right: 20, bottom: 20, left: 50 };
-var gridWidth  = 1110;
-var gridHeight = 680;
-
-var squareWidthHeight = 40;
-var squareMarginX = 8;
-var numRows = 16;
-
-var squareHoverSizeIncrease = 50;
-var zoomOffset = 5;
-
-var countryGridSVG = d3.select("#country-grid")
+countryGridSVG = d3.select("#country-grid")
   .attr("width", 100+(squareWidthHeight + squareMarginX)*numRows)
   .attr("height", (Math.floor(222 / numRows)+2) * (squareWidthHeight + squareMarginX))
 .append("g")
