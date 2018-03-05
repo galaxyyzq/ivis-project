@@ -27,7 +27,8 @@ function mouseOutContryName(x){
 function initTopRightBarChart() {
   // These variables has to be set in drawBarsHack too.
   var trbcMargin = {top: 40, right: 0, bottom: 100, left: 120};
-  
+  $("#right-side-bar-chart").empty()
+  // $("#right-side-bar-chart > #bar-holder > .x").remove()
   var xDomain = [];
   for(i = 1951; i < 2017; i++){
     xDomain.push(i);
@@ -38,10 +39,20 @@ function initTopRightBarChart() {
   trbcX = d3.scale.ordinal()
     .rangeRoundBands([0, trbcWidth], .1, 1)
     .domain(xDomain);
-
-  trbcY = d3.scale.linear()
-      .range([trbcHeight, 0])
+  if (scaleForY == "linear") {
+    trbcY = d3.scale.linear()
       .domain([0, 2541249])
+      .range([trbcHeight, 0]);
+  } else {
+    trbcY = d3.scale.log()
+      .base(10)
+      .domain([1, 10000000])
+      .range([trbcHeight, 0]);
+  }
+
+  // trbcY = d3.scale.linear()
+  //     .range([trbcHeight, 0])
+  //     .domain([0, 2541249])
 
   trbcXAxis = d3.svg.axis()
       .tickFormat(function(d, i) {
@@ -93,11 +104,11 @@ function initTopRightBarChart() {
   //d3.select("#countryName").text("Country name")
 }
 
-function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
-  
+function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data,scaleForY="linear"){
+  initTopRightBarChart();
   // Update yaxis here, when we switch from linear to exponential
   var yDomain = d3.max(data, function(d) {return d.Value; })
-  trbcY.domain([0, yDomain]);
+  // trbcY.domain([0, yDomain]);
   trbcYaxisAnimate
   .call(trbcYaxis)
     .selectAll("text")
@@ -159,9 +170,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 				.transition().delay(600).duration(500)
         .attr("x", function(d) { return trbcX(d.Year); })
         .attr("width", trbcX.rangeBand())
-        .attr("y", function(d) { return trbcY(d.Value); })
+      .attr("y", function (d) { return trbcY(Math.max(1, d.Value)); })
         .attr("height", function(d) {
-            return trbcHeight - trbcY(d.Value);
+          return trbcHeight - trbcY(Math.max(1, d.Value));
         })
 
 		// Update the bars
@@ -170,9 +181,9 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .transition().delay(600).duration(500)
       .attr("x", function(d) { return trbcX(d.Year); })
       .attr("width", trbcX.rangeBand())
-      .attr("y", function(d) { return trbcY(d.Value); })
+      .attr("y", function(d) { return trbcY(Math.max(1, d.Value)); })
       .attr("height", function(d) {
-          return trbcHeight - trbcY(d.Value);
+          return trbcHeight - trbcY(Math.max(1, d.Value));
     });
 
     // Remove bars that don't exist anymore

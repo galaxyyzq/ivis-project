@@ -37,3 +37,15 @@ $("#awayFromHomeLink").on("click", function() {
   $("#information").css('display', 'none');	
 })
 
+$("#logScaleToggle").on("click", function () {
+  if (scaleForY === "linear"){
+    scaleForY = "Out";
+    $("#logScaleToggle").text("Use Linear Scale");
+  }else{
+    scaleForY = "linear";
+    $("#logScaleToggle").text("Use Log Scale");
+  } 
+  initGrid();
+  updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, dataForUpdate, scaleForY)  
+  console.log("log scale")
+})

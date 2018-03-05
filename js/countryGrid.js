@@ -1,6 +1,7 @@
 //// Global Variables ////
 var thisYear = "2015"; // Default value. It will be changed by a slider
 var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
+var scaleForY = "linear" // linear or log for the scale of the grid bars
 var prev_clicked_element = null;
 var prev_clicked_name = "";
 var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
@@ -30,11 +31,11 @@ function updateFigures(thisSquare, thisYear, d) {
   //d3.select("#countryName").text(d[0].Country)
 
   // Update the barchart
-  updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+  updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d, scaleForY);
 
   // Update the sankey diagram
   updateSankey(d[0].Country, thisYear);
-
+  dataForUpdate = d;
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
 }
@@ -115,16 +116,23 @@ function changeFillColor(d,i) {
 	if (d.length == 0) {
 		return "white"; // Some countries have invalid data
 	} else {
-		var numRefugees = 0; // For some countries there is no data for all the years
-		//var numRefugees = 1; // For logarithmic scale
-
+    if(scaleForY=="linear"){
+      var numRefugees = 0; // For some countries there is no data for all the years
+    }else{
+      var numRefugees = 1; // For logarithmic scale
+    }
 		for (j = 0; j < d.length; j++) {
 				if (d[j].Year == thisYear) {
-						numRefugees = d[j].Value;
+            numRefugees = d[j].Value;
 				}
-		}
-		//var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
-		var t = numRefugees / maxRefugees[thisYear];
+    }
+    var t;
+    if (scaleForY == "linear") {
+      var t = numRefugees / maxRefugees[thisYear];
+		} else {
+      numRefugees = Math.max(1, numRefugees);
+      t = Math.log(numRefugees) / Math.log(maxRefugees[thisYear]); // For a log scale
+    }
 		if (inOut == "In") {
 		    return d3.hsl(hueIn, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
 		} else {
@@ -172,6 +180,7 @@ function initGrid() {
       .attr("id", function (d, i) { return "square-" + i; })
       .on("click", function (d, i) {
           updateFigures(this, thisYear, d);
+          console.log(d);
       })   // This will trigger only for parent node (this,thisYear)
       .on("mouseenter", function (d, i) {
           selectSquare(this, thisYear, d);
@@ -212,7 +221,7 @@ function initGrid() {
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
           // Call function from 'bars.js'
-          initBars(barHolderSelector, squareWidthHeight, squareWidthHeight, d);
+          initBars(barHolderSelector, squareWidthHeight, squareWidthHeight, d,scaleForY);
     });
 
   // Add legend
@@ -272,4 +281,4 @@ function loadCountryData() {
 // initBars(data)
 
 loadCountryData();
-initTopRightBarChart();
+// initTopRightBarChart();
