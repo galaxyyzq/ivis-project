@@ -1,110 +1,171 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Away From Home</title>
-    <!-- CSS files -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link rel="stylesheet" href="css/sankeyStyle.css">
-    <link rel="stylesheet" href="css/d3.slider.css" />
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
-    <!-- Include libraries here -->
-    <!-- Has to be 'https' links to work with github hosting -->
-    <!-- Jquery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- D3js -->
-    <script src="js/d3.js"></script>
-    <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
-    <script src="js/d3-topojson.js"></script>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <title>Away From Home</title>
+	  <!-- CSS files -->
+	  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	  <link rel="stylesheet" href="css/sankeyStyle.css">
+	  <link rel="stylesheet" href="css/d3.slider.css" />
+      <link rel="stylesheet" href="css/mapStyle.css" />
+
+	  <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/topoJson.css" /> -->
+	  <!-- Include libraries here -->
+	  <!-- Has to be 'https' links to work with github hosting -->
+	  <!-- Jquery -->
+	  <script src="js/libraries/jquery.js"></script>
+	  <script src="js/libraries/bootstrap-toggle.js"></script>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="css/bootstrap.css">
+	  <!-- D3js -->
+	  <script src="js/libraries/d3.js"></script>
+	  <!-- Topojson: https://github.com/topojson/topojson/wiki/API-Reference-->
+	  <script src="js/libraries/d3-topojson.js"></script>
+	  
+	  <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet"> -->   
+		<link href="https://fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">	  
+		<link rel="stylesheet" href="css/bootstrap-toggle.min.css" rel="stylesheet">
+		
   </head>
 
   <body>
-    <button id="inoutChange">Chage In Out</button>
-      <!-- <label for="text">Name:</label>
-      <input type="text" id="nameinput" />
-      <button id="clickButton" type="submit">Click</button>
-      <button id="toggleMap">Toggle Map</button>
-      <div id="map-holder"></div> -->
+	  <!-- CONTAINER THAT CONTAINS EVERYTHING -->
+	  <div class="container-fluid" id="visualization" >
+		  
+			  
+		  <!-- CONTENT ROW -->
+		  <div class="container-fluid" id="contentRow" style="display: block" >
+			  <div class="row"> 
+				  <!-- COUNTRY GRID AND SLIDER ######################### col-6 col-12-md -->
+                  <div class="col-lg-6 " id="leftColum">
+                      <!-- HEADER (just in case we decide putting a word on the top, but right now we think we don't have space for that) -->
+                      <div class="row">
+                          <div class="col-6">
+                              <img src="img/logo.png" style="width: 100px; float: left">
+                              <h1 class="projectTitle"> <a href="#" class="menuLink" id="awayFromHomeLink"> Away From Home </a> </h1>
+                              <h1 class="info">  <a href="#" class="menuLink" id="infoLink"> Info </a> </h1>
+                          </div>
+                      </div>
+                      <!-- End of Header -->
+                      <div class="row">
+                          <div class="col-12 " id="test">
+                              <p id="modeSentence"> Refugees and Asylum-Seekers Living in each Country. </p>
+                              <!-- <p> Refugees and Asylum-Seekers from each Country -->
+                              <div id="test">
+                                  <label for="search-countries">
+                                      Search for country:
+                                      <input id="search-countries" list="search-options">
+                                      <datalist id="search-options"></datalist>
+                                  </label>
+                                  <input id="inOutToggle" type="checkbox" data-toggle="toggle" data-on="In" data-off="From" checked>
+                                  <input id="logScaleToggle" type="checkbox" data-toggle="toggle" data-on="Linear" data-off="Logarithmic" checked>
+                                  <input id="toggleMap" type="checkbox" data-toggle="toggle" data-on="Grid" data-off="Map" checked>
+                              </div>
+                          </div>
+                      </div>
 
-	  <h2 style="text-align: center; font-size: 70px; margin-bottom: 40px;">
-        Number of refugees and asylum-seekers throughout the years
-    </h2>
+                      <div class="row">
+                          <div class="col-12" id="test">
+                              <svg id="country-grid"></svg>
+                              <div id="map-holder"></div>
+                              <div id="legendGrid"> </div>
+                              <div id="slider"> </div>
+                          </div>
+                      </div>
+                  </div>
+				  <!-- ################################################# -->
 
-      <div class="container-fluid">
-        <div class="row">
+			  
+				  <!-- BAR CHART + SANKEY ############################## col-6 col-12-md -->
+				  <div class="col-lg-6" id="rightColumn">
+					  <h1 onmouseout="mouseOutContryName(this)" onmouseover="mouseOverContryName(this)" id="countryName">Hover here to get Country's Name</h1>
+					  <h3 id="barChartDescription"> <span id="nRefugees">228,601</span> <span id="descriptionSentence">Refugees living in this country in</span> <span id="barChartYear">2015</span></h3>
 
-          <!-- Column with country grid -->
-            <div class="col-6 col-12-md" id="test">
-                <svg id="country-grid"></svg>
-                <!--<div id="countryGridLabelContainer">
-                    <span class="continents asia">Asia</span>
-                    <span class="continents africa">Africa</span>
-                    <span class="continents america">America</span>
-                    <span class="continents europe">Europe</span>
-                    <span class="continents oceania">Oceania</span>
-                </div>-->
+					  <div class="row top-buffer" style="margin-left: 10px">
+						  <svg id="right-side-bar-chart"></svg>
+					  </div>
 
-                <div id="legendGrid"></div>
-                <div id="slider">
-                </div>
-            </div>
-
-
-		  <!-- Column with sankey and sidebar chart -->
-          <div class="col-6 col-12-md">
-	  		<h1 id="countryName" style="text-align: center; font-size: 50px"></h1>
-
-            <div class="row top-buffer" style="margin-left: 70px">
-                <svg id="right-side-bar-chart"></svg>
-            </div>
-            <div class="row top-buffer" style="margin-left: 70px">
-              <div class="sankey">
-                <div id="Title"></div>
-                <p id="chart">
+					  <div class="row" style="margin-left: 70px">
+						  <div class="sankey">
+							  <div id="Title"></div>
+							  <p id="chart">
+						  </div>
+					  </div>
+				  </div>
+				  <!-- END OF BAR CHART + SANKEY ####################### -->  
+			  </div> <!-- END OF CONTENT ROW -->	
+		  </div>  
+	  </div>
+	  
+	  
+	  <!-- INFO VIEW -->
+      <div class="container-fluid" id="information" style="display: none">
+          <!-- HEADER (just in case we decide putting a word on the top, but right now we think we don't have space for that) -->
+          <div class="row">
+              <div class="col-6">
+                  <img src="img/logo.png" style="width: 100px; float: left">
+                  <h1 class="projectTitle"> <a href="#" class="menuLink" id="awayFromHomeLink2"> Away From Home </a> </h1>
+                  <h1 class="info">  <a href="#" class="menuLink" id="infoLink2"> Info </a> </h1>
               </div>
-            </div>
           </div>
-        </div>
+          <!-- End of Header -->
+          <!-- ROW FOOTER ############################################################ -->
+          <div class="row footer top-buffer">
+              <div class="col-6">
+                  <h3>
+                      Data and definitons provided by
+                      <a href="http://popstats.unhcr.org/">The UN Refugee Agency</a>
+                  </h3>
 
-        <div class="row footer top-buffer">
-          <div class="col-6">
-            <h3></h3>
-            <h3>Data and definitons provided by <a href="http://popstats.unhcr.org/">The UN Refugee Agency</a></h3>
-            <p style="border-left: 5px solid #F8B7B7; padding-left: 7px">
-              <strong>Refugees</strong>
-              include individuals recognised under the 1951 Convention relating to the Status of Refugees;
-              its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems
-              in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary
-              forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also
-              includes people in a refugee-like situation.
-            </p>
-            <p style="border-left: 5px solid #8496AB; padding-left: 7px">
-              <strong>Asylum-seekers</strong>
-              are individuals who have sought international protection and whose claims for refugee status have
-              not yet been determined, irrespective of when they may have been lodged.
-            </p>
+                  <p style="border-left: 5px solid #F8B7B7; padding-left: 7px">
+                      <strong>Refugees</strong>
+                      include individuals recognised under the 1951 Convention relating to the Status of Refugees;
+                      its 1967 Protocol; the 1969 OAU Convention Governing the Specific Aspects of Refugee Problems
+                      in Africa; those recognised in accordance with the UNHCR Statute; individuals granted complementary
+                      forms of protection; or those enjoying temporary protection. Since 2007, the refugee population also
+                      includes people in a refugee-like situation.
+                  </p>
+
+                  <p style="border-left: 5px solid #8496AB; padding-left: 7px">
+                      <strong>Asylum-seekers</strong>
+                      are individuals who have sought international protection and whose claims for refugee status have
+                      not yet been determined, irrespective of when they may have been lodged.
+                  </p>
+              </div>
+
+              <div class="col-6">
+                  <h3>Contact information</h3>
+
+                  <p>Staffan Sandberg {stsand@kth.se}</p>
+                  <p>Sonia Camacho {soniach@kth.se}</p>
+                  <p>I Wayan Kurniawan {wardana@kth.se}</p>
+                  <p>Kauã Melo {kaua@kth.se}</p>
+                  <p>Zaiqiao Ye {zaiqiao@kth.se}</p>
+                  <p>Akash Menon {amenon@kth.se}</p>
+                  <p>Murat Buldu {buldu@kth.se}</p>
+                  <p>Julia Duong {jduong@kth.se}</p>
+                  <p>Supervisor: Mario Romero {marior@kth.se}</p>
+              </div>
           </div>
-          <div class="col-6">
-            <h3>Our contact information and such</h3>
-          </div>
-        </div>
+          <!-- END OF FOOTER ######################################################### -->
       </div>
+	  
   </body>
 
 
-  <!-- Include all javascript files here-->
+  <!-- Include all javascript files here -->
+  <script src="js/globalVariables.js"></script>
+	
   <script src="js/bars.js"></script>
-
-  <script src="js/databaseFunctions.js"></script>
-  <!-- <script src="js/topoJson.js"></script> -->
+  <script src="js/legend.js"></script>
   <script src="js/topRightBarchart.js"></script>
   <script src="js/countryGrid.js"></script>
-  <script src="js/sankey.js"></script>
+  <script src="js/libraries/sankey.js"></script>
   <script src="js/sankeyView.js"></script>
-  <script src="js/d3.slider.js"></script>
+  <script src="js/libraries/d3.slider.js"></script>
   <script src="js/sliderView.js"></script>
+  <script src="js/searchField.js"></script>
+  <script src="js/mapView.js"></script>
   <script src="js/main.js"></script>
 </html>

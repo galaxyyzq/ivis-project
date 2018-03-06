@@ -1,39 +1,82 @@
-//// Global Variables ////
-var thisYear = "2015"; // Default value. It will be changed by a slider
-var inOut = "In"; // Can be "In" or "Out". This will be changed by a toggle
-var prev_clicked_element = null;
-var prev_clicked_name = "";
-var maxRefugees = {}; // Max number of refugees in a country for year = thisYear
-var rects;
-var dataForUpdate = null;
+
+// Finds the specific data for a country
+function findDataForCountry(countryName) {
+  var dataWeWant;
+  countryData.forEach(function (d) {
+      /*var short, long;
+      if (d[0].Country.length > countryName.length) {
+          short = countryName;
+          long = d[0].Country;
+      } else {
+          long = countryName;
+          short = d[0].Country;
+      }
+      if (long.search(short) != -1) {*/
+      if (d[0].Country === countryName) {
+          dataWeWant = d;
+          return;
+      }
+  });
+  return dataWeWant;
+}
+
+
+// Find the DOM reference to the specific country square
+function findCountrySquare(countryName) {
+  var countrySquares =  d3.selectAll(".rect-container");
+  var countrySquareRef;
+  countrySquares.each(function(d,i) {
+    if(d[0].Country === countryName){
+      countrySquareRef = countrySquares[0][i];
+      return;
+    }
+  });
+  return countrySquareRef;
+}
+
 
 function selectSquare(thisSquare, thisYear, d) {
-
   if(thisSquare === prev_clicked_element) return;
-
-  d3.select(thisSquare).select("rect")
-    .attr("stroke-width", 3)
-    .attr("stroke", "orange")
-}
+    d3.select(thisSquare).select("rect")
+      .attr("stroke-width", 3)
+      .attr("stroke", "orange")
+  }
 
 function updateFigures(thisSquare, thisYear, d) {
   if (prev_clicked_element) {
     deselectSquare(prev_clicked_element, true);
   }
-
   // Mark the square as selected
   d3.select(thisSquare).select("rect")
   .attr("stroke-width", 3)
-  .attr("stroke", "green")
+  .attr("stroke", "red")
 
   // Update the title above the barchart
-  d3.select("#countryName").text(d[0].Country)
+  currentCountryName = d[0].Country;
+  //d3.select("#countryName").text(d[0].Country)
 
-  drawBarsHack("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d)
+  // Update the barchart
+  updateTopRightBarChart("#right-side-bar-chart", xComp = "letter", yComp = "frequency", yAxisTitle = "", height = 200, width = 500, xP = 0, yP = 0, showAxis = true, d, scaleForY);
+  
+  // Update the sankey diagram
+  updateSankey(d[0].Country, thisYear);
 
-  updateSankey(d[0].Country,thisYear);
+  // Update the map
+  drawMap();
+  // update title for barChartDescription
+  d.forEach(el => {
+    if(el.Year==thisYear){
+      // Changing the value (number of refugees) in the second column description.
+      $("#nRefugees").html(el.Value);
+      return;
+    }
+  });
+  
+  dataForUpdate = d;
   prev_clicked_element = thisSquare;
   prev_clicked_name = d[0].Country;
+	
+  updateBarChartDescription();		
 }
 
 function deselectSquare(prev, clicked) {
@@ -46,24 +89,10 @@ function deselectSquare(prev, clicked) {
 }
 
 
-//// Global variables for the grid
 // Dimensions of the useful area inside the SGV
-var countryData;
-
-var gridMargin = { top: 62, right: 20, bottom: 20, left: 20 };
-var gridWidth  = 1110;
-var gridHeight = 680;
-
-var squareWidthHeight = 80;
-var squareMarginX = 8;
-var numRows = 16;
-
-var squareHoverSizeIncrease = 50;
-var zoomOffset = 5;
-
-var countryGridSVG = d3.select("#country-grid")
+countryGridSVG = d3.select("#country-grid")
   .attr("width", 100+(squareWidthHeight + squareMarginX)*numRows)
-  .attr("height", (Math.floor(222 / numRows)+2) * (squareWidthHeight + squareMarginX))
+  .attr("height", (Math.floor(222 / numRows)+1.1) * (squareWidthHeight + squareMarginX))
 .append("g")
   .attr("transform", "translate(" + gridMargin.left + "," + gridMargin.top + ")")
   .attr("id", "g_container"); // We give the <g> an id because we'll later create a rec inside of it
@@ -87,28 +116,62 @@ var countryGridSVG = d3.select("#country-grid")
   //     .attr("stroke-width", 1) // border
   //     .attr("stroke", "gray")
   //     .attr("fill", "white")
-  // 	.attr("rx", 10);
+	// 	.attr("rx", 10);
+	
 
-// Call this function if we "thisYear" has been updated
+// Sort from high to low
+function highToLow(a,b) {
+	var refugeesA = 0;
+	for (j = 0; j < a.length; j++) {
+		if (a[j].Year == thisYear) {
+				refugeesA = a[j].Value;
+		}
+	}
+	var refugeesB = 0;
+	for (j = 0; j < b.length; j++) {
+		if (b[j].Year == thisYear) {
+				refugeesB = b[j].Value;
+		}
+	}
+	return +refugeesB - +refugeesA;
+}
+
+// Change the color mapping inside a square
+function changeFillColor(d,i) {
+	if (d.length == 0) {
+		return "white"; // Some countries have invalid data
+	} else {
+    if(scaleForY=="linear"){
+      var numRefugees = 0; // For some countries there is no data for all the years
+    }else{
+      var numRefugees = 1; // For logarithmic scale
+    }
+		for (j = 0; j < d.length; j++) {
+				if (d[j].Year == thisYear) {
+            numRefugees = d[j].Value;
+				}
+    }
+    var t;
+    if (scaleForY == "linear") {
+      var t = numRefugees / maxRefugees[thisYear];
+		} else {
+      numRefugees = Math.max(1, numRefugees);
+      t = Math.log(numRefugees) / Math.log(maxRefugees[thisYear]); // For a log scale
+    }
+		if (inOut == "In") {
+		    return d3.hsl(hueIn, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for In mode
+		} else {
+			return d3.hsl(hueOut, 1, 0.6 * t + (1 - t) * 0.99); // Interpolation in L for Out mode
+		}
+	}
+}
+
+// Call this function if "thisYear" has been updated
 function updateGrid() {
   var countrySquares = countryGridSVG.selectAll(".rect-container")
-  .data(countryData.sort(function(a,b) {
-      var refugeesA = 0;
-      for (j = 0; j < a.length; j++) {
-        if (a[j].Year == thisYear) {
-            refugeesA = a[j].Value;
-        }
-      }
-      var refugeesB = 0;
-      for (j = 0; j < b.length; j++) {
-        if (b[j].Year == thisYear) {
-            refugeesB = b[j].Value;
-        }
-      }
-      return +refugeesB - +refugeesA;
-    }), function(d) {
+  .data(countryData.sort(highToLow), function(d) {
       return d[0].Country;
-    });
+  });
 
   // Update the position of the squares
   countrySquares
@@ -119,27 +182,11 @@ function updateGrid() {
       return `translate(${x},${y})`;
     });
 
-  // Update the colormaping
+  // Update the color mapping
   countrySquares
     .select("rect")
     .transition().duration(1000)
-    .attr("fill", function (d, i) {
-        if (d.length == 0) {
-            return "white"; // Some countries have invalid data
-        } else {
-            //var numRefugees = 1; // For logarithmic scale
-            var numRefugees = 0; // For some countries there is no data for all the years
-
-            for (j = 0; j < d.length; j++) {
-                if (d[j].Year == thisYear) {
-                    numRefugees = d[j].Value;
-                }
-            }
-            //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
-            var t = numRefugees / maxRefugees[thisYear];
-            return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
-        }
-    });
+    .attr("fill", changeFillColor);
 }
 
 function initGrid() {
@@ -147,21 +194,7 @@ function initGrid() {
   countryGridSVG.selectAll(".rect-container").remove();
 
   var countrySquares = countryGridSVG.selectAll(".rect-container")
-    .data(countryData.sort(function(a,b) {
-        var refugeesA = 0;
-        for (j = 0; j < a.length; j++) {
-          if (a[j].Year == thisYear) {
-              refugeesA = a[j].Value;
-          }
-        }
-        var refugeesB = 0;
-        for (j = 0; j < b.length; j++) {
-          if (b[j].Year == thisYear) {
-              refugeesB = b[j].Value;
-          }
-        }
-        return +refugeesB - +refugeesA;
-      }), function(d) {
+    .data(countryData.sort(highToLow), function(d) {
         return d[0].Country;
       });
       
@@ -203,23 +236,7 @@ function initGrid() {
         else return "black";
       })
       .transition().duration(500)
-      .attr("fill", function (d, i) {
-          if (d.length == 0) {
-              return "white"; // Some countries have invalid data
-          } else {
-              //var numRefugees = 1; // For logarithmic scale
-              var numRefugees = 0; // For some countries there is no data for all the years
-
-              for (j = 0; j < d.length; j++) {
-                  if (d[j].Year == thisYear) {
-                      numRefugees = d[j].Value;
-                  }
-              }
-              //var t = Math.log(numRefugees) / Math.log(Math.max.apply(Math, refugeesArray)); // For a log scale
-              var t = numRefugees / maxRefugees[thisYear];
-              return d3.hsl(230, 1, 0.6 * t + (1 - t)*0.99); // Interpolation in L
-          }
-      });
+      .attr("fill", changeFillColor);
 
   // Add a bar chart in each square
   countrySquares
@@ -227,19 +244,8 @@ function initGrid() {
       var barHolderSelector = "#"+d3.select(this).attr("id");
       var x = +d3.select(this).selectAll("rect").attr("x");
           var y = +d3.select(this).selectAll("rect").attr("y");
-          d = d.slice(Math.max(d.length - 50, 1));
           // Call function from 'bars.js'
-          drawBars(barHolderSelector,
-          xComp = "letter",
-          yComp = "frequency",
-          yAxisTitle = "",
-          gridHeight = squareWidthHeight,
-          width = squareWidthHeight,
-          x,
-          y,
-          false,
-          d
-          );
+          initBars(barHolderSelector, squareWidthHeight, squareWidthHeight, d,scaleForY);
     });
 
   // Add legend
@@ -280,91 +286,20 @@ function loadCountryData() {
         maxRefugees[d.Year] = +d.Value;
       }
 
-    })
-    countryData = countryWithYears;
+    });
 
+    countryData = countryWithYears;
+    
     initGrid();
     if (prev_clicked_name == "" || dataForUpdate == null){
       dataForUpdate = countryData[0];
       prev_clicked_element = document.getElementById("square-0");
     }
     updateFigures(prev_clicked_element, thisYear, dataForUpdate);
+
+    // Don't use the global variable so everything is sorted
+    addCountriesToDropdown(countryWithYears);
   });
-}
-
-// Legend for the country Grid when coloring by amount of refugees in a country in "thisYear"
-function drawLegend(maxRefugees, thisYear) {
-    document.getElementById("legendGrid").innerHTML = "";
-    var w = 500, h = 70;
-    d3.select("#legendGrid").selectAll("svg").remove();
-
-    var key = d3.select("#legendGrid")
-        .append("svg")
-        .attr("width", w)
-        .attr("height", h)
-        .attr("stroke-width", 1)
-        .attr("stroke", "gray");
-
-    var legend = key.append("defs")
-        .append("svg:linearGradient")
-        .attr("id", "gradient")
-        .attr("x1", "0%")
-        .attr("y1", "100%")
-        .attr("x2", "100%")
-        .attr("y2", "100%")
-        .attr("spreadMethod", "pad");
-
-    legend.append("stop")
-        .attr("offset", "0%")
-        .attr("stop-color", d3.hsl(230, 1, 1))
-        .attr("stop-opacity", 1);
-
-    legend.append("stop")
-        .attr("offset", "100%")
-        .attr("stop-color", d3.hsl(230, 1, 0.6))
-        .attr("stop-opacity", 1);
-
-    key.append("rect")
-        .attr("width", w - 200)
-        .attr("height", h - 50)
-        .style("fill", "url(#gradient)")
-        .attr("transform", "translate(100,30)");
-
-    //Append title
-    key.append("g")
-        .append("text")
-        .attr("class", "legendTitle")
-        .attr("x", 250)
-        .attr("y", 20)
-        .style("font-size", "18pt")
-        .style("text-anchor", "middle")
-        .text("Number of refugees sheltered in " + thisYear); // Change sheltered when toggling to out
-
-    function precisionRound(number, precision) {
-        var factor = Math.pow(10, precision);
-        var a = Number(( Math.round(number * factor) / factor).toFixed((-1)*precision) );
-        return a;
-    }
-
-    // Append labels
-    var maxLabel = precisionRound(maxRefugees, 2 - maxRefugees.toString().length);
-    key.append("g")
-        .append("text")
-        .attr("class", "legendTitle")
-        .attr("x", 100)
-        .attr("y", 70)
-        .style("font-size", "16pt")
-        .style("text-anchor", "middle")
-        .text("0");
-
-    key.append("g")
-        .append("text")
-        .attr("class", "legendTitle")
-        .attr("x", 400)
-        .attr("y", 70)
-        .style("font-size", "16pt")
-        .style("text-anchor", "middle")
-        .text(maxLabel);
 }
 
 // change barHolderSelector for the bar holder,

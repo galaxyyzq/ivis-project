@@ -14,6 +14,7 @@
 	margin-left: 20px;
 }
 
+/*
 #countryGridLabelContainer span
 {
 	-display: block;
@@ -38,8 +39,34 @@ span:before
   -display: inline-block;
   -margin-top: -5px;	
 }
+*/
+	
+.col-6 {
+	font-family: 'Saira Condensed', sans-serif;	
+}
 
-		
+#nRefugees{
+	font-size: 30px;
+}
+
+#barChartYear{
+	font-size: 30px;
+}
+
+#barChartDescription{
+	text-align: right;
+	font-family: 'Saira Condensed', sans-serif;	
+	font-size: 50px;	
+}
+
+#contentRow{
+	font-family: 'Saira Condensed', sans-serif;
+}
+
+.legendTitle {
+	font-family: 'Saira Condensed', sans-serif;
+}		
+
 .asia:before {
   background: pink;
 }
@@ -55,10 +82,113 @@ span:before
 .oceania:before {
   background: #FFA55F;
 }
-    
+
 .footer {
   padding-left: 5px;
   padding-right: 5px;
   border-top: 2px solid gray;
 }
+	
+#countryName{
+	text-align: center; 
+	font-family: 'Saira Condensed', sans-serif;	
+	font-size: 50px;		
+	font-weight:600;
+	color: lightgray;
+}	
+	
+#modeSentence{
+	font-size: 30px;
+	font-family: 'Saira Condensed', sans-serif;	
+	font-weight:300;
+}
+
+#inOutToggle{
+	font-size: 20px;
+	float: right;
+	margin-right: 80px;
+	width: 150px;
+}
+
+#toggleMap {
+    font-size: 20px;
+    float: right;
+    margin-right: 80px;
+    margin-top: 10px;
+    width: 150px;
+}
+
+#logScaleToggle {
+	font-size: 20px;
+	float: right;
+	margin-right: 80px;
+	margin-top: 10px;
+	width: 150px;
+}
+	
+.projectTitle{
+	font-size: 50px;
+	-text-align: center;
+	text-align: left;
+	font-family: 'Saira Condensed', sans-serif;	
+	
+	margin-top: 15px;
+	float: left;
+}	
+
+.info{
+	font-size: 50px;
+	margin-top: 15px;
+	margin-left: 735px;
+}
+	
+.menuLink{
+  color: gray;
+  text-decoration: none; /* no underline */	
+}
+
+.menuLink:hover{
+	color: black;
+}
+
+#leftColum{
+	border-right: 1px solid lightgray;
+}	
+
+#rightColumn{
+	padding-right: 100px;
+}
+	
+.yellow{
+	background-color: yellow;
+}
+	
+.red{
+	background-color: red;
+}
+	
+.green{
+	background-color: green;
+}
+	
+.blue{
+	background-color: blue;
+}
+	
+.black{
+	background-color: black;
+}	
 		
+
+@media (min-width: 500px) 
+{
+	body {
+		background-color: black;
+	}
+}
+
+
+
+
+
+

@@ -5,8 +5,8 @@
 }
 
 .node text {
-  pointer-events: none;
-  text-shadow: 0 1px 0 #fff;
+    pointer-events: none;
+    /*text-shadow: 0 1px 0 #fff;*/
 }
 
 .link {
@@ -20,9 +20,9 @@
 }
 
 .sankey {
-  display: inline-block;
-  border: solid;
-  margin: 20px;
+    display: inline-block;
+    /* border: solid; */
+    margin: 20px;
 }
 
 #Title {

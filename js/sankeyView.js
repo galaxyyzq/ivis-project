@@ -1,7 +1,7 @@
 // Code for drawing a sankey diagram
 
 var marginSankey = { top: 10, right: 10, bottom: 0, left: 10 },
-    widthSankey = 500 - marginSankey.left - marginSankey.right,
+    widthSankey = 600 - marginSankey.left - marginSankey.right,
     heightSankey = 300 - marginSankey.top - marginSankey.bottom;
 
 // Sort countries by number of refugees, return names
@@ -94,6 +94,23 @@ function drawSankey(data, thisYear) {
     var formatNumber = d3.format(",.0f"),    // zero decimal places
         format = function (d) { return formatNumber(d) + " " + units; };
 
+    /* Initialize tooltip */
+    //for tooltip 
+    var offsetL = document.getElementById('chart').offsetLeft + 30;
+    var offsetT = document.getElementById('chart').offsetTop + 30;
+
+    var tooltipSankey = d3.select("#chart")
+        .append("div")
+        .attr("class", "tooltip hidden");
+
+    function showTooltipSankey(d) {
+        var mouse = d3.mouse(sankeySVG.node())
+            .map(function (d) { return parseInt(d); });
+        tooltipSankey.style('display', 'block')
+            .attr("style", "left:" + (mouse[0] + offsetL) + "px;top:" + (mouse[1] + offsetT) + "px")
+            .html(d.source.name + " → " + d.target.name + "<br>" + format(d.value));
+    }
+
     //Remove previous sankey
     d3.select("#chart").selectAll("svg").remove();
 
@@ -119,24 +136,42 @@ function drawSankey(data, thisYear) {
     //set up graph in same style as original example but empty
     graph = { "nodes": [], "links": [] };
 
-    data.forEach(function (d) {
-        graph.nodes.push({ "name": d.source });
-        graph.nodes.push({ "name": d.target });
-        graph.links.push({
-            "source": d.source,
-            "target": d.target,
-            "value": +d.value
+    if (inOut == "In") { 
+        data.forEach(function (d) {
+            graph.nodes.push({ "name": d.source });
+            graph.nodes.push({ "name": "" });
+            graph.links.push({
+                "source": d.source,
+                "target": "",
+                "value": +d.value
+            });
         });
-    });
+    }else{
+        data.forEach(function (d) {
+            graph.nodes.push({ "name": "" });
+            graph.nodes.push({ "name": d.target });
+            graph.links.push({
+                "source": "",
+                "target": d.target,
+                "value": +d.value
+            });
+        });
+    }
+    
+    
 
     //Add title in graph
-    var ourTarget;
+    var ourTarget, direction;
     if (inOut == "In") {
         ourTarget = data[0].target;
+        direction = "in";
+        d3.select("#Title").text("Origin of refugees in " + thisYear);
     } else {
         ourTarget = data[0].source;
+        direction = "from";
+        d3.select("#Title").text("Residence of refugees in " + thisYear);
     }
-    d3.select("#Title").text("Refugees in " + ourTarget + ". Year:" + thisYear);
+    //d3.select("#Title").text("Refugees " + direction + " " + ourTarget + ". Year:" + thisYear);
 
     // return only the distinct / unique nodes
     graph.nodes = d3.keys(d3.nest()
@@ -174,15 +209,21 @@ function drawSankey(data, thisYear) {
                 return d.color = color(d.target.name);
             }
         })
+        .on("mousemove", showTooltipSankey)
+        .on("mouseout", function (d, i) {
+            //tooltipMap.classed("hidden", true);
+            tooltipSankey.style('display', 'none');
+
+        })
         .sort(function (a, b) { return b.dy - a.dy; });
 
 
     // add the link titles
-    link.append("title")
+    /*link.append("title")
         .text(function (d) {
             return d.source.name + " → " +
                 d.target.name + "\n" + format(d.value);
-        });
+        });*/ 
 
     // add in the nodes
     var node = sankeySVG.append("g").selectAll(".node")
@@ -229,27 +270,45 @@ function drawSankey(data, thisYear) {
 // Called when mouse hovers over a square
 function updateSankey(country, thisYear) {
     //console.log("This country: ", country);
-
     //d3.csv("data/dataforSankeyDiagram.csv", function (error, data) {
-    d3.csv("data/treatingRealData/sankeyData"+ inOut + ".csv", function (error, data) {
-
+    d3.csv("data/treatingRealData/sankeyData" + inOut + ".csv", function (error, data) {
         if (inOut == "In") {
             countryLabel = "Residence";
         } else {
             countryLabel = "Origin";
         }
         var sankeyData = [];
+        //var short, long;
         data.forEach(function (d) {
+            /*if (d.Year == thisYear) { 
+                if (d[countryLabel].length > country.length) {
+                    short = country;
+                    long = d[countryLabel];
+                } else {
+                    long = country;
+                    short = d[countryLabel];
+                }
+                if ((long.search(short) != -1 || long==short) && !(long == "S. Sudan" && short == "Sudan")) {
+                    sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
+                }
+            }*/
             if (d[countryLabel] == country && d.Year == thisYear) {
                 //console.log(d[countryLabel]);
 
                 sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
-        //console.log("Sankey data: ", sankeyData);
-
-        //Represent only the top5 countries to simplify the diagram
-        drawSankey(topCountries(sankeyData), thisYear);
+        console.log(sankeyData)
+        if (sankeyData.length == 0) {
+            //Remove previous sankey
+            d3.select("#chart").selectAll("svg").remove();
+            // add some text
+            d3.select("#Title").text("No data for this year");
+        } else {
+            //Represent only the top5 countries to simplify the diagram
+            drawSankey(topCountries(sankeyData), thisYear);
+        }
+        
     });
 
 }

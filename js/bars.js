@@ -1,133 +1,83 @@
 // change barHolderSelector for the bar holder,
 // i.e for id="barHolder" use #barHolder
-// change the x component name and y component name also the yAxisTitle
+// change the squareX component name and squareY component name also the yAxisTitle
 // to update the bars, use
 // initBars(data)
 
-function drawBars(barHolderSelector,xComp="Year",yComp="Value",yAxisTitle="",height=100,width=100, xP=0, yP=0, showAxis=false, data){
-  // var barHolderSelector = "body";
-  // var xComp = "letter";
-  // var yComp = "frequency";
-  // var yAxisTitle = "Frequency";
+var squareX;
+var squareY;
+var xRangeSquare;
+var startingYear = 1951;
 
-  // var margin = {top: 20, right: 20, bottom: 30, left: 40},
-      // width = 960 - margin.left - margin.right,
-      // height = 500 - margin.top - margin.bottom;
-    //console.log("Drawbars: ", data);
-  var margin;
-  if(showAxis) margin = {top: 0, right: 0, bottom: 50, left: 50};
-  else margin = {top: 0, right: 0, bottom: 0, left: 0};
+/*
+* barHolderSelctor is the id of the element that holds the barchart
+* height is the height of the bar chart
+* width is the width of the bar chart
+* data is the data that's shown in the bar chart
+*/
+function initBars(barHolderSelector, height, width, data,scaleForY) {
 
-  var xRange = [];
-  for(i = 1951; i < 2017; i++){
-    xRange.push(i);
+	// The range we are using, 2017 - 1951 = 66
+  xRangeSquare = [];
+  for(i = 0; i < 66; i++){
+    xRangeSquare.push(i);
   }
 
-  var x = d3.scale.ordinal()
-  	.rangeRoundBands([0, width], .1, 1);
-
-  var y = d3.scale.linear()
-      .range([height, 0])
-      .domain([0, 2541249]);
-
-  var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom");
-
-  var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left");
-
-  //console.log(barHolderSelector);
-
-  var barSvg = d3.select(barHolderSelector)
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+	// Use linear scale for so we can have small squares
+	// Ordinal only uses whole numbers which we can't use
+	squareX = d3.scale.linear()
+		.range([0, width*0.95]) // If we use the whole width the bars will go outside the square
+		.domain([0, xRangeSquare[xRangeSquare.length-1]]);
+	if(scaleForY=="linear"){
+		squareY = d3.scale.linear()
+			.domain([0, 2541249])
+			.range([height, 0]);
+	}else{
+		squareY = d3.scale.log()
+			.base(10)
+			.domain([1, 10000000])
+			.range([height, 0]);
+	}
+	
+  d3.select(barHolderSelector)
+      .attr("width", width)
+      .attr("height", height)
     .append("g")
       .attr("id", "bar-holder")
-      .attr("transform", "translate(" + (margin.left + xP) + "," + (margin.top + yP) + ")");
 
-    // console.log(data)
-    initBars(data)
+	// drawBarsInSquare(data, height, barHolderSelector)
+	data.forEach(function (d) {
+		d.Value = scaleForY == "linear" ? +d.Value: Math.max(+d.Value, 1);
+		d.Year = +d.Year;
+	});
 
-  function initBars(data) {
-    //document.getElementById("bar-holder").innerHTML = "";
-    data.forEach(function(d) {
-      d.Value = +d.Value;
-    });
+	var barSvg = d3.select(barHolderSelector).select("#bar-holder");
 
-    // console.log(xRange.map(function(d) { return d.toString(); }));
+	var theBars = barSvg.selectAll(".bar")
+		.data(data).enter()
+		.append("rect")
+		.attr("class", "bar")
+		.attr("x", function (d) {
+			// Scale down d.Year to [0, 66]
+			return squareX(d.Year - startingYear);
+		})
+		.attr("width", 2)
+		.attr("y", function (d) { return squareY(d.Value); })
+		.attr("height", function (d) {
+			return height - squareY(d.Value);
+		})
+		
+}
 
-    x.domain(xRange.map(function(d) { return d.toString();}));
-    // x.domain(data.map(function(d) { return d.Year;}));
-    // y.domain([0, d3.max(data, function(d) { return d[yComp]; })]);
+function drawBarsInSquare(data, height, barHolderSelector) {
 
-    if(showAxis){
-      barSvg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
+	
 
-      barSvg.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-        .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text(yAxisTitle);
-    }
-
-    var theBars = barSvg.selectAll(".bar")
-        .data(data).enter()
-      .append("rect")
-        .attr("class", "bar")
-        .attr("x", function(d) { 
-            return x(d.Year); })
-        .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.Value); })
-        .attr("height", function(d) {
-            return height - y(d.Value);
-        })
-        .on("click",function(d){
-          // click event for bars
-        });
-
-    theBars
-        .transition()
-        .attr("y", function(d) { return y(d.Value); })
-    // barSvg.exit().remove()
-    d3.select("input").on("change", change);
-
-    // var sortTimeout = setTimeout(function() {
-    //   d3.select("input").property("checked", true).each(change);
-    // }, 2000);
-
-    function change() {
-      // clearTimeout(sortTimeout);
-      // Copy-on-write since tweens are evaluated after a delay.
-      var x0 = x.domain(data.sort(this.checked
-          ? function(a, b) { return b[yComp] - a[yComp]; }
-          : function(a, b) { return d3.ascending(a[xComp], b[xComp]); })
-          .map(function(d) { return d[xComp]; }))
-          .copy();
-
-      svg.selectAll(".bar")
-          .sort(function(a, b) { return x0(a[xComp]) - x0(b[xComp]); });
-
-      var transition = svg.transition().duration(750),
-          delay = function(d, i) { return i * 50; };
-
-      transition.selectAll(".bar")
-          .delay(delay)
-          .attr("x", function(d) { return x0(d[xComp]); });
-
-      transition.select(".x.axis")
-          .call(xAxis)
-        .selectAll("g")
-          .delay(delay);
-    }
-  }
+	// Update the bars here!
+	// When we switch from linear to exponential etc
+		
+	// squareY = d3.scale.linear()
+	// .range([height, 0])
+	// .domain([0, 2541249]);
 
 }
