@@ -63,6 +63,11 @@ span:before
 	font-family: 'Saira Condensed', sans-serif;
 }
 
+#information {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
 .legendTitle {
 	font-family: 'Saira Condensed', sans-serif;
 }		
