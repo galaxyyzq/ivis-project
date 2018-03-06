@@ -202,7 +202,7 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
 
           drawLegend(maxRefugees[thisYear], thisYear);
-
+          drawMap();
           //Update the slider when year change in bar chart
           var newYear = scaleSlider(thisYear);
           d3.slider().move(Math.round(newYear));

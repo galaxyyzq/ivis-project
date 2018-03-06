@@ -221,7 +221,8 @@ d3.slider = function module() {
       updateSankey(currentCountryName,thisYear);
       updateGrid();
 
-	  updateBarChartDescription();		
+      updateBarChartDescription();
+      drawMap();
     }
 
     olddisplayValue = displayValue;
