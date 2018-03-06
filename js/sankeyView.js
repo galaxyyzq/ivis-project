@@ -94,6 +94,23 @@ function drawSankey(data, thisYear) {
     var formatNumber = d3.format(",.0f"),    // zero decimal places
         format = function (d) { return formatNumber(d) + " " + units; };
 
+    /* Initialize tooltip */
+    //for tooltip 
+    var offsetL = document.getElementById('chart').offsetLeft + 30;
+    var offsetT = document.getElementById('chart').offsetTop + 30;
+
+    var tooltipSankey = d3.select("#chart")
+        .append("div")
+        .attr("class", "tooltip hidden");
+
+    function showTooltipSankey(d) {
+        var mouse = d3.mouse(sankeySVG.node())
+            .map(function (d) { return parseInt(d); });
+        tooltipSankey.style('display', 'block')
+            .attr("style", "left:" + (mouse[0] + offsetL) + "px;top:" + (mouse[1] + offsetT) + "px")
+            .html(d.source.name + " → " + d.target.name + "<br>" + format(d.value));
+    }
+
     //Remove previous sankey
     d3.select("#chart").selectAll("svg").remove();
 
@@ -192,15 +209,21 @@ function drawSankey(data, thisYear) {
                 return d.color = color(d.target.name);
             }
         })
+        .on("mousemove", showTooltipSankey)
+        .on("mouseout", function (d, i) {
+            //tooltipMap.classed("hidden", true);
+            tooltipSankey.style('display', 'none');
+
+        })
         .sort(function (a, b) { return b.dy - a.dy; });
 
 
     // add the link titles
-    link.append("title")
+    /*link.append("title")
         .text(function (d) {
             return d.source.name + " → " +
                 d.target.name + "\n" + format(d.value);
-        });
+        });*/ 
 
     // add in the nodes
     var node = sankeySVG.append("g").selectAll(".node")
