@@ -181,7 +181,8 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
 
     theBars.enter()
       .append("rect")
-			.attr("id",function(d){return "chart" +d.Year})
+      .attr("id",function(d){return "chart" +d.Year})
+        .style("cursor", "pointer")
         .on("click",function(d,i){
           if(this !== trbcPrevClickedBar){
             d3.select(this)
