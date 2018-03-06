@@ -201,6 +201,7 @@ function initGrid() {
   var newRectContainer =  countrySquares.enter()
     .append("g")
       .attr("class", "rect-container")
+      .style("cursor", "pointer")
       // Id is used to reference the square in the bar chart script
       .attr("id", function (d, i) { return "square-" + i; })
       .on("click", function (d, i) {
