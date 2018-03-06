@@ -18,11 +18,11 @@ $("#infoLink2").on("click", function () {
 
 // When we click on the 'Away from home' button.
 $("#awayFromHomeLink").on("click", function() {
-  $("#contentRow").css('display', 'inline');
+  $("#contentRow").css('display', 'block');
   $("#information").css('display', 'none');	
 })
 $("#awayFromHomeLink2").on("click", function () {
-    $("#contentRow").css('display', 'inline');
+    $("#contentRow").css('display', 'block');
     $("#information").css('display', 'none');
 })
 
