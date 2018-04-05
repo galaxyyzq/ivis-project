@@ -45,23 +45,28 @@ span:before
   -margin-top: -5px;	
 }
 */
+
+.labelText {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 25px;
+}
 	
 .col-6 {
 	font-family: 'Saira Condensed', sans-serif;	
 }
 
 #nRefugees{
-	font-size: 30px;
+	font-size:50px;
 }
 
 #barChartYear{
-	font-size: 30px;
+	font-size: 50px;
 }
 
 #barChartDescription{
-	text-align: right;
+	text-align: center;
 	font-family: 'Saira Condensed', sans-serif;	
-	font-size: 50px;	
+	font-size: 30px;	
 }
 
 #contentRow{
@@ -114,14 +119,14 @@ span:before
 }
 
 #inOutToggle{
-	font-size: 20px;
+	font-size: 25px;
 	float: right;
 	margin-right: 80px;
 	width: 150px;
 }
 
 #toggleMap {
-    font-size: 20px;
+    font-size: 25px;
     float: right;
     margin-right: 80px;
     margin-top: 10px;
@@ -129,7 +134,7 @@ span:before
 }
 
 #logScaleToggle {
-	font-size: 20px;
+	font-size: 25px;
 	float: right;
 	margin-right: 80px;
 	margin-top: 10px;

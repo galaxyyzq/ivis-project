@@ -26,10 +26,10 @@ function updateBarChartDescription(){
 
 	// Changing the description Sentence
 	if(inOut === "In"){
-		$("#descriptionSentence").html("Refugees living in this country in ");
+		$("#descriptionSentence").html(" Refugees living in this country in ");
 	}
   	else{
-		$("#descriptionSentence").html("Refugees from this country in");
+		$("#descriptionSentence").html(" Refugees from this country in ");
 	}
 
 	// Changing the Value
