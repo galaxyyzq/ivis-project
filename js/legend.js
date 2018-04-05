@@ -7,9 +7,7 @@ function drawLegend(maxRefugees, thisYear) {
   var key = d3.select("#legendGrid")
       .append("svg")
       .attr("width", w)
-      .attr("height", h)
-      .attr("stroke-width", 1)
-      .attr("stroke", "gray");
+      .attr("height", h);
 
   var legend = key.append("defs")
       .append("svg:linearGradient")
@@ -40,6 +38,8 @@ function drawLegend(maxRefugees, thisYear) {
       .attr("width", w - 200)
       .attr("height", h - 50)
       .style("fill", "url(#gradient)")
+      .attr("stroke-width", 1)
+      .attr("stroke", "gray")
       .attr("transform", "translate(100,30)");
 
   //Append title

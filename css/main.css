@@ -1,3 +1,8 @@
+text {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 20px;
+}
+
 .top-buffer {
   margin-top: 50px;
 }
