@@ -34,7 +34,8 @@
 }
 
 .d3slider text {
-  font: 14px sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 20px;
 }
 
 .tick.minor text {
@@ -66,8 +67,8 @@
 }
 
 .dragger-inner {
-  fill: #B30424;
-  stroke: none;
+    fill: #006EE3; /*#B30424;*/
+    stroke: none;
 }
 
 .min-marker line {

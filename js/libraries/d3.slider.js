@@ -13,9 +13,9 @@ d3.slider = function module() {
 
   var div, min = 0, max = 100, svgGroup, classPrefix, axis,
   height=40, rect,
-  rectHeight = 12,
+  rectHeight = 15,
   tickSize = 6,
-  margin = {top: 25, right: 25, bottom: 15, left: 25},
+  margin = {top: 30, right: 25, bottom: 15, left: 25},
   ticks = 0, tickValues, scale, tickFormat, dragger, width,
   // range = false,
   callbackFn, stepValues, focus;
@@ -115,16 +115,16 @@ d3.slider = function module() {
 
       dragger.append("circle")
       .attr("class", "dragger-outer")
-      .attr("r", 10)
+      .attr("r", 14)
       .attr("transform", function(d) {
-        return "translate(0,6)";
+        return "translate(0,8)";
       });
 
       dragger.append("circle")
       .attr("class", "dragger-inner")
-      .attr("r", 4)
+      .attr("r", 8)
       .attr("transform", function(d) {
-        return "translate(0,6)";
+        return "translate(0,8)";
       });
 
 
