@@ -219,16 +219,22 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
           updateGrid();
 
         })
-        .on("mouseenter", function(){
+        .on("mouseenter", function(d){
             if(this === trbcPrevClickedBar) return;
             d3.select(this)
               .attr("fill", trbcHoverBarColor)
-							$("#chart"+thisYear).attr("fill","green");
+            $("#chart" + thisYear).attr("fill", "green");
+
+            // Quick update of description
+            updateBarChartDescription(d.Year);
         })
         .on("mouseleave", function(){
           if(this === trbcPrevClickedBar) return;
           d3.select(this)
             .attr("fill", trbcDefaultBarColor)
+
+            // Quick update of elements at the right
+            updateBarChartDescription(thisYear);
         })
         .attr("class", "bar")
         .attr("height", 0)
