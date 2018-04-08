@@ -75,6 +75,8 @@ d3.slider = function module() {
       }
       if (tickFormat) {
         axis.tickFormat(tickFormat);
+      } else {
+          axis.tickFormat(d3.format(".0f"));
       }
 
       svgSlider.append("g")
