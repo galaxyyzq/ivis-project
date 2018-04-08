@@ -1,0 +1,7 @@
+﻿.x_axis path, 
+.y_axis path{
+    fill: none;
+    stroke: gray;
+    shape-rendering: crispEdges;
+    stroke-width: 3px;
+}

@@ -11,17 +11,17 @@ var trbcWidth = 600;
 var trbcHeight = 250;
 var trbcHoverBarColor = "orange";
 var trbcClickedColor = "green";
-var trbcDefaultBarColor = "black";
+var trbcDefaultBarColor = "#212145"; //"black";
 
 function formatNumber (num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
 }
 
 
-function updateBarChartDescription(){
+function updateBarChartDescription(year = thisYear){
 
 	// Changing the year in the second column description.
-	$("#barChartYear").html(thisYear);
+	$("#barChartYear").html(year);
 
 
 	// Changing the description Sentence
@@ -36,7 +36,7 @@ function updateBarChartDescription(){
 	countryData.forEach(function(countryRecords){
 		// 'countryRecords' contains all records for each country
 		countryRecords.forEach(function(cr){
-			if(cr.Country === currentCountryName && cr.Year == thisYear)
+			if(cr.Country === currentCountryName && cr.Year == year)
 			{
 				$("#nRefugees").html( formatNumber(cr.Value) );
 
@@ -111,7 +111,7 @@ function initTopRightBarChart() {
       .attr("transform", "translate(" + (trbcMargin.left + 0) + "," + (trbcMargin.top + 0) + ")");
 
   trbcXAxisAnimate = trbcSVG.append("g")
-    .attr("class", "x axis")
+    .attr("class", "x_axis")
     .attr("transform", "translate(0," + trbcHeight + ")")
     .call(trbcXAxis)
 
@@ -126,7 +126,7 @@ function initTopRightBarChart() {
       });
 
   trbcYaxisAnimate= trbcSVG.append("g")
-      .attr("class", "y axis")
+      .attr("class", "y_axis")
       .call(trbcYaxis)
 
   trbcYaxisAnimate
@@ -183,14 +183,22 @@ function updateTopRightBarChart(barHolderSelector,xComp="Year",yComp="Value",yAx
       .append("rect")
       .attr("id",function(d){return "chart" +d.Year})
         .style("cursor", "pointer")
+        .attr("fill", function (d) {
+            if (d.Year == thisYear) {
+                trbcPrevClickedBar = this; 
+                return trbcClickedColor;
+            } else {
+                return trbcDefaultBarColor;
+            } 
+        })
         .on("click",function(d,i){
           if(this !== trbcPrevClickedBar){
             d3.select(this)
-              .attr("fill", trbcClickedColor)
+              .attr("fill", trbcClickedColor);
             d3.select(trbcPrevClickedBar)
-              .attr("fill", trbcDefaultBarColor)
-							  $("#chart"+oldYearSlider).attr("fill","black");
-								$("#chart"+thisYear).attr("fill","black");
+              .attr("fill", trbcDefaultBarColor);
+			$("#chart"+oldYearSlider).attr("fill",trbcDefaultBarColor);
+			$("#chart"+thisYear).attr("fill",trbcDefaultBarColor);
             trbcPrevClickedBar = this;
 
           }

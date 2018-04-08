@@ -216,7 +216,7 @@ d3.slider = function module() {
 
       drawLegend(maxRefugees[thisYear], thisYear);
 
-      $("#chart"+olddisplayValue).attr("fill","black");
+      $("#chart"+olddisplayValue).attr("fill",trbcDefaultBarColor);
       $("#chart"+thisYear).attr("fill","green");
 
       // updateSankey($("#countryName").text(),thisYear);
