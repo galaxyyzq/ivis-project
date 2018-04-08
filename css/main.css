@@ -149,12 +149,14 @@ span:before
 	
 	margin-top: 15px;
 	float: left;
-}	
+}
 
-.info{
-	font-size: 50px;
-	margin-top: 15px;
-	margin-left: 735px;
+.info {
+    font-size: 50px;
+    margin-top: 15px;
+    margin-right: 70px;
+    text-align: right;
+    /*margin-left: 735px;*/
 }
 	
 .menuLink{
