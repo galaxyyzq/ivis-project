@@ -298,7 +298,7 @@ function updateSankey(country, thisYear) {
                 sankeyData.push({ source: d.Origin, target: d.Residence, value: d.Value });
             }
         });
-        console.log(sankeyData)
+        //console.log(sankeyData)
         if (sankeyData.length == 0) {
             //Remove previous sankey
             d3.select("#chart").selectAll("svg").remove();
